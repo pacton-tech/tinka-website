@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Dato' Nik Mod Amin bin Nik Abd Majid</title>
+  <meta content="" name="description">
+
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+ <!-- Template Main CSS File -->
+ <link href="assets/css/style.css" rel="stylesheet">
+ <link rel="stylesheet" href="assets/css/custom.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css	">
+ <!-- =======================================================
+  <!-- =======================================================
+  * Template Name: FlexStart - v1.1.1
+  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  @include('header')
+<!-- End Header -->
+
+
+ <!-- ======= Hero Section ======= -->
+ <section id="hero" class="hero d-flex align-items-center">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+        <img src="assets/img/team/nikmohd.jpg"  class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-6 d-flex flex-column justify-content-center">
+        <h1 data-aos="fade-up">Dato' Nik Mod Amin bin Nik Abd Majid</h1>
+        
+        <h2 data-aos="fade-up" data-aos-delay="400"> Founder & Chairman </h2>
+        <hr>
+        <p data-aos="fade-left" data-aos-delay="200">Dato’ Nik Mod Amin is the founder of Versatile Straits Sdn Bhd.</p>
+
+         <p data-aos="fade-left" data-aos-delay="300"> He is a prominent figure in the Malaysian banking industry. 
+         He currently holds the position as Director and Shareholder of Mirmas Holding 
+         Sdn Bhd through FASK Capital Sdn Bhd. He is also currently the Chairman and 
+         Director of FASK Holding Group and the founder of FASK Capital Sdn Bhd 
+         (formerly known as The Royal Mint Exchange Sdn Bhd) and serves as the 
+         Non-Independent Director on the Board of AWC Berhad.</p>
+          
+          <p data-aos="fade-left" data-aos-delay="400">Dato’ Nik was previously the CEO/Executive Director of BSN Commercial 
+            Bank (M) Berhad. During his tenure with BSN Commercial, he re-engineered
+             the bank’s business direction towards assisting Small Medium Industries.
+             He was also the Board Member of Universiti Utara Malaysia (UUM) and a 
+             Trustee to the Malaysian Humanitarian Foundation.</p>
+          
+         <p data-aos="fade-left" data-aos-delay="500">Prior to that, was also the General Manager of Perbadanan Usahawan 
+           Nasional Berhad (“PUNB”), setting up the funds’ investment division. 
+           He also held key senior positions in Maybank Berhad and Affin Bank Berhad 
+           executing risk management, strategic planning, credit management, 
+           international banking roles in the respective banks. Datuk Nik holds 
+           a Degree in Economics from the University of Malaya. </p>
+          
+          <p data-aos="fade-left" data-aos-delay="600">Being a serial entrepreneur, Dato’ Nik is involved in multiple industries
+             including Finance, Agriculture, Technology, Engineering and Education.</p>
+        
+        <div data-aos="fade-up" data-aos-delay="600">
+          <div class="text-center text-lg-start">
+            <a href="/tinkaleadership" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <span>View Full Tinka Leadership</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+
+</section><!-- End Hero -->
+
+    
+    <!-- Social Media Section-->
+
+    <section>
+      <div class="container mt-5 mb-5 d-flex justify-content-center">
+        <ul class="social-list">
+            <li>
+                <div class="maincard p-3">
+                    <div class="thecard">
+                      <a href="https://www.facebook.com/tinkamalaysia" target="_blank">
+                        <div class="thefront text-center py-4 sfacebook">
+                            <div class="social-icon"> <i class="fa fa-facebook fa-2x"></i> </div>
+                        </div>
+                        <div class="theback text-center py-4 sfacebook">
+                            <div class="social-icon"> <i class="fa fa-facebook fa-2x"></i> </div>
+                        </div>
+                      </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="maincard p-3">
+                    <div class="thecard">
+                      <a href="https://www.instagram.com/tinkamalaysia" target="_blank">
+                        <div class="thefront text-center py-4 sinstagram">
+                            <div class="social-icon"> <i class="fa fa-instagram fa-2x"></i> </div>
+                        </div>
+                        <div class="theback text-center py-4 sinstagram">
+                            <div class="social-icon"> <i class="fa fa-instagram fa-2x"></i> </div>
+                        </div>
+                      </a>
+                    </div>
+                </div>
+            </li>
+            
+           <li>
+              <div class="maincard p-3">
+                <div class="thecard">
+                  <a href="https://tinka.wasap.my" target="_blank">
+                    <div class="thefront text-center py-4 swhatsapp">
+                        <div class="social-icon"> <i class="fa fa-whatsapp fa-2x"></i> </div>
+                    </div>
+                    <div class="theback text-center py-4 swhatsapp">
+                        <div class="social-text"> <i class="fa fa-whatsapp fa-2x"></i></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+           </li>
+
+      </ul>
+    </div>
+
+    </section>
+
+
+  <!-- End of Social Media Section-->
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  @include('footer')
+<!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

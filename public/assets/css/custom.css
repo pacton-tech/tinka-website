@@ -1,0 +1,678 @@
+.team2 .member2 .pic {
+    overflow: hidden;
+    width: 180px;
+    border-radius: 50%;
+}
+
+.team2 .member2 {
+    position: relative;
+    padding: 30px;
+    border-radius: 5px;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.team2 .member .member-info2 {
+    padding: 10px 15px 20px 15px;
+  }
+  
+  .team2 .member .member-info2 h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #012970;
+    text-align: center;
+  }
+  
+  .team2 .member2 .member-info2 span {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #aaaaaa;
+    text-align: center;
+    font-style: italic;
+  }
+  
+  .team2 .member .member-info2 p {
+    font-style: italic;
+    font-size: 14px;
+    padding-top: 15px;
+    line-height: 26px;
+    color: #5e5e5e;
+    text-align: center;
+  }
+  
+/*--------------------------------------------------------------
+# Physical Class Values
+--------------------------------------------------------------*/
+.values .physicalbox {
+  padding: 30px;
+  box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+  text-align: center;
+  transition: 0.3s;
+  height: 100%;
+  background: #9CDED9;
+}
+
+.values .physicalbox {
+  padding: 30px;
+  box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+  text-align: center;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.values .physicalbox img {
+  padding: 30px 50px;
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+.values .physicalbox h3 {
+  font-size: 24px;
+  color: #012970;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.values .physicalbox:hover {
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+}
+
+.values .physicalbox:hover img {
+  transform: scale(1);
+}
+
+/*--------------------------------------------------------------
+#Home Tuition Class Values
+--------------------------------------------------------------*/
+.values .homebox {
+  padding: 30px;
+  box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+  text-align: center;
+  transition: 0.3s;
+  height: 100%;
+  background:#FFDC4E;
+}
+
+.values .homebox {
+  padding: 30px;
+  box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+  text-align: center;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.values .homebox img {
+  padding: 30px 50px;
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+.values .homebox h3 {
+  font-size: 24px;
+  color: #012970;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.values .homebox:hover {
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+}
+
+.values .homebox:hover img {
+  transform: scale(1);
+}
+
+/*--------------------------------------------------------------
+#Online Tuition Values
+--------------------------------------------------------------*/
+.values .onlinebox {
+  padding: 130px;
+  box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+  text-align: center;
+  transition: 0.3s;
+  height: 100%;
+  background: #F89797;
+}
+
+.values .onlinebox {
+  padding: 30px;
+  box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+  text-align: center;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.values .onlinebox img {
+  padding: 30px 50px;
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+.values .onlinebox h3 {
+  font-size: 24px;
+  color: #012970;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.values .onlinebox:hover {
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+}
+
+.values .onlinebox:hover img {
+  transform: scale(1);
+}
+
+/*--------------------------------------------------------------
+# joincourse
+--------------------------------------------------------------*/
+.joincourse .studentbox {
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  background: #FFDE59;
+}
+
+.joincourse .studentbox:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+}
+
+.joincourse .teacherbox {
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  background: #9CDED9;
+}
+
+.joincourse .teacherbox:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+}
+
+
+.joincourse h3 {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.joincourse .price {
+  font-size: 36px;
+  color: #444444;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+.joincourse .price sup {
+  font-size: 20px;
+  top: -15px;
+  left: -3px;
+}
+
+.joincourse .price span {
+  color: #bababa;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.joincourse img {
+  padding: 30px 40px;
+}
+
+.joincourse ul {
+  padding: 0;
+  list-style: none;
+  color: #444444;
+  text-align: center;
+  line-height: 26px;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.joincourse ul li {
+  padding-bottom: 10px;
+}
+
+.joincourse ul .na {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.joincourse .btn-buy {
+  display: inline-block;
+  padding: 8px 40px 10px 40px;
+  border-radius: 50px;
+  color: white;
+  background: #FF5C5C;
+  transition: none;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  transition: 0.3s;
+  border: 1px solid #FF5C5C;
+  cursor: pointer;
+}
+
+.joincourse .btn-buy:hover {
+  background: #FF5C5C ;
+  color: #fff;
+}
+
+.joincourse .featured {
+  width: 200px;
+  position: absolute;
+  top: 18px;
+  right: -68px;
+  transform: rotate(45deg);
+  z-index: 1;
+  font-size: 14px;
+  padding: 1px 0 3px 0;
+  background: #4154f1;
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Social Links
+--------------------------------------------------------------*/
+
+.social-list {
+  display: inline-flex
+}
+
+.social-list li {
+  list-style: none;
+  margin-right: 10px
+}
+
+.maincard {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.thecard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease
+}
+
+.thecard:hover {
+  transform: rotateY(180deg)
+}
+
+.thefront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: hidden;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 1px solid #eee;
+  box-shadow: 5px 6px 6px 2px #e9ecef;
+  padding: 4px
+}
+
+.theback {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: hidden;
+  color: #fff;
+  border-radius: 50px;
+  transform: rotateY(180deg);
+  border: 1px solid #eee;
+  box-shadow: 5px 6px 6px 2px #e9ecef;
+  padding: 4px
+}
+
+.social-text small {
+  font-size: 20px
+}
+
+@media (max-width:700px) {
+  .social-list {
+      display: block;
+  }
+}
+
+.sfacebook {
+  background: #3F3D56;
+}
+
+.sinstagram {
+  background: #3F3D56;
+}
+
+.swhatsapp {
+  background: #3F3D56;
+}
+
+/*--------------------------------------------------------------
+# subjects
+--------------------------------------------------------------*/
+.subjects .img{
+  width: 200;
+  height: 200;
+}
+
+.subjects .box {
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  
+}
+
+.subjects .box:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+}
+
+.subjects h3 {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.subjects .price {
+  font-size: 36px;
+  color: #444444;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+.subjects .price sup {
+  font-size: 20px;
+  top: -15px;
+  left: -3px;
+}
+
+.subjects .price span {
+  color: #bababa;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.subjects img {
+  padding: 30px 40px;
+}
+
+.subjects ul {
+  padding: 0;
+  list-style: none;
+  color: #444444;
+  text-align: center;
+  line-height: 26px;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.subjects ul li {
+  padding-bottom: 10px;
+}
+
+.subjects ul .na {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.subjects .btn-buy {
+  display: inline-block;
+  padding: 8px 40px 10px 40px;
+  border-radius: 50px;
+  color: #4154f1;
+  transition: none;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  transition: 0.3s;
+  border: 1px solid #4154f1;
+}
+
+.subjects .btn-buy:hover {
+  background: #4154f1;
+  color: #fff;
+}
+
+.subjects .featured {
+  width: 200px;
+  position: absolute;
+  top: 18px;
+  right: -68px;
+  transform: rotate(45deg);
+  z-index: 1;
+  font-size: 14px;
+  padding: 1px 0 3px 0;
+  background: #4154f1;
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# registrationteacher
+--------------------------------------------------------------*/
+
+
+.registrationteacher .php-email-form {
+  background: #9CDED9;
+  padding: 30px;
+  height: 100%;
+  border-radius: 2%;
+}
+
+.registrationteacher .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.registrationteacher .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.registrationteacher .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.registrationteacher .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+.registrationteacher .php-email-form input, .registrationteacher .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  border-radius: 0;
+}
+
+.registrationteacher .php-email-form input:focus, .registrationteacher .php-email-form textarea:focus {
+  border-color: #4154f1;
+}
+
+.registrationteacher .php-email-form input {
+  padding: 10px 15px;
+}
+
+.registrationteacherteacher .php-email-form textarea {
+  padding: 12px 15px;
+}
+
+.registrationteacher .php-email-form button[type="submit"] {
+  background: #FF5C5C;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 5%;
+}
+
+
+.registrationteacher .php-email-form button[type="submit"]:hover {
+  background: #5969f3;
+}
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# registrationstudent
+--------------------------------------------------------------*/
+
+
+.registrationstudent .php-email-form {
+  background: #F9DD6A;
+  padding: 30px;
+  height: 100%;
+  border-radius: 2%;
+}
+
+.registrationstudent .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.registrationstudent .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #F9DD6A;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.registrationstudent .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.registrationstudent .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+.registrationstudent .php-email-form input, .registrationstudent .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  border-radius: 0;
+}
+
+.registrationstudent .php-email-form input:focus, .registrationstudent .php-email-form textarea:focus {
+  border-color: #4154f1;
+}
+
+.registrationstudent .php-email-form input {
+  padding: 10px 15px;
+}
+
+.registrationstudent .php-email-form textarea {
+  padding: 12px 15px;
+}
+
+.registrationstudent .php-email-form button[type="submit"] {
+  background: #4154f1;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.registrationstudent .php-email-form button[type="submit"]:hover {
+  background: #5969f3;
+}
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
