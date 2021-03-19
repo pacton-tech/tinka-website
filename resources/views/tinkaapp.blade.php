@@ -52,13 +52,20 @@
         <div class="col-lg-12 " data-aos="fade-up" data-aos-delay="200">
           <center>
               <div>
-                <a href="https://www.apple.com/my/app-store/" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
                   <span>Get The App</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
               </div>
           </center>
         </div>
+        <center>
+        <div class="app-links mt-3">
+                 <a href="#"><img src="./assets/img/appstore.png" alt="" width="150"></a>
+                 <a href="#"><img src="./assets/img/playstoreg.png" alt="" width="150"></a>
+
+                </div>
+        </center>
       </div>
     </div>
 
