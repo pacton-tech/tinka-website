@@ -58,7 +58,6 @@
         </div>
 
         <div class="row">
-          <div class="col-sm-1"></div>
             <div class="col member2" >
                 <center>
                   <div class="pic"><img src="assets/img/team/squared/faisal.jpg" class="img-fluid" alt=""></div>
@@ -77,7 +76,6 @@
           </div>
 
         <div class="row">
-          <div class="col-sm-1"></div>
             <div class="col member2" >
                   <center>
                     <div class="pic"><img src="assets/img/team/squared/emeritushd.jpg" class="img-fluid" alt=""></div>
@@ -86,7 +84,6 @@
                   </center>
             </div>
   
-            <div class="col-sm-1"></div>
             <div class="col member2" >
                   <center>
                    <div class="pic"><img src="assets/img/team/squared/rozhanhd.jpg" class="img-fluid" alt=""></div>

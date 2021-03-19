@@ -32,6 +32,7 @@
             </ul> 
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
           <li><a class="nav-link scrollto" href="/faq">FAQ</a></li>
+          <li><a class="nav-link scrollto" href="https://helpdesk.tinka.world/help-center">Help Centre</a></li>
           <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
        
         </ul>
