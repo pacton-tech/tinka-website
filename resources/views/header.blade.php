@@ -3,7 +3,7 @@
 
       <a href="/" class="logo d-flex align-items-center">
         <img src="assets/img/Tinka (1).png" alt="">
-        <span>TINKA</span>
+        <span>TiNKA</span>
       </a>
 
       <nav id="navbar" class="navbar">
