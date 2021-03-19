@@ -4,7 +4,7 @@
 
       <a href="/" class="logo d-flex align-items-center">
         <img src="assets/img/Tinka (1).png" alt="">
-        <span>TINKA</span>
+        <span>TiNKA</span>
       </a>
 
       <nav id="navbar" class="navbar">
@@ -33,7 +33,7 @@
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
           <li><a class="nav-link scrollto" href="/faq">FAQ</a></li>
           <li><a class="nav-link scrollto" target="_blank" href="https://helpdesk.tinka.world/help-center">Help Centre</a></li>
-          <li><a class="getstarted scrollto" href="#">Login</a></li>
+          <li><a class="getstarted scrollto" href="#">Get Started</a></li>
        
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

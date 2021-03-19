@@ -83,7 +83,8 @@
                     <p class="text-black"> Advisor</p>
                   </center>
             </div>
-  
+            
+            <div class="col-sm-1"></div>
             <div class="col member2" >
                   <center>
                    <div class="pic"><img src="assets/img/team/squared/rozhanhd.jpg" class="img-fluid" alt=""></div>
