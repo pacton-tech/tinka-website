@@ -299,5 +299,3 @@ function validatePassword(){
   }
 }
 
-password.onchange = validatePassword;
-confirmpassword.onkeyup = validatePassword;

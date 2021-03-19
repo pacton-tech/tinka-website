@@ -5,133 +5,105 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Contact Us</title>
+  <title>Teachers Profile</title>
   <meta content="" name="description">
 
   <meta content="" name="keywords">
-
   @extends('layouts.master')
 
 </head>
 
+<main id="main">
+@include('header')
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>About Us</li>
+        <li>Teachers Profile</li>
+      </ol>
+      <h2>Teachers Profile</h2>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
 <body>
 
- <!-- ======= Header ======= -->
- @include('header')
-<!-- End Header -->
 
-  <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
+<section id="doctors" class="doctors">
       <div class="container">
 
-        <ol>
-          <li><a href="/">Home</a></li>
-          <li><a href="/contact">Contact Us</a></li>
-        </ol>
-        <h2>Contact Us</h2>
+        <header class="section-header" data-aos="fade-left" data-aos-delay="100">
+            <h2>Tinka Teachers</h2>
+            <p>Teachers Profile</p>
+        </header>
 
-      </div>
-    </section><!-- End Breadcrumbs -->
+        <div class="row">
 
- 
- <!-- ======= Contact Section ======= -->
- <section id="contact" class="contact">
-
-    <div class="container" data-aos="fade-up">
-
-      <header class="section-header">
-        <h2>Contact</h2>
-        <p>Contact Us</p>
-      </header>
-
-      <div class="row gy-4">
-
-        <div class="col-lg-6">
-
-          <div class="row gy-4">
-            <div class="col-md-6">
-              <div class="info-box">
-                <i class="bi bi-geo-alt"></i>
-                <h3>Address</h3>
-                <p>29-1, Jalan Pelapik B U8/B,<br>
-                  Bukit Jelutong, <br>
-                  40150 Shah Alam, Selangor. <br>
-                  Landmark: Klinik Menara  
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="info-box">
-                <i class="bi bi-telephone"></i>
-                <h3>Call Us</h3>
-                <p>03 - 5030 5883<br>011 - 1087 0015</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="info-box">
-                <i class="bi bi-envelope"></i>
-                <h3>Email Us</h3>
-                <p>info@example.com<br>contact@example.com</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="info-box">
-                <i class="bi bi-clock"></i>
-                <h3>Operating Hours</h3>
-                <p>Monday - Friday : 9 AM - 6 PM <br>
-                Saturday : 10 AM - 6 PM <br>
-                Sunday : 8 AM - 4 PM
-                </p>
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="assets/img/team/baharuddin.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Baharuddin bin Haji Kasim</h4>
+                <p> Full Time Tutor</p>
+                <p> 22 years teaching experience </p>
+                <span> Diploma Eksekutif Pentadbiran, Sijil Fasilitator Pendidikan</span>      
               </div>
             </div>
           </div>
 
-        </div>
-
-        <div class="col-lg-6">
-          <form action="forms/contact.php" method="post" class="php-email-form">
-            <div class="row gy-4">
-
-              <div class="col-md-6">
-                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="assets/img/team/lyana.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Noor Lyana binti Mohd Rohaizad</h4>
+                <p> Full Time Tutor</p>
+                <p> 6 years teaching experience </p>
+                <span>Bachelor of Science (Hons) Chemistry </span>
               </div>
-
-              <div class="col-md-6 ">
-                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-              </div>
-
-              <div class="col-md-12">
-                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-              </div>
-
-              <div class="col-md-12">
-                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-              </div>
-
-              <div class="col-md-12 text-center">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                <button type="submit">Send Message</button>
-              </div>
-
             </div>
-          </form>
-
+          </div>
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="assets/img/team/halimatul.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Halimatul Saadiah Binti Che Dolah</h4>
+                <p>Lab Assistance / Tutor</p>
+                <p> 6 years teaching experience </p>
+                <span>Bachelor Science Of Applied Chemistry </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="assets/img/team/alizan.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Mohd Alizan Bin Azhari</h4>
+                <p> Teacher At Smi Darus Salim</p>
+                <p> 8 years teaching experience </p>
+                <span>Bachelor Of Psychology</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="assets/img/team/azrul.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Muhammad Azrul Hafiz Bin Kamaruddin</h4>
+                <p> Tutor / Student (UPM)</p>
+                <p> 10 years teaching experience </p>
+                <span>Bachelor In Sc. (Hons) Microbiology </span>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
-
-    </div>
-
-  </section><!-- End Contact Section -->
-
-    
-
-    
+    </section>
     <!-- Social Media Section-->
 
     <section>
@@ -197,6 +169,7 @@
 <!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
 
 
 </body>

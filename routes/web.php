@@ -61,3 +61,6 @@ Route::get('/rozhan', function () {
 Route::get('/faq', function() {
     return view('faq');
 });
+Route::get('/teachers', function() {
+    return view('teachers');
+});
