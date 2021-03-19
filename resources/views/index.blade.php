@@ -50,7 +50,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-7 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">TINKA EDUCENTRE</h1>
+          <h1 data-aos="fade-up">TINKARRR EDUCENTRE</h1>
           <h2 data-aos="fade-up" data-aos-delay="400">Tinka Educentre is keen to provide 
             quality education at an affordable pricing and  a conducive learning
             environment to students. Opening soon at Bukit Jelutong! </h2>
