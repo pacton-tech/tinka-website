@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  @include('header')
+  @include('mainheader')
 
   <section id="hero" class="hero d-flex align-items-center">
 
