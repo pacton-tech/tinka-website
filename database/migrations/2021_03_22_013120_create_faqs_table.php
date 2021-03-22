@@ -22,12 +22,12 @@ class CreateFaqsTable extends Migration
 
             $table->foreign('categoryid')
                 ->references('id')
-                ->on($tableNames['faqcategory'])
+                ->on('faqcategories')
                 ->onDelete('cascade');
 
             $table->foreign('subcategoryid')
                 ->references('id')
-                ->on($tableNames['faqsubcategory'])
+                ->on('faqsubcategories')
                 ->onDelete('cascade');
         });
     }
