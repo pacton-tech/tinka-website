@@ -37,9 +37,10 @@ Route::get('/registrationteacher', function () {
 Route::get('/registrationstudent', function () {
     return view('registrationstudent');
 });
-Route::get('/contact', function () {
-    return view('contact');
-});
+
+Route::get('/contact', 'ContactController@contact')->name('contact');
+Route::post('/contact', 'ContactController@contactPost')->name('contactPost');
+
 Route::get('/aqliah', function () {
     return view('aqliah');
 });

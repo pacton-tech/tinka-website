@@ -64,20 +64,6 @@
             </div>
             <div class="col-md-6">
               <div class="info-box">
-                <i class="bi bi-telephone"></i>
-                <h3>Call Us</h3>
-                <p>03 - 5030 5883<br>011 - 1087 0015</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="info-box">
-                <i class="bi bi-envelope"></i>
-                <h3>Email Us</h3>
-                <p>info@example.com<br>contact@example.com</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="info-box">
                 <i class="bi bi-clock"></i>
                 <h3>Operating Hours</h3>
                 <p>Monday - Friday : 9 AM - 6 PM <br>
@@ -86,35 +72,59 @@
                 </p>
               </div>
             </div>
+            <div class="col-md-6">
+              <div class="info-box">
+                <i class="bi bi-telephone"></i>
+                <h3>Call Us</h3>
+                <p>03 - 5030 5883<br>011 - 1087 0015</p>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="info-box">
+                <i class="bi bi-envelope"></i>
+                <h3>Email Us</h3>
+                <p>info@tinka.world</p>
+              </div>
+            </div>
+            
           </div>
 
         </div>
 
         <div class="col-lg-6">
-          <form action="forms/contact.php" method="post" class="php-email-form">
+          <form action="/contact" method="post" class="php-email-form">
+            @csrf
             <div class="row gy-4">
 
+              @if(Session::has('success'))
+              <div class="alert alert-success">
+                  {{ Session::get('success') }}
+                  @php
+                      Session::forget('success');
+                  @endphp
+              </div>
+              @endif
+
               <div class="col-md-6">
-                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                <input type="text" name="name" class="form-control" placeholder="Your Name" {{ $errors->has('name') ? 'has-error' : '' }} value="{{ old('name') }}">
+                <span class="text-danger">{{ $errors->first('name') }}</span>
               </div>
 
               <div class="col-md-6 ">
-                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                <input type="email" class="form-control" name="email" placeholder="Your Email" {{ $errors->has('email') ? 'has-error' : '' }} value="{{ old('email') }}">
+                <span class="text-danger">{{ $errors->first('email') }}</span>
               </div>
 
               <div class="col-md-12">
-                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                <input type="text" class="form-control" name="subject" placeholder="Subject" {{ $errors->has('subject') ? 'has-error' : '' }} value="{{ old('subject') }}">
+                <span class="text-danger">{{ $errors->first('subject') }}</span>
               </div>
 
               <div class="col-md-12">
-                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="content" rows="6" placeholder="Message" {{ $errors->has('content') ? 'has-error' : '' }} value="{{ old('content') }}"></textarea>
+                <span class="text-danger">{{ $errors->first('content') }}</span>
               </div>
-
-              <div class="col-md-12 text-center">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-
                 <button type="submit">Send Message</button>
               </div>
 

@@ -90,7 +90,7 @@
               <img src="assets/img/offeredclass/home tuition.png" class="img-fluid" alt="">
               <p>Home tuition programme is catered for one-to-one
                 learning. Have our Tink-Educator drop by your place
-                for personalised
+                for personalised.
               </p>
               <a href="/registrationstudent" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Register Now</span>
@@ -170,9 +170,6 @@
                   <a href="/registrationteacher" class="btn-buy">Register Now</a>
                 </div>
               </div>
-    
-        
-    
              </div>
     
         </section>
