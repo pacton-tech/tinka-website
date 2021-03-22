@@ -170,9 +170,6 @@
                   <a href="/registrationteacher" class="btn-buy">Register Now</a>
                 </div>
               </div>
-    
-        
-    
              </div>
     
         </section>
