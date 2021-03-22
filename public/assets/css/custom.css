@@ -82,7 +82,9 @@
 .values .physicalbox:hover img {
   transform: scale(1);
 }
-
+.values .physicalbox p{
+  font-family: "Nunito", sans-serif;
+}
 /*--------------------------------------------------------------
 #Home Tuition Class Values
 --------------------------------------------------------------*/
@@ -124,6 +126,10 @@
   transform: scale(1);
 }
 
+.values .homebox p{
+  font-family: "Nunito", sans-serif;
+}
+
 /*--------------------------------------------------------------
 #Online Tuition Values
 --------------------------------------------------------------*/
@@ -163,6 +169,10 @@
 
 .values .onlinebox:hover img {
   transform: scale(1);
+}
+
+.values .onlinebox p{
+  font-family: "Nunito", sans-serif;
 }
 
 /*--------------------------------------------------------------
