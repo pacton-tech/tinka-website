@@ -85,7 +85,7 @@
   
             <div class="col-md-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
               <center >
-               <a href="/tuitionfees"><img src="./assets/img/offeredclass/upsr2.png" alt="" width="400"></a>
+               <a href="/tuitionfees"><img src="./assets/img/offeredclass/UPSR2.png" alt="" width="400"></a>
               </center>
             </div>
   
@@ -94,11 +94,13 @@
                 <a href="/tuitionfees"><img src="./assets/img/offeredclass/pt32.png" alt="" width="400"></a>
               </center>
             </div>
+
             <div class="col-md-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
               <center >
                 <a href="/tuitionfees"><img src="./assets/img/offeredclass/spm2.png" alt="" width="400"></a>
               </center>
             </div>
+
             <div class="col-md-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
               <center>
                 <a href="/tuitionfees"><img src="./assets/img/offeredclass/igcse2.png" alt="" width="400"></a>
