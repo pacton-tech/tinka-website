@@ -196,7 +196,9 @@
             </h2>
             <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
               <div class="accordion-body">
+                <p>
                 In 5 years’, TINKA™ aims to be the <b> “Netflix of Education” </b>and to be able to bridge the digital divide between rural and urban students.
+                </p>
               </div>
             </div>
           </div>
@@ -210,7 +212,9 @@
               </h2>
               <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                 <div class="accordion-body">
+                <p>
                 Tinka is a subscription based app.
+                </p>
                 </div>
               </div>
             </div>
@@ -222,11 +226,11 @@
                 </button>
               </h2>
               <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
+                <div class="accordion-body"><p>
                 Please ensure the password that was used to sign in into your
                  child's account is not shared to others. Reset yourpassword if 
                  it's compromised.
-
+                 </p>
                 </div>
               </div>
             </div>
@@ -238,8 +242,9 @@
                 </button>
               </h2>
               <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
+                <div class="accordion-body"><p>
                 Click on the 'Reset my password' link below the sign up field and a password reset email is sent to your email.
+                </p>
                 </div>
               </div>
             </div>

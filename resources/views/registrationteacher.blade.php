@@ -53,9 +53,9 @@
               </div>
 
               <div class="form-group">
-                <p>Gender</p>
-                <label>
-                  <input
+                <label id="gender-label" for="gender">Gender</label>                
+                  <label>
+                    <input
                     name="gender"
                     value="mobile-nav-toggle"
                     type="radio"
@@ -136,7 +136,7 @@
             
             
               <div class="form-group">
-                <p>Last Qualification</p>
+                <label id="qualification-label" for="qualification">Last Qualification</label>
                 <select id="dropdown" name="qualification" class="form-control" required>
                   <option disabled selected value>Select qualification</option>
                   <option value="spm">SPM</option>
@@ -148,7 +148,7 @@
               </div>
               
               <div class="form-group">
-                <p>Are You Currently Teaching At Any School?</p>
+                <label id="teaching-label" for="teaching">Are You Currently Teaching At Any School?</label>
                 <select id="dropdown" name="teaching" class="form-control" required>
                   <option disabled selected value>Yes/No</option>
                   <option value="yes">Yes</option>
@@ -170,7 +170,7 @@
               </div>
           
               <div class="form-group">
-                <p>Are You Currently Attached To Any Tuition Centre?</p>
+                <label id="tuitioncentre-label" for="tuitioncentre">Are You Currently Teaching At Any School?</label>
                 <select id="dropdown" name="tuitioncentre" class="form-control" required>
                   <option disabled selected value>Yes/No</option>
                   <option value="yes">Yes</option>
@@ -235,11 +235,7 @@
     <div class="copyright">
       &copy; Copyright <strong><span>Versatile Straits Sdn. Bhd</span></strong>. All Rights Reserved
     </div>
-   <!-- <div class="credits"> -->
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+  
       
     </div>
   

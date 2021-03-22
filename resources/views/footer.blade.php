@@ -39,7 +39,7 @@
           
           <div class="col-lg-4 col-6 footer-links">
               <h4>New To Tinka?</h4>
-              <p>Register now to get the latest update from us!</p>
+              <p>Subscribe now to get the latest update from us!</p>
                <div class="col-lg-6">
                   <form action="" method="post">
                    <input type="text" name="text" placeholder="Your email address">
@@ -48,8 +48,8 @@
 
                <div class="app-links mt-3">
                  <h4>Download Our App Now</h4>
-                 <a href="#"><img src="./assets/img/appstore.png" alt="" width="150"></a>
-                 <a href="#"><img src="./assets/img/playstoreg.png" alt="" width="150"></a>
+                 <a href="https://www.apple.com/my/app-store/" target="_blank"><img src="./assets/img/appstore.png" alt="" width="150"></a>
+                 <a href="https://play.google.com/" target="_blank"><img src="./assets/img/playstoreg.png" alt="" width="150"></a>
 
                 </div>
           </div>
