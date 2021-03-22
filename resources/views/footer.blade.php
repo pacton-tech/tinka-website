@@ -28,7 +28,7 @@
           <div class="col-lg-4 col-6 footer-links">
             <h4>About Us</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="./assets/PDPR Press Release_21012021.pdf">Press/Media</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="./assets/PDPR Press Release_21012021.pdf" target="_blank">Press/Media</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Terms & Condition</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="/registrationteacher">Tutor Registration</a></li>
