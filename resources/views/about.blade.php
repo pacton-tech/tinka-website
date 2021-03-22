@@ -105,8 +105,8 @@
 
 </section><!-- End Values Section -->
 
-<!-- Team Section-->
-    <section id="team" class="team">
+<!--Tinka Team Section-->
+    <section id="tinkateam" class="tinkateam">
 
     <div class="container" data-aos="fade-up">
   
