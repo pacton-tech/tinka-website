@@ -777,4 +777,35 @@ section {
   transform: scale(1.08);
   box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
 }
+/*--------------------------------------------------------------
+# FAQ Custom
+--------------------------------------------------------------*/
+.faq .accordion-body p{
+  text-align: justify;
+}
 
+/*--------------------------------------------------------------
+# FAQ Tab
+--------------------------------------------------------------*/
+
+.faqtabs {
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Nunito';
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  text-align: center;
+}
+
+.faqtabs a{
+  background-color: inherit;
+  border: 2px solid  #012970;
+  width: 100px;
+  padding: 50px;
+  max-height: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 25px;
+  color: #012970;
+}
