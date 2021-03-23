@@ -19,6 +19,7 @@ class CreateFaqsTable extends Migration
             $table->mediumText('answer');
             $table->unsignedBigInteger('categoryid');
             $table->unsignedBigInteger('subcategoryid');
+            $table->timestamps();
 
             $table->foreign('categoryid')
                 ->references('id')

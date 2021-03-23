@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,3 +64,4 @@ Route::get('/faq', function() {
 Route::get('/teachers', function() {
     return view('teachers');
 });
+Route::resource('faqs', FaqController::class);
