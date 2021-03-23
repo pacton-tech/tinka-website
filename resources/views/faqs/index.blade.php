@@ -27,14 +27,15 @@
          <tbody>
          <tr>
              <th>No</th>
-             <th>Name</th>
-             <th>Details</th>
+             <th>Question</th>
+             <th>Answer</th>
+             <th>Category</th>
+             <th>Subcategory</th>
              <th width="280px">Action</th>
          </tr>
          @foreach ($faqs as $faq)
          <tr>
              <td>{{ ++$i }}</td>
-             <td>{{ $faq->id }}</td>
              <td>{{ $faq->question }}</td>
              <td>{{ $faq->answer }}</td>
              <td>{{ $faq->categoryid }}</td>
