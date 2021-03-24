@@ -40,7 +40,6 @@
   <div class="container" data-aos="fade-up">
 
     <header class="section-header">
-      <h2>FAQ</h2>
       <p>Hi, how can we help you?</p>
     </header>
 
@@ -73,13 +72,35 @@
             </center>
       </div>
 
+      <!-- ====== FAQ Tab Section =-====== -->
+      <section id="faqtab" class="faqtab">
+        <div class="row">
+          <div class="faqtabs">
+            <div>
+              <a href="#">FAQ</a>
+            </div>
+            <div>
+              <a href="#">System Requirement</a>
+            </div>
+            <div>
+              <a href="#">Trouble Shooting</a>
+            </div>
+            <div>
+              <a href="#">Certification</a>
+            </div>
+            <div>
+              <a href="#">Payments</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
 <!-- ======= F.A.Q Section ======= -->
 <section id="faq" class="faq">
 
   <div class="container" data-aos="fade-up">
 
     <header class="section-header">
-      <h2>F.A.Q</h2>
       <p>Frequently Asked Questions</p>
     </header>
 
@@ -96,16 +117,15 @@
             </h2>
             <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
               <div class="accordion-body">
-                <p>The TINKA™ initiative was born during the various engagement done by Centre for 
-                  Economic Policy and Research Malaysia (CEPR Malaysia), a think tank under FASK Group 
-                  of companies which aims to promote an integrated learning and teaching platform with 
-                  a mission to revolutionize and democratize learning by leveraging on technology and 
-                  digital tools.</p> 
+                <p>The TINKA™ initiative was born during the various engagement done by Centre for Economic 
+                  Policy and Research Malaysia (CEPR Malaysia), a think tank under FASK Group of companies 
+                  which aims to promote an integrated learning and teaching platform with a <b> mission </b>to 
+                  revolutionize and democratize learning by leveraging on technology and digital tools.</p> 
 
                 <p>Nowadays, students from a young age are exposed to highly immersive content that desensitizes 
                   them to regular modes of learning. Every student is unique in their own way and because 
                   of this, various teaching approaches needs to be implemented to explain learning areas. 
-                  The vision of personalized learning for each student has been out of reach due to the 
+                  The vision of <b> personalized learning </b> for each student has been out of reach due to the 
                   inability to individually track the massive number of students in real time. The digital 
                   tools for education that are available today are still disintegrated whereby the usage 
                   are still not seamless and time consuming. TINKA™ aims to provide a total solution to 
@@ -121,10 +141,18 @@
                   meta-tagged with curriculum data such as Learning Areas and Learning Outcomes as to
                    enable self-paced, self-directed learning and also to support in-classroom and 
                    live-stream learning.</p>
-                <p> TINKA™ is positioned to be a Supplementary Enrichment and Enhancement program whereby its content 
+                <p> TINKA™ is positioned to be a <b> Supplementary Enrichment and Enhancement </b> program whereby its content 
                   is meta-tagged with curriculum data such as Learning Areas and Learning Outcomes as 
                   to enable self-paced, self-directed learning and also to support in-classroom and 
                   live-stream learning.</p>
+
+                <p>
+                In 2021, Versatile Straits acquired a tuition centre in Bukit Jelutong, Shah Alam and 
+                converted the traditional tuition centre into <b> TINKA™ Educentre.</b> The centre offers 
+                premium ambience and a recording studio that produces its first <b> “TINKA™ Lightboard 
+                Series”.</b> Currently, TINKA™ Educentre has 25 tutors (“Tink-educators”) who covers 
+                <b> Standard 1 to Form 5 students including IGCSE.</b>
+                </p>
 
                 <p><b><i>Disclaimer: The TINKA™ app will be available to the public on iOS Appstore and Google Playstore on 1st of March 2021.</i></b></p>
               </div>
@@ -141,19 +169,19 @@
               <div class="accordion-body">
                <p>In 2020, Versatile Straits partnered with Pacton Technologies to customize the TINKA™ 
                  digital education platform which includes all the tools for digital education. It has 
-                 an in-house developed “administered classroom conferencing” technology where tools such 
-                 as the “Interactive Digital Blackboard” are used by the teachers as a teaching aid. It 
+                 an in-house developed <b> “administered classroom conferencing” </b> technology where tools such 
+                 as the <b> “Interactive Digital Blackboard” </b> are used by the teachers as a teaching aid. It 
                  also includes easy access folders for teachers and students to store documents, videos 
                  and quizzes. TINKA™ offers live teaching and on-demand pre-recorded contents by their 
-                 “Tink-educators”. </p>
+                 <b>“Tink-educators”.</b> </p>
 
-               <p>In 2020, Versatile Straits partnered with Pacton Technologies to customize the TINKA™ 
-                 digital education platform which includes all the tools for digital education. It has
-                  an in-house developed “administered classroom conferencing” technology where tools such 
-                  as the “Interactive Digital Blackboard” are used by the teachers as a teaching aid. 
-                  It also includes easy access folders for teachers and students to store documents, 
-                  videos and quizzes. TINKA™ offers live teaching and on-demand pre-recorded contents 
-                  by their “Tink-educators”. </p>
+               <p>TINKA™ users are supported with “pre- and post-lecture” animation contents that is created 
+                 in-house by <b> TINKA™ Studio </b> and its partners. These videos included an <b> “in-video
+                  micro-assessments” </b> from <b> TINKA™ Question Bank </b>that are used to assess and generate 
+                  its students profiling. These data are made to teachers, students and parents in 
+                  a simplified dashboard form <b> (“TINKA™ Analytics”).</b> <b> TINKA™ Artificial Intelligence</b> 
+                  strives to curate personalized content for its users according to their learning 
+                  approach preferences.</p>
               </div>
             </div>
           </div>
@@ -166,7 +194,9 @@
             </h2>
             <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
               <div class="accordion-body">
-                In 5 years’, TINKA™ aims to be the “Netflix of Education” and to be able to bridge the digital divide between rural and urban students.
+                <p>
+                In 5 years’, TINKA™ aims to be the <b> “Netflix of Education” </b>and to be able to bridge the digital divide between rural and urban students.
+                </p>
               </div>
             </div>
           </div>
@@ -180,7 +210,9 @@
               </h2>
               <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                 <div class="accordion-body">
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                <p>
+                Tinka is a subscription based app.
+                </p>
                 </div>
               </div>
             </div>
@@ -192,8 +224,11 @@
                 </button>
               </h2>
               <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                <div class="accordion-body"><p>
+                Please ensure the password that was used to sign in into your
+                 child's account is not shared to others. Reset yourpassword if 
+                 it's compromised.
+                 </p>
                 </div>
               </div>
             </div>
@@ -205,8 +240,9 @@
                 </button>
               </h2>
               <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
-                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+                <div class="accordion-body"><p>
+                Click on the 'Reset my password' link below the sign up field and a password reset email is sent to your email.
+                </p>
                 </div>
               </div>
             </div>

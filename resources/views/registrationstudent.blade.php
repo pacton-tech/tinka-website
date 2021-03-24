@@ -50,7 +50,7 @@
                     </div>
       
                     <div class="form-group">
-                      <p>Gender</p>
+                    <label id="gender-label" for="gender">Gender</label>                
                       <label>
                         <input
                           name="gender"
@@ -168,7 +168,7 @@
                     </div>
                 
                     <div class="form-group">
-                      <p>Classes That You Are Interested In</p>
+                      <label id="classchoice-label" for="classchoice">Classes That You Are Interested In</label>
                       <select id="dropdown" name="classchoice" class="form-control" required>
                         <option disabled selected value>Physical Tuition Class/Online Class/Home Tuition </option>
                         <option value="physicaltuitin">Physical Tuition</option>
@@ -208,11 +208,7 @@
       <div class="copyright">
         &copy; Copyright <strong><span>Versatile Straits Sdn. Bhd</span></strong>. All Rights Reserved
       </div>
-     <!-- <div class="credits"> -->
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+     
         
       </div>
     

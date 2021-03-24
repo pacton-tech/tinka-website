@@ -27,7 +27,7 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
   font-family: "Nunito", sans-serif;
 }
 
@@ -425,6 +425,7 @@ section {
   height: 100vh;
   background: url(../img/hero-bg.png) top center no-repeat;
   background-size: cover;
+  text-align: justify;
 }
 
 .hero h1 {
@@ -1102,6 +1103,7 @@ section {
 
 .portfolio .portfolio-wrap img {
   transition: 1s;
+  border: 1px solid;
 }
 
 .portfolio .portfolio-wrap .portfolio-info {

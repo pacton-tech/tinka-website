@@ -61,8 +61,8 @@
         </div>
         <center>
         <div class="app-links mt-3">
-                 <a href="#"><img src="./assets/img/appstore.png" alt="" width="150"></a>
-                 <a href="#"><img src="./assets/img/playstoreg.png" alt="" width="150"></a>
+                 <a href="https://www.apple.com/my/app-store/" target="_blank"><img src="./assets/img/appstore.png" alt="" width="150"></a>
+                 <a href="https://play.google.com/" target="_blank"><img src="./assets/img/playstoreg.png" alt="" width="150"></a>
 
                 </div>
         </center>
