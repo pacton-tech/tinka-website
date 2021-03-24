@@ -21,6 +21,15 @@
          </div>
      @endif
     
+    <div class="dropdown">
+      <button class="dropbtn">Category</button>
+        <div class="dropdown-content">
+            <a href="#">Category 1</a>
+            <a href="#">Category 2</a>
+            <a href="#">Category 3</a>
+        </div>
+    </div>
+
     <table class="table table-bordered" 
             style=" justify-content: center;
                     margin: 20px;">

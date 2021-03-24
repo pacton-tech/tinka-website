@@ -1103,6 +1103,7 @@ section {
 
 .portfolio .portfolio-wrap img {
   transition: 1s;
+  border: 1px solid;
 }
 
 .portfolio .portfolio-wrap .portfolio-info {
