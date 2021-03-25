@@ -44,8 +44,16 @@ class User extends Authenticatable
     /**
      * Get profile associated with the user.
      */
-    public function profile()
+    public function teacher_profile()
     {
-        return $this->hasOne(Profile::class);
+        return $this->hasOne(TeacherProfile::class);
+    }
+
+    /**
+     * Get profile associated with the user.
+     */
+    public function student_profile()
+    {
+        return $this->hasOne(StudentProfile::class);
     }
 }

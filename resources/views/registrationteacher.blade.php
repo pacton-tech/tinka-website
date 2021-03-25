@@ -1,24 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+@push('css')
+<link href="{{ asset('assets/css/registrationform.css') }}" rel="stylesheet">
+@endpush
 
-  <title>Teacher Registration</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+@section('content')
 
-  @extends('layouts.teacherlayout')
-
-</head>
-
-<body>
-
- 
-  <!-- ======= Header ======= -->
-  @include('header')
-<!-- End Header -->
+@include('header')
 
   <main id="main">
 
@@ -38,7 +26,7 @@
                 <p>Welcome Tink-Educator!</p>
               </header>
             
-            <form id="survey-form" data-aos="zoom-in" data-aos-delay="100">
+            <form id="survey-form" data-aos="zoom-in" data-aos-delay="100" class="register">
 
               <div class="form-group">
                 <label id="fullname-label" for="fullname">Full Name</label>
@@ -134,7 +122,6 @@
                 />
               </div>
             
-            
               <div class="form-group">
                 <label id="qualification-label" for="qualification">Last Qualification</label>
                 <select id="dropdown" name="qualification" class="form-control" required>
@@ -155,7 +142,6 @@
                   <option value="no">No</option>
                 </select>
               </div>
-             
              
               <div class="form-group">
                 <label id="currentschoolname-label" for="currentschoolname">Your Current School Name</label>
@@ -189,8 +175,7 @@
                   required
                 />
               </div>
-          
-                     
+            
               <div class="form-group">
                 <label id="subjectteach-label" for="subjectteach">Subject That You Are Teaching</label>
                 <input
@@ -214,7 +199,6 @@
                 />
               </div>
 
-          
               <div class="form-group">
                 <button type="submit" id="submit" class="submit-button">
                   Submit
@@ -226,26 +210,5 @@
 
   </main><!-- End #main -->
 
- <!-- ======= Footer ======= -->
- <footer id="footer" class="footer">
-
-    
-
-  <div class="container">
-    <div class="copyright">
-      &copy; Copyright <strong><span>Versatile Straits Sdn. Bhd</span></strong>. All Rights Reserved
-    </div>
-  
-      
-    </div>
-  
-  </div>
-</footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  
-
-</body>
-
-</html>
+@include('footer')
+@endsection

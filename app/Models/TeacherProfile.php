@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Profile extends Model
+class TeacherProfile extends Model
 {
     use HasFactory;
 
     public $timestamps = true;
 
+    protected $tables = 'teacher_profile';
+
     protected $fillable = [
         'user_id',
-		'role',
 		'gender',
 		'birthday',
 		'qualification',

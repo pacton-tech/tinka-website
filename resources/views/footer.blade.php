@@ -2,12 +2,9 @@
   <div class="footer">
    <footer id="footer" class="footer">
 
-   
-
     <div class="footer-top">
       <div class="container">
         <div class="row gy-4">
-          
 
           <div class="col-lg-4 col-6 footer-links">
             <h4>Customer Service</h4>
@@ -48,8 +45,8 @@
 
                <div class="app-links mt-3">
                  <h4>Download Our App Now</h4>
-                 <a href="https://www.apple.com/my/app-store/" target="_blank"><img src="./assets/img/appstore.png" alt="" width="150"></a>
-                 <a href="https://play.google.com/" target="_blank"><img src="./assets/img/playstoreg.png" alt="" width="150"></a>
+                 <a href="https://www.apple.com/my/app-store/" target="_blank"><img src="{{ asset('assets/img/appstore.png') }}" alt="" width="150"></a>
+                 <a href="https://play.google.com/" target="_blank"><img src="{{ asset('assets/img/playstoreg.png') }}" alt="" width="150"></a>
 
                 </div>
           </div>
