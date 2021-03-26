@@ -25,8 +25,8 @@
           
           <li class="dropdown" ><a href="#"><span>Join Us</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="/registrationteacher">Tink-Educator</a></li>
-              <li><a href="/registrationstudent">Future Tinkers</a></li>
+              <li><a href="/register/teacher">Tink-Educator</a></li>
+              <li><a href="/register/student">Future Tinkers</a></li>
           
             </ul> 
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>

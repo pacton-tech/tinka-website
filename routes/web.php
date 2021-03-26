@@ -61,8 +61,9 @@ Route::get('/teachers', function() {
 
 Route::get('/register/teacher', 'TeacherController@create')->name('register-teacher');
 Route::get('/register/student', 'StudentController@create')->name('register-student');
-Route::post('/register/teacher', 'TeacherController@store')->name('create-teacher');
-Route::post('/register/student', 'StudentController@store')->name('create-student');
+
+Route::post('/create/teacher', 'TeacherController@store')->name('create-teacher');
+Route::post('/create/student', 'StudentController@store')->name('create-student');
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
