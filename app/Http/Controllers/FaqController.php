@@ -86,7 +86,7 @@ class FaqController extends Controller
      */
     public function update(Request $request, Faq $faq)
     {
-        $categories->faqcategory::all();
+        $categories = faqcategory::all();
         $request->validate([
             'question' => 'required',
             'answer' => 'required',
