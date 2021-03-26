@@ -22,40 +22,27 @@
             </ul>
         </div>
     @endif
-  
-    <form action="{{ route('faqs.update',$faq->id) }}" method="POST">
-        @csrf
-        @method('PUT')
-   
-         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Question:</strong>
-                    <input type="text" name="question" value="{{ $faq->question }}" class="form-control" placeholder="Question">
-                </div>
+    @csrf
+    <div class="col-sm-8 col-xs-offset-2">
+        <div class="well">
+            {{ Form::model($faq, ['method'=>'put','route' => ['faqs.update',$faq->id]]) }}
+            <br>
+            {{ Form::label('question', 'Question') }}
+            {{ Form::text('question', old('question'), ['class'=> 'form-control']) }}
+            <br>
+            {{ Form::label('answer', 'Answer') }}
+            {{ Form::text('answer', old('answer'), ['class'=> 'form-control']) }}
+            <br>
+            {{ Form::label('category', 'Category') }}
+            {{ Form::text('categoryid', old('categoryid'), ['class'=> 'form-control']) }}
+            <br>
+            {{ Form::label('subcategory', 'Subcategory') }}
+            {{ $faq->categories }}
+            <br>
+            <div class="text-center "> 
+                {{ Form::submit('Update', ['class'=> 'btn btn-primary ']) }}
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Answer:</strong>
-                    <textarea class="form-control" style="height:150px" name="answer" placeholder="answer">{{ $faq->answer }}</textarea>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Category:</strong>
-                    <input type="text" name="categoryid" value="{{ $faq->categoryid }}" class="form-control" placeholder="Category Id">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Subcategory:</strong>
-                    <input type="text" name="subcategoryid" value="{{ $faq->subcategoryid }}" class="form-control" placeholder="Subcategory Id">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+            {{ Form::close() }}
         </div>
-   
-    </form>
+    </div>
 @endsection

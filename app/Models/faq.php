@@ -11,4 +11,14 @@ class faq extends Model
     protected $fillable = [
         'question', 'answer', 'categoryid', 'subcategoryid'
     ];
+
+    public function categories()
+    {
+        return hasOneThrough(Faq::class, Category::class);
+    }
+    public function subcategories()
+    {
+        return hasOneThrough(Faq::class, Subcategory::class);
+    }
 }
+
