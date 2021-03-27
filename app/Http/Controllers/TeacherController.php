@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\TeacherProfile;
+use Hash;
+use Image;
 
 class TeacherController extends Controller
 {
@@ -34,7 +38,52 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|same:confirmpassword',
+            'gender' => 'required',
+            'birthdate' => 'required',
+            'content' => 'required',
+            'qualification' => 'required',
+            'teaching' => 'required',
+            'currentschoolname' => 'required',
+            'tuitioncentre' => 'required',
+            'subjectteach' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        $user_data = [
+            'name' => $input['name'],
+            'email' => $input['email'],
+            'password' => Hash::make($input['password'])
+        ];
+
+        $user = User::create($user_data);
+
+        if ($request->hasfile('photo')) {
+
+            $avatar = $request->file('photo');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300, 300)->save(public_path('uploads/avatars/' . $filename));
+        }
+
+        $profile = [
+            'user_id' => $user->id,
+            'gender' => $input['gender'],
+            'birthday' => $input['birthdate'],
+            'qualification' => $input['qualification'],
+            'teaching' => $input['teaching'],
+            'current_school' => $input['currentschoolname'],
+            'current_tuition' => $input['tuitioncentre'],
+            'subject' => $input['subjectteach'],
+            'avatar' => !empty($filename) ? $filename : 'default_avatar.png'
+        ];
+
+        TeacherProfile::create($profile);
+
+        return back()->with('success', 'Thanks for your registration, we will get back to you soon!');
     }
 
     /**
