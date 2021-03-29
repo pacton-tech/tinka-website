@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\TeacherProfile;
 use Hash;
+use Image;
 
 class TeacherController extends Controller
 {
@@ -62,8 +63,9 @@ class TeacherController extends Controller
 
         if ($request->has('photo')) {
 
-            $filename = time() . '.' . $request->photo->extension();
-            $request->photo->resize(300, 300)->move(storage_path('uploads/avatars/', $filename));
+            $avatar = $request->file('photo');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300, 300)->save(storage_path('uploads/avatars/' . $filename));
         }
 
         $profile = [
