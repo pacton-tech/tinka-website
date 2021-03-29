@@ -44,7 +44,7 @@ class User extends Authenticatable
     /**
      * Get profile associated with the user.
      */
-    public function teacher_profile()
+    public function teacher()
     {
         return $this->hasOne(TeacherProfile::class);
     }
@@ -52,7 +52,7 @@ class User extends Authenticatable
     /**
      * Get profile associated with the user.
      */
-    public function student_profile()
+    public function student()
     {
         return $this->hasOne(StudentProfile::class);
     }

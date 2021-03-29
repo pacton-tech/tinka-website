@@ -31,6 +31,20 @@ Teacher Registration
               </header>
             <div class="row justify-content-md-center">
               <div class="col-lg-6">
+                @if ($errors->any())
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif
+              @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
             <form id="survey-form" data-aos="zoom-in" data-aos-delay="100" class="register" method="post" action="{{ route('create-teacher') }}">
               @csrf
               <div class="form-group">
@@ -71,13 +85,13 @@ Teacher Registration
               </div>
 
               <div class="form-group">
-                <label id="birthdate" for="birthdate"
-                  >Birthdate</label
+                <label id="birthday" for="birthday"
+                  >Date of birth</label
                 >
                 <input
                   type="date"
-                  name="birthdate"
-                  id="birthdate"
+                  name="birthday"
+                  id="birthday"
                   class="form-control"
                   {{ $errors->has('birthday') ? 'has-error' : '' }} value="{{ old('birthday') }}"
                 />
@@ -105,20 +119,22 @@ Teacher Registration
                   id="password"
                   class="form-control"
                   placeholder="Enter your password"
+                  value="{{ old('password') }}"
                 />
-                <span class="text-danger">{{ $errors->first('email') }}</span>
+                <span class="text-danger">{{ $errors->first('password') }}</span>
               </div>
 
               <div class="form-group">
-                <label id="confirmpassword-label" for="confirmpassword">Password</label>
+                <label id="confirmpassword-label" for="confirmpassword">Repeat Password</label>
                 <input
                   type="password"
                   name="confirmpassword"
                   id="confirmpassword"
                   class="form-control"
                   placeholder="Re-enter your password"
+                  value="{{ old('confirmpassword') }}"
                 />
-                <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
+                <span class="text-danger">{{ $errors->first('confirmpassword') }}</span>
               </div>
             
               <div class="form-group">
@@ -137,18 +153,19 @@ Teacher Registration
               <div class="form-group">
                 <label id="teaching-label" for="teaching">Are You Currently Teaching At Any School?</label>
                 <select id="dropdown" name="teaching" class="form-control" >
-                  <option disabled selected value>Yes/No</option>
+                  <option disabled selected value>- Choose -</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </select>
+                <span class="text-danger">{{ $errors->first('teaching') }}</span>
               </div>
              
               <div class="form-group">
-                <label id="currentschoolname-label" for="currentschoolname">Your Current School Name</label>
+                <label id="current_school-label" for="current_school">Your Current School Name</label>
                 <input
                   type="text"
-                  name="currentschoolname"
-                  id="currentschoolname"
+                  name="current_school"
+                  id="current_school"
                   class="form-control"
                   placeholder="School Name"
                   {{ $errors->has('current_school') ? 'has-error' : '' }} value="{{ old('current_school') }}"
@@ -157,35 +174,36 @@ Teacher Registration
               </div>
           
               <div class="form-group">
-                <label id="tuitioncentre-label" for="tuitioncentre">Are You Currently Teaching At Any School?</label>
-                <select id="dropdown" name="tuitioncentre" class="form-control" >
-                  <option disabled selected value>Yes/No</option>
+                <label id="tuition">Are You Currently Teaching At Any Tuition Centre?</label>
+                <select id="dropdown" name="tuition" class="form-control" >
+                  <option disabled selected value>- Choose -</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </select>
+                <span class="text-danger">{{ $errors->first('tuition') }}</span>
               </div>
              
               <div class="form-group">
-                <label id="tuitioncentre-label" for="tuitioncentre">If Yes, Please State The Name Of The Tuition Centre</label>
+                <label id="current_tuition-label" for="current_tuition">If Yes, Please State The Name Of The Tuition Centre</label>
                 <input
                   type="text"
-                  name="tuitioncentre"
-                  id="tuitioncentre"
+                  name="current_tuition"
+                  id="current_tuition"
                   class="form-control"
                   placeholder="Tuition Centre Name"
                 />
-                <span class="text-danger">{{ $errors->first('current_tuition') }}</span>
               </div>
             
               <div class="form-group">
-                <label id="subjectteach-label" for="subjectteach">Subject That You Are Teaching</label>
+                <label id="subject-label" for="subject">Subject That You Are Teaching (seperate by comma)</label>
                 <input
                   type="text"
-                  name="subjectteach"
-                  id="subjectteach"
+                  name="subject"
+                  id="subject"
                   class="form-control"
                   placeholder="Please state the name of the subjects that you are teaching"
                 />
+                <span class="text-danger">{{ $errors->first('subject') }}</span>
               </div>
 
               <div class="form-group">
