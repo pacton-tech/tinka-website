@@ -47,7 +47,7 @@ class TeacherController extends Controller
             'qualification' => 'required',
             'teaching' => 'required',
             'subject' => 'required',
-            'photo' => 'required'
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $input = $request->all();
