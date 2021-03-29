@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+@section('title')
+TiNKA - Education. Everywhere.
+@endsection
 
-  <title>TiNKA - Education. Everywhere.</title>
-  <meta content="" name="description">
-
-  <meta content="" name="keywords">
-
- @extends('layouts.master')
-</head>
-
-<body>
-  @include('mainheader')
+@section('content')
+@include('mainheader')
 
   <section id="hero" class="hero d-flex align-items-center">
 
@@ -42,7 +33,6 @@
         </div>
       </div>
     </div>
-
   </section>
 
     <section id="values" class="values">
@@ -62,7 +52,7 @@
               <img src="assets/img/offeredclass/physical.png" class="img-fluid" alt="">
               <p>Our new and revamped tuition centre is located at Bukit Jelutong.
                 Available for UPSR, PT3, SPM & IGCSE students.</p>
-              <a href="/registrationstudent" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <a href="/register/student" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Register Now</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -77,7 +67,7 @@
                 Learn from the comfort of your own home or pretty much
                 everywhere.
               </p>
-              <a href="/registrationstudent" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <a href="/register/student" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Register Now</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -92,7 +82,7 @@
                 learning. Have our Tink-Educator drop by your place
                 for personalised.
               </p>
-              <a href="/registrationstudent" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <a href="/register/student" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Register Now</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -104,7 +94,6 @@
       </div>
 
     </section>
-
 
   <main id="main">
     <section id="about" class="about">
@@ -157,7 +146,7 @@
                   <h3 style="color: #1B1464;">Students</h3>
                   <img src="assets/img/offeredclass/studentscropped.png" class="img-fluid" alt="">
                   <p>Enroll your child at Tinka Educentre now.</p>   
-                  <a href="/registrationstudent" class="btn-buy">Register Now</a>
+                  <a href="/register/student" class="btn-buy">Register Now</a>
                 </div>
               </div>
 
@@ -167,7 +156,7 @@
                   <img src="assets/img/offeredclass/tinka tutor cropped.png" class="img-fluid" alt="">
                   <p>Earn a part-time income by
                     signing up as Tinka Tutor.</p>
-                  <a href="/registrationteacher" class="btn-buy">Register Now</a>
+                  <a href="/register/teacher" class="btn-buy">Register Now</a>
                 </div>
               </div>
              </div>
@@ -230,17 +219,7 @@
     </div>
 
     </section>
-
-
-
-
   </main>
 
-  @include('footer')
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
- 
-</body>
-
-</html>
+@include('footer')
+@endsection

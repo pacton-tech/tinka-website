@@ -43,13 +43,11 @@ class TeacherController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirmpassword',
             'gender' => 'required',
-            'birthdate' => 'required',
-            'content' => 'required',
+            'birthday' => 'required',
             'qualification' => 'required',
             'teaching' => 'required',
-            'currentschoolname' => 'required',
-            'tuitioncentre' => 'required',
-            'subjectteach' => 'required'
+            'subject' => 'required',
+            'photo' => 'required'
         ]);
 
         $input = $request->all();
@@ -62,28 +60,32 @@ class TeacherController extends Controller
 
         $user = User::create($user_data);
 
-        if ($request->hasfile('photo')) {
+        if ($request->has('photo')) {
 
             $avatar = $request->file('photo');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(300, 300)->save(public_path('uploads/avatars/' . $filename));
+            Image::make($avatar)->resize(300, 300)->save(storage_path('uploads/avatars/' . $filename));
         }
 
         $profile = [
             'user_id' => $user->id,
             'gender' => $input['gender'],
-            'birthday' => $input['birthdate'],
+            'birthday' => $input['birthday'],
             'qualification' => $input['qualification'],
             'teaching' => $input['teaching'],
-            'current_school' => $input['currentschoolname'],
-            'current_tuition' => $input['tuitioncentre'],
-            'subject' => $input['subjectteach'],
+            'current_school' => $input['current_school'] ?? 'N/A',
+            'current_tuition' => $input['current_tuition'] ?? 'N/A',
+            'subject' => $input['subject'],
             'avatar' => !empty($filename) ? $filename : 'default_avatar.png'
         ];
 
-        TeacherProfile::create($profile);
+        $create = TeacherProfile::create($profile);
 
-        return back()->with('success', 'Thanks for your registration, we will get back to you soon!');
+        if($create){
+            return back()->with('success', 'Thanks for your registration, we will get back to you soon!');
+        } else {
+            return back()->with('error', 'Please fill all the required field');
+        }
     }
 
     /**

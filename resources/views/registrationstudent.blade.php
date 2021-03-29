@@ -1,25 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+@section('title')
+Student Registration
+@endsection
 
-  <title>Student Registration</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-  @extends('layouts.studentlayout')
+@push('css')
+<link href="{{ asset('assets/css/studentform.css') }}" rel="stylesheet">
+@endpush
 
- 
-</head>
+@section('content')
 
-<body>
-
- 
-  <!-- ======= Header ======= -->
-  @include('header')
-<!-- End Header -->
-
+@include('header')
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -34,9 +25,24 @@
                     <h2>Register</h2>
                     <p>Hello Future Tinkers!</p>
                   </header>
-            
-                  <form id="survey-form" data-aos="zoom-in" data-aos-delay="100">
-
+                  <div class="row justify-content-md-center">
+              <div class="col-lg-6">
+                   @if ($errors->any())
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif
+              @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
+                  <form id="survey-form" data-aos="zoom-in" data-aos-delay="100" class="register" method="post" action="{{ route('create-student') }}">
+                    @csrf
                     <div class="form-group">
                       <label id="fullname-label" for="fullname">Full Name</label>
                       <input
@@ -45,8 +51,9 @@
                         id="name"
                         class="form-control"
                         placeholder="Enter your name"
-                        required
+                        {{ $errors->has('name') ? 'has-error' : '' }} value="{{ old('name') }}"
                       />
+                      <span class="text-danger">{{ $errors->first('name') }}</span>
                     </div>
       
                     <div class="form-group">
@@ -58,6 +65,7 @@
                           type="radio"
                           class="input-radio"
                           checked
+                          {{ $errors->has('gender') ? 'has-error' : 'checked' }}
                         />Male</label
                       >
                       <label>
@@ -66,45 +74,51 @@
                           value="female"
                           type="radio"
                           class="input-radio"
+                          {{ $errors->has('gender') ? 'has-error' : 'checked' }}
                         />Female</label
                       >
+                      <span class="text-danger">{{ $errors->first('gender') }}</span>
                     </div>
       
                     <div class="form-group">
-                      <label id="birthdate" for="birthdate"
-                        >Birthdate</label
+                      <label id="birthday" for="birthday"
+                        >Date of Birth</label
                       >
                       <input
                         type="date"
-                        name="birthdate"
-                        id="birthdate"
+                        name="birthday"
+                        id="birthday"
                         class="form-control"
                         placeholder=""
+                        {{ $errors->has('birthday') ? 'has-error' : '' }} value="{{ old('birthday') }}"
                       />
+                      <span class="text-danger">{{ $errors->first('birthday') }}</span>
                     </div>
 
                     <div class="form-group">
-                      <label id="guardianname-label" for="guardianname">Father / Mother / Guardian Name</label>
+                      <label id="guardian_name" for="guardian_name">Father / Mother / Guardian Name</label>
                       <input
                         type="text"
-                        name="guardianname"
-                        id="guardianname"
+                        name="guardian_name"
+                        id="guardian_name"
                         class="form-control"
                         placeholder="Enter your father/mother/guardian name"
-                        required
+                        {{ $errors->has('guardian_name') ? 'has-error' : '' }} value="{{ old('guardian_phone') }}"
                       />
+                      <span class="text-danger">{{ $errors->first('guardian_name') }}</span>
                     </div>
 
                     <div class="form-group">
-                      <label id="guardianphonenum-label" for="guardianphonenum">Father / Mother / Guardian Phone Number</label>
+                      <label id="guardian_phone" for="guardian_phone">Father / Mother / Guardian Phone Number</label>
                       <input
                         type="text"
-                        name="guardianphonenum"
-                        id="guardianphonenum"
+                        name="guardian_phone"
+                        id="guardian_phone"
                         class="form-control"
                         placeholder="Enter your father/mother/guardian phone number"
-                        required
+                        {{ $errors->has('guardian_phone') ? 'has-error' : '' }} value="{{ old('guardian_phone') }}"
                       />
+                      <span class="text-danger">{{ $errors->first('guardian_phone') }}</span>
                     </div>
       
                     <div class="form-group">
@@ -115,22 +129,11 @@
                         id="email"
                         class="form-control"
                         placeholder="Enter your Email"
-                        required
+                        {{ $errors->has('email') ? 'has-error' : '' }} value="{{ old('email') }}"
                       />
+                      <span class="text-danger">{{ $errors->first('email') }}</span>
                     </div>
-      
-                    <div class="form-group">
-                      <label id="username-label" for="username">Username</label>
-                      <input
-                        type="text"
-                        name="username"
-                        id="username"
-                        class="form-control"
-                        placeholder="Enter your username"
-                        required
-                      />
-                    </div>
-      
+
                     <div class="form-group">
                       <label id="password-label" for="password">Password</label>
                       <input
@@ -139,42 +142,46 @@
                         id="password"
                         class="form-control"
                         placeholder="Enter your password"
-                        required
+                        value="{{ old('password') }}"
                       />
+                      <span class="text-danger">{{ $errors->first('password') }}</span>
                     </div>
-      
+
                     <div class="form-group">
-                      <label id="confirmpassword-label" for="confirmpassword">Password</label>
+                      <label id="confirmpassword-label" for="confirmpassword">Repeat Password</label>
                       <input
                         type="password"
                         name="confirmpassword"
                         id="confirmpassword"
                         class="form-control"
                         placeholder="Re-enter your password"
-                        required
+                        value="{{ old('confirmpassword') }}"
                       />
+                      <span class="text-danger">{{ $errors->first('confirmpassword') }}</span>
                     </div>
                                  
                     <div class="form-group">
-                      <label id="currentschoolname-label" for="currentschoolname">Your Current School Name</label>
-                      <input
-                        type="text"
-                        name="currentschoolname"
-                        id="currentschoolname"
-                        class="form-control"
-                        placeholder="School Name"
-                        required
-                      />
-                    </div>
+                <label id="current_school-label" for="current_school">Your Current School Name</label>
+                <input
+                  type="text"
+                  name="current_school"
+                  id="current_school"
+                  class="form-control"
+                  placeholder="School Name"
+                  {{ $errors->has('current_school') ? 'has-error' : '' }} value="{{ old('current_school') }}"
+                />
+                <span class="text-danger">{{ $errors->first('current_school') }}</span>
+              </div>
                 
                     <div class="form-group">
-                      <label id="classchoice-label" for="classchoice">Classes That You Are Interested In</label>
-                      <select id="dropdown" name="classchoice" class="form-control" required>
-                        <option disabled selected value>Physical Tuition Class/Online Class/Home Tuition </option>
-                        <option value="physicaltuitin">Physical Tuition</option>
-                        <option value="onlineclass">Online Class</option>
-                        <option value="hometuition">Home Tuition</option>
+                      <label id="classroom" for="classroom">Classes That You Are Interested In</label>
+                      <select id="dropdown" name="classroom" class="form-control">
+                        <option disabled selected value>- Choose -</option>
+                        <option value="physical tuition">Physical Tuition</option>
+                        <option value="online class">Online Class</option>
+                        <option value="home tuition">Home Tuition</option>
                       </select>
+                      <span class="text-danger">{{ $errors->first('classroom') }}</span>
                     </div>
       
                     <div class="form-group">
@@ -184,8 +191,8 @@
                         name="photo"
                         id="photo"
                         class="form-control"
-                        required
                       />
+                      <span class="text-danger">{{ $errors->first('photo') }}</span>
                     </div>
       
               <div class="form-group">
@@ -195,29 +202,11 @@
               </div>
             </form>
           </div>
+        </div>
+      </div>
     </section>
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-    
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Versatile Straits Sdn. Bhd</span></strong>. All Rights Reserved
-      </div>
-     
-        
-      </div>
-    
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-
-</body>
-
-</html>
+  @include('footer')
+@endsection
