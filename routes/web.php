@@ -30,12 +30,6 @@ Route::get('/tinkaapp', function () {
 Route::get('/tuitionfees', function () {
     return view('tuitionfees');
 });
-Route::get('/registrationteacher', function () {
-    return view('registrationteacher');
-});
-Route::get('/registrationstudent', function () {
-    return view('registrationstudent');
-});
 
 Route::get('/contact', 'ContactController@contact')->name('contact');
 Route::post('/contact', 'ContactController@contactPost')->name('contactPost');
@@ -64,4 +58,13 @@ Route::get('/faq', function() {
 Route::get('/teachers', function() {
     return view('teachers');
 });
+
+Route::get('/register/teacher', 'TeacherController@create')->name('register-teacher');
+Route::get('/register/student', 'StudentController@create')->name('register-student');
+
+Route::post('/create/teacher', 'TeacherController@store')->name('create-teacher');
+Route::post('/create/student', 'StudentController@store')->name('create-student');
+
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('faqs', FaqController::class);

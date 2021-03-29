@@ -19,6 +19,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'role',
         'password',
     ];
 
@@ -40,4 +41,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get profile associated with the user.
+     */
+    public function teacher()
+    {
+        return $this->hasOne(TeacherProfile::class);
+    }
+
+    /**
+     * Get profile associated with the user.
+     */
+    public function student()
+    {
+        return $this->hasOne(StudentProfile::class);
+    }
 }

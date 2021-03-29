@@ -1,8 +1,8 @@
-<div class = "header">
+<div class="header">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="/" class="logo d-flex align-items-center">
-        <img src="assets/img/Tinka (1).png" alt="">
+        <img src="{{ asset('assets/img/Tinka (1).png') }}" alt="">
         <span>TiNKA</span>
       </a>
 
@@ -25,8 +25,8 @@
           
           <li class="dropdown" ><a href="#"><span>Join Us</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="/registrationteacher">Tink-Educator</a></li>
-              <li><a href="/registrationstudent">Future Tinkers</a></li>
+              <li><a href="/register/teacher">Tink-Educator</a></li>
+              <li><a href="/register/student">Future Tinkers</a></li>
           
             </ul> 
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
