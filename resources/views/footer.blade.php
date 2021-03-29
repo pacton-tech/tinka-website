@@ -14,7 +14,7 @@
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a href="/contact">Contact Us</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="/faq">FAQ</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms & Condition</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="./assets/TiNKA - Schedule 1 (Terms & Conditions of Subscription).pdf" target="_blank">Terms & Condition</a></li>
             </ul>
             
             <div class="social-links mt-3">
@@ -29,7 +29,7 @@
             <h4>About Us</h4>
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a href="./assets/PDPR Press Release_21012021.pdf" target="_blank">Press/Media</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms & Condition</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="./assets/TiNKA - Schedule 1 (Terms & Conditions of Subscription).pdf" target="_blank">Terms & Condition</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="/registrationteacher">Tutor Registration</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="/registrationstudent">Student Registration</a></li>
