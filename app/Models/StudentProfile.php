@@ -11,7 +11,7 @@ class StudentProfile extends Model
 
     public $timestamps = true;
 
-    protected $tables = 'student_profile';
+    protected $table = 'student_profile';
 
     protected $fillable = [
         'user_id',
