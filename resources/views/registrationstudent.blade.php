@@ -41,7 +41,7 @@ Student Registration
                     {{ session()->get('success') }}
                 </div>
             @endif
-                  <form id="survey-form" data-aos="zoom-in" data-aos-delay="100" class="register" method="post" action="{{ route('create-student') }}">
+                  <form id="survey-form" data-aos="zoom-in" data-aos-delay="100" class="register" method="post" action="{{ route('create-student') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                       <label id="fullname-label" for="fullname">Full Name</label>
