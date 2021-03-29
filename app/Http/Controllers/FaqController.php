@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
    
 use App\Models\faq;
 use App\Models\faqcategory;
+use App\Models\faqsubcategory;
 use Illuminate\Http\Request;
   
 class FaqController extends Controller
@@ -28,8 +29,9 @@ class FaqController extends Controller
      */
     public function create()
     {
-        
-        return view('faqs.create');
+        $categories = ['categories' => faqcategory::pluck('categoryname','id')];
+        $subcategories = ['subcategories' => faqsubcategory::pluck('subcategoryname','id')];
+        return view('faqs.create', compact('categories', 'subcategories'));
 
     }
     
@@ -74,9 +76,10 @@ class FaqController extends Controller
      */
     public function edit($id)
     {
-        $categories = ['categories' => faqcategory::get()];
-        $faq = ['faq' => faq::find($id)];
-        return view('faqs.edit',compact('categories','faq'));
+        $categories = ['categories' => faqcategory::pluck('categoryname','id')];
+        $subcategories = ['subcategories' => faqsubcategory::pluck('subcategoryname','id')];
+        $faq = faq::find($id);
+        return view('faqs.edit',compact('subcategories','categories','faq'));
     }
     
     /**

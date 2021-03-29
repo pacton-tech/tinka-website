@@ -25,20 +25,21 @@
     @csrf
     <div class="col-sm-8 col-xs-offset-2">
         <div class="well">
-            {!! Form::open(array('route' => ['faqs.update', $faq->id], 'method' => 'patch')) !!}
+            {!! Form::open(array('route' => ['faqs.update', $faq['id']], 'method' => 'patch')) !!}
             <br>
 
             {{ Form::label('question', 'Question') }}
-            {{ Form::text('question', old('question'), ['class'=> 'form-control']) }}
+            {{ Form::text('question', $faq['question'], ['class'=> 'form-control']) }}
             <br>
             {{ Form::label('answer', 'Answer') }}
-            {{ Form::text('answer', old('answer'), ['class'=> 'form-control']) }}
+            {{ Form::textarea('answer', $faq['answer'], ['class'=> 'form-control']) }}
             <br>
             {{ Form::label('category', 'Category') }}
-            {{ Form::text('categoryid', old('categoryid'),$categories, ['class'=> 'form-control']) }}
-            <br>
-            {{ Form::label('subcategory', 'Subcategory') }}
+            {{ Form::select('categoryid', $categories, $faq['categoryid'], ['class'=> 'form-control']) }}
 
+            <br>
+            {{ Form::label('subcategory', 'Sub category') }}
+            {{ Form::select('subcategoryid', $subcategories, $faq['subcategoryid'], ['class'=> 'form-control']) }}
             <br>
             <div class="text-center "> 
                 {{ Form::submit('Update', ['class'=> 'btn btn-primary ']) }}
