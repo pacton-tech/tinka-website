@@ -63,7 +63,7 @@ class TeacherController extends Controller
         if ($request->has('photo')) {
 
             $filename = time() . '.' . $request->photo->extension();
-            $request->photo->resize(300, 300)->move(storage_path('uploads/avatars/', $filename));
+            $request->photo->resize(300, 300)->move(storage_path('uploads/avatars/', $filename);
         }
 
         $profile = [
