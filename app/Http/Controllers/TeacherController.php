@@ -55,6 +55,7 @@ class TeacherController extends Controller
         $user_data = [
             'name' => $input['name'],
             'email' => $input['email'],
+            'role' => 'teacher',
             'password' => Hash::make($input['password'])
         ];
 
