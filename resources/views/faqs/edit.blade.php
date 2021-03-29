@@ -25,8 +25,9 @@
     @csrf
     <div class="col-sm-8 col-xs-offset-2">
         <div class="well">
-            {{ Form::model($faq, ['method'=>'put','route' => ['faqs.update',$faq->id]]) }}
+            {!! Form::open(array('route' => ['faqs.update', $faq->id], 'method' => 'patch')) !!}
             <br>
+
             {{ Form::label('question', 'Question') }}
             {{ Form::text('question', old('question'), ['class'=> 'form-control']) }}
             <br>
@@ -34,10 +35,10 @@
             {{ Form::text('answer', old('answer'), ['class'=> 'form-control']) }}
             <br>
             {{ Form::label('category', 'Category') }}
-            {{ Form::text('categoryid', old('categoryid'), ['class'=> 'form-control']) }}
+            {{ Form::text('categoryid', old('categoryid'),$categories, ['class'=> 'form-control']) }}
             <br>
             {{ Form::label('subcategory', 'Subcategory') }}
-            {{ $faq->categories }}
+
             <br>
             <div class="text-center "> 
                 {{ Form::submit('Update', ['class'=> 'btn btn-primary ']) }}

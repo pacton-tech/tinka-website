@@ -20,7 +20,7 @@
              <p>{{ $message }}</p>
          </div>
      @endif
-    
+
     <table class="table table-bordered" 
             style=" justify-content: center;
                     margin: 20px;">

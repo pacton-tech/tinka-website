@@ -14,11 +14,11 @@ class faq extends Model
 
     public function categories()
     {
-        return hasOneThrough(Faq::class, Category::class);
+        return $this->belongsTo('App\Models\faqcategory');
     }
     public function subcategories()
     {
-        return hasOneThrough(Faq::class, Subcategory::class);
+        return $this->belongsTo('App\Models\faqsubcategory');
     }
 }
 

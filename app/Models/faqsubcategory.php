@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class faqsubcategory extends Model
 {
     use HasFactory;
+    public function faqsubcategories()
+    {
+        return $this->hasOne('App\Models\faq');
+    }
 }

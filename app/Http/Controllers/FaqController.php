@@ -2,7 +2,7 @@
   
 namespace App\Http\Controllers;
    
-use App\Models\Faq;
+use App\Models\faq;
 use App\Models\faqcategory;
 use Illuminate\Http\Request;
   
@@ -28,7 +28,7 @@ class FaqController extends Controller
      */
     public function create()
     {
-        $categories = faqcategory::all();
+        
         return view('faqs.create');
 
     }
@@ -41,7 +41,7 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        $categories = faqcategory::all();
+        
         $request->validate([
             'question' => 'required',
             'answer' => 'required',
@@ -72,9 +72,11 @@ class FaqController extends Controller
      * @param  \App\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function edit(Faq $faq)
+    public function edit($id)
     {
-        return view('faqs.edit',compact('faq'));
+        $categories = ['categories' => faqcategory::get()];
+        $faq = ['faq' => faq::find($id)];
+        return view('faqs.edit',compact('categories','faq'));
     }
     
     /**
@@ -86,7 +88,7 @@ class FaqController extends Controller
      */
     public function update(Request $request, Faq $faq)
     {
-        $categories = faqcategory::all();
+        $categories = ['categories' => faqcategory::get()];
         $request->validate([
             'question' => 'required',
             'answer' => 'required',
