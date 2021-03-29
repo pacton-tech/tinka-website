@@ -48,7 +48,7 @@ class StudentController extends Controller
             'guardian_phone' => 'required',
             'classroom' => 'required',
             'current_school' => 'required',
-            'photo' => 'required'
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $input = $request->all();
