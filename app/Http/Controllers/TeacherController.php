@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\TeacherProfile;
 use Hash;
-use Image;
 
 class TeacherController extends Controller
 {
@@ -38,7 +37,7 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirmpassword',
@@ -47,7 +46,7 @@ class TeacherController extends Controller
             'qualification' => 'required',
             'teaching' => 'required',
             'subject' => 'required',
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
         $input = $request->all();
@@ -63,9 +62,8 @@ class TeacherController extends Controller
 
         if ($request->has('photo')) {
 
-            $avatar = $request->file('photo');
-            $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(300, 300)->save(storage_path('uploads/avatars/' . $filename));
+            $filename = time() . '.' . $request->photo->extension();
+            $request->photo->resize(300, 300)->move(storage_path('uploads/avatars/', $filename);
         }
 
         $profile = [
