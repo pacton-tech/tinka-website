@@ -66,3 +66,5 @@ Route::get('/teachers', function() {
     return view('teachers');
 });
 Route::resource('faqs', FaqController::class);
+Route::resource('faqcategories', CategoryController::class);
+Route::resource('faqsubcategories', SubcategoryController::class);

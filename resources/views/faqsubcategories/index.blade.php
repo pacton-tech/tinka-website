@@ -1,17 +1,15 @@
-@extends('faqs.layout')
+@extends('faqsubcategories.layout')
  
  @section('content')
      <div class="row" 
             style=" box-sizing: border-box; margin: 5px; justify-content: center;">
          <div class="col-lg-12 margin-tb">
-            <h2>FAQ Admin Interface</h2>
+            <h2>Subcategory Menu</h2>
          </div>
      </div>
      <div class="row"style=" box-sizing: border-box; margin: 5px; justify-content: center;">
         <div class="col-lg-12 margin-tb">
-                 <a class="btn btn-success" href="{{ route('faqs.create') }}"> Create New FAQ</a>
-                 <a class="btn btn-success" href="{{ route('faqcategories.index') }}"> View Categories</a>
-                 <a class="btn btn-success" href="{{ route('faqsubcategories.index') }}"> View Subcategories</a>
+                 <a class="btn btn-success" href="{{ route('faqsubcategories.create') }}"> Create New Subcategory</a>
         </div>
      </div>
     
@@ -27,23 +25,19 @@
          <tbody>
          <tr>
              <th>No</th>
-             <th>Question</th>
-             <th>Answer</th>
-             <th>Category</th>
              <th>Subcategory</th>
+
              <th width="200px">Action</th>
          </tr>
-         @foreach ($faqs as $faq)
+         @foreach ($faqsubcategories as $subcategory)
          <tr>
              <td>{{ ++$i }}</td>
-             <td>{{ $faq->question }}</td>
-             <td>{{ $faq->answer }}</td>
-             <td>{{ $faq->categoryid }}</td>
-             <td>{{ $faq->subcategoryid }}</td>
+             <td>{{ $subcategory->subcategoryname }}</td>
+
              <td>
-                 <form action="{{ route('faqs.destroy',$faq->id) }}" method="POST">
+                 <form action="{{ route('faqsubcategories.destroy',$subcategory->id) }}" method="POST">
      
-                     <a class="btn btn-primary" href="{{ route('faqs.edit',$faq->id) }}">Edit</a>
+                     <a class="btn btn-primary" href="{{ route('faqsubcategories.edit',$subcategory->id) }}">Edit</a>
     
                      @csrf
                      @method('DELETE')
@@ -55,7 +49,7 @@
          @endforeach
      </table>
    
-     {!! $faqs->links() !!}
+     {!! $faqsubcategories->links() !!}
        
  @endsection
  

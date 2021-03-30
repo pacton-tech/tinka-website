@@ -17,8 +17,9 @@ class FaqController extends Controller
     public function index()
     {
         $faqs = Faq::latest()->paginate(5);
-    
-        return view('faqs.index',compact('faqs'))
+        $categories = ['categories' => faqcategory::pluck('categoryname','id')];
+        $subcategories = ['subcategories' => faqsubcategory::pluck('subcategoryname','id')];
+        return view('faqs.index',compact('subcategories','categories','faqs'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
      
@@ -67,6 +68,7 @@ class FaqController extends Controller
     {
         return view('faqs.show',compact('faq'));
     } 
+    
      
     /**
      * Show the form for editing the specified resource.
