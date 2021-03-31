@@ -65,7 +65,7 @@ Teacher Registration
                   <label>
                     <input
                     name="gender"
-                    value="mobile-nav-toggle"
+                    value="male"
                     type="radio"
                     class="input-radio"
                     checked
