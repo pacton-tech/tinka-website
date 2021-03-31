@@ -814,11 +814,12 @@ section {
 # Profile Section
 --------------------------------------------------------------*/
 .profile{
-  margin-top:20px;
+    margin-top:20px;
     color: #1a202c;
     text-align: left;
     background-color: #e2e8f0;   
     padding: 50px;
+    font-family: inherit;
 }
 .card {
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
@@ -843,8 +844,8 @@ section {
 }
 
 .gutters-sm {
-    margin-right: -8px;
-    margin-left: -8px;
+    margin-right: -50px;
+    margin-left: 200px;
 }
 
 .gutters-sm>.col, .gutters-sm>[class*=col-] {
