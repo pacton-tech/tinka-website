@@ -13,6 +13,6 @@ class faqcategory extends Model
     ];
     public function faqcategories()
     {
-        return $this->hasOne('App\Models\faq');
+        return $this->belongsTo('App\Models\faq');
     }
 }

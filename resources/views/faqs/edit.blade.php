@@ -1,15 +1,16 @@
 @extends('faqs.layout')
    
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit FAQ</h2>
-            </div>
+<div class="row">
+    <br>
+    <div class="col-lg-8 col-xs-offset-2 margin-tb">
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('faqs.index') }}"> Back</a>
-            </div>
+            <a class="btn btn-primary" href="{{ route('faqs.index') }}"> Back</a>
         </div>
+    </div>
+</div>
+    <div class="text-center">
+            <h2>Edit FAQ</h2>
     </div>
    
     @if ($errors->any())
@@ -38,7 +39,7 @@
             {{ Form::select('categoryid', $categories, $faq['categoryid'], ['class'=> 'form-control']) }}
 
             <br>
-            {{ Form::label('subcategory', 'Sub category') }}
+            {{ Form::label('subcategory', 'Subcategory') }}
             {{ Form::select('subcategoryid', $subcategories, $faq['subcategoryid'], ['class'=> 'form-control']) }}
             <br>
             <div class="text-center "> 

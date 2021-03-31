@@ -29,17 +29,17 @@
         <div class="well">
             {{ Form::open(['route' => 'faqs.store']) }}
             <br>
-            {{ Form::label('category', 'Category') }}
-            {{ Form::select('categoryid', $categories, ['class'=> 'form-control']) }}
-            <br>
-            {{ Form::label('subcategory', 'Sub Category') }}
-            {{ Form::select('subcategoryid', $subcategories, ['class'=> 'form-control']) }}
-            <br>
             {{ Form::label('question', 'Question') }}
             {{ Form::text('question', '', ['class'=> 'form-control']) }}
             <br>
             {{ Form::label('answer', 'Answer') }}
             {{ Form::textarea('answer', '', ['class'=> 'form-control']) }}
+            <br>
+            {{ Form::label('category', 'Category') }}
+            {{ Form::select('categoryid', $categories,'', ['class'=> 'form-control']) }}
+            <br>
+            {{ Form::label('subcategory', 'Subcategory') }}
+            {{ Form::select('subcategoryid', $subcategories,'', ['class'=> 'form-control']) }}
             <br>
             <div class="text-center"> 
                 {{ Form::submit('Create', ['class'=> 'btn btn-primary ']) }}
@@ -47,6 +47,4 @@
             {{ Form::close() }}
         </div>
     </div>
-
-
 @endsection

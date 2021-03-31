@@ -14,11 +14,11 @@ class faq extends Model
 
     public function categories()
     {
-        return $this->belongsTo('App\Models\faqcategory');
+        return $this->hasOne('App\Models\faqcategory', 'id', 'categoryid');
     }
     public function subcategories()
     {
-        return $this->belongsTo('App\Models\faqsubcategory');
+        return $this->hasOne('App\Models\faqsubcategory', 'id', 'subcategoryid');
     }
 }
 

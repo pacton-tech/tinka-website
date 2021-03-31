@@ -1,15 +1,20 @@
 @extends('faqsubcategories.layout')
  
  @section('content')
+     <div class="pull-right" style=" margin-top:20px;">
+        <a class="btn btn-primary" href="{{ route('faqs.index') }}"> Back</a>
+     </div>
      <div class="row" 
             style=" box-sizing: border-box; margin: 5px; justify-content: center;">
          <div class="col-lg-12 margin-tb">
-            <h2>Subcategory Menu</h2>
+            <div class="text-center">
+                <h2>Subcategory Menu</h2>
+            </div>
          </div>
      </div>
-     <div class="row"style=" box-sizing: border-box; margin: 5px; justify-content: center;">
+     <div class="row"style=" box-sizing: border-box;margin-bottom:20px;margin-top:50px; justify-content: center;">
         <div class="col-lg-12 margin-tb">
-                 <a class="btn btn-success" href="{{ route('faqsubcategories.create') }}"> Create New Subcategory</a>
+                 <a class="btn btn-primary" href="{{ route('faqsubcategories.create') }}"> Create New Subcategory</a>
         </div>
      </div>
     
@@ -20,14 +25,13 @@
      @endif
 
     <table class="table table-bordered" 
-            style=" justify-content: center;
-                    margin: 20px;">
+            style=" justify-content: center;">
          <tbody>
          <tr>
              <th>No</th>
              <th>Subcategory</th>
 
-             <th width="200px">Action</th>
+             <th width="140px">Action</th>
          </tr>
          @foreach ($faqsubcategories as $subcategory)
          <tr>
