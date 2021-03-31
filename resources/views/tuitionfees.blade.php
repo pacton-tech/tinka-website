@@ -170,7 +170,7 @@
                     </div>
                   </div>
                 </div>                
-                <div class="col-lg-4 col-md-6 portfolio-item filter-spm">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-pmr">
                   <div class="portfolio-wrap">
                     <img src="assets/img/portfolio/12.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
