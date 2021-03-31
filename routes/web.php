@@ -62,8 +62,14 @@ Route::get('profile', function(){
     return view('profile');
 });
 
-Route::get('/register/teacher', 'TeacherController@create')->name('register-teacher');
-Route::get('/register/student', 'StudentController@create')->name('register-student');
+Route::get('/register/teacher', function() {
+    return view('coming-soon');
+});
+Route::get('/register/student', function() {
+    return view('coming-soon');
+});
+//Route::get('/register/teacher', 'TeacherController@create')->name('register-teacher');
+//Route::get('/register/student', 'StudentController@create')->name('register-student');
 
 Route::post('/create/teacher', 'TeacherController@store')->name('create-teacher');
 Route::post('/create/student', 'StudentController@store')->name('create-student');
