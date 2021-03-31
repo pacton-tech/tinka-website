@@ -1,26 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+@section('title')
+Tinka Educentre 
+@endsection
 
-  <title>Tinka Educentre</title>
-  <meta content="" name="description">
+@section('content')
 
-  <meta content="" name="keywords">
+@include('header')
 
-  @extends('layouts.master')
-
-</head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  @include('header')
-<!-- End Header -->
-
-  <main id="main">
+<main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
     <section class="breadcrumbs">
@@ -181,15 +169,6 @@
 
 
   </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  @include('footer')
-<!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-
-
-</body>
-
-</html>
+@include('footer')
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+@endsection
