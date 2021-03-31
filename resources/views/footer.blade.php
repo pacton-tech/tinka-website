@@ -11,7 +11,6 @@
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a href="/contact">Contact Us</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="/faq">FAQ</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="./assets/TiNKA - Schedule 1 (Terms & Conditions of Subscription).pdf" target="_blank">Terms & Condition</a></li>
             </ul>
             
             <div class="social-links mt-3">

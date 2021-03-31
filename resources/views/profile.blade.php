@@ -25,6 +25,9 @@ Profile
 
     <!-- Profile Section -->
     <section class="profile">
+        <header class="section-header">
+            <p>My Profile</p>
+        </header>
         <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
                 <div class="card">
