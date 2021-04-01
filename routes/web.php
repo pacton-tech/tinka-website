@@ -68,6 +68,7 @@ Route::get('/register/teacher', function() {
 Route::get('/register/student', function() {
     return view('coming-soon');
 });
+
 //Route::get('/register/teacher', 'TeacherController@create')->name('register-teacher');
 //Route::get('/register/student', 'StudentController@create')->name('register-student');
 
@@ -78,7 +79,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('faqs', FaqController::class);
 Route::resource('subscription', SubscriptionController::class);
-Route::get('subscription/book', 'SubscriptionController@store')->name('create-subscription');
 Route::resource('plan', PlanController::class);
 Route::post('plan/checkout', 'PlanController@checkout')->name('plan-checkout');
 Route::resource('payment', PaymentController::class);
+Route::post('payment/response', 'PaymentController@response_billplz')->name('payment-response');

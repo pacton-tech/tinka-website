@@ -13,7 +13,6 @@
             <ul>
               <li><a href="/about">About Tinka</a></li>
               <li><a href="/tinkaleadership">Tinka Leadership</a></li>
-              <!--<li><a href="blog.html">Tinka News</a></li>-->
             </ul>
           <li class="dropdown" ><a href="/tinkaeducentre"><span>Product & Services</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -30,8 +29,6 @@
           
             </ul> 
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
-          <li><a class="nav-link scrollto" href="/faq">FAQ</a></li>
-          <li><a class="nav-link scrollto" target="_blank" href="https://helpdesk.tinka.world/help-center">Help Centre</a></li>
           <li><a class="getstarted scrollto" href="#">Get Started</a></li>
        
         </ul>
