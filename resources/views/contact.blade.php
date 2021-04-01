@@ -1,24 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+@section('title')
+Contact Us
+@endsection
 
-  <title>Contact Us</title>
-  <meta content="" name="description">
+@section('content')
 
-  <meta content="" name="keywords">
-
-  @extends('layouts.master')
-
-</head>
-
-<body>
-
- <!-- ======= Header ======= -->
- @include('header')
-<!-- End Header -->
+@include('header')
 
   <main id="main">
 
@@ -202,13 +190,7 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  @include('footer')
-<!-- End Footer -->
+@include('footer')
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+@endsection
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-
-</body>
-
-</html>

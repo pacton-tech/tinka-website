@@ -58,6 +58,9 @@ Route::get('/faq', function() {
 Route::get('/teachers', function() {
     return view('teachers');
 });
+Route::get('profile', function(){
+    return view('profile');
+});
 
 Route::get('/register/teacher', function() {
     return view('coming-soon');
