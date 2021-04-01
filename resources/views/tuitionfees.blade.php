@@ -26,7 +26,7 @@
             <div class="container">
 
               <ol>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index">Home</a></li>
                 <li>Tuition Fees</li>
               </ol>
               <h2>Tuition Fees</h2>
