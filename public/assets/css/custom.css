@@ -707,7 +707,6 @@ section {
 .doctors .member .pic {
   overflow: hidden;
   width: 150px;
-  height: 150px;
   border-radius: 50%;
 }
 .doctors .member h4 {
