@@ -81,6 +81,7 @@ class PaymentController extends Controller
             'email' => $email,
             'name' => $name,
             'amount' => $plan['price']*100, // in cent
+            'callback_url' => env('APP_URL').'/payment/callback',
             'redirect_url' => env('APP_URL').'/payment/response'
         ]);
 
@@ -173,6 +174,51 @@ class PaymentController extends Controller
         }
 
         return view('payment.receipt', compact('payment'));
+    }
+
+    public function callback_billplz(Request $request)
+    {
+        /*
+        id="W_79pJDk"
+        &collection_id="599"
+        &paid="true"
+        &state="paid"
+        &amount="200"
+        &paid_amount="0"
+        &due_at="2020-12-31"
+        &email="api@billplz.com"
+        &mobile="+60112223333"
+        &name="MICHAEL API"
+        &metadata[id]="9999"
+        &metadata[description]="This is to test bill creation"
+        &url="http://billplz.dev/bills/W_79pJDk"
+        &paid_at="2015-03-09 16:23:59 +0800"
+        */
+
+        // Update billplz payment
+        $payment = Payment::update([
+            'billplz_id' => $_POST['id'],
+            'amount' => $_POST['paid_amount']/100,
+            'paid' => $response['paid'],
+            'status' => $_POST['state']
+        ]);
+
+        if($response['paid'] == 'true'){
+
+            $user = User::where('email', $_POST['email'])->first();
+            $plan = Payment::where('billplz_id', $_POST['id'])->first();
+
+            // create subscription
+            Subscription::create([
+                'user_id' => $user['id'],
+                'plan_id' => $plan['id'],
+                'starts_at' => Carbon::now(),
+                'ends_at' => Carbon::addMonth(),
+                'payment_id' => $payment['id']
+            ]);
+        }
+
+        echo 'OK';
     }
 
     /**

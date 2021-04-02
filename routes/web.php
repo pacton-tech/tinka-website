@@ -90,6 +90,9 @@ Route::resource('plan', PlanController::class);
 Route::post('plan/checkout', 'PlanController@checkout')->name('plan-checkout');
 Route::resource('payment', PaymentController::class);
 
+Route::post('payment/response', 'PaymentController@response_billplz')->name('payment-response');
+Route::post('payment/callback', 'PaymentController@callback_billplz')->name('payment-callback');
+
 Route::get('feesdetail', function() {
     return view('feesdetail.feesdetail');
 });
