@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('billplz/response', 'PaymentController@response_billplz')->name('payment-response');
+Route::get('billplz/response', 'PaymentController@response_billplz')->name('payment-response');
 Route::post('billplz/callback', 'PaymentController@callback_billplz')->name('payment-callback');
 
 Route::get('/', function () {
