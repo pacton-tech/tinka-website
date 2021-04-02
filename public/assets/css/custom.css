@@ -869,3 +869,10 @@ section {
 .text-secondary{
   font-family: nunito;
 }
+
+.portfolio-details .getstarted {
+  background: #4154f1;
+  padding: 8px 20px;
+  border-radius: 4px;
+  color: #fff;
+}
