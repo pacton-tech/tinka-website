@@ -47,7 +47,7 @@ class PaymentController extends Controller
 
             $request->validate([
                 'name' => 'required',
-                'email' => 'required',
+                'email' => 'required|unique:users',
                 'plan_id' => 'required'
             ]);
 
@@ -124,6 +124,9 @@ class PaymentController extends Controller
 
             return redirect($response['url'].'?auto_submit=true');
 
+        } else {
+
+            return with('error', 'Unable to create subscription');
         }
     }
 
