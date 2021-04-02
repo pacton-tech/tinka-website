@@ -69,12 +69,12 @@ Tinka App
 
       <div class="row g-0 py-3 py-md-0">
         <div class="col-md-6 mb-4 mb-md-0">
-          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span class="d-sm-none d-md-block d-lg-none position-absolute top-0 start-0 w-100 h-100 rounded-start bg-secondary" style="opacity: 1;"></span>
+          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
            <img src="./assets/img/offeredclass/onlinelearning.png" alt="">
           </div>
         </div>
         <div class="col-md-6">
-          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span class="d-sm-none d-md-block d-lg-none position-absolute top-0 start-0 w-100 h-100 rounded-start bg-secondary" style="opacity: 1;"></span>
+          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
             <div class="my-auto mx-auto text-center" style="max-width: 450px;">
               <h2 style="font-weight: bold; text-align: justify; color: #1B1464">Online Learning</h2>
               <p style="text-align: justify; color: #1B1464;">Learn from our mobile app at the comfort of your own home or literally from anywhere! It's smart, easy-to-use and best of all, convenient!</p>
@@ -86,7 +86,7 @@ Tinka App
       <div class="row g-0 py-3 py-md-0">
         <div class="col-md-6 mb-4 mb-md-0">
           
-          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span class="d-sm-none d-md-block d-lg-none position-absolute top-0 start-0 w-100 h-100 rounded-start bg-secondary" style="opacity: 1;"></span>
+          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
             <div class="my-auto mx-auto text-center" style="max-width: 450px;">
               <h2 style="font-weight: bold; text-align: left; color: #1B1464">Professionally trained educators</h2>
               <p style="text-align: justify; color: #1B1464;">Learn from our mobile app at the comfort of your own home or literally from anywhere! It's smart, easy-to-use and best of all, convenient!</p>
@@ -94,7 +94,7 @@ Tinka App
           </div>     
         </div>
         <div class="col-md-6">
-          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span class="d-sm-none d-md-block d-lg-none position-absolute top-0 start-0 w-100 h-100 rounded-start bg-secondary" style="opacity: 1;"></span>
+          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
               <img src="./assets/img/offeredclass/12.png" alt="">
              </div>
           </div>
@@ -103,12 +103,12 @@ Tinka App
 
       <div class="row g-0 py-3 py-md-0">
         <div class="col-md-6 mb-4 mb-md-0">
-          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span class="d-sm-none d-md-block d-lg-none position-absolute top-0 start-0 w-100 h-100 rounded-start bg-secondary" style="opacity: 1;"></span>
+          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
            <img src="./assets/img/offeredclass/13.png" alt="">
           </div>
         </div>
         <div class="col-md-6">
-          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span class="d-sm-none d-md-block d-lg-none position-absolute top-0 start-0 w-100 h-100 rounded-start bg-secondary" style="opacity: 1;"></span>
+          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
             <div class="my-auto mx-auto text-center" style="max-width: 450px;">
               <h2 style="font-weight: bold; text-align: justify; color: #1B1464">Track your child's learning</h2>
               <p style="text-align: justify; color: #1B1464;">Our teachers are professionally trained and are carefully vetted, to ensure that your child gets the best!</p>
@@ -120,7 +120,7 @@ Tinka App
       <div class="row g-0 py-3 py-md-0">
         <div class="col-md-6 mb-4 mb-md-0">
           
-          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span class="d-sm-none d-md-block d-lg-none position-absolute top-0 start-0 w-100 h-100 rounded-start bg-secondary" style="opacity: 1;"></span>
+          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
             <div class="my-auto mx-auto text-center" style="max-width: 450px;">
               <h2 style="font-weight: bold; text-align: left; color: #1B1464"> Accessible lesson videos</h2>
               <p style="text-align: justify; color: #1B1464;">Need a refresher before an exam? Our lesson videos are recorded and available at your fingertips when needed!</p>
@@ -128,7 +128,7 @@ Tinka App
           </div>     
         </div>
         <div class="col-md-6">
-          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span class="d-sm-none d-md-block d-lg-none position-absolute top-0 start-0 w-100 h-100 rounded-start bg-secondary" style="opacity: 1;"></span>
+          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
               <img src="./assets/img/offeredclass/12.png" alt="">
              </div>
           </div>
