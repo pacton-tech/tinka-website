@@ -5,7 +5,7 @@ TiNKA - Education. Everywhere.
 @endsection
 
 @section('content')
-@include('mainheader')
+@include('header')
 
   <section id="hero" class="hero d-flex align-items-center">
 
