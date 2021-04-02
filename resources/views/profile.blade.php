@@ -5,7 +5,6 @@ Profile
 @endsection
 
 @section('content')
-@include('mainheader')
 
 <main id="main">
 @include('header')
@@ -23,145 +22,140 @@ Profile
     </div>
   </section><!-- End Breadcrumbs -->
 
-    <!-- Profile Section -->
-    <section class="profile">
-        <header class="section-header">
-            <p>My Profile</p>
-        </header>
-        <div class="row gutters-sm">
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex flex-column align-items-center text-center">
-                            <img src="https://vgraphs.com/images/agents/jett-avatar.jpg" alt="Admin" class="rounded-circle" width="150">
-                            <div class="mt-3">
-                            <h4>Hakim Danial</h4>
-                            <p class="text-secondary mb-1">Biology Teacher</p>
-                            <p class="text-muted font-size-sm">Shah Alam, Selangor</p>
-                            <button class="btn btn-primary">Edit Profile</button>
-                            </div>
+    <section id="features" class="features">
+
+      <div class="container aos-init aos-animate" data-aos="fade-up">
+
+        <!-- Feature Tabs -->
+        <div class="row feture-tabs aos-init aos-animate" data-aos="fade-up">
+          <div class="col-lg-9">
+            <h3>Details</h3>
+
+            <!-- Tabs -->
+            <ul class="nav nav-pills mb-3">
+              <li>
+                <a class="nav-link active" data-bs-toggle="pill" href="#tab1">Profile</a>
+              </li>
+              <li>
+                <a class="nav-link" data-bs-toggle="pill" href="#tab2">Subscription</a>
+              </li>
+              <li>
+                <a class="nav-link" data-bs-toggle="pill" href="#tab3">Payments</a>
+              </li>
+            </ul><!-- End Tabs -->
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+
+              <div class="tab-pane fade active show" id="tab1">
+                @if($profile)
+                <table>
+                    @foreach($profile as $data)
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    @endforeach
+                </table>
+                @else
+                <p>No profile available</p>
+                @endif
+              </div><!-- End Tab 1 Content -->
+
+              <div class="tab-pane fade" id="tab2">
+                @if($user->subscriptions)
+                <table class="table">
+                    <thead>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Fee</th>
+                        <th>Start</th>
+                        <th>End</th>
+                    </thead>
+                    @foreach($user->subscriptions as $subscription)
+                    <tr>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>{!! $subscription['starts_at'] !!}</td>
+                        <td>{!! $subscription['ends_at'] !!}</td>
+                    </tr>
+                    @endforeach
+                </table>
+                @else
+                <p>No subscription yet. Let's take a look at available <a href="{{ url('plan') }}">subscription</a>.</p>
+                @endif
+              </div><!-- End Tab 2 Content -->
+
+              <div class="tab-pane fade" id="tab3">
+                @if($user->payments)
+                <table class="table">
+                    <thead>
+                        <th>Order #</th>
+                        <th>Status</th>
+                        <th>Description</th>
+                        <th>Amount (RM)</th>
+                        <th>Paid (RM)</th>
+                        <th>Action</th>
+                    </thead>
+                    @foreach($user->payments as $payment)
+                    <tr>
+                        <td>{!! $payment['billplz_id'] !!}</td>
+                        <td>{!! ucfirst($payment['status']) !!}</td>
+                        <td>{!! $payment['description'] !!}</td>
+                        <td>{!! number_format($payment['amount'],2) !!}</td>
+                        <td>{!! number_format($payment['paid'],2) !!}</td>
+                        <td>@if($payment['status'] != 'paid')
+                            <a href="{!! $payment['url'] !!}" class="btn btn-sm btn-primary" target="_blank">Pay</a>
+                            @else
+                            <a href="{!! $payment['url'] !!}" class="btn btn-sm btn-success" target="_blank">Invoice</a>
+                            @endif
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+                @else
+                <p>No subscription yet. Let's take a look at available <a href="{{ url('plan') }}">subscription</a>.</p>
+                @endif
+              </div><!-- End Tab 2 Content -->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex flex-column align-items-center text-center">
+                        <img src="https://ui-avatars.com/api/?name={!! urlencode($user['name']) !!}" alt="Admin" class="rounded-circle" width="150">
+                        <div class="mt-3">
+                            <h4>{!! $user['name'] !!}</h4>
+                            <p class="text-secondary mb-1">{!! $user['role'] !!}</p>
+                            <button type="button" class="btn btn-primary">{!! $user['email'] !!}</button>
+                            <a class="btn btn-secondary" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="col-md-6">
-                <div class="card mb-3">
-                    <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <h6 class="mb-0">Full Name</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        Hakim Danial
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <h6 class="mb-0">Gender</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        Male
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <h6 class="mb-0">Birthdate</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        19/9/1997
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <h6 class="mb-0">Email</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        example@email.com
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <h6 class="mb-0">Username</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        testusername
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <h6 class="mb-0">Password</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        **********
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <h6 class="mb-0">Last Qualification</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        PhD
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <h6 class="mb-0">Currently Teaching At Any School</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        Yes
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <h6 class="mb-0">Current School Name</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        SMK Seksyen 9, Shah Alam
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <h6 class="mb-0">Currently Attached To Any Tuition Centre</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        No
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <h6 class="mb-0">Tuition Centre Name</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        -
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <h6 class="mb-0">Subject Currently Teaching</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                        Biology
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            
-            </div>
-        </div>
+          </div>
+
+        </div><!-- End Feature Tabs -->
+
+        
+
+      </div>
+
     </section>
-    <!-- End Profile Section -->
 
 @include('footer')
 @endsection

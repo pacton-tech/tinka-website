@@ -29,7 +29,13 @@
           
             </ul> 
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+          @auth
+          <li><a class="getstarted" href="{{ route('view-profile', auth()->user()->id) }}">Dashboard</a></li>
+          @endauth
+
+          @guest
           <li><a class="getstarted scrollto" href="#">Get Started</a></li>
+          @endguest
        
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
