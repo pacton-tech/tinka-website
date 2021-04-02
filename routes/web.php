@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('payment/response', 'PaymentController@response_billplz')->name('payment-response');
+Route::post('payment/callback', 'PaymentController@callback_billplz')->name('payment-callback');
+
 Route::get('/', function () {
     return view('index');
 });
@@ -88,8 +91,3 @@ Route::resource('subscription', SubscriptionController::class);
 Route::get('subscription/book', 'SubscriptionController@store')->name('create-subscription');
 Route::resource('plan', PlanController::class);
 Route::post('plan/checkout', 'PlanController@checkout')->name('plan-checkout');
-Route::resource('payment', PaymentController::class);
-
-Route::get('/payment/response', 'PaymentController@response_billplz')->name('payment-response');
-Route::post('/payment/callback', 'PaymentController@callback_billplz')->name('payment-callback');
-
