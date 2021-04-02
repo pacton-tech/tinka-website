@@ -40,6 +40,14 @@ Plan
               <div class="row">
         <div class="col-md-12 order-md-1">
           <h4 class="mb-3">Checkout</h4>
+          @if(Session::has('error'))
+            <div class="alert alert-danger">
+                {{ Session::get('error') }}
+                @php
+                    Session::forget('error');
+                @endphp
+            </div>
+            @endif
           <form method="put" action="{{ url('payment/create') }}">
             @csrf
               @auth
@@ -51,7 +59,7 @@ Plan
               @guest
               <div class="mb-3">
                 <label for="firstName">Full name <span class="text-muted">(Required)</span></label>
-                <input type="text" class="form-control" id="name" placeholder="" value="" required="">
+                <input type="text" class="form-control" name="name" placeholder="" value="" required="">
                 <div class="invalid-feedback">
                   Valid name is required.
                 </div>
@@ -59,7 +67,7 @@ Plan
 
             <div class="mb-3">
               <label for="email">Email <span class="text-muted">(Required)</span></label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <input type="email" class="form-control" name="email" placeholder="you@example.com">
               <div class="invalid-feedback">
                 Please enter a valid email address for invoice.
               </div>
