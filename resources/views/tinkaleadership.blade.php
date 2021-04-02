@@ -112,7 +112,7 @@ Tinka Leadership
       <div class="container mt-5 mb-5 d-flex justify-content-center">
         <ul class="social-list">
             <li>
-                <div class="maincard p-3">
+                <div class="maincard">
                     <div class="thecard">
                       <a href="https://www.facebook.com/tinkamalaysia" target="_blank">
                         <div class="thefront text-center py-4 sfacebook">
@@ -126,7 +126,7 @@ Tinka Leadership
                 </div>
             </li>
             <li>
-                <div class="maincard p-3">
+                <div class="maincard">
                     <div class="thecard">
                       <a href="https://www.instagram.com/tinkamalaysia" target="_blank">
                         <div class="thefront text-center py-4 sinstagram">
@@ -141,7 +141,7 @@ Tinka Leadership
             </li>
             
            <li>
-              <div class="maincard p-3">
+              <div class="maincard">
                 <div class="thecard">
                   <a href="https://tinka.wasap.my" target="_blank">
                     <div class="thefront text-center py-4 swhatsapp">
