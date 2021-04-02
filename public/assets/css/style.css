@@ -1173,13 +1173,12 @@ section {
 .portfolio .portfolio-wrap .portfolio-links a {
   color: #fff;
   background: #4154f1;
-  margin: 10px 2px;
-  width: 36px;
+  padding: 10px;
   height: 36px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: 5px;
   transition: 0.3s;
 }
 
