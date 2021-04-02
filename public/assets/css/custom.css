@@ -188,6 +188,8 @@
   overflow: hidden;
   transition: 0.3s;
   background: #FFDE59;
+  width: 500px;
+  height: 600px;
 }
 
 .joincourse .studentbox:hover {
@@ -205,6 +207,8 @@
   overflow: hidden;
   transition: 0.3s;
   background: #9CDED9;
+  width: 500px;
+  height: 600px;
 }
 
 .joincourse .teacherbox:hover {
@@ -240,6 +244,7 @@
 
 .joincourse img {
   padding: 30px 40px;
+  height: 400px;
 }
 
 .joincourse ul {
@@ -868,4 +873,11 @@ section {
 }
 .text-secondary{
   font-family: nunito;
+}
+
+.portfolio-details .getstarted {
+  background: #4154f1;
+  padding: 8px 20px;
+  border-radius: 4px;
+  color: #fff;
 }

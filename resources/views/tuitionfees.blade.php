@@ -54,7 +54,7 @@ Tuition Fees
                     <img src="assets/img/portfolio/1.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
                      <div class="portfolio-links">
-                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
+                        <a href="/feesdetail" title="More Details"><i class="bi bi-link"></i></a>
                       </div>
                     </div>
                   </div>
@@ -159,7 +159,7 @@ Tuition Fees
                     </div>
                   </div>
                 </div>                
-                <div class="col-lg-4 col-md-6 portfolio-item filter-pmr">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-pt3">
                   <div class="portfolio-wrap">
                     <img src="assets/img/portfolio/12.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
