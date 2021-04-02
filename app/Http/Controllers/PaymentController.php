@@ -83,8 +83,8 @@ class PaymentController extends Controller
             'email' => $email,
             'name' => $name,
             'amount' => $total_amount*100, // in cent
-            'callback_url' => env('APP_URL').'/payment/callback',
-            'redirect_url' => env('APP_URL').'/payment/response'
+            'callback_url' => env('APP_URL').'/billplz/callback',
+            'redirect_url' => env('APP_URL').'/billplz/response'
         ]);
 
         /*
