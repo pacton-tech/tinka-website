@@ -64,6 +64,9 @@ Route::get('profile', function(){
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile/{id}', 'ProfileController@profile')->name('view-profile');
+    Route::get('/dashboard', function () {
+        return view('index');
+    });
 });
 
 Route::get('/register/teacher', function() {
