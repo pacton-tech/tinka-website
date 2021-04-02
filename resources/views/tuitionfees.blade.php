@@ -159,7 +159,7 @@ Tuition Fees
                     </div>
                   </div>
                 </div>                
-                <div class="col-lg-4 col-md-6 portfolio-item filter-pmr">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-pt3">
                   <div class="portfolio-wrap">
                     <img src="assets/img/portfolio/12.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
