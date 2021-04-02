@@ -13,8 +13,19 @@ class Subscription extends Model
 
     protected $fillable = [
         'user_id',
+        'plan_id',
         'starts_at',
         'ends_at',
         'payment_id'
     ];
+
+    public function payment()
+    {
+        return $this->hasOne(Payment::class);
+    }
+
+    public function plan()
+    {
+        return $this->hasOne(Plan::class);
+    }
 }
