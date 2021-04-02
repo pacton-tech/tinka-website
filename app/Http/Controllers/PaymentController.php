@@ -14,16 +14,6 @@ use Carbon\Carbon;
 class PaymentController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -34,7 +24,9 @@ class PaymentController extends Controller
 
             $request->validate([
                 'user_id' => 'required',
-                'plan_id' => 'required'
+                'plan_id' => 'required',
+                'subject' => 'required',
+                'amount' => 'required'
             ]);
 
             $user = User::find($request->input('user_id'));
@@ -49,7 +41,8 @@ class PaymentController extends Controller
                 'name' => 'required',
                 'email' => 'required|unique:users',
                 'plan_id' => 'required',
-                'agree' => 'required'
+                'subject' => 'required',
+                'amount' => 'required'
             ]);
 
             $name = $request->input('name');
@@ -71,6 +64,9 @@ class PaymentController extends Controller
             $user_id = $user['id'];
         }
 
+        $amount = $request->input('amount');
+        $subject = implode(', ', $request->input('subject'));
+
         $input = $request->all();
 
         $plan = Plan::find($input['plan_id']);
@@ -78,10 +74,10 @@ class PaymentController extends Controller
         $response = Http::withBasicAuth(env('BILLPLZ_API_KEY').':', '')
             ->post(env('BILLPLZ_URL').'v3/bills', [
             'collection_id' => env('BILLPLZ_COLLECTION_ID'),
-            'description' => 'Payment for TiNKA Subscription '.$plan['name'],
+            'description' => 'Subscription for '.$plan['name'].' with subject '.$subject,
             'email' => $email,
             'name' => $name,
-            'amount' => $plan['price']*100, // in cent
+            'amount' => $amount*100, // in cent
             'callback_url' => env('APP_URL').'/payment/callback',
             'redirect_url' => env('APP_URL').'/payment/response'
         ]);
@@ -134,42 +130,40 @@ class PaymentController extends Controller
 
     public function response_billplz(Request $request)
     {
+        $billplz = $request->input('billplz');;
+        
         /*
-        id="W_79pJDk"
-        &collection_id="599"
-        &paid="true"
-        &state="paid"
-        &amount="200"
-        &paid_amount="0"
-        &due_at="2020-12-31"
-        &email="api@billplz.com"
-        &mobile="+60112223333"
-        &name="MICHAEL API"
-        &metadata[id]="9999"
-        &metadata[description]="This is to test bill creation"
-        &url="http://billplz.dev/bills/W_79pJDk"
-        &paid_at="2015-03-09 16:23:59 +0800"
+        array:4 [
+          "id" => "xltgy8w4"
+          "paid" => "true"
+          "paid_at" => "2021-04-02 21:32:13 +0800"
+          "x_signature" => "4d9335b300c9956476cfd72e70f486fed60e7f340e134aef8ee8625c2bd64c7f"
+        ]
         */
 
         // Update billplz payment
-        $payment = Payment::update([
-            'billplz_id' => $_POST['id'],
-            'amount' => $_POST['paid_amount']/100,
-            'paid' => $response['paid'],
-            'status' => $_POST['state']
+
+        if($billplz['paid'] == 'true'){
+            $status = 'active';
+        } else {
+            $status = 'due';
+        }
+
+        Payment::where('billplz_id', $billplz['id'])->update([
+            'paid' => $billplz['paid'],
+            'status' => $status
         ]);
 
-        if($response['paid'] == 'true'){
-
-            $user = User::where('email', $_POST['email'])->first();
-            $plan = Payment::where('billplz_id', $_POST['id'])->first();
+        $payment = Payment::where('billplz_id', $billplz['id'])->first();
+        
+        if($billplz['paid'] == 'true'){
 
             // create subscription
             Subscription::create([
-                'user_id' => $user['id'],
-                'plan_id' => $plan['id'],
+                'user_id' => $payment['user_id'],
+                'plan_id' => $payment['plan_id'],
                 'starts_at' => Carbon::now(),
-                'ends_at' => Carbon::addMonth(),
+                'ends_at' => Carbon::now()->addMonth(),
                 'payment_id' => $payment['id']
             ]);
         }
@@ -180,101 +174,48 @@ class PaymentController extends Controller
     public function callback_billplz(Request $request)
     {
         /*
-        id="W_79pJDk"
-        &collection_id="599"
-        &paid="true"
-        &state="paid"
-        &amount="200"
-        &paid_amount="0"
-        &due_at="2020-12-31"
-        &email="api@billplz.com"
-        &mobile="+60112223333"
-        &name="MICHAEL API"
-        &metadata[id]="9999"
-        &metadata[description]="This is to test bill creation"
-        &url="http://billplz.dev/bills/W_79pJDk"
-        &paid_at="2015-03-09 16:23:59 +0800"
+        {
+            :id=>"zq0tm2wc",
+            :collection_id=>"yhx5t1pp",
+            :paid=>true,
+            :state=>"paid",
+            :amount=>100,
+            :paid_amount=>100,
+            :due_at=>"2018-9-27",
+            :email=>"tester@test.com",
+            :mobile=>nil,
+            :name=>"TESTER",
+            :url=>"http://www.billplz-sandbox.com/bills/zq0tm2wc",
+            :paid_at=>"2018-09-27 15:15:09 +0800",
+            :x_signature=>"0fe0a20b8d557eeae570377783d062a3816a9ea80f368860bacfa7ec3ca4d00e"
+        }
         */
 
-        // Update billplz payment
-        $payment = Payment::update([
-            'billplz_id' => $_POST['id'],
-            'amount' => $_POST['paid_amount']/100,
-            'paid' => $response['paid'],
-            'status' => $_POST['state']
+        if($_POST['paid'] == 'true'){
+            $status = 'active';
+        } else {
+            $status = 'due';
+        }
+
+        Payment::where('billplz_id', $_POST['id'])->update([
+            'paid' => $_POST['paid'],
+            'status' => $status
         ]);
 
-        if($response['paid'] == 'true'){
+        $payment = Payment::where('billplz_id', $_POST['id'])->first();
 
-            $user = User::where('email', $_POST['email'])->first();
-            $plan = Payment::where('billplz_id', $_POST['id'])->first();
+        if($_POST['paid'] == 'true'){
 
             // create subscription
             Subscription::create([
-                'user_id' => $user['id'],
-                'plan_id' => $plan['id'],
+                'user_id' => $payment['user_id'],
+                'plan_id' => $payment['plan_id'],
                 'starts_at' => Carbon::now(),
-                'ends_at' => Carbon::addMonth(),
+                'ends_at' => Carbon::now()->addMonth(),
                 'payment_id' => $payment['id']
             ]);
         }
 
         echo 'OK';
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
