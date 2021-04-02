@@ -157,10 +157,12 @@ class PaymentController extends Controller
         if($response['paid'] == 'true'){
 
             $user = User::where('email', $_POST['email'])->first();
+            $plan = Payment::where('billplz_id', $_POST['id'])->first();
 
             // create subscription
             Subscription::create([
                 'user_id' => $user['id'],
+                'plan_id' => $plan['id'],
                 'starts_at' => Carbon::now(),
                 'ends_at' => Carbon::addMonth()
                 'payment_id' => $payment['id']
