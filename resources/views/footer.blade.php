@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row gy-4">
 
-          <div class="col-lg-3 col-6 footer-links">
+          <div class="col-lg-3 col-sm-12 footer-links">
             <h4>Customer Service</h4>
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a href="/contact">Contact Us</a></li>
@@ -15,7 +15,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-3 col-6 footer-links">
+          <div class="col-lg-3 col-sm-12 footer-links">
             <h4>About Us</h4>
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a href="./assets/PDPR Press Release_21012021.pdf" target="_blank">Press/Media</a></li>
@@ -26,7 +26,7 @@
             </ul>
           </div>
           
-          <div class="col-lg-6 col-6 footer-links">
+          <div class="col-lg-6 col-sm-12 footer-links">
 
                <div class="app-links">
                  <h4>Download Our App Now</h4>

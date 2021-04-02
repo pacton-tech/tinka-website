@@ -1,4 +1,4 @@
-<header id="header" class="header fixed-top">
+<header id="header" class="header">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="/" class="logo d-flex align-items-center">
