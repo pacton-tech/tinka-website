@@ -76,7 +76,7 @@ Plan
 
             <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input" id="agree">
-              <label class="custom-control-label" for="agree" name="agree">I agree to the <a href="{{ url('terms-and-conditons') }}" target="_blank">{{ env('APP_NAME') }}'s terms and conditions</a></label>
+              <label class="custom-control-label" for="agree" name="agree">I agree to the <a href="{{ url('terms-and-conditons') }}" target="_blank" required>{{ env('APP_NAME') }}'s terms and conditions</a></label>
             </div>
             <input type="hidden" name="plan_id" value="{{ $plan['id'] }}">
           
