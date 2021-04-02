@@ -364,11 +364,7 @@
   font-size: 20px
 }
 
-@media (max-width:700px) {
-  .social-list {
-      display: block;
-  }
-}
+
 
 .sfacebook {
   background: #3F3D56;
