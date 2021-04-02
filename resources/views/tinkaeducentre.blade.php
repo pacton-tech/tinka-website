@@ -41,18 +41,13 @@ Tinka Educentre
                     Currently, TINKA™ Educentre has 25 tutors (“Tink-educators”) who 
                     covers Standard 1 to Form 5 students including IGCSE.
                 </p>
-                <div class="text-center text-lg-start">
-                  <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                    <span>Tinka Educentre</span>
-                    <i class="bi bi-arrow-right"></i>
-                  </a>
-                </div>
-  
+                
                </div>
             </div>
   
             <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-                <video class="img-fluid" width="900"  controls src="./assets/video/tinkavideo.mp4"></video>                </div>
+                <video class="img-fluid" width="900"  controls src="./assets/video/tinkavideo.mp4"></video>                <
+            </div>
   
           </div>
         </div>
