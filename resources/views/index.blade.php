@@ -141,7 +141,7 @@ TiNKA - Education. Everywhere.
     
             <div class="row gy-4" data-aos="fade-left">
      
-              <div class="col-lg-6 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+              <div class="col-lg-6 col-md-6 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="300">
                 <div class="studentbox">
                   <h3 style="color: #1B1464;">Students</h3>
                   <img src="assets/img/offeredclass/studentscropped.png" class="img-fluid" alt="">
@@ -150,7 +150,7 @@ TiNKA - Education. Everywhere.
                 </div>
               </div>
 
-              <div class="col-lg-6 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+              <div class="col-lg-6 col-md-6 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="200">
                 <div class="teacherbox">
                   <h3 style="color: #1B1464;">Tinka Tutor</h3>
                   <img src="assets/img/offeredclass/tinka tutor cropped.png" class="img-fluid" alt="">
