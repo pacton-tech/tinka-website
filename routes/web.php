@@ -91,3 +91,4 @@ Route::resource('subscription', SubscriptionController::class);
 Route::get('subscription/book', 'SubscriptionController@store')->name('create-subscription');
 Route::resource('plan', PlanController::class);
 Route::post('plan/checkout', 'PlanController@checkout')->name('plan-checkout');
+Route::resource('payment', PaymentController::class);
