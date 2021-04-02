@@ -66,19 +66,15 @@ Profile
                 @if($user->subscriptions)
                 <table class="table">
                     <thead>
-                        <th>No.</th>
                         <th>Name</th>
                         <th>Description</th>
-                        <th>Fee</th>
                         <th>Start</th>
                         <th>End</th>
                     </thead>
                     @foreach($user->subscriptions as $subscription)
                     <tr>
-                        <td>1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{!! $subscription->plan->name !!}</td>
+                        <td>{!! $subscription->plan->description !!}</td>
                         <td>{!! $subscription['starts_at'] !!}</td>
                         <td>{!! $subscription['ends_at'] !!}</td>
                     </tr>
@@ -97,7 +93,6 @@ Profile
                         <th>Status</th>
                         <th>Description</th>
                         <th>Amount (RM)</th>
-                        <th>Paid (RM)</th>
                         <th>Action</th>
                     </thead>
                     @foreach($user->payments as $payment)
@@ -106,8 +101,7 @@ Profile
                         <td>{!! ucfirst($payment['status']) !!}</td>
                         <td>{!! $payment['description'] !!}</td>
                         <td>{!! number_format($payment['amount'],2) !!}</td>
-                        <td>{!! number_format($payment['paid'],2) !!}</td>
-                        <td>@if($payment['status'] != 'paid')
+                        <td>@if($payment['status'] != 'active')
                             <a href="{!! $payment['url'] !!}" class="btn btn-sm btn-primary" target="_blank">Pay</a>
                             @else
                             <a href="{!! $payment['url'] !!}" class="btn btn-sm btn-success" target="_blank">Invoice</a>

@@ -8,7 +8,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="/">Home</a></li>
           <li class="dropdown"><a href="/about"><span>About Us</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/about">About Tinka</a></li>
@@ -20,7 +20,7 @@
               <li><a href="/tinkaapp">Tinka App</a></li>
               <li><a href="/teachers">Tinka Teachers</a></li>
             </ul>
-          <li><a class="nav-link scrollto" href="/tuitionfees">Tuition Fees</a></li>
+          <li><a class="nav-link scrollto" href="/plan">Tuition Fees</a></li>
           
           <li class="dropdown" ><a href="#"><span>Join Us</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
