@@ -41,23 +41,24 @@ Plan
               <div class="row">
         <div class="col-md-12 order-md-1">
           <h4 class="mb-3">Checkout</h4>
-          @if(Session::has('error'))
-            <div class="alert alert-danger">
-                {{ Session::get('error') }}
-                @php
-                    Session::forget('error');
-                @endphp
-            </div>
-            @endif
+          @if ($errors->any())
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif
           <form method="put" action="{{ url('payment/create') }}" name="checkout">
             <h3>Subject Selection</h3>
               <?php $subject = explode(',', $plan['subjects']); ?>
-              <div class="custom-control custom-checkbox mb-3">
-                @foreach($subject as $key => $value)
-                <input type="checkbox" class="custom-control-input" id="subject-{{ $key }}" name="subject[]" onclick="chkcontrol({{ $key-1 }})" value="{{ $value }}">
-                <label class="custom-control-label" for="subject-{{ $key }}" name="agree">{{ $value }}</label>
-                @endforeach
+              @foreach($subject as $key => $value)
+              <div class="form-check form-check-inline">
+                <input type="checkbox" class="form-check-input" id="subject-{{ $key }}" name="subjects[]" onclick="checkBoxLimit()" value="{{ $value }}">
+                <label class="form-check-label" for="subject-{{ $key }}" name="agree">{{ $value }}</label>
               </div>
+              @endforeach
             @csrf
               @auth
               <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
@@ -80,16 +81,16 @@ Plan
             @endguest
 
             @php
-            $amount = ($plan['price']*2) + $plan['signup_fee'] + $plan['exam_fee'];
+            $extra = $plan['signup_fee'] + $plan['exam_fee'];
             @endphp
-            <h4>Total price: RM {{ number_format($amount,2) }}</h4>
             <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input" id="agree">
               <label class="custom-control-label" for="agree" name="agree">I agree to the <a href="{{ url('terms-and-conditons') }}" target="_blank" required>{{ env('APP_NAME') }}'s terms and conditions</a></label>
             </div>
             <span class="text-danger">{{ $errors->first('agree') }}</span>
             <input type="hidden" name="plan_id" value="{{ $plan['id'] }}">
-            <input type="hidden" name="amount" value="{{ $amount }}">
+            <input type="hidden" name="extra_amount" value="{{ $extra }}">
+            <input type="hidden" name="price" value="{{ $plan['price'] }}">
         </div>
       </div>
       <hr class="mb-4">
@@ -103,11 +104,11 @@ Plan
                 <h5>Disclaimer</h5>
                 <ul>
                   <li>4 lesson per month for every subject</li>
-                  <li>We reserve the rights to refuce entry into class for late payments</li>
+                  <li>We reserve the rights to refuse entry into class for late payments</li>
                   <li>Fees must be paid before the second class of the month</li>
                 </ul>
               </div>
-              <p><img height="24px" src="https://cdn02.billplz.com/assets/v1/Billplz_Blue-3153732736cf969cb5d2e23e3e8fa4b3e2292b87d4b19b581b27ee93940b0bc2.svg"> is the payment gateway and subject to agreed <a href="https://www.billplz.com/privacy" target="_blank">terms and conditions</a></p>
+              <p><img height="24px" src="https://cdn02.billplz.com/assets/v1/Billplz_Blue-3153732736cf969cb5d2e23e3e8fa4b3e2292b87d4b19b581b27ee93940b0bc2.svg"> is the payment gateway provider. By subscribing to this service, you are subject to bind with their <a href="https://www.billplz.com/privacy" target="_blank">terms and conditions</a></p>
             </div>
           </div>
 </form>
@@ -127,19 +128,25 @@ Plan
 
 @push('js')
 <script type="text/javascript">
-  function chkcontrol(j) {
-    var total = 0;
-    var max = {{ $plan['maximum_subject'] }};
-    for(var i=0; i < document.checkout.subject.length; i++){
-      if(document.checkout.subject[i].checked){
-        total = total+1;
+  function checkBoxLimit() {
+  var checkBoxGroup = document.forms['checkout']['subjects[]'];     
+  var max_sub = {{ $plan['maximum_subject'] }};
+  var min_sub = {{ $plan['minimum_subject'] }};
+  for (var i = 0; i < checkBoxGroup.length; i++) {
+    checkBoxGroup[i].onclick = function() {
+      var checkedcount = 0;
+      for (var i = 0; i < checkBoxGroup.length; i++) {
+        checkedcount += (checkBoxGroup[i].checked) ? 1 : 0;
       }
-      if(total > max){
-        alert("Please select only " + max + " subject") 
-        document.checkout.subject[j].checked = false ;
-      return false;
+      if (checkedcount < min_sub) {
+        alert("You must select minimum of " + min_sub + " subject.");
+      }
+      if (checkedcount > max_sub) {
+        alert("You can select maximum of " + max_sub + " subject.");
+        this.checked = false;
       }
     }
   }
+}
 </script>
 @endpush

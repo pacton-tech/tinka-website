@@ -25,8 +25,9 @@ class PaymentController extends Controller
             $request->validate([
                 'user_id' => 'required',
                 'plan_id' => 'required',
-                'subject' => 'required',
-                'amount' => 'required'
+                'subjects' => 'required',
+                'price' => 'required',
+                'extra_amount' => 'required'
             ]);
 
             $user = User::find($request->input('user_id'));
@@ -41,8 +42,9 @@ class PaymentController extends Controller
                 'name' => 'required',
                 'email' => 'required|unique:users',
                 'plan_id' => 'required',
-                'subject' => 'required',
-                'amount' => 'required'
+                'subjects' => 'required',
+                'extra_amount' => 'required',
+                'price' => 'required'
             ]);
 
             $name = $request->input('name');
@@ -64,8 +66,11 @@ class PaymentController extends Controller
             $user_id = $user['id'];
         }
 
-        $amount = $request->input('amount');
-        $subject = implode(', ', $request->input('subject'));
+        $extra_amount = $request->input('extra_amount');
+        $price = $request->input('price');
+        $subject = implode(', ', $request->input('subjects'));
+        $total_subject = count($request->input('subjects'));
+        $total_amount = ($price * $total_subject) + $extra_amount;
 
         $input = $request->all();
 
@@ -77,7 +82,7 @@ class PaymentController extends Controller
             'description' => 'Subscription for '.$plan['name'].' with subject '.$subject,
             'email' => $email,
             'name' => $name,
-            'amount' => $amount*100, // in cent
+            'amount' => $total_amount*100, // in cent
             'callback_url' => env('APP_URL').'/payment/callback',
             'redirect_url' => env('APP_URL').'/payment/response'
         ]);
