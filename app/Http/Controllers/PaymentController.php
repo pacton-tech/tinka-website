@@ -164,7 +164,7 @@ class PaymentController extends Controller
                 'user_id' => $user['id'],
                 'plan_id' => $plan['id'],
                 'starts_at' => Carbon::now(),
-                'ends_at' => Carbon::addMonth()
+                'ends_at' => Carbon::addMonth(),
                 'payment_id' => $payment['id']
             ]);
         }
