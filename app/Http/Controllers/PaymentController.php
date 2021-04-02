@@ -34,7 +34,8 @@ class PaymentController extends Controller
 
             $request->validate([
                 'user_id' => 'required',
-                'plan_id' => 'required'
+                'plan_id' => 'required',
+                'agree' => 'required'
             ]);
 
             $user = User::find($request->input('user_id'));
@@ -48,7 +49,8 @@ class PaymentController extends Controller
             $request->validate([
                 'name' => 'required',
                 'email' => 'required|unique:users',
-                'plan_id' => 'required'
+                'plan_id' => 'required',
+                'agree' => 'required'
             ]);
 
             $name = $request->input('name');

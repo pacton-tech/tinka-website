@@ -59,18 +59,14 @@ Plan
               @guest
               <div class="mb-3">
                 <label for="firstName">Full name <span class="text-muted">(Required)</span></label>
-                <input type="text" class="form-control" name="name" placeholder="" value="" required="">
-                <div class="invalid-feedback">
-                  Valid name is required.
-                </div>
+                <input type="text" class="form-control" name="name" {{ $errors->has('name') ? 'has-error' : '' }} value="{{ old('name') }}">
+                <span class="text-danger">{{ $errors->first('name') }}</span>
               </div>
 
             <div class="mb-3">
               <label for="email">Email <span class="text-muted">(Required)</span></label>
-              <input type="email" class="form-control" name="email" placeholder="you@example.com">
-              <div class="invalid-feedback">
-                Please enter a valid email address for invoice.
-              </div>
+              <input type="email" class="form-control" name="email" placeholder="you@example.com" {{ $errors->has('email') ? 'has-error' : '' }} value="{{ old('email') }}">
+              <span class="text-danger">{{ $errors->first('email') }}</span>
             </div>
             @endguest
 
@@ -78,6 +74,7 @@ Plan
               <input type="checkbox" class="custom-control-input" id="agree">
               <label class="custom-control-label" for="agree" name="agree">I agree to the <a href="{{ url('terms-and-conditons') }}" target="_blank" required>{{ env('APP_NAME') }}'s terms and conditions</a></label>
             </div>
+            <span class="text-danger">{{ $errors->first('agree') }}</span>
             <input type="hidden" name="plan_id" value="{{ $plan['id'] }}">
           
         </div>
