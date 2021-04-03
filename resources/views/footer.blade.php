@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row gy-4">
 
-          <div class="col-lg-3 col-sm-12 footer-links">
+          <div class="col-lg-2 col-sm-12 footer-links">
             <h4>Customer Service</h4>
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a href="/contact">Contact Us</a></li>
@@ -15,13 +15,21 @@
             </ul>
           </div>
 
-          <div class="col-lg-3 col-sm-12 footer-links">
+          <div class="col-lg-2 col-sm-12 footer-links">
             <h4>About Us</h4>
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a href="./assets/PDPR Press Release_21012021.pdf" target="_blank">Press/Media</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="./assets/TiNKA - Schedule 1 (Terms & Conditions of Subscription).pdf" target="_blank">Terms & Condition</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="/register/teacher">Tutor Registration</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-sm-12 footer-links">
+            <h4>Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="/login">Login</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/password/reset">Reset Password</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/register/student">Student Registration</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="/register/student">Student Registration</a></li>
             </ul>
           </div>

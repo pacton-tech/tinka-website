@@ -22,7 +22,7 @@ Profile
     </div>
   </section><!-- End Breadcrumbs -->
 
-    <section id="features" class="features">
+    <section>
 
       <div class="container aos-init aos-animate" data-aos="fade-up">
 
@@ -48,22 +48,65 @@ Profile
             <div class="tab-content">
 
               <div class="tab-pane fade active show" id="tab1">
-                @if($profile)
-                <table>
-                    @foreach($profile as $data)
+                @if(isset($profile))
+                <table class="table">
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td>Date of Birth</td>
+                        <td>{{ $profile->birthday }}</td>
                     </tr>
-                    @endforeach
+                    <tr>
+                        <td>Gender</td>
+                        <td>{{ ucfirst($profile->gender) }}</td>
+                    </tr>
+                    <tr>
+                        <td>Qualification</td>
+                        <td>{{ strtoupper($profile->qualification) }}</td>
+                    </tr>
+                    @if($user['role'] == 'teacher')
+                    <tr>
+                        <td>Curently teaching</td>
+                        <td>{{ strtoupper($profile->teaching) }}</td>
+                    </tr>
+                    <tr>
+                        <td>Current School</td>
+                        <td>{{ strtoupper($profile->current_school) }}</td>
+                    </tr>
+                    <tr>
+                        <td>Current Tuition Center</td>
+                        <td>{{ strtoupper($profile->current_tuition) }}</td>
+                    </tr>
+                    <tr>
+                        <td>Subject</td>
+                        <td>{{ ucfirst($profile->subject) }}</td>
+                    </tr>
+                    @endif
+
+                    @if($user['role'] == 'student')
+                    <tr>
+                        <td>Father/Mother/Guardian's name</td>
+                        <td>{{ strtoupper($profile->father_name) }}</td>
+                    </tr>
+                    <tr>
+                        <td>Father/Mother/Guardian's contact No.</td>
+                        <td>{{ strtoupper($profile->mother_name) }}</td>
+                    </tr>
+                    <tr>
+                        <td>Current School</td>
+                        <td>{{ strtoupper($profile->current_school) }}</td>
+                    </tr>
+                    <tr>
+                        <td>Subject Interested</td>
+                        <td>{{ ucfirst($profile->interest) }}</td>
+                    </tr>
+                    @endif
                 </table>
                 @else
-                <p>No profile available</p>
+                <p>No profile available. <a class="btn btn-success" href="{{ route('create-profile', $user['id']) }}">Create new profile</a></p>
                 @endif
               </div><!-- End Tab 1 Content -->
 
               <div class="tab-pane fade" id="tab2">
-                @if($user->subscriptions)
+                @if(is_array($user->subscriptions))
                 <table class="table">
                     <thead>
                         <th>Name</th>
@@ -86,7 +129,7 @@ Profile
               </div><!-- End Tab 2 Content -->
 
               <div class="tab-pane fade" id="tab3">
-                @if($user->payments)
+                @if(is_array($user->payments))
                 <table class="table">
                     <thead>
                         <th>Order #</th>
@@ -111,7 +154,7 @@ Profile
                     @endforeach
                 </table>
                 @else
-                <p>No subscription yet. Let's take a look at available <a href="{{ url('plan') }}">subscription</a>.</p>
+                <p>No payment details yet. Let's take a look at available <a href="{{ url('plan') }}">subscription</a>.</p>
                 @endif
               </div><!-- End Tab 2 Content -->
 
@@ -123,11 +166,16 @@ Profile
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img src="https://ui-avatars.com/api/?name={!! urlencode($user['name']) !!}" alt="Admin" class="rounded-circle" width="150">
+                      {{-- @if(isset($profile))
+                        <img src="{{ Storage::url('uploads/avatars/'.$profile['avatar']) }}" alt="{{ $user['name'] }}" class="rounded-circle" width="150">
+                      @else --}}
+                        <img src="https://ui-avatars.com/api/?name={!! urlencode($user['name']) !!}" alt="{{ $user['name'] }}" class="rounded-circle" width="150">
+                      {{-- @endif --}}
                         <div class="mt-3">
                             <h4>{!! $user['name'] !!}</h4>
-                            <p class="text-secondary mb-1">{!! $user['role'] !!}</p>
-                            <button type="button" class="btn btn-primary">{!! $user['email'] !!}</button>
+                            <p class="text-secondary mb-1">{!! ucfirst($user['role']) !!}</p>
+                            <p class="text-secondary mb-1">{!! $user['email'] !!}</p>
+                            <a class="btn btn-success" href="{{ route('change-password', $user['id']) }}">Change Password</a>
                             <a class="btn btn-secondary" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">

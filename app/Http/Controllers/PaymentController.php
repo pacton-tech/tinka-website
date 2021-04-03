@@ -10,6 +10,9 @@ use App\Models\Plan;
 use App\Models\Subscription;
 use Hash;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeMail;
+use App\Mail\PlanRegistration;
 
 class PaymentController extends Controller
 {
@@ -63,6 +66,15 @@ class PaymentController extends Controller
 
             // save user to db
             $user->save();
+
+            $data = ([
+                'name' => $user['name'],
+                'email' => $user['email'],
+                'temporary_password' => $temp_password
+            ]);
+
+            Mail::to($user['email'])->send(new WelcomeMail($data));
+
             $user_id = $user['id'];
         }
 
@@ -173,6 +185,22 @@ class PaymentController extends Controller
             ]);
         }
 
+        if($billplz['paid'] == 'true'){
+
+            // send email notification
+            $data = ([
+                'invoice' => $payment['billplz_id'],
+                'description' => $payment['description'],
+                'amount' => $payment['amount'],
+                'url' => $payment['url'],
+                'updated_at' => $payment['updated_at'],
+                'starts_at' => Carbon::now(),
+                'ends_at' => Carbon::now()->addMonth()
+            ]);
+
+            Mail::to($user['email'])->send(new PlanRegistration($data));
+        }
+
         return view('payment.receipt', compact('payment'));
     }
 
@@ -219,6 +247,20 @@ class PaymentController extends Controller
                 'ends_at' => Carbon::now()->addMonth(),
                 'payment_id' => $payment['id']
             ]);
+        }
+
+        if($_POST['paid'] == 'true'){
+
+            // send email notification
+            $data = ([
+                'invoice' => $payment['billplz_id'],
+                'description' => $payment['description'],
+                'amount' => $payment['amount'],
+                'url' => $payment['url'],
+                'updated_at' => $payment['updated_at']
+            ]);
+
+            Mail::to($user['email'])->send(new PlanRegistration($data));
         }
 
         echo 'OK';
