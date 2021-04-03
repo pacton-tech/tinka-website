@@ -42,14 +42,14 @@ Plan
         <div class="col-md-12 order-md-1">
           <h4 class="mb-3">Checkout</h4>
           @if ($errors->any())
-                  <div class="alert alert-danger">
-                      <ul>
-                          @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                          @endforeach
-                      </ul>
-                  </div>
-              @endif
+            <div class="alert alert-danger">
+              <ul>
+                @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
+          @endif
           <form method="put" action="{{ url('payment/create') }}" name="checkout">
             <h3>Subject Selection</h3>
               <?php $subject = explode(',', $plan['subjects']); ?>
@@ -67,6 +67,9 @@ Plan
               @endauth
 
               @guest
+              <div class="alert alert-info">
+                If you're already registered, you can login <a href="/login">here</a>
+              </div>
               <div class="mb-3">
                 <label for="firstName">Full name <span class="text-muted">(Required)</span></label>
                 <input type="text" class="form-control" name="name" {{ $errors->has('name') ? 'has-error' : '' }} value="{{ old('name') }}">
@@ -85,7 +88,7 @@ Plan
             @endphp
             <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input" id="agree">
-              <label class="custom-control-label" for="agree" name="agree">I agree to the <a href="{{ url('terms-and-conditons') }}" target="_blank" required>{{ env('APP_NAME') }}'s terms and conditions</a></label>
+              <label class="custom-control-label" for="agree" name="agree">I agree to the <a href="{{ url('terms-and-conditions') }}" target="_blank" required>{{ env('APP_NAME') }}'s terms and conditions</a></label>
             </div>
             <span class="text-danger">{{ $errors->first('agree') }}</span>
             <input type="hidden" name="plan_id" value="{{ $plan['id'] }}">
