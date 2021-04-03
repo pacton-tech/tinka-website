@@ -106,7 +106,7 @@ Profile
               </div><!-- End Tab 1 Content -->
 
               <div class="tab-pane fade" id="tab2">
-                @if(is_array($user->subscriptions))
+                @if(isset($user->subscriptions))
                 <table class="table">
                     <thead>
                         <th>Name</th>
@@ -129,7 +129,7 @@ Profile
               </div><!-- End Tab 2 Content -->
 
               <div class="tab-pane fade" id="tab3">
-                @if(is_array($user->payments))
+                @if(isset($user->payments))
                 <table class="table">
                     <thead>
                         <th>Order #</th>
