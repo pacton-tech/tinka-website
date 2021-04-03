@@ -67,19 +67,23 @@ Route::get('profile', function(){
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile/{id}', 'ProfileController@profile')->name('view-profile');
+    Route::get('/profile/change-password/{id}', 'ProfileController@change_password')->name('change-password');
+    Route::post('/profile/reset-password', 'ProfileController@reset_password')->name('reset-password');
+    Route::get('/profile/create-profile/{id}', 'ProfileController@create_profile')->name('create-profile');
     Route::get('/dashboard', function () {
         return view('index');
     });
 });
 
-Route::get('/register/teacher', function() {
+/*Route::get('/register/teacher', function() {
     return view('coming-soon');
 });
 Route::get('/register/student', function() {
     return view('coming-soon');
-});
-//Route::get('/register/teacher', 'TeacherController@create')->name('register-teacher');
-//Route::get('/register/student', 'StudentController@create')->name('register-student');
+});*/
+
+Route::get('/register/teacher', 'TeacherController@create')->name('register-teacher');
+Route::get('/register/student', 'StudentController@create')->name('register-student');
 
 Route::post('/create/teacher', 'TeacherController@store')->name('create-teacher');
 Route::post('/create/student', 'StudentController@store')->name('create-student');
