@@ -15,7 +15,7 @@ TiNKA - Education. Everywhere.
           <h1 data-aos="fade-up">TINKA EDUCENTRE</h1>
           <h2 data-aos="fade-up" data-aos-delay="400">Tinka Educentre is keen to provide 
             quality education at an affordable pricing and  a conducive learning
-            environment to students. Opening soon at Bukit Jelutong! </h2>
+            environment to students. Visit us at Bukit Jelutong! </h2>
           <hr>
           <h1 data-aos="fade-left" data-aos-delay="600">UPSR . PT3 . SPM . IGCSE     </h1>
           

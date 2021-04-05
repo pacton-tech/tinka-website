@@ -45,7 +45,7 @@ Tinka App
               <div>
                 <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
                   <span>Get The App</span>
-                  <i class="bi bi-arrow-right"></i>
+                  <i class="bi bi-arrow-down"></i>
                 </a>
               </div>
           </center>
