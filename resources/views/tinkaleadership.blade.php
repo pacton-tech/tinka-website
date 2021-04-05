@@ -16,7 +16,7 @@ Tinka Leadership
       <div class="container">
   
         <ol>
-          <li><a href="index.html">Home</a></li>
+        <li><a href="/">Home</a></li>
           <li>About Us</li>
           <li>Tinka Leadership</li>
         </ol>

@@ -16,7 +16,7 @@ Tinka App
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
+        <li><a href="/">Home</a></li>
           <li>Product & Services</li>
           <li>Tinka App</li>
         </ol>
