@@ -70,7 +70,7 @@ Tinka App
       <div class="row g-0 py-3 py-md-0">
         <div class="col-md-6 mb-4 mb-md-0">
           <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
-           <img src="./assets/img/offeredclass/onlinelearning.png" alt="">
+           <img src="./assets/img/offeredclass/onlinelearning2.png" width="400" alt="">
           </div>
         </div>
         <div class="col-md-6">
@@ -89,7 +89,7 @@ Tinka App
           <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
             <div class="my-auto mx-auto text-center" style="max-width: 450px;">
               <h2 style="font-weight: bold; text-align: left; color: #1B1464">Professionally trained educators</h2>
-              <p style="text-align: justify; color: #1B1464;">Learn from our mobile app at the comfort of your own home or literally from anywhere! It's smart, easy-to-use and best of all, convenient!</p>
+              <p style="text-align: justify; color: #1B1464;">Our teachers are professionally trained and are carefully vetted, to ensure that your child gets the best!</p>
             </div>
           </div>     
         </div>
@@ -111,7 +111,7 @@ Tinka App
           <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
             <div class="my-auto mx-auto text-center" style="max-width: 450px;">
               <h2 style="font-weight: bold; text-align: justify; color: #1B1464">Track your child's learning</h2>
-              <p style="text-align: justify; color: #1B1464;">Our teachers are professionally trained and are carefully vetted, to ensure that your child gets the best!</p>
+              <p style="text-align: justify; color: #1B1464;">Our AI powered app generates a comprehensive online report on your child's learning. We are able to step in wherever help is needed.</p>
             </div>
           </div>
         </div>
@@ -123,7 +123,7 @@ Tinka App
           <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
             <div class="my-auto mx-auto text-center" style="max-width: 450px;">
               <h2 style="font-weight: bold; text-align: left; color: #1B1464"> Accessible lesson videos</h2>
-              <p style="text-align: justify; color: #1B1464;">Need a refresher before an exam? Our lesson videos are recorded and available at your fingertips when needed!</p>
+              <p style="text-align: justify; color: #1B1464;">Need a refresher before an exam? Our lesson videos are recorded and available at your fingertips when needed.</p>
             </div>
           </div>     
         </div>
