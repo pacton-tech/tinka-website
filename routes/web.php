@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('billplz/response', 'PaymentController@response_billplz')->name('payment-response');
+Route::post('billplz/callback', 'PaymentController@callback_billplz')->name('payment-callback');
+
 Route::get('/', function () {
     return view('index');
 });
@@ -65,6 +68,47 @@ Route::get('/faq', function() {
 Route::get('/teachers', function() {
     return view('teachers');
 });
+
+Route::get('profile', function(){
+    return view('profile');
+});
+
+Route::get('terms-and-conditions', function(){
+    return view('terms-and-conditions');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile/{id}', 'ProfileController@profile')->name('view-profile');
+    Route::get('/profile/change-password/{id}', 'ProfileController@change_password')->name('change-password');
+    Route::post('/profile/reset-password', 'ProfileController@reset_password')->name('reset-password');
+    Route::get('/profile/create-profile/{id}', 'ProfileController@create_profile')->name('create-profile');
+    Route::get('/dashboard', function () {
+        return view('index');
+    });
+});
+
+/*Route::get('/register/teacher', function() {
+    return view('coming-soon');
+});
+Route::get('/register/student', function() {
+    return view('coming-soon');
+});*/
+
+Route::get('/register/teacher', 'TeacherController@create')->name('register-teacher');
+Route::get('/register/student', 'StudentController@create')->name('register-student');
+
+Route::post('/create/teacher', 'TeacherController@store')->name('create-teacher');
+Route::post('/create/student', 'StudentController@store')->name('create-student');
+
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('faqs', FaqController::class);
+Route::resource('subscription', SubscriptionController::class);
+Route::get('subscription/book', 'SubscriptionController@store')->name('create-subscription');
+Route::resource('plan', PlanController::class);
+Route::post('plan/checkout', 'PlanController@checkout')->name('plan-checkout');
+Route::resource('payment', PaymentController::class);
+
 Route::resource('faqs', FaqController::class);
 Route::resource('faqcategories', CategoryController::class);
 Route::resource('faqsubcategories', SubcategoryController::class);
