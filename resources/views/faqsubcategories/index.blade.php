@@ -31,7 +31,7 @@
              <th>No</th>
              <th>Subcategory</th>
 
-             <th width="140px">Action</th>
+             <th width="180px">Action</th>
          </tr>
          @foreach ($faqsubcategories as $subcategory)
          <tr>

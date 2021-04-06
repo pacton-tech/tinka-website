@@ -112,3 +112,6 @@ Route::resource('payment', PaymentController::class);
 Route::resource('faqs', FaqController::class);
 Route::resource('faqcategories', CategoryController::class);
 Route::resource('faqsubcategories', SubcategoryController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
