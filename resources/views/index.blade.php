@@ -63,7 +63,7 @@ TiNKA - Education. Everywhere.
             <div class="onlinebox" data-aos="fade-up" data-aos-delay="400">
               <h3>Online Class</h3>
               <img src="assets/img/offeredclass/online.png" class="img-fluid" alt="">
-              <p>Online lessons are taught via Google Meet/Zoom Meeting.
+              <p>Online lessons are taught via our own TiNKA App.
                 Learn from the comfort of your own home or pretty much
                 everywhere.
               </p>
