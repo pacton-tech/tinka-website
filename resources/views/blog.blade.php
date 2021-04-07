@@ -1,38 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+@section('title')
+Tinka News
+@endsection
 
-  <title>Blog - FlexStart Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+@section('content')
 
-  @extends('layouts.master')
+@include('header')
 
-</head>
+<main id="main">
 
-<body>
-
-  <!-- ======= Header ======= -->
-  @include('header')
-<!-- End Header -->
-  
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <ol>
-        <li><a href="/">Home</a></li>
-          <li>Blog</li>
-        </ol>
-        <h2>Blog</h2>
-
-      </div>
-    </section><!-- End Breadcrumbs -->
+      <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li>About Us</li>
+        <li>Tinka News</li>
+      </ol>
+      <h2>Tinka News</h2>
+    </div>
+  </section>
+  <!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
@@ -230,22 +221,7 @@
 
               </div><!-- End sidebar recent posts-->
 
-              <h3 class="sidebar-title">Tags</h3>
-              <div class="sidebar-item tags">
-                <ul>
-                  <li><a href="#">App</a></li>
-                  <li><a href="#">IT</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Mac</a></li>
-                  <li><a href="#">Design</a></li>
-                  <li><a href="#">Office</a></li>
-                  <li><a href="#">Creative</a></li>
-                  <li><a href="#">Studio</a></li>
-                  <li><a href="#">Smart</a></li>
-                  <li><a href="#">Tips</a></li>
-                  <li><a href="#">Marketing</a></li>
-                </ul>
-              </div><!-- End sidebar tags-->
+             
 
             </div><!-- End sidebar -->
 
@@ -258,14 +234,6 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  @include('footer')
-<!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
- 
-
-</body>
-
-</html>
+@include('footer')
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+@endsection

@@ -30,7 +30,7 @@
               <li><i class="bi bi-chevron-right"></i> <a href="/login">Login</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="/password/reset">Reset Password</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="/register/student">Student Registration</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="/register/student">Student Registration</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/register/teacher">Teacher Registration</a></li>
             </ul>
           </div>
           
