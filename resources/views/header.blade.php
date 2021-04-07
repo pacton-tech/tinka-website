@@ -13,6 +13,7 @@
             <ul>
               <li><a href="/about">About Tinka</a></li>
               <li><a href="/tinkaleadership">Tinka Leadership</a></li>
+              <li><a href="/blog">Tinka News</a></li>
             </ul>
           <li class="dropdown" ><a href="/tinkaeducentre"><span>Product & Services</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
