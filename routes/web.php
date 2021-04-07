@@ -34,12 +34,6 @@ Route::get('/tinkaapp', function () {
 Route::get('/tuitionfees', function () {
     return view('tuitionfees');
 });
-Route::get('/registrationteacher', function () {
-    return view('registrationteacher');
-});
-Route::get('/registrationstudent', function () {
-    return view('registrationstudent');
-});
 
 Route::get('/contact', 'ContactController@contact')->name('contact');
 Route::post('/contact', 'ContactController@contactPost')->name('contactPost');
@@ -107,6 +101,7 @@ Route::resource('subscription', SubscriptionController::class);
 Route::get('subscription/book', 'SubscriptionController@store')->name('create-subscription');
 Route::resource('plan', PlanController::class);
 Route::post('plan/checkout', 'PlanController@checkout')->name('plan-checkout');
+
 Route::resource('payment', PaymentController::class);
 
 Route::resource('faqs', FaqController::class);
@@ -115,3 +110,6 @@ Route::resource('faqsubcategories', SubcategoryController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('payment', PaymentController::class);
+

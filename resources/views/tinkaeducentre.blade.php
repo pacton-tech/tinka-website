@@ -1,33 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+@section('title')
+Tinka Educentre 
+@endsection
 
-  <title>Tinka Educentre</title>
-  <meta content="" name="description">
+@section('content')
 
-  <meta content="" name="keywords">
+@include('header')
 
-  @extends('layouts.master')
-
-</head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  @include('header')
-<!-- End Header -->
-
-  <main id="main">
+<main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
     <section class="breadcrumbs">
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
+        <li><a href="/">Home</a></li>
           <li>Product & Services</li>
           <li>Tinka Educentre</li>
         </ol>
@@ -53,18 +41,13 @@
                     Currently, TINKA™ Educentre has 25 tutors (“Tink-educators”) who 
                     covers Standard 1 to Form 5 students including IGCSE.
                 </p>
-                <div class="text-center text-lg-start">
-                  <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                    <span>Tinka Educentre</span>
-                    <i class="bi bi-arrow-right"></i>
-                  </a>
-                </div>
-  
+                
                </div>
             </div>
   
             <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-                <video class="img-fluid" width="900"  controls src="./assets/video/tinkavideo.mp4"></video>                </div>
+                <video class="img-fluid" width="900"  controls src="./assets/video/tinkavideo.mp4"></video>                <
+            </div>
   
           </div>
         </div>
@@ -85,23 +68,25 @@
   
             <div class="col-md-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
               <center >
-               <a href="/tuitionfees"><img src="./assets/img/offeredclass/upsr2.png" alt="" width="400"></a>
+               <a href="/plan"><img src="./assets/img/offeredclass/UPSR2.png" alt="" width="400"></a>
               </center>
             </div>
   
             <div class="col-md-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
               <center >
-                <a href="/tuitionfees"><img src="./assets/img/offeredclass/pt32.png" alt="" width="400"></a>
+                <a href="/plan"><img src="./assets/img/offeredclass/pt32.png" alt="" width="400"></a>
               </center>
             </div>
+
             <div class="col-md-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
               <center >
-                <a href="/tuitionfees"><img src="./assets/img/offeredclass/spm2.png" alt="" width="400"></a>
+                <a href="/plan"><img src="./assets/img/offeredclass/spm2.png" alt="" width="400"></a>
               </center>
             </div>
+
             <div class="col-md-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
               <center>
-                <a href="/tuitionfees"><img src="./assets/img/offeredclass/igcse2.png" alt="" width="400"></a>
+                <a href="/plan"><img src="./assets/img/offeredclass/igcse2.png" alt="" width="400"></a>
               </center>
             </div>
            
@@ -126,7 +111,7 @@
       <div class="container mt-5 mb-5 d-flex justify-content-center">
         <ul class="social-list">
             <li>
-                <div class="maincard p-3">
+                <div class="maincard">
                     <div class="thecard">
                       <a href="https://www.facebook.com/tinkamalaysia" target="_blank">
                         <div class="thefront text-center py-4 sfacebook">
@@ -140,7 +125,7 @@
                 </div>
             </li>
             <li>
-                <div class="maincard p-3">
+                <div class="maincard">
                     <div class="thecard">
                       <a href="https://www.instagram.com/tinkamalaysia" target="_blank">
                         <div class="thefront text-center py-4 sinstagram">
@@ -155,7 +140,7 @@
             </li>
             
            <li>
-              <div class="maincard p-3">
+              <div class="maincard">
                 <div class="thecard">
                   <a href="https://tinka.wasap.my" target="_blank">
                     <div class="thefront text-center py-4 swhatsapp">
@@ -179,15 +164,6 @@
 
 
   </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  @include('footer')
-<!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-
-
-</body>
-
-</html>
+@include('footer')
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+@endsection

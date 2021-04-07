@@ -1,24 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+@section('title')
+Professor Dr. Rozhan M. Idrus
+@endsection
 
-  <title>Professor Dr. Rozhan M. Idrus</title>
-  <meta content="" name="description">
+@section('content')
 
-  <meta content="" name="keywords">
-  @extends('layouts.master')
+@include('header')
 
-</head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  @include('header')
-<!-- End Header -->
-  
+<main id="main">
   <!-- ======= Breadcrumbs ======= -->
 <section class="breadcrumbs">
     <div class="container">
@@ -45,12 +35,12 @@
         
         <h2 data-aos="fade-up" data-aos-delay="400"> Advisor </h2>
         <hr>
-        <p>Rozhan M. Idrus is a Professor of Open and Distance Learning (ODL) 
+        <p data-aos="fade-left" data-aos-delay="100">Rozhan M. Idrus is a Professor of Open and Distance Learning (ODL) 
             & Technogogy (retired) with more than 35 years of international 
             experience as an e-learning technologist and analyst, consultant, 
             presenter and workshop facilitator.</p>
 
-            <p> Prof. Rozhan is currently the Dean of the Centre for Graduate 
+            <p data-aos="fade-left" data-aos-delay="200"> Prof. Rozhan is currently the Dean of the Centre for Graduate 
                 Studies (CGS) in the Universiti Sains Islam Malaysia. He is a 
                 Professor of Open and Distance Learning (ODL) & Technology as 
                 an e-learning analyst, consultant, presenter and workshop 
@@ -59,7 +49,8 @@
                 citation-indexed journals, books and handbook chapters. 
             </p>
           
-            <p>He has garnered awards in mobile learning in the World Education Summit (2011), 
+            <p data-aos="fade-left" data-aos-delay="300">He has garnered awards in mobile learning 
+                in the World Education Summit (2011), 
                 e-INDIA Awards (2010) and the Asia Pacific Mobile Learning & Edutainment 
                 Advisory Panel (APACMLEAP) Mobile Learning Initiatives Recognition 
                 (2009), Gold Medal Award in the Innovation and Invention in Education
@@ -72,6 +63,11 @@
                  in e-learning of the Hamdan Bin Mohammed Smart University Dubai, UAE. 
             </p>
           
+            <p data-aos="fade-left" data-aos-delay="300">
+            His speech at NDMRP-2018 was a memorable activity for the attendees of conference in terms 
+            of scholarly contribution and knowledge sharing. His keynote speech topic was Leveraging on 
+            4IR Technology for an Immersive and Collaborative Multidisciplinary Educational Landscape.
+            </p>
              
                  
         <div data-aos="fade-up" data-aos-delay="600">
@@ -95,7 +91,7 @@
       <div class="container mt-5 mb-5 d-flex justify-content-center">
         <ul class="social-list">
             <li>
-                <div class="maincard p-3">
+                <div class="maincard">
                     <div class="thecard">
                       <a href="https://www.facebook.com/tinkamalaysia" target="_blank">
                         <div class="thefront text-center py-4 sfacebook">
@@ -109,7 +105,7 @@
                 </div>
             </li>
             <li>
-                <div class="maincard p-3">
+                <div class="maincard">
                     <div class="thecard">
                       <a href="https://www.instagram.com/tinkamalaysia" target="_blank">
                         <div class="thefront text-center py-4 sinstagram">
@@ -124,7 +120,7 @@
             </li>
             
            <li>
-              <div class="maincard p-3">
+              <div class="maincard">
                 <div class="thecard">
                   <a href="https://tinka.wasap.my" target="_blank">
                     <div class="thefront text-center py-4 swhatsapp">
@@ -149,14 +145,6 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  @include('footer')
-<!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-
-
-</body>
-
-</html>
+@include('footer')
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+@endsection

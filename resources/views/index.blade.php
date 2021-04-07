@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+@section('title')
+TiNKA - Education. Everywhere.
+@endsection
 
-  <title>TiNKA - Education. Everywhere.</title>
-  <meta content="" name="description">
-
-  <meta content="" name="keywords">
-
- @extends('layouts.master')
-</head>
-
-<body>
-  @include('mainheader')
+@section('content')
+@include('header')
 
   <section id="hero" class="hero d-flex align-items-center">
 
@@ -24,7 +15,7 @@
           <h1 data-aos="fade-up">TINKA EDUCENTRE</h1>
           <h2 data-aos="fade-up" data-aos-delay="400">Tinka Educentre is keen to provide 
             quality education at an affordable pricing and  a conducive learning
-            environment to students. Opening soon at Bukit Jelutong! </h2>
+            environment to students. Visit us at Bukit Jelutong! </h2>
           <hr>
           <h1 data-aos="fade-left" data-aos-delay="600">UPSR . PT3 . SPM . IGCSE     </h1>
           
@@ -42,7 +33,6 @@
         </div>
       </div>
     </div>
-
   </section>
 
     <section id="values" class="values">
@@ -62,7 +52,7 @@
               <img src="assets/img/offeredclass/physical.png" class="img-fluid" alt="">
               <p>Our new and revamped tuition centre is located at Bukit Jelutong.
                 Available for UPSR, PT3, SPM & IGCSE students.</p>
-              <a href="/registrationstudent" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <a href="/register/student" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Register Now</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -73,11 +63,11 @@
             <div class="onlinebox" data-aos="fade-up" data-aos-delay="400">
               <h3>Online Class</h3>
               <img src="assets/img/offeredclass/online.png" class="img-fluid" alt="">
-              <p>Online lessons are taught via Google Meet/Zoom Meeting.
+              <p>Online lessons are taught via our own TiNKA App.
                 Learn from the comfort of your own home or pretty much
                 everywhere.
               </p>
-              <a href="/registrationstudent" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <a href="/register/student" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Register Now</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -92,7 +82,7 @@
                 learning. Have our Tink-Educator drop by your place
                 for personalised.
               </p>
-              <a href="/registrationstudent" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <a href="/register/student" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Register Now</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -104,7 +94,6 @@
       </div>
 
     </section>
-
 
   <main id="main">
     <section id="about" class="about">
@@ -152,22 +141,22 @@
     
             <div class="row gy-4" data-aos="fade-left">
      
-              <div class="col-lg-6 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+              <div class="col-lg-6 col-md-6 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="300">
                 <div class="studentbox">
                   <h3 style="color: #1B1464;">Students</h3>
                   <img src="assets/img/offeredclass/studentscropped.png" class="img-fluid" alt="">
                   <p>Enroll your child at Tinka Educentre now.</p>   
-                  <a href="/registrationstudent" class="btn-buy">Register Now</a>
+                  <a href="/register/student" class="btn-buy">Register Now</a>
                 </div>
               </div>
 
-              <div class="col-lg-6 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+              <div class="col-lg-6 col-md-6 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="200">
                 <div class="teacherbox">
                   <h3 style="color: #1B1464;">Tinka Tutor</h3>
                   <img src="assets/img/offeredclass/tinka tutor cropped.png" class="img-fluid" alt="">
                   <p>Earn a part-time income by
                     signing up as Tinka Tutor.</p>
-                  <a href="/registrationteacher" class="btn-buy">Register Now</a>
+                  <a href="/register/teacher" class="btn-buy">Register Now</a>
                 </div>
               </div>
              </div>
@@ -183,7 +172,7 @@
       <div class="container mt-5 mb-5 d-flex justify-content-center">
         <ul class="social-list">
             <li>
-                <div class="maincard p-3">
+                <div class="maincard">
                     <div class="thecard">
                       <a href="https://www.facebook.com/tinkamalaysia" target="_blank">
                         <div class="thefront text-center py-4 sfacebook">
@@ -197,7 +186,7 @@
                 </div>
             </li>
             <li>
-                <div class="maincard p-3">
+                <div class="maincard">
                     <div class="thecard">
                       <a href="https://www.instagram.com/tinkamalaysia" target="_blank">
                         <div class="thefront text-center py-4 sinstagram">
@@ -212,7 +201,7 @@
             </li>
             
            <li>
-              <div class="maincard p-3">
+              <div class="maincard">
                 <div class="thecard">
                   <a href="https://tinka.wasap.my" target="_blank">
                     <div class="thefront text-center py-4 swhatsapp">
@@ -230,17 +219,7 @@
     </div>
 
     </section>
-
-
-
-
   </main>
 
-  @include('footer')
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
- 
-</body>
-
-</html>
+@include('footer')
+@endsection

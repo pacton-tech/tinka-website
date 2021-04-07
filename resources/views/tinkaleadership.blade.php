@@ -1,31 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+@section('title')
+Tinka Leadership
+@endsection
 
-  <title>Tinka Leadership</title>
-  <meta content="" name="description">
+@section('content')
 
-  <meta content="" name="keywords">
+@include('header')
 
-  @extends('layouts.master')
+<main id="main">
 
-</head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  @include('header')
-<!-- End Header -->
 
     <!-- ======= Breadcrumbs ======= -->
     <section class="breadcrumbs">
       <div class="container">
   
         <ol>
-          <li><a href="index.html">Home</a></li>
+        <li><a href="/">Home</a></li>
           <li>About Us</li>
           <li>Tinka Leadership</li>
         </ol>
@@ -121,7 +112,7 @@
       <div class="container mt-5 mb-5 d-flex justify-content-center">
         <ul class="social-list">
             <li>
-                <div class="maincard p-3">
+                <div class="maincard">
                     <div class="thecard">
                       <a href="https://www.facebook.com/tinkamalaysia" target="_blank">
                         <div class="thefront text-center py-4 sfacebook">
@@ -135,7 +126,7 @@
                 </div>
             </li>
             <li>
-                <div class="maincard p-3">
+                <div class="maincard">
                     <div class="thecard">
                       <a href="https://www.instagram.com/tinkamalaysia" target="_blank">
                         <div class="thefront text-center py-4 sinstagram">
@@ -150,7 +141,7 @@
             </li>
             
            <li>
-              <div class="maincard p-3">
+              <div class="maincard">
                 <div class="thecard">
                   <a href="https://tinka.wasap.my" target="_blank">
                     <div class="thefront text-center py-4 swhatsapp">
@@ -175,14 +166,6 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  @include('footer')
-<!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-
-
-</body>
-
-</html>
+@include('footer')
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+@endsection

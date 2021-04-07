@@ -24,7 +24,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
+        <li><a href="/">Home</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li>Blog Single</li>
         </ol>

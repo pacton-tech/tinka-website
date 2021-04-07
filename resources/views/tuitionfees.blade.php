@@ -1,38 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+@section('title')
+Tuition Fees
+@endsection
 
-  <title>Tuition Fees</title>
-  <meta content="" name="description">
+@section('content')
 
-  <meta content="" name="keywords">
+@include('header')
 
-  @extends('layouts.master')
+<main id="main">
 
-</head>
+          <!-- ======= Breadcrumbs ======= -->
+          <section class="breadcrumbs">
+            <div class="container">
 
-<body>
+              <ol>
+                <li><a href="index">Home</a></li>
+                <li>Tuition Fees</li>
+              </ol>
+              <h2>Tuition Fees</h2>
 
-  <!-- ======= Header ======= -->
-  @include('header')
-<!-- End Header -->
-  <main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Tuition Fees</li>
-        </ol>
-        <h2>Tuition Fees</h2>
-
-      </div>
-    </section><!-- End Breadcrumbs -->
+            </div>
+          </section><!-- End Breadcrumbs -->
 
 
            <!-- ======= Portfolio Section ======= -->
@@ -62,91 +51,168 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-upsr">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/standard 1 (2).png" class="img-fluid" alt="">
+                    <img src="assets/img/portfolio/1.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                      <h4>PACKAGE A STD 1-4</h4>
                      <div class="portfolio-links">
-                        <a href="assets/img/portfolio/standard 1 (2).png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
-                        <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                        <a href="/feesdetail" title="More Details"><i class="bi bi-link"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
-      
                 <div class="col-lg-4 col-md-6 portfolio-item filter-upsr">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/standard 1-4(3).png" class="img-fluid" alt="">
+                    <img src="assets/img/portfolio/2.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                      <h4>PACKAGE B STD 1-4</h4>
                      <div class="portfolio-links">
-                        <a href="assets/img/portfolio/standard 1-4(3).png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
-                        <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6 portfolio-item filter-upsr">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/standard 1-4(4).png" class="img-fluid" alt="">
+                    <img src="assets/img/portfolio/3.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                      <h4>PACKAGE C STD 1-4</h4>
                      <div class="portfolio-links">
-                        <a href="assets/img/portfolio/standard 1-4(4).png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
-                        <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
-
                 <div class="col-lg-4 col-md-6 portfolio-item filter-upsr">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/standard5(2).png" class="img-fluid" alt="">
+                    <img src="assets/img/portfolio/4.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                      <h4>PACKAGE A STD 5-6</h4>
-                      <p>App</p>
-                      <div class="portfolio-links">
-                        <a href="assets/img/portfolio/standard5(2).png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="2 Subjects package at RM 55 per subject BM BI MATHS ENGLISH"><i class="bi bi-plus"></i></a>
-                        <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-      
-                <div class="col-lg-4 col-md-6 portfolio-item filter-upsr">
-                  <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/standard 5-6 (3).png" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                      <h4>PACKAGE B STD 5-6</h4>
                      <div class="portfolio-links">
-                        <a href="assets/img/portfolio/standard 5-6 (3).png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
-                        <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
-      
                 <div class="col-lg-4 col-md-6 portfolio-item filter-upsr">
                   <div class="portfolio-wrap">
-                    <img src="assets/img/portfolio/standard 5-6(4).png" class="img-fluid" alt="">
+                    <img src="assets/img/portfolio/5.png" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                      <h4>App 2</h4>
-                      <p>App</p>
-                      <div class="portfolio-links">
-                        <a href="assets/img/portfolio/standard 5-6(4).png" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
-                        <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                     <div class="portfolio-links">
+                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
-      
-           
-      
+                <div class="col-lg-4 col-md-6 portfolio-item filter-upsr">
+                  <div class="portfolio-wrap">
+                    <img src="assets/img/portfolio/6.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                     <div class="portfolio-links">
+                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item filter-pt3">
+                  <div class="portfolio-wrap">
+                    <img src="assets/img/portfolio/7.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                     <div class="portfolio-links">
+                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item filter-pt3">
+                  <div class="portfolio-wrap">
+                    <img src="assets/img/portfolio/8.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                     <div class="portfolio-links">
+                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+                <div class="col-lg-4 col-md-6 portfolio-item filter-pt3">
+                  <div class="portfolio-wrap">
+                    <img src="assets/img/portfolio/9.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                     <div class="portfolio-links">
+                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+                <div class="col-lg-4 col-md-6 portfolio-item filter-pt3">
+                  <div class="portfolio-wrap">
+                    <img src="assets/img/portfolio/10.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                     <div class="portfolio-links">
+                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+                <div class="col-lg-4 col-md-6 portfolio-item filter-pt3">
+                  <div class="portfolio-wrap">
+                    <img src="assets/img/portfolio/11.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                     <div class="portfolio-links">
+                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+                <div class="col-lg-4 col-md-6 portfolio-item filter-pt3">
+                  <div class="portfolio-wrap">
+                    <img src="assets/img/portfolio/12.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                     <div class="portfolio-links">
+                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+                <div class="col-lg-4 col-md-6 portfolio-item filter-spm">
+                  <div class="portfolio-wrap">
+                    <img src="assets/img/portfolio/13.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                     <div class="portfolio-links">
+                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+                <div class="col-lg-4 col-md-6 portfolio-item filter-spm">
+                  <div class="portfolio-wrap">
+                    <img src="assets/img/portfolio/14.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                     <div class="portfolio-links">
+                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+                <div class="col-lg-4 col-md-6 portfolio-item filter-spm">
+                  <div class="portfolio-wrap">
+                    <img src="assets/img/portfolio/15.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                     <div class="portfolio-links">
+                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+                <div class="col-lg-4 col-md-6 portfolio-item filter-spm">
+                  <div class="portfolio-wrap">
+                    <img src="assets/img/portfolio/16.png" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                     <div class="portfolio-links">
+                        <a href="#" title="More Details"><i class="bi bi-link"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>    
               </div>
-      
             </div>
-      
-          </section><!-- End Portfolio Section -->
+          </section>
+          <!-- End Portfolio Section -->
 
           
   </main><!-- End #main -->
@@ -159,7 +225,7 @@
       <div class="container mt-5 mb-5 d-flex justify-content-center">
         <ul class="social-list">
             <li>
-                <div class="maincard p-3">
+                <div class="maincard">
                     <div class="thecard">
                       <a href="https://www.facebook.com/tinkamalaysia" target="_blank">
                         <div class="thefront text-center py-4 sfacebook">
@@ -173,7 +239,7 @@
                 </div>
             </li>
             <li>
-                <div class="maincard p-3">
+                <div class="maincard">
                     <div class="thecard">
                       <a href="https://www.instagram.com/tinkamalaysia" target="_blank">
                         <div class="thefront text-center py-4 sinstagram">
@@ -188,7 +254,7 @@
             </li>
             
            <li>
-              <div class="maincard p-3">
+              <div class="maincard">
                 <div class="thecard">
                   <a href="https://tinka.wasap.my" target="_blank">
                     <div class="thefront text-center py-4 swhatsapp">
@@ -213,12 +279,6 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  @include('footer')
-<!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-</body>
-
-</html>
+@include('footer')
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+@endsection

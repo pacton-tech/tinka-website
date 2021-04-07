@@ -1,24 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+@section('title')
+Teacher Registration
+@endsection
 
-  <title>Teacher Registration</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+@push('css')
+<link href="{{ asset('assets/css/registrationform.css') }}" rel="stylesheet">
+@endpush
 
-  @extends('layouts.teacherlayout')
+@section('content')
 
-</head>
-
-<body>
-
- 
-  <!-- ======= Header ======= -->
-  @include('header')
-<!-- End Header -->
+@include('header')
 
   <main id="main">
 
@@ -37,9 +29,24 @@
                 <h2>Register</h2>
                 <p>Welcome Tink-Educator!</p>
               </header>
-            
-            <form id="survey-form" data-aos="zoom-in" data-aos-delay="100">
-
+            <div class="row justify-content-md-center">
+              <div class="col-lg-6">
+                @if ($errors->any())
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif
+              @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
+            <form id="survey-form" data-aos="zoom-in" data-aos-delay="100" class="register" method="post" action="{{ route('create-teacher') }}" enctype="multipart/form-data">
+              @csrf
               <div class="form-group">
                 <label id="fullname-label" for="fullname">Full Name</label>
                 <input
@@ -48,19 +55,21 @@
                   id="name"
                   class="form-control"
                   placeholder="Enter your name"
-                  required
+                  {{ $errors->has('name') ? 'has-error' : '' }} value="{{ old('name') }}"
                 />
+                <span class="text-danger">{{ $errors->first('name') }}</span>
               </div>
 
               <div class="form-group">
-                <p>Gender</p>
-                <label>
-                  <input
+                <label id="gender-label" for="gender">Gender</label>                
+                  <label>
+                    <input
                     name="gender"
-                    value="mobile-nav-toggle"
+                    value="male"
                     type="radio"
                     class="input-radio"
                     checked
+                    {{ $errors->has('gender') ? 'has-error' : 'checked' }}
                   />Male</label
                 >
                 <label>
@@ -69,21 +78,24 @@
                     value="female"
                     type="radio"
                     class="input-radio"
+                    {{ $errors->has('gender') ? 'has-error' : 'checked' }}
                   />Female</label
                 >
+                <span class="text-danger">{{ $errors->first('gender') }}</span>
               </div>
 
               <div class="form-group">
-                <label id="birthdate" for="birthdate"
-                  >Birthdate</label
+                <label id="birthday" for="birthday"
+                  >Date of birth</label
                 >
                 <input
                   type="date"
-                  name="birthdate"
-                  id="birthdate"
+                  name="birthday"
+                  id="birthday"
                   class="form-control"
-                  placeholder=""
+                  {{ $errors->has('birthday') ? 'has-error' : '' }} value="{{ old('birthday') }}"
                 />
+                <span class="text-danger">{{ $errors->first('birthday') }}</span>
               </div>
 
               <div class="form-group">
@@ -94,20 +106,9 @@
                   id="email"
                   class="form-control"
                   placeholder="Enter your Email"
-                  required
+                  {{ $errors->has('email') ? 'has-error' : '' }} value="{{ old('email') }}"
                 />
-              </div>
-
-              <div class="form-group">
-                <label id="username-label" for="username">Username</label>
-                <input
-                  type="text"
-                  name="username"
-                  id="username"
-                  class="form-control"
-                  placeholder="Enter your username"
-                  required
-                />
+                <span class="text-danger">{{ $errors->first('email') }}</span>
               </div>
 
               <div class="form-group">
@@ -118,26 +119,27 @@
                   id="password"
                   class="form-control"
                   placeholder="Enter your password"
-                  required
+                  value="{{ old('password') }}"
                 />
+                <span class="text-danger">{{ $errors->first('password') }}</span>
               </div>
 
               <div class="form-group">
-                <label id="confirmpassword-label" for="confirmpassword">Password</label>
+                <label id="confirmpassword-label" for="confirmpassword">Repeat Password</label>
                 <input
                   type="password"
                   name="confirmpassword"
                   id="confirmpassword"
                   class="form-control"
                   placeholder="Re-enter your password"
-                  required
+                  value="{{ old('confirmpassword') }}"
                 />
+                <span class="text-danger">{{ $errors->first('confirmpassword') }}</span>
               </div>
             
-            
               <div class="form-group">
-                <p>Last Qualification</p>
-                <select id="dropdown" name="qualification" class="form-control" required>
+                <label id="qualification-label" for="qualification">Last Qualification</label>
+                <select id="dropdown" name="qualification" class="form-control" >
                   <option disabled selected value>Select qualification</option>
                   <option value="spm">SPM</option>
                   <option value="diploma">Diploma</option>
@@ -145,62 +147,63 @@
                   <option value="master">Master</option>
                   <option value="phd">PhD</option>
                 </select>
+                <span class="text-danger">{{ $errors->first('qualification') }}</span>
               </div>
               
               <div class="form-group">
-                <p>Are You Currently Teaching At Any School?</p>
-                <select id="dropdown" name="teaching" class="form-control" required>
-                  <option disabled selected value>Yes/No</option>
+                <label id="teaching-label" for="teaching">Are You Currently Teaching At Any School?</label>
+                <select id="dropdown" name="teaching" class="form-control" >
+                  <option disabled selected value>- Choose -</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </select>
+                <span class="text-danger">{{ $errors->first('teaching') }}</span>
               </div>
              
-             
               <div class="form-group">
-                <label id="currentschoolname-label" for="currentschoolname">Your Current School Name</label>
+                <label id="current_school-label" for="current_school">Your Current School Name</label>
                 <input
                   type="text"
-                  name="currentschoolname"
-                  id="currentschoolname"
+                  name="current_school"
+                  id="current_school"
                   class="form-control"
                   placeholder="School Name"
-                  required
+                  {{ $errors->has('current_school') ? 'has-error' : '' }} value="{{ old('current_school') }}"
                 />
+                <span class="text-danger">{{ $errors->first('current_school') }}</span>
               </div>
           
               <div class="form-group">
-                <p>Are You Currently Attached To Any Tuition Centre?</p>
-                <select id="dropdown" name="tuitioncentre" class="form-control" required>
-                  <option disabled selected value>Yes/No</option>
+                <label id="tuition">Are You Currently Teaching At Any Tuition Centre?</label>
+                <select id="dropdown" name="tuition" class="form-control" >
+                  <option disabled selected value>- Choose -</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </select>
+                <span class="text-danger">{{ $errors->first('tuition') }}</span>
               </div>
              
               <div class="form-group">
-                <label id="tuitioncentre-label" for="tuitioncentre">If Yes, Please State The Name Of The Tuition Centre</label>
+                <label id="current_tuition-label" for="current_tuition">If Yes, Please State The Name Of The Tuition Centre</label>
                 <input
                   type="text"
-                  name="tuitioncentre"
-                  id="tuitioncentre"
+                  name="current_tuition"
+                  id="current_tuition"
                   class="form-control"
                   placeholder="Tuition Centre Name"
-                  required
                 />
               </div>
-          
-                     
+            
               <div class="form-group">
-                <label id="subjectteach-label" for="subjectteach">Subject That You Are Teaching</label>
+                <label id="subject-label" for="subject">Subject That You Are Teaching (seperate by comma)</label>
                 <input
                   type="text"
-                  name="subjectteach"
-                  id="subjectteach"
+                  name="subject"
+                  id="subject"
                   class="form-control"
                   placeholder="Please state the name of the subjects that you are teaching"
-                  required
                 />
+                <span class="text-danger">{{ $errors->first('subject') }}</span>
               </div>
 
               <div class="form-group">
@@ -210,11 +213,10 @@
                   name="photo"
                   id="photo"
                   class="form-control"
-                  required
                 />
+                <span class="text-danger">{{ $errors->first('photo') }}</span>
               </div>
 
-          
               <div class="form-group">
                 <button type="submit" id="submit" class="submit-button">
                   Submit
@@ -222,34 +224,11 @@
               </div>
             </form>
           </div>
+        </div>
+          </div>
     </section>
 
   </main><!-- End #main -->
 
- <!-- ======= Footer ======= -->
- <footer id="footer" class="footer">
-
-    
-
-  <div class="container">
-    <div class="copyright">
-      &copy; Copyright <strong><span>Versatile Straits Sdn. Bhd</span></strong>. All Rights Reserved
-    </div>
-   <!-- <div class="credits"> -->
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-      
-    </div>
-  
-  </div>
-</footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  
-
-</body>
-
-</html>
+@include('footer')
+@endsection
