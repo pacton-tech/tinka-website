@@ -81,7 +81,7 @@ class User extends Authenticatable
         // Maybe you can just hardcode in a user id that you
         //   know is always an admin ID?
 
-        if (       $this->id === 1
+        if (       $this->id === 2
              && $this->email === "pijut96@gmail.com"
            ){
 
