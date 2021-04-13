@@ -44,7 +44,7 @@ TiNKA Home Tuition
                 <li class="na">Sign up fee</li>
                 <li class="na">Exam fee</li>
               </ul>
-              <a href="#" class="btn-buy">Choose</a>
+              <a href="{{ route('fee.home-tuition.show', $plan['id']) }}" class="btn-buy">Choose</a>
             </div>
           </div>
 

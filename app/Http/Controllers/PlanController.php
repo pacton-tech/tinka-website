@@ -25,6 +25,12 @@ class PlanController extends Controller
         return view('plan.home-tuition',compact('plans'));
     }
 
+    public function home_tuition_show($id)
+    {
+        $plan = Plan::find($id);
+        return view('plan.home-tuition-show',compact('plan'));
+    }
+
     public function show($id)
     {
         $plan = Plan::find($id);
