@@ -30,9 +30,6 @@ Route::get('/tinkaeducentre', function () {
 Route::get('/tinkaapp', function () {
     return view('tinkaapp');
 });
-Route::get('/tuitionfees', function () {
-    return view('tuitionfees');
-});
 
 Route::get('/contact', 'ContactController@contact')->name('contact');
 Route::post('/contact', 'ContactController@contactPost')->name('contactPost');
@@ -79,13 +76,6 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
-/*Route::get('/register/teacher', function() {
-    return view('coming-soon');
-});
-Route::get('/register/student', function() {
-    return view('coming-soon');
-});*/
-
 Route::get('/register/teacher', 'TeacherController@create')->name('register-teacher');
 Route::get('/register/student', 'StudentController@create')->name('register-student');
 
@@ -100,3 +90,30 @@ Route::get('subscription/book', 'SubscriptionController@store')->name('create-su
 Route::resource('plan', PlanController::class);
 Route::post('plan/checkout', 'PlanController@checkout')->name('plan-checkout');
 Route::resource('payment', PaymentController::class);
+
+Route::get('fees/educentre', 'PlanController@educentre')->name('fee.educentre');
+Route::get('fees/home-tuition', 'PlanController@home_tuition')->name('fee.home-tuition');
+Route::get('fees/app', 'PlanController@app')->name('fee.app');
+
+// Admin route goes here
+Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
+
+    //Login Routes
+    Route::get('/login','Auth\LoginController@showLoginForm')->name('login');
+    Route::post('/login','Auth\LoginController@login');
+    Route::post('/logout','Auth\LoginController@logout')->name('logout');
+
+    //Forgot Password Routes
+    Route::get('/password/reset','Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    Route::post('/password/email','Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+
+    //Reset Password Routes
+    Route::get('/password/reset/{token}','Auth\ResetPasswordController@showResetForm')->name('password.reset');
+    Route::post('/password/reset','Auth\ResetPasswordController@reset')->name('password.update');
+
+    Route::middleware(['auth:admin'])->group(function () {
+        Route::get('/dashboard','HomeController@index')->name('home');
+        Route::resource('/subscription', SubscriptionController::class);
+    });
+
+});
