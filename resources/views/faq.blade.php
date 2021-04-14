@@ -62,28 +62,27 @@ FAQ
             </center>
       </div>
 
-      <!-- ====== FAQ Tab Section =-====== -->
-      <section id="faqtab" class="faqtab">
-        <div class="row">
-          <div class="faqtabs">
-            <div>
-              <a href="#">FAQ</a>
-            </div>
-            <div>
-              <a href="#">System Requirement</a>
-            </div>
-            <div>
-              <a href="#">Trouble Shooting</a>
-            </div>
-            <div>
-              <a href="#">Certification</a>
-            </div>
-            <div>
-              <a href="#">Payments</a>
-            </div>
-          </div>
+  <!-- ======= FAQ Categories Section ======= -->
+  <section id="faqcategories" class="faqcategories">
+
+    <div class="container" data-aos="fade-up">
+
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="faqcategories-flters">
+            <li data-filter="*" class="active">FAQ</li>
+            <li data-filter=".filter-system">System Requirement</li>
+            <li data-filter=".filter-troubleshooting">Troubleshooting</li>
+            <li data-filter=".filter-certification">Certification</li>
+            <li data-filter=".filter-payment">Payment</li>
+          </ul>
         </div>
-      </section>
+      </div>
+
+    </div>
+  </section>
+    <!-- ======= End FAQ Categories Section ======= -->
+
 
 <!-- ======= F.A.Q Section ======= -->
 <section id="faq" class="faq">

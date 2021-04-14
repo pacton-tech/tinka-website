@@ -102,8 +102,6 @@ Route::get('subscription/book', 'SubscriptionController@store')->name('create-su
 Route::resource('plan', PlanController::class);
 Route::post('plan/checkout', 'PlanController@checkout')->name('plan-checkout');
 
-Route::resource('payment', PaymentController::class);
-
 Route::resource('faqs', FaqController::class);
 Route::resource('faqcategories', CategoryController::class);
 Route::resource('faqsubcategories', SubcategoryController::class);
@@ -113,3 +111,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('payment', PaymentController::class);
 
+Route::get('blog', function(){
+    return view('blog');
+});

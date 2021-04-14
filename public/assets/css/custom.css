@@ -876,3 +876,176 @@ section {
   border-radius: 4px;
   color: #fff;
 }
+
+/*--------------------------------------------------------------
+# faqcategories
+--------------------------------------------------------------*/
+.faqcategories #faqcategories-flters {
+  padding: 0;
+  margin: 0 auto 25px auto;
+  list-style: none;
+  text-align: center;
+  background: white;
+  border-radius: 50px;
+  padding: 2px 15px;
+}
+
+.faqcategories #faqcategories-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 20px 10px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  color: #444444;
+  margin: 0 4px 8px 4px;
+  transition: 0.3s;
+  border-radius: 50px;
+  border: 1px solid #fff;
+}
+
+.faqcategories #faqcategories-flters li:hover, .faqcategories #faqcategories-flters li.filter-active {
+  color: #4154f1;
+  border-color: #4154f1;
+}
+
+.faqcategories #faqcategories-flters li:last-child {
+  margin-right: 0;
+}
+
+.faqcategories .faqcategories-wrap {
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.faqcategories .faqcategories-wrap::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.75);
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  top: 30px;
+  bottom: 30px;
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  opacity: 0;
+}
+
+.faqcategories .faqcategories-wrap img {
+  transition: 1s;
+  border: 1px solid;
+}
+
+.faqcategories .faqcategories-wrap .faqcategories-info {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.faqcategories .faqcategories-wrap .faqcategories-info::before {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  border-top: 3px solid rgba(1, 41, 112, 0.2);
+  border-left: 3px solid rgba(1, 41, 112, 0.2);
+  transition: all 0.5s ease 0s;
+  z-index: 9994;
+}
+
+.faqcategories .faqcategories-wrap .faqcategories-info::after {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  bottom: 35px;
+  right: 35px;
+  border-bottom: 3px solid rgba(1, 41, 112, 0.2);
+  border-right: 3px solid rgba(1, 41, 112, 0.2);
+  transition: all 0.5s ease 0s;
+  z-index: 9994;
+}
+
+.faqcategories .faqcategories-wrap .faqcategories-info h4 {
+  font-size: 20px;
+  color: #012970;
+  font-weight: 700;
+}
+
+.faqcategories .faqcategories-wrap .faqcategories-info p {
+  color: #012970;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+.faqcategories .faqcategories-wrap .faqcategories-links {
+  text-align: center;
+  z-index: 4;
+}
+
+.faqcategories .faqcategories-wrap .faqcategories-links a {
+  color: #fff;
+  background: #4154f1;
+  padding: 10px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.faqcategories .faqcategories-wrap .faqcategories-links a i {
+  font-size: 24px;
+  line-height: 0;
+}
+
+.faqcategories .faqcategories-wrap .faqcategories-links a:hover {
+  background: #5969f3;
+}
+
+.faqcategories .faqcategories-wrap:hover img {
+  transform: scale(1.1);
+}
+
+.faqcategories .faqcategories-wrap:hover::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+}
+
+.faqcategories .faqcategories-wrap:hover .faqcategories-info {
+  opacity: 1;
+}
+
+.faqcategories .faqcategories-wrap:hover .faqcategories-info::before {
+  top: 15px;
+  left: 15px;
+}
+
+.faqcategories .faqcategories-wrap:hover .faqcategories-info::after {
+  bottom: 15px;
+  right: 15px;
+}

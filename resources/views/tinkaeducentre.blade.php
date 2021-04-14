@@ -46,7 +46,7 @@ Tinka Educentre
             </div>
   
             <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-                <video class="img-fluid" width="900"  controls src="./assets/video/tinkavideo.mp4"></video>                <
+                <video class="img-fluid" width="900"  controls src="./assets/video/tinkaeducentre.mp4"></video>               
             </div>
   
           </div>
