@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,6 +62,7 @@ Route::get('/faq', function() {
 Route::get('/teachers', function() {
     return view('teachers');
 });
+
 Route::get('profile', function(){
     return view('profile');
 });
@@ -99,13 +101,16 @@ Route::resource('subscription', SubscriptionController::class);
 Route::get('subscription/book', 'SubscriptionController@store')->name('create-subscription');
 Route::resource('plan', PlanController::class);
 Route::post('plan/checkout', 'PlanController@checkout')->name('plan-checkout');
-Route::resource('payment', PaymentController::class);
 
+Route::resource('faqs', FaqController::class);
+Route::resource('faqcategories', CategoryController::class);
+Route::resource('faqsubcategories', SubcategoryController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('payment', PaymentController::class);
 
 Route::get('blog', function(){
     return view('blog');
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

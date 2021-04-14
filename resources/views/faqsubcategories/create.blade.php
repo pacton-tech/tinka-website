@@ -1,16 +1,16 @@
-@extends('faqs.layout')
+@extends('faqsubcategories.layout')
   
 @section('content')
 <div class="row">
     <br>
     <div class="col-lg-8 col-xs-offset-2 margin-tb">
             <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('faqs.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('faqsubcategories.index') }}"> Back</a>
         </div>
     </div>
 </div>
     <div class="text-center">
-            <h2>Add New FAQ</h2>
+            <h2>Add New Subcategory</h2>
     </div>
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -27,19 +27,10 @@
   
     <div class="col-sm-8 col-xs-offset-2">
         <div class="well">
-            {{ Form::open(['route' => 'faqs.store']) }}
+            {{ Form::open(['route' => 'faqsubcategories.store']) }}
             <br>
-            {{ Form::label('question', 'Question') }}
-            {{ Form::text('question', '', ['class'=> 'form-control']) }}
-            <br>
-            {{ Form::label('answer', 'Answer') }}
-            {{ Form::textarea('answer', '', ['class'=> 'form-control']) }}
-            <br>
-            {{ Form::label('category', 'Category') }}
-            {{ Form::select('categoryid', $categories,'', ['class'=> 'form-control']) }}
-            <br>
-            {{ Form::label('subcategory', 'Subcategory') }}
-            {{ Form::select('subcategoryid', $subcategories,'', ['class'=> 'form-control']) }}
+            {{ Form::label('subcategoryname', 'Subcategoryname') }}
+            {{ Form::text('subcategoryname', '', ['class'=> 'form-control']) }}
             <br>
             <div class="text-center"> 
                 {{ Form::submit('Create', ['class'=> 'btn btn-primary ']) }}
@@ -47,4 +38,6 @@
             {{ Form::close() }}
         </div>
     </div>
+
+
 @endsection

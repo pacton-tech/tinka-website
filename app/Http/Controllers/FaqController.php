@@ -2,7 +2,9 @@
   
 namespace App\Http\Controllers;
    
-use App\Models\Faq;
+use App\Models\faq;
+use App\Models\faqcategory;
+use App\Models\faqsubcategory;
 use Illuminate\Http\Request;
   
 class FaqController extends Controller
@@ -15,8 +17,9 @@ class FaqController extends Controller
     public function index()
     {
         $faqs = Faq::latest()->paginate(5);
-    
-        return view('faqs.index',compact('faqs'))
+        $categories = ['categories' => faqcategory::pluck('categoryname','id')];
+        $subcategories = ['subcategories' => faqsubcategory::pluck('subcategoryname','id')];
+        return view('faqs.index',compact('subcategories','categories','faqs'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
      
@@ -27,7 +30,10 @@ class FaqController extends Controller
      */
     public function create()
     {
-        return view('faqs.create');
+        $categories = ['categories' => faqcategory::pluck('categoryname','id')];
+        $subcategories = ['subcategories' => faqsubcategory::pluck('subcategoryname','id')];
+        return view('faqs.create', compact('categories', 'subcategories'));
+
     }
     
     /**
@@ -38,6 +44,7 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
+        
         $request->validate([
             'question' => 'required',
             'answer' => 'required',
@@ -61,6 +68,7 @@ class FaqController extends Controller
     {
         return view('faqs.show',compact('faq'));
     } 
+    
      
     /**
      * Show the form for editing the specified resource.
@@ -68,9 +76,12 @@ class FaqController extends Controller
      * @param  \App\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function edit(Faq $faq)
+    public function edit($id)
     {
-        return view('faqs.edit',compact('faq'));
+        $categories = ['categories' => faqcategory::pluck('categoryname','id')];
+        $subcategories = ['subcategories' => faqsubcategory::pluck('subcategoryname','id')];
+        $faq = faq::find($id);
+        return view('faqs.edit',compact('subcategories','categories','faq'));
     }
     
     /**
@@ -82,6 +93,7 @@ class FaqController extends Controller
      */
     public function update(Request $request, Faq $faq)
     {
+        $categories = ['categories' => faqcategory::get()];
         $request->validate([
             'question' => 'required',
             'answer' => 'required',

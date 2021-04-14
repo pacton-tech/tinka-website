@@ -11,4 +11,14 @@ class faq extends Model
     protected $fillable = [
         'question', 'answer', 'categoryid', 'subcategoryid'
     ];
+
+    public function categories()
+    {
+        return $this->hasOne('App\Models\faqcategory', 'id', 'categoryid');
+    }
+    public function subcategories()
+    {
+        return $this->hasOne('App\Models\faqsubcategory', 'id', 'subcategoryid');
+    }
 }
+

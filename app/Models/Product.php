@@ -1,18 +1,15 @@
 <?php
-
+  
 namespace App\Models;
-
+  
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-class faqcategory extends Model
+  
+class Product extends Model
 {
     use HasFactory;
+  
     protected $fillable = [
-        'categoryname'
+        'name', 'slug', 'detail'
     ];
-    public function faqcategories()
-    {
-        return $this->belongsTo('App\Models\faq');
-    }
 }
