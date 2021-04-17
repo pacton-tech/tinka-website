@@ -71,17 +71,23 @@ Plan
                 If you're already registered, you can login <a href="/login">here</a>
               </div>
               <div class="mb-3">
-                <label for="firstName">Full name <span class="text-muted">(Required)</span></label>
+                <label for="firstName">Full name <span class="text-muted">(required)</span></label>
                 <input type="text" class="form-control" name="name" {{ $errors->has('name') ? 'has-error' : '' }} value="{{ old('name') }}">
                 <span class="text-danger">{{ $errors->first('name') }}</span>
               </div>
 
             <div class="mb-3">
-              <label for="email">Email <span class="text-muted">(Required)</span></label>
+              <label for="email">Email <span class="text-muted">(required)</span></label>
               <input type="email" class="form-control" name="email" placeholder="you@example.com" {{ $errors->has('email') ? 'has-error' : '' }} value="{{ old('email') }}">
               <span class="text-danger">{{ $errors->first('email') }}</span>
             </div>
             @endguest
+
+            <div class="mb-3">
+              <label for="studentName">Student Name <span class="text-muted">(required)</span></label>
+              <input type="text" class="form-control" name="student_name" {{ $errors->has('student_name') ? 'has-error' : '' }} value="{{ old('student_name') }}">
+              <span class="text-danger">{{ $errors->first('student_name') }}</span>
+            </div>
 
             @php
             $extra = $plan['signup_fee'] + $plan['exam_fee'];

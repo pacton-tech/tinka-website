@@ -28,26 +28,27 @@ Profile
 
         <!-- Feature Tabs -->
         <div class="row feture-tabs aos-init aos-animate" data-aos="fade-up">
-          <div class="col-lg-9">
-            <h3>Details</h3>
-
+          <div class="col-lg-12">
             <!-- Tabs -->
             <ul class="nav nav-pills mb-3">
+            
               <li>
-                <a class="nav-link active" data-bs-toggle="pill" href="#tab1">Profile</a>
-              </li>
-              <li>
-                <a class="nav-link" data-bs-toggle="pill" href="#tab2">Subscription</a>
+                <a class="nav-link active" data-bs-toggle="pill" href="#tab2">Subscription</a>
               </li>
               <li>
                 <a class="nav-link" data-bs-toggle="pill" href="#tab3">Payments</a>
               </li>
+              @if(isset($profile))
+              <li>
+                <a class="nav-link" data-bs-toggle="pill" href="#tab1">Profile</a>
+              </li>
+              @endif
             </ul><!-- End Tabs -->
 
             <!-- Tab Content -->
             <div class="tab-content">
 
-              <div class="tab-pane fade active show" id="tab1">
+              <div class="tab-pane fade" id="tab1">
                 @if(isset($profile))
                 <table class="table">
                     <tr>
@@ -105,21 +106,27 @@ Profile
                 @endif
               </div><!-- End Tab 1 Content -->
 
-              <div class="tab-pane fade" id="tab2">
+              <div class="tab-pane fade active show" id="tab2">
                 @if(isset($user->subscriptions))
                 <table class="table">
                     <thead>
-                        <th>Name</th>
-                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Package</th>
+                        <th>Student Name</th>
                         <th>Start</th>
                         <th>End</th>
+                        <th>Expiry</th>
+                        <th>Action</th>
                     </thead>
                     @foreach($user->subscriptions as $subscription)
                     <tr>
+                        <td class="text-uppercase">{!! str_replace("-", " ", $subscription->plan->category) !!}</td>
                         <td>{!! $subscription->plan->name !!}</td>
-                        <td>{!! $subscription->plan->description !!}</td>
-                        <td>{!! $subscription['starts_at'] !!}</td>
-                        <td>{!! $subscription['ends_at'] !!}</td>
+                        <td>{!! $subscription->student_name !!}</td>
+                        <td>{!! \Carbon\Carbon::parse($subscription['starts_at'])->format('d/m/Y') !!}</td>
+                        <td>{!! \Carbon\Carbon::parse($subscription['ends_at'])->format('d/m/Y') !!}</td>
+                        <td>{!! \Carbon\Carbon::parse($subscription['ends_at'])->diffForHumans() !!}</td>
+                        <td><a href="{{ url('subscription', $subscription->id) }}" class="btn btn-primary btn-sm">Details</a></td>
                     </tr>
                     @endforeach
                 </table>
@@ -162,7 +169,9 @@ Profile
 
           </div>
 
-          <div class="col-lg-3">
+        </div><!-- End Feature Tabs -->
+
+        <div class="col-lg-3">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex flex-column align-items-center text-center">
@@ -190,10 +199,6 @@ Profile
                 </div>
             </div>
           </div>
-
-        </div><!-- End Feature Tabs -->
-
-        
 
       </div>
 

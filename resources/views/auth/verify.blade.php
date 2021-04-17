@@ -1,13 +1,21 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+<section id="values" class="values">
 
-                <div class="card-body">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>{{ env('APP_NAME') }}</h2>
+          <p>{{ __('Verify Your Email Address') }}</p>
+        </header>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-4">
+                <div class="box aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/values-2.png') }}" class="img-fluid" alt="">
+
                     @if (session('resent'))
                         <div class="alert alert-success" role="alert">
                             {{ __('A fresh verification link has been sent to your email address.') }}
@@ -24,5 +32,5 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection
