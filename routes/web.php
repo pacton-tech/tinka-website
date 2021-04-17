@@ -93,7 +93,7 @@ Route::resource('payment', PaymentController::class);
 
 Route::get('fees/educentre', 'PlanController@educentre')->name('fee.educentre');
 Route::get('fees/home-tuition', 'PlanController@home_tuition')->name('fee.home-tuition');
-Route::get('fees/home-tuition/{id}', 'PlanController@home_tuition_details')->name('fee.home-tuition.show');
+Route::get('fees/home-tuition/{id}', 'PlanController@home_tuition_show')->name('fee.home-tuition.show');
 Route::get('fees/app', 'PlanController@app')->name('fee.app');
 
 // Admin route goes here

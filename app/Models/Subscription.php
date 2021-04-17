@@ -13,10 +13,16 @@ class Subscription extends Model
 
     protected $fillable = [
         'user_id',
+        'student_name',
         'plan_id',
+        'subjects',
         'starts_at',
         'ends_at',
         'payment_id'
+    ];
+
+    protected $casts = [
+        'subjects' => 'array'
     ];
 
     public function payment()

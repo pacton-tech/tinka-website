@@ -18,19 +18,19 @@ class ProfileController extends Controller
     	if($user['role'] == 'teacher')
     	{
     		$profile = TeacherProfile::where('user_id', $user['id'])->first();
+            return view('profile', compact('user', 'profile'));
     	}
 
     	if($user['role'] == 'student')
     	{
     		$profile = StudentProfile::where('user_id', $user['id'])->first();
+            return view('profile', compact('user', 'profile'));
     	}
 
-    	if($user['role'] == '')
+    	if($user['role'] == 'parent' || $user['role'] == '')
     	{
-    		$profile = '';
+    		return view('profile', compact('user'));
     	}
-
-    	return view('profile', compact('user', 'profile'));
     }
 
     public function change_password($id)
