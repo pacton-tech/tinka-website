@@ -103,6 +103,7 @@ Route::resource('payment', PaymentController::class);
 
 Route::get('blog', function(){
     return view('blog');
+});
 
 Route::get('fees/educentre', 'PlanController@educentre')->name('fee.educentre');
 Route::get('fees/home-tuition', 'PlanController@home_tuition')->name('fee.home-tuition');
