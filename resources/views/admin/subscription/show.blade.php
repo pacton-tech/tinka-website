@@ -107,6 +107,25 @@
                         </dl>
                     </div>
                 </div>
+
+                <div class="card shadow mt-3">
+                    <div class="card-header bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h6 class="text-uppercase text-muted ls-1 mb-1">User</h6>
+                                <h2 class="mb-0">User Details</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <dl class="dl-horizontal">
+                            <dt>Name</dt>
+                            <dd>{{ $subscription->user->name }}</dd>
+                            <dt>E-mail Address</dt>
+                            <dd>{!! $subscription->user->email !!}</dd>
+                        </dl>
+                    </div>
+                </div>
             </div>
         </div>
 
