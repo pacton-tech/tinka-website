@@ -33,10 +33,17 @@
 
                         {!! Form::open(array('route' => ['admin.subscription.update', $id], 'method' => 'patch')) !!}
                         <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-3">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Student Name</label>
                                     {!! Form::text('student_name', $subscription['student_name'] ?? null, array('class' => 'form-control form-control-sm')) !!}
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <label class="form-control-label">Subject Registered</label>
+                                    {!! Form::textarea('subjects', $subscription['subjects'] ?? null, array('class' => 'form-control form-control-sm')) !!}
                                 </div>
                             </div>
                         </div>

@@ -42,7 +42,12 @@
                                     <td>{{ $data->plan->name }}</td>
                                     <td>{{ \Carbon\Carbon::parse($data->starts_at)->format('d/m/Y') }}</td>
                                     <td>{{ \Carbon\Carbon::parse($data->ends_at)->format('d/m/Y') }}</td>
-                                    <td>{!! \Carbon\Carbon::parse($data->ends_at)->diffForHumans() !!}</td>
+                                    <td>@if(\Carbon\Carbon::now() > $data->ends_at)
+                                        <label class="badge badge-danger">Expired</label>
+                                        @else
+                                        {!! \Carbon\Carbon::parse($data->ends_at)->diffForHumans() !!}
+                                        @endif
+                                    </td>
                                     <td>
                                         <a class="btn btn-sm btn-success" href="{{ route('admin.subscription.show',$data->id) }}">View</a>
                                         <a class="btn btn-sm btn-primary" href="{{ route('admin.subscription.edit',$data->id) }}">Edit</a>
