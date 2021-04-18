@@ -86,7 +86,7 @@ About Us
          
           <h3>Mission</h3>
           <p>Able to supplement classroom education with innovative content delivery
-             methods via the EduTV Platform.
+             methods via the TINKA™ Platform.
           </p>
        
         </div>

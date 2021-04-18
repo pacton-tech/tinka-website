@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Plan
+TiNKA Educentre
 @endsection
 
 @section('content')
@@ -45,7 +45,7 @@ Plan
           @foreach($plans as $plan)
           <div class="col-lg-4 col-md-6 portfolio-item filter-{!! $plan['category'] !!}" style="position: absolute; left: 0px; top: 0px;">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/{!! $plan['id'] !!}.png" class="img-fluid" alt="">
+              <img src="{{ asset('assets/img/portfolio/'.$plan['id'].'.png') }}" class="img-fluid" alt="">
               <div class="portfolio-info">
                <div class="portfolio-links">
                   <a href="/plan/{!! $plan['id'] !!}" title="More Details"><i class="bi bi-link"></i> Details</a>

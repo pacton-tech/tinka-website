@@ -13,6 +13,30 @@ class PlanController extends Controller
         return view('plan.index',compact('plans'));
     }
 
+    public function educentre()
+    {
+        $plans = Plan::whereIn('category', ['upsr', 'pt3', 'spm'])->get();
+        return view('plan.index',compact('plans'));
+    }
+
+    public function home_tuition()
+    {
+        $plans = Plan::where('category', 'home-tuition')->get();
+        return view('plan.home-tuition',compact('plans'));
+    }
+
+    public function app()
+    {
+        $plans = Plan::where('category', 'app')->get();
+        return view('plan.app',compact('plans'));
+    }
+
+    public function home_tuition_show($id)
+    {
+        $plan = Plan::find($id);
+        return view('plan.home-tuition-show',compact('plan'));
+    }
+
     public function show($id)
     {
         $plan = Plan::find($id);

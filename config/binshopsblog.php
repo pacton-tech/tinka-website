@@ -7,7 +7,7 @@ return [
 
     //Your custom User model
     //Change it to \App\User::class for previous laravel versions
-    'user_model'=>\App\Models\User::class,
+    'user_model'=>\App\Models\Admin::class,
 
     // reading progress bar is the bar which shows on top of your post when you are scrolling down the page. You can disable this feature if you want
     'reading_progress_bar' => true,
@@ -144,7 +144,7 @@ return [
         //      'disqus' (uses https://disqus.com/, please enter further config options below),
         //      'custom' (will load binshopsblog::partials.custom_comments, which you can copy to your vendor view dir to customise
         //      'disabled' (turn comments off)
-        'type_of_comments_to_show' => 'built_in', // default: built_in
+        'type_of_comments_to_show' => 'disabled', // default: built_in
 
         'max_num_of_comments_to_show' => 1000, // max num of comments to show on a single blog post. Set to a lower number for smaller page sizes. No comment pagination is built in yet.
 

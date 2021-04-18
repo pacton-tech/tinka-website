@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Subscriptions;
+use App\Models\Subscription;
 use App\Models\User;
 use Carbon\Carbon;
 
@@ -49,7 +49,8 @@ class SubscriptionController extends Controller
      */
     public function show($id)
     {
-        //
+        $subscription = Subscription::find($id);
+        return view('subscription.show',compact('subscription'));
     }
 
     /**

@@ -25,13 +25,26 @@ class PaymentController extends Controller
     {
         if($request->has('user_id')){
 
-            $request->validate([
-                'user_id' => 'required',
-                'plan_id' => 'required',
-                'subjects' => 'required',
-                'price' => 'required',
-                'extra_amount' => 'required'
-            ]);
+            if($request->input('category') == 'home-tuition')
+            {
+                $request->validate([
+                    'user_id' => 'required',
+                    'plan_id' => 'required',
+                    'price' => 'required',
+                    'student_name' => 'required'
+                ]);
+
+            } else {
+
+                $request->validate([
+                    'user_id' => 'required',
+                    'plan_id' => 'required',
+                    'subjects' => 'required',
+                    'price' => 'required',
+                    'extra_amount' => 'required',
+                    'student_name' => 'required'
+                ]);
+            }
 
             $user = User::find($request->input('user_id'));
 
@@ -41,14 +54,28 @@ class PaymentController extends Controller
 
         } else {
 
-            $request->validate([
-                'name' => 'required',
-                'email' => 'required|unique:users',
-                'plan_id' => 'required',
-                'subjects' => 'required',
-                'extra_amount' => 'required',
-                'price' => 'required'
-            ]);
+            if($request->input('category') == 'home-tuition')
+            {
+                $request->validate([
+                    'name' => 'required',
+                    'email' => 'required|unique:users',
+                    'plan_id' => 'required',
+                    'price' => 'required',
+                    'student_name' => 'required'
+                ]);
+
+            } else {
+
+                $request->validate([
+                    'name' => 'required',
+                    'email' => 'required|unique:users',
+                    'plan_id' => 'required',
+                    'subjects' => 'required',
+                    'extra_amount' => 'required',
+                    'price' => 'required',
+                    'student_name' => 'required'
+                ]);
+            }
 
             $name = $request->input('name');
             $email = $request->input('email');
@@ -78,22 +105,33 @@ class PaymentController extends Controller
             $user_id = $user['id'];
         }
 
-        $extra_amount = $request->input('extra_amount');
-        $price = $request->input('price');
-        $subject = implode(', ', $request->input('subjects'));
-        $total_subject = count($request->input('subjects'));
-        $total_amount = ($price * $total_subject) + $extra_amount;
-
         $input = $request->all();
 
         $plan = Plan::find($input['plan_id']);
 
+        if($request->input('category') == 'home-tuition')
+        {
+            $price = $request->input('price');
+            $total_amount = $price;
+            $subject = '';
+        } else {
+            $extra_amount = $request->input('extra_amount');
+            $price = $request->input('price');
+            $subject = implode(',', $request->input('subjects'));
+            $total_subject = count($request->input('subjects'));
+            $total_amount = ($price * $total_subject) + $extra_amount;
+        }
+
         $response = Http::withBasicAuth(env('BILLPLZ_API_KEY').':', '')
             ->post(env('BILLPLZ_URL').'v3/bills', [
             'collection_id' => env('BILLPLZ_COLLECTION_ID'),
-            'description' => 'Subscription for '.$plan['name'].' with subject '.$subject,
+            'description' => 'Subscription for '.$plan['name'],
             'email' => $email,
             'name' => $name,
+            'reference_1_label' => 'Student Name',
+            'reference_1' => $input['student_name'],
+            'reference_2_label' => 'Subject',
+            'reference_2' => $subject,
             'amount' => $total_amount*100, // in cent
             'callback_url' => env('APP_URL').'/billplz/callback',
             'redirect_url' => env('APP_URL').'/billplz/response'
@@ -175,9 +213,14 @@ class PaymentController extends Controller
         
         if($billplz['paid'] == 'true'){
 
+            // get the bill
+            $bill = Http::withBasicAuth(env('BILLPLZ_API_KEY').':', '')->get(env('BILLPLZ_URL').'v3/bills/'.$billplz['id']);
+
             // create subscription
             Subscription::create([
                 'user_id' => $payment['user_id'],
+                'subjects' => $bill['reference_2'],
+                'student_name' => $bill['reference_1'],
                 'plan_id' => $payment['plan_id'],
                 'starts_at' => Carbon::now(),
                 'ends_at' => Carbon::now()->addMonth(),
@@ -197,6 +240,8 @@ class PaymentController extends Controller
                 'starts_at' => Carbon::now(),
                 'ends_at' => Carbon::now()->addMonth()
             ]);
+
+            $user = User::find($payment['user_id']);
 
             Mail::to($user['email'])->send(new PlanRegistration($data));
         }
@@ -259,6 +304,8 @@ class PaymentController extends Controller
                 'url' => $payment['url'],
                 'updated_at' => $payment['updated_at']
             ]);
+
+            $user = User::find($payment['user_id']);
 
             Mail::to($user['email'])->send(new PlanRegistration($data));
         }

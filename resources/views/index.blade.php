@@ -40,8 +40,8 @@ TiNKA - Education. Everywhere.
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h2>Class That We Offered</h2>
-          <p>View Below</p>
+          <h2>Available Class</h2>
+          <p>Class That We Offer</p>
         </header>
 
         <div class="row">
@@ -51,8 +51,8 @@ TiNKA - Education. Everywhere.
               <h3>Physical Tuition Class</h3>
               <img src="assets/img/offeredclass/physical.png" class="img-fluid" alt="">
               <p>Our new and revamped tuition centre is located at Bukit Jelutong.
-                Available for UPSR, PT3, SPM & IGCSE students.</p>
-              <a href="/register/student" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                Available for UPSR, PT3, SPM & IGCSE students.<br><br></p>
+              <a href="/register" class="btn btn-primary scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Register Now</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -67,7 +67,7 @@ TiNKA - Education. Everywhere.
                 Learn from the comfort of your own home or pretty much
                 everywhere.
               </p>
-              <a href="/register/student" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <a href="/tinkaapp" class="btn btn-danger scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Register Now</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -82,7 +82,7 @@ TiNKA - Education. Everywhere.
                 learning. Have our Tink-Educator drop by your place
                 for personalised.
               </p>
-              <a href="/register/student" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <a href="/register" class="btn btn-warning scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Register Now</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -146,7 +146,7 @@ TiNKA - Education. Everywhere.
                   <h3 style="color: #1B1464;">Students</h3>
                   <img src="assets/img/offeredclass/studentscropped.png" class="img-fluid" alt="">
                   <p>Enroll your child at Tinka Educentre now.</p>   
-                  <a href="/register/student" class="btn-buy">Register Now</a>
+                  <a href="/register" class="btn-buy">Register Now</a>
                 </div>
               </div>
 

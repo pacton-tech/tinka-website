@@ -7,7 +7,7 @@ Description: {{ $data['description'] }}
 Amount: RM {{ number_format($data['amount'],2) }}  
 Payment Method: BillPlz  
 Payment Date/Time: {{ $data['updated_at'] }} 
-Start: {{ $data['starts_at'] }} 
+Start: {{ $data['starts_at'] }}  
 End: {{ $data['ends_at'] }}
 
 @component('mail::button', ['url' => $data['url']])
