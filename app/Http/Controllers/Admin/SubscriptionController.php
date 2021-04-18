@@ -22,4 +22,19 @@ class SubscriptionController extends Controller
         $subscription = Subscription::find($id);
         return view('admin.subscription.show',compact('subscription'));
     }
+
+    public function edit($id)
+    {
+        $subscription = Subscription::find($id);
+        return view('admin.subscription.edit')->with('subscription', $subscription)->with('id', $id);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $subscription = Subscription::find($id);
+        $subscription->student_name = $request->input('student_name');
+        $subscription->save();
+        
+        return redirect()->route('admin.subscription.index')->with('success','Subcription updated successfully');
+    }
 }
