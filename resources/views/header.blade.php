@@ -34,7 +34,7 @@
               <li><a href="/register">Future Tinkers</a></li>
           
             </ul> 
-          <li><a class="nav-link scrollto" href="{{ route('blog') }}">Blog</a></li>
+          <li><a class="nav-link scrollto" href="/en/blog">Blog</a></li>
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
           @auth
           <li><a class="getstarted" href="{{ route('view-profile', auth()->user()->id) }}">Dashboard</a></li>

@@ -25,6 +25,12 @@ class PlanController extends Controller
         return view('plan.home-tuition',compact('plans'));
     }
 
+    public function app()
+    {
+        $plans = Plan::where('category', 'app')->get();
+        return view('plan.app',compact('plans'));
+    }
+
     public function home_tuition_show($id)
     {
         $plan = Plan::find($id);

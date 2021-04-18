@@ -49,31 +49,24 @@ Home Tuition Details
               </ul>
             </div>
           @endif
+          @guest
+            <p>If you already have an account with us, you can proceed by login. Else, you can register your new account here.</p>
+            <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
+            <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
+            </div>
+          @endguest
+
+          @auth
           <form method="put" action="{{ url('payment/create') }}" name="checkout">
             @csrf
-              @auth
               <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
               <p class="text-mute">Name: {{ auth()->user()->name }}<br>
                 E-mail: {{ auth()->user()->email }}</p>
-              @endauth
-
-              @guest
-              <div class="alert alert-info">
-                If you're already registered, you can login <a href="/login">here</a>
-              </div>
               <div class="mb-3">
-                <label for="firstName">Full name <span class="text-muted">(Required)</span></label>
-                <input type="text" class="form-control" name="name" {{ $errors->has('name') ? 'has-error' : '' }} value="{{ old('name') }}">
-                <span class="text-danger">{{ $errors->first('name') }}</span>
+                <label for="studentName">Student Name <span class="text-muted">(required)</span></label>
+                <input type="text" class="form-control" name="student_name" {{ $errors->has('student_name') ? 'has-error' : '' }} value="{{ old('student_name') }}">
+                <span class="text-danger">{{ $errors->first('student_name') }}</span>
               </div>
-
-            <div class="mb-3">
-              <label for="email">Email <span class="text-muted">(Required)</span></label>
-              <input type="email" class="form-control" name="email" placeholder="you@example.com" {{ $errors->has('email') ? 'has-error' : '' }} value="{{ old('email') }}">
-              <span class="text-danger">{{ $errors->first('email') }}</span>
-            </div>
-            @endguest
-
             @php
             $extra = $plan['signup_fee'] + $plan['exam_fee'];
             @endphp
@@ -99,6 +92,7 @@ Home Tuition Details
             </div>
           </div>
 </form>
+@endauth
 
         </div>
       </div>

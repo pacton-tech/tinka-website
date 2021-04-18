@@ -6,6 +6,12 @@
       <div class="container">
         <div class="row gy-4">
 
+          <div class="col-lg-3 col-sm-12 footer-links">
+            <p>TINKA™ is positioned to be a Supplementary Enrichment and Enhancement program whereby its content is meta-tagged with curriculum data such as Learning Areas and Learning Outcomes as to enable self-paced, self-directed learning and also to support in-classroom and live-stream learning.</p>
+            <img src="{{ asset('assets/img/Tinka (1).png') }}" alt="" height="50px" class="img-thumb">
+
+          </div>
+
           <div class="col-lg-2 col-sm-12 footer-links">
             <h4>Customer Service</h4>
             <ul>
@@ -34,7 +40,7 @@
             </ul>
           </div>
           
-          <div class="col-lg-6 col-sm-12 footer-links">
+          <div class="col-lg-3 col-sm-12 footer-links">
 
                <div class="app-links">
                  <h4>Download Our App Now</h4>
