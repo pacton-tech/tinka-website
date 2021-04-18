@@ -33,6 +33,7 @@ class SubscriptionController extends Controller
     {
         $subscription = Subscription::find($id);
         $subscription->student_name = $request->input('student_name');
+        $subscription->subjects = $request->input('subjects');
         $subscription->save();
         
         return redirect()->route('admin.subscription.index')->with('success','Subcription updated successfully');
