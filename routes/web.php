@@ -68,6 +68,10 @@ Route::get('terms-and-conditions', function(){
     return view('terms-and-conditions');
 });
 
+Route::get('privacy-policy', function(){
+    return view('privacy-policy');
+});
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile/{id}', 'ProfileController@profile')->name('view-profile');
     Route::get('/profile/change-password/{id}', 'ProfileController@change_password')->name('change-password');
