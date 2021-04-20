@@ -65,12 +65,12 @@ Tinka App
    <!-- ======= Features Section ======= -->
    <section id="features" class="features">
 
-    <section class="container py-5 py-md-6 py-lg-7">
+    <section class="container">
 
       <div class="row g-0 py-3 py-md-0">
         <div class="col-md-6 mb-4 mb-md-0">
-          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
-           <img src="./assets/img/offeredclass/onlinelearning2.png" width="400" alt="">
+          <div class="d-flex justify-content-center align-items-center py-9" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
+           <img src="./assets/img/offeredclass/oc2.png" width="500" alt="">
           </div>
         </div>
         <div class="col-md-6">
@@ -94,17 +94,17 @@ Tinka App
           </div>     
         </div>
         <div class="col-md-6">
-          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
-              <img src="./assets/img/offeredclass/12.png" alt="">
+          <div class="d-flex justify-content-center align-items-center mt-9" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
+              <img src="./assets/img/offeredclass/oc3.png" width="500" alt="">
              </div>
           </div>
         </div>
       </div>
-
       <div class="row g-0 py-3 py-md-0">
         <div class="col-md-6 mb-4 mb-md-0">
-          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
-           <img src="./assets/img/offeredclass/13.png" alt="">
+          <div class="d-flex justify-content-center align-items-center mt-9" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
+                      <img src="./assets/img/offeredclass/oc4.png" width="500" alt="">
+
           </div>
         </div>
         <div class="col-md-6">
@@ -128,8 +128,9 @@ Tinka App
           </div>     
         </div>
         <div class="col-md-6">
-          <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
-              <img src="./assets/img/offeredclass/12.png" alt="">
+          <div class="d-flex justify-content-center align-items-center mt-9" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
+                         <img src="./assets/img/offeredclass/oc1.png" width="500" alt="">
+
              </div>
           </div>
         </div>
