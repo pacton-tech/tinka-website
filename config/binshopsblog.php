@@ -21,16 +21,10 @@ return [
 
     'per_page' => 10, // how many posts to show per page on the blog index page. Default: 10
 
-
     'image_upload_enabled' => true, // true or false, if image uploading is allowed.
     'blog_upload_dir' => "blog_images", // this should be in public_path() (i.e. /public/blog_images), and should be writable
 
-
-    'memory_limit' => '2048M', // This is used when uploading images :
-    //                              @ini_set('memory_limit', config("binshopsblog.memory_limit"));
-    //                            See PHP.net for detailso
-    //                            Set to false to not set any value.
-
+    'memory_limit' => '512M',
 
     //if true it will echo out  (with {!! !!}) the blog post with NO escaping! This is not safe if you don't trust your blog post writers! Understand the risks by leaving this to true
     // (you should disable this (set to false) if you don't trust your blog writers).
@@ -51,9 +45,7 @@ return [
     // echo_html must be set to true for this to have an effect.
     'use_wysiwyg' => true, // Default: true
 
-
     'image_quality' => 80, // what image quality to use when saving images. higher = better + bigger sizes. Around 80 is normal.
-
 
     'image_sizes' => [
 
@@ -63,7 +55,6 @@ return [
         // Also, if you change the w/h (which are obviously in pixels :) ), it won't change any previously uploaded images.
 
         // There must be only three sizes - image_large, image_medium, image_thumbnail.
-
 
         'image_large' => [ // this key must start with 'image_'. This is what the DB column must be named
             'w' => 1000, // width in pixels
@@ -150,7 +141,6 @@ return [
 
         // should we save the IP address in the database?
         'save_ip_address' => true, // Default: true
-
 
         //should comments appear straight away on the site (set this to true)? or wait for approval (set to false)
         'auto_approve_comments' => false, // default: false

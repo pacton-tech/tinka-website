@@ -71,7 +71,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('admin.payment.index') }}">
                         <i class="ni ni-money-coins text-success"></i>
                         <span class="nav-link-text">Payments</span>
                     </a>

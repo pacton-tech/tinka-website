@@ -129,6 +129,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::middleware(['auth:admin'])->group(function () {
         Route::get('/dashboard','HomeController@index')->name('home');
         Route::resource('/subscription', SubscriptionController::class);
+        Route::resource('/payment', PaymentController::class);
     });
 
 });

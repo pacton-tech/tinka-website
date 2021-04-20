@@ -14,7 +14,7 @@ class SubscriptionController extends Controller
     {
         $subscription = Subscription::orderBy('id','DESC')->paginate(10);
         return view('admin.subscription.index', compact('subscription'))
-        	->with('i', ($request->input('page', 1) - 1) * 10);;
+        	->with('i', ($request->input('page', 1) - 1) * 10);
     }
 
     public function show($id)
