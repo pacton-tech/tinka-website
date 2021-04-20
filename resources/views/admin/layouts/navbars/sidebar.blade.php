@@ -77,7 +77,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('admin.users.index') }}">
                         <i class="ni ni-money-coins text-warning"></i>
                         <span class="nav-link-text">Users</span>
                     </a>
