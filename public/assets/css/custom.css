@@ -1049,3 +1049,7 @@ section {
   bottom: 15px;
   right: 15px;
 }
+
+.features img{
+  padding: 20px;
+}
