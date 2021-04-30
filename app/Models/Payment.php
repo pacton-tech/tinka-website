@@ -20,7 +20,9 @@ class Payment extends Model
         'status',
         'url',
         'description',
-        'amount'
+        'amount',
+        'is_renewal',
+        'subscription_id'
     ];
 
     public function user()
@@ -36,5 +38,10 @@ class Payment extends Model
     public function subscription()
     {
         return $this->belongsTo(Subscription::class, 'id', 'payment_id');
+    }
+
+    public function renewal()
+    {
+        return $this->belongsTo(Subscription::class, 'id', 'subscription_id');
     }
 }

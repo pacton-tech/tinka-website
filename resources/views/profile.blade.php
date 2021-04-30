@@ -113,8 +113,8 @@ Profile
                         <th>Category</th>
                         <th>Package</th>
                         <th>Student Name</th>
-                        <th>Start</th>
-                        <th>End</th>
+                        <th>Duration</th>
+                        <th>Status</th>
                         <th>Expiry</th>
                         <th>Action</th>
                     </thead>
@@ -123,8 +123,12 @@ Profile
                         <td class="text-uppercase">{!! str_replace("-", " ", $subscription->plan->category) !!}</td>
                         <td>{!! $subscription->plan->name !!}</td>
                         <td>{!! $subscription->student_name !!}</td>
-                        <td>{!! \Carbon\Carbon::parse($subscription['starts_at'])->format('d/m/Y') !!}</td>
-                        <td>{!! \Carbon\Carbon::parse($subscription['ends_at'])->format('d/m/Y') !!}</td>
+                        <td>{!! \Carbon\Carbon::parse($subscription['starts_at'])->format('d/m/Y') !!} - {!! \Carbon\Carbon::parse($subscription['ends_at'])->format('d/m/Y') !!}</td>
+                        @if(\Carbon\Carbon::now() < $subscription['ends_at'])
+                        <td>{!! $subscription->is_cancelled == 1 ? '<button class="btn btn-sm btn-warning">Cancelled</button>' : '<button class="btn btn-sm btn-success">Active</button>' !!}</td>
+                        @else
+                        <td><button class="btn btn-sm btn-danger">Expired</button></td>
+                        @endif
                         <td>{!! \Carbon\Carbon::parse($subscription['ends_at'])->diffForHumans() !!}</td>
                         <td><a href="{{ url('subscription', $subscription->id) }}" class="btn btn-primary btn-sm">Details</a></td>
                     </tr>

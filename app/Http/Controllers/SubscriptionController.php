@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Subscription;
+use App\Models\Plan;
+use App\Models\Payment;
 use App\Models\User;
 use Carbon\Carbon;
 
@@ -50,7 +52,11 @@ class SubscriptionController extends Controller
     public function show($id)
     {
         $subscription = Subscription::find($id);
-        return view('subscription.show',compact('subscription'));
+        $renewal = Payment::where('is_renewal', 1)
+            ->where('subscription_id', $subscription->id)
+            ->where('paid', 'true')
+            ->first();
+        return view('subscription.show',compact('subscription','renewal'));
     }
 
     /**
@@ -85,5 +91,33 @@ class SubscriptionController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Renew the subscription
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function renew($id)
+    {
+        $subscription = Subscription::find($id);
+        $plan = Plan::where('id', $subscription->plan->id)->first();
+        return view('subscription.renew',compact('plan', 'subscription'));
+    }
+
+    /**
+     * Show available upgrade for the subscription
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function upgrade($id)
+    {
+        $subscription = Subscription::find($id);
+        $plan = Plan::where('category', $subscription->plan->category)
+            ->where('minimum_subject', '>', $subscription->plan->minimum_subject)
+            ->get();
+        return view('subscription.upgrade',compact('plan'));
     }
 }

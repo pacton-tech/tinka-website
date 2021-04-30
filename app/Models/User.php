@@ -60,11 +60,11 @@ class User extends Authenticatable
 
     public function subscriptions()
     {
-        return $this->hasMany(Subscription::class, 'user_id', 'id');
+        return $this->hasMany(Subscription::class, 'user_id', 'id')->orderBy('id', 'DESC');
     }
 
     public function payments()
     {
-        return $this->hasMany(Payment::class, 'user_id', 'id');
+        return $this->hasMany(Payment::class, 'user_id', 'id')->orderBy('id', 'DESC');
     }
 }

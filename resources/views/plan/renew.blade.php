@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Plan
+Package Renewal
 @endsection
 
 @section('content')
@@ -16,7 +16,7 @@ Plan
           <li><a href="index">Home</a></li>
           <li>Tuition Fees</li>
         </ol>
-        <h2>Tinka Educentre Course</h2>
+        <h2>Renewal</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 

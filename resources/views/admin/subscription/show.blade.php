@@ -129,6 +129,45 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-xl-12 mt-4 mb-5 mb-xl-0">
+                <div class="card shadow">
+                    <div class="card-header bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h6 class="text-uppercase ls-1 mb-1">Payment</h6>
+                                <h2 class="mb-0">Renewal</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Invoice #</th>
+                                    <th>Amount</th>
+                                    <th>Created At</th>
+                                    <th>Status</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($renewal as $data)
+                                <tr>
+                                    <td>{{ $data['billplz_id'] }}</td>
+                                    <td>{{ $data['amount'] }}</td>
+                                    <td>{{ $data['created_at'] }}</td>
+                                    <td>{{ $data['status'] }}</td>
+                                    <td><a class="btn btn-sm btn-primary" href="{{ $data->url }}">Invoice</a></td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         @include('admin.layouts.footers.auth')
     </div>
 @endsection

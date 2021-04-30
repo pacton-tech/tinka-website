@@ -26,6 +26,7 @@
                                     <th>Name</th>
                                     <th>Amount</th>
                                     <th>Created At</th>
+                                    <th>Status</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -37,8 +38,9 @@
                                     <td>{!! $data->user->name ?? 'N/A' !!}</td>
                                     <td class="text-right">{{ number_format($data->amount,2) }}</td>
                                     <td>{{ \Carbon\Carbon::parse($data->created_at)->format('d/m/Y') }}</td>
+                                    <td>{!! $data->status == 'due' ? '<button class="btn btn-sm btn-warning">Due</button>' : '<button class="btn btn-sm btn-success">Active</button>' !!}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-success" href="{{ route('admin.payment.show',$data->id) }}">View</a>
+                                        <a class="btn btn-sm btn-primary" href="{{ route('admin.payment.show',$data->id) }}">View</a>
                                     </td>
                                 </tr>
                                 @endforeach

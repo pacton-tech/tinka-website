@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Subscription;
 use App\Models\User;
+use App\Models\Payment;
 use Carbon\Carbon;
 
 class SubscriptionController extends Controller
@@ -20,7 +21,8 @@ class SubscriptionController extends Controller
     public function show($id)
     {
         $subscription = Subscription::find($id);
-        return view('admin.subscription.show',compact('subscription'));
+        $renewal = Payment::where('subscription_id', $subscription->id)->get();
+        return view('admin.subscription.show',compact('subscription', 'renewal'));
     }
 
     public function edit($id)

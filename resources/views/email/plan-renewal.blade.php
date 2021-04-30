@@ -1,7 +1,7 @@
 @component('mail::message')
 # Invoice {{ $data['invoice'] }} at {{ config('app.name') }}
 
-Thank you for your subscription. We have received your payment. Below is the details of your payment:
+Thank you for your subscription renewal. We have received your payment. Below is the details of your payment:
 
 Description: {{ $data['description'] }}  
 Amount: RM {{ number_format($data['amount'],2) }}  

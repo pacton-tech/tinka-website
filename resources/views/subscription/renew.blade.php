@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Plan
+Package Renewal
 @endsection
 
 @section('content')
@@ -16,7 +16,7 @@ Plan
           <li><a href="index">Home</a></li>
           <li>Tuition Fees</li>
         </ol>
-        <h2>Tinka Educentre Course</h2>
+        <h2>Renewal</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
@@ -26,9 +26,6 @@ Plan
         <div class="row gx-0">
 
           <div class="col-lg-6 d-flex flex-column justify-content-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-            @php
-              $previous = url()->previous();
-            @endphp
             <div class="content">
               <h3>Plan Details</h3>
               <h2>{{ $plan['name'] }}</h2>
@@ -36,21 +33,12 @@ Plan
               <h3>Subscription details</h3>
               <ul>
                 <li>Price: RM {{ $plan['price'] }}/subject</li>
-                @if(!str_contains($previous, 'subscription'))
-                <li>Annual Registration: RM {{ $plan['signup_fee'] }}</li>
-                <li>Exam and Notes: RM {{ $plan['exam_fee'] }}</li>
-                @endif
                 <li>Renewal: Every {{ $plan['invoice_period'].' '.$plan['invoice_interval'] }}</li>
               </ul>
               
               <div class="row">
                 <div class="col-md-12 order-md-1">
                   <h4 class="mb-3">Checkout</h4>
-                  @guest
-                    <p>If you already have an account with us, you can proceed by login. Else, you can register your new account here.</p>
-                    <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
-                    <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
-                  @endguest
                   @if ($errors->any())
                     <div class="alert alert-danger">
                       <ul>
@@ -61,13 +49,16 @@ Plan
                     </div>
                   @endif
                   @auth
-                  <form method="put" action="{{ url('payment/create') }}" name="checkout">
+                  <form method="post" action="{{ route('renew-payment') }}" name="checkout">
                     <h3>Subject Selection</h3>
-                      <?php $subject = explode(',', $plan['subjects']); ?>
+                      <?php
+                        $subject = explode(',', $plan['subjects']);
+                        $subscription_subject = explode(', ', $subscription->subjects);
+                      ?>
                       @foreach($subject as $key => $value)
                       <div class="form-check form-check-inline">
-                        <input type="checkbox" class="form-check-input" id="subject-{{ $key }}" name="subjects[]" onclick="checkBoxLimit()" value="{{ $value }}">
-                        <label class="form-check-label" for="subject-{{ $key }}" name="agree">{{ $value }}</label>
+                        <input type="checkbox" class="form-check-input" id="subject-{{ $key }}" name="subjects[]" onclick="checkBoxLimit()" value="{{ $value }}" {{ in_array($value, $subscription_subject) ? 'checked' : '' }}>
+                        <label class="form-check-label" for="subject-{{ $key }}">{{ $value }}</label>
                       </div>
                       @endforeach
                       @csrf
@@ -77,21 +68,14 @@ Plan
                         E-mail: {{ auth()->user()->email }}</p>
                       <div class="mb-3">
                         <label for="studentName">Student Name <span class="text-muted">(required)</span></label>
-                        <input type="text" class="form-control" name="student_name" {{ $errors->has('student_name') ? 'has-error' : '' }} value="{{ old('student_name') }}">
+                        <input type="text" class="form-control" name="student_name" {{ $errors->has('student_name') ? 'has-error' : '' }} value="{{ $subscription->student_name }}">
                         <span class="text-danger">{{ $errors->first('student_name') }}</span>
                       </div>
 
-                    @if(!str_contains($previous, 'subscription'))
-                    @php
-                    $extra = $plan['signup_fee'] + $plan['exam_fee'];
-                    @endphp
-                    <input type="hidden" name="subscription_option" value="initial">
-                    @else
                     @php
                     $extra = 0;
                     @endphp
-                    <input type="hidden" name="subscription_option" value="upgrade">
-                    @endif
+                    <input type="hidden" name="subscription_option" value="renewal">
                     <div class="custom-control custom-checkbox">
                       <input type="checkbox" class="custom-control-input" id="agree">
                       <label class="custom-control-label" for="agree" name="agree">I agree to the <a href="{{ url('terms-and-conditions') }}" target="_blank" required>{{ env('APP_NAME') }}'s terms and conditions</a></label>
@@ -100,11 +84,12 @@ Plan
                     <input type="hidden" name="plan_id" value="{{ $plan['id'] }}">
                     <input type="hidden" name="extra_amount" value="{{ $extra }}">
                     <input type="hidden" name="price" value="{{ $plan['price'] }}">
+                    <input type="hidden" name="subscription_id" value="{{ $subscription->id }}">
 
                     <hr class="mb-4">
                     <div class="text-center text-lg-start">
                       <button class="btn btn-primary">
-                        <span>Subscribe</span>
+                        <span>Renew</span>
                         <i class="bi bi-arrow-right"></i>
                       </button>
                     </div>

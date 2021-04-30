@@ -80,6 +80,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         return view('index');
     });
+    Route::get('subscription/renew/{id}', 'SubscriptionController@renew')->name('renew-subscription');
+    Route::get('subscription/cancel/{id}', 'SubscriptionController@cancel')->name('cancel-subscription');
+    Route::get('subscription/upgrade/{id}', 'SubscriptionController@upgrade')->name('upgrade-subscription');
+    Route::post('/payment/renew', 'PaymentController@renew')->name('renew-payment');
+    Route::get('payment/receipt/{id}', 'PaymentController@receipt')->name('receipt-payment');
 });
 
 Route::get('/register/teacher', 'TeacherController@create')->name('register-teacher');
