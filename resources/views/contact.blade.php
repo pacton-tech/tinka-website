@@ -64,7 +64,7 @@ Contact Us
               <div class="info-box">
                 <i class="bi bi-telephone"></i>
                 <h3>Call Us</h3>
-                <p>03 - 5030 5883<br>011 - 1087 0015</p>
+                <p>03 - 5880 4813<br>011 - 1087 0015</p>
               </div>
             </div>
 
