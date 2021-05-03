@@ -22,32 +22,25 @@ class CheckExpiringSubscription extends Command
 
     public function handle()
     {
-        $today = Carbon::now()->startOfMonth();
-        $month_end = $today->copy()->endOfMonth()->addMonth();
-        $due_date = $today->copy()->endOfMonth()->addDays(14);
+        $today = Carbon::now();
 
         // check for overdue subscription
-        $expiring = Subscription::where('subscriptions.ends_at', '>', $today)
-            ->where('subscriptions.ends_at', '<', $month_end)
-            ->select('subscriptions.*')
-            ->get();
+        $expiring = Subscription::whereNotIn('id', ['9', '5'])->get();
 
-        if(!$expiring)
-        {
-            $this->info('No expiring subscription found.');
-            
-        } else {
+        foreach ($expiring as $data) {
 
-            foreach ($expiring as $data) {
+            if($data['ends_at'] < $today){
 
                 $plan = Plan::find($data['plan_id']);
 
                 if($plan['category'] != 'home-tuition' && $data['is_cancelled'] == 0)
                 {
                     // check in payment table if invoice exist
-                    $invoice = Payment::where('subscription_id', $data['id'])->get();
+                    $invoice = Payment::where('subscription_id', $data['id'])->first();
 
-                    if(!$invoice){
+                    if($invoice){
+                        $this->info('Invoice already exist for subscription '.$data->id);
+                    } else {
 
                         $extra_amount = 0;
                         $subject = explode(', ', $data['subjects']);
@@ -66,8 +59,7 @@ class CheckExpiringSubscription extends Command
                             'reference_2' => $data['subjects'],
                             'amount' => $total_amount*100, // in cent
                             'callback_url' => env('APP_URL').'/billplz/callback',
-                            'redirect_url' => env('APP_URL').'/billplz/response',
-                            'due_at' => Carbon::createFromFormat('Y-m-d', $due_date)
+                            'redirect_url' => env('APP_URL').'/billplz/response'
                         ]);
 
                         if($response){
@@ -92,15 +84,12 @@ class CheckExpiringSubscription extends Command
 
                             $this->info('Unable to create invoice for subscription '.$data->id);
                         }
-                    } else {
-                        $this->info('Invoice exist for subscription '.$data->id);
                     }
                 } else {
                     $this->info('No invoice required for subscription '.$data->id);
                 }
             }
-             
-            $this->info('Successfully execute invoice creation for expiring subscription.');
         }
+        $this->info('Successfully execute invoice creation for expiring subscription.');
     }
 }
