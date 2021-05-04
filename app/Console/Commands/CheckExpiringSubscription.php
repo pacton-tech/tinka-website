@@ -25,7 +25,8 @@ class CheckExpiringSubscription extends Command
         $today = Carbon::now();
 
         // check for overdue subscription
-        $expiring = Subscription::whereNotIn('id', ['9', '5'])->get();
+        // TODO: custom for month May 2021 ONLY
+        $expiring = Subscription::all();
 
         foreach ($expiring as $data) {
 
@@ -42,10 +43,28 @@ class CheckExpiringSubscription extends Command
                         $this->info('Invoice already exist for subscription '.$data->id);
                     } else {
 
-                        $extra_amount = 0;
-                        $subject = explode(', ', $data['subjects']);
-                        $total_subject = count($subject);
-                        $total_amount = $plan['price'] * $total_subject;
+                        // 9 reduce to one
+                        if($data->id == 9){
+                            $extra_amount = 0;
+                            $data['subjects'] = "Science";
+                            $total_subject = 1;
+                            $total_amount = $plan['price'] * $total_subject;
+                        }
+
+                        // 3 discount to RM 200
+                        elseif($data->id == 3){
+                            $extra_amount = 0;
+                            $subject = explode(', ', $data['subjects']);
+                            $total_subject = count($subject);
+                            $total_amount = 200;
+                        }
+
+                        else {
+                            $extra_amount = 0;
+                            $subject = explode(', ', $data['subjects']);
+                            $total_subject = count($subject);
+                            $total_amount = $plan['price'] * $total_subject;
+                        }
 
                         $response = Http::withBasicAuth(env('BILLPLZ_API_KEY').':', '')
                             ->post(env('BILLPLZ_URL').'v3/bills', [

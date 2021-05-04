@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('invoice:renew')->monthly();
+        $schedule->command('invoice:renew')->daily();
         $schedule->command('subscription:check')->daily();
     }
 
