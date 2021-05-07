@@ -9,11 +9,11 @@ use App\Models\Plan;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 
-class CheckExpiringSubscription extends Command
+class DropSubjectRenewal extends Command
 {
-    protected $signature = 'subscription:check';
+    protected $signature = 'subject:drop';
 
-    protected $description = 'Check for expiring subscription and create invoice';
+    protected $description = 'Drop subject renewal custom';
 
     public function __construct()
     {
@@ -25,13 +25,13 @@ class CheckExpiringSubscription extends Command
         $today = Carbon::now();
 
         // check for overdue subscription
-        $expiring = Subscription::all();
+        $expiring = Subscription::find([3,8,9,10]);
 
         foreach ($expiring as $data) {
 
             if($data['ends_at'] < $today){
 
-                $plan = Plan::find($data['plan_id']);
+                $plan = Plan::find(16); // SPM 1 subject
 
                 if($plan['category'] != 'home-tuition' && $data['is_cancelled'] == 0)
                 {
@@ -43,9 +43,9 @@ class CheckExpiringSubscription extends Command
                     } else {
 
                         $extra_amount = 0;
-                        $subject = explode(', ', $data['subjects']);
-                        $total_subject = count($subject);
-                        $total_amount = $plan['price'] * $total_subject;
+                        $subject = "Science";
+                        $total_subject = 1;
+                        $total_amount = $plan['price'];
 
                         $response = Http::withBasicAuth(env('BILLPLZ_API_KEY').':', '')
                             ->post(env('BILLPLZ_URL').'v3/bills', [
@@ -56,7 +56,7 @@ class CheckExpiringSubscription extends Command
                             'reference_1_label' => 'Student Name',
                             'reference_1' => $data['student_name'],
                             'reference_2_label' => 'Subject',
-                            'reference_2' => $data['subjects'],
+                            'reference_2' => $subject,
                             'amount' => $total_amount*100, // in cent
                             'callback_url' => env('APP_URL').'/billplz/callback',
                             'redirect_url' => env('APP_URL').'/billplz/response'

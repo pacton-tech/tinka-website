@@ -136,6 +136,8 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         Route::resource('/subscription', SubscriptionController::class);
         Route::resource('/payment', PaymentController::class);
         Route::resource('/users', UserController::class);
+        Route::post('/delete_invoice','PaymentController@delete_invoice')->name('invoice.delete');
+        Route::get('/subscription/downgrade/{id}','SubscriptionController@downgrade')->name('subscription.downgrade');
     });
 
 });

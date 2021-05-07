@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Subscription;
 use App\Models\User;
+use App\Models\Plan;
 use App\Models\Payment;
 use Carbon\Carbon;
 
@@ -29,6 +30,13 @@ class SubscriptionController extends Controller
     {
         $subscription = Subscription::find($id);
         return view('admin.subscription.edit')->with('subscription', $subscription)->with('id', $id);
+    }
+
+    public function downgrade($id)
+    {
+        $subscription = Subscription::find($id);
+        $plan = Plan::where('category', $subscription->plan->category)->where('id', '!=', $subscription->plan_id)->get();
+        return view('admin.subscription.downgrade', compact('subscription', 'plan', 'id'));
     }
 
     public function update(Request $request, $id)

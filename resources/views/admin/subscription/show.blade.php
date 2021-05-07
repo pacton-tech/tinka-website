@@ -83,7 +83,10 @@
                             <dt>Status</dt>
                             <dd>{!! $subscription->payment->paid == true ? '<label class="badge badge-success">Paid</label>' : '<label class="label label-danger">Unpaid</label>' !!}</dd>
                             <dt>Action</dt>
-                            <dd><a href="{{ $subscription->payment->url }}" class="btn btn-sm btn-primary" target="_blank">View Invoice</a></dd>
+                            <dd>
+                                <a href="{{ $subscription->payment->url }}" class="btn btn-sm btn-primary" target="_blank">View Invoice</a>
+                                <a href="{{ route('admin.subscription.downgrade', $subscription->id) }}" class="btn btn-sm btn-secondary">Upgrade/Downgrade</a>
+                            </dd>
                         </dl>
                     </div>
                 </div>
@@ -158,7 +161,14 @@
                                     <td>{{ $data['amount'] }}</td>
                                     <td>{{ $data['created_at'] }}</td>
                                     <td>{{ $data['status'] }}</td>
-                                    <td><a class="btn btn-sm btn-primary" href="{{ $data->url }}">Invoice</a></td>
+                                    <td>
+                                        @if($data['status'] != 'delete')
+                                        <a class="btn btn-sm btn-primary" href="{{ $data->url }}">View</a> 
+                                        <a class="btn btn-sm btn-danger" href="#" onclick="ConfirmDelete('{{ $data['billplz_id'] }}');">Delete</a>
+                                        @else
+                                        N/A
+                                        @endif
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -171,3 +181,31 @@
         @include('admin.layouts.footers.auth')
     </div>
 @endsection
+
+@push('js')
+<script type="text/javascript">
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    function ConfirmDelete(billplz_id)
+    {
+        var x = confirm("Are you sure you want to delete this invoice?");
+        if (x)
+            $.ajax({
+            type:'POST',
+                url:'/admin/delete_invoice',
+                data: 'billplz_id=' + billplz_id,
+                success:function(msg){
+                    console.log(msg);
+                    alert(msg);
+                }
+            });
+        else
+            event.preventDefault();
+    }
+</script>
+@endpush
