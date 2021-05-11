@@ -319,7 +319,7 @@ class PaymentController extends Controller
             if($payment['is_renewal'] == 1){
 
                 $subscription = Payment::where('subscription_id', $payment['subscription_id'])->first();
-                $start_at = Carbon::parse($subscription->ends_at)->startOfMonth()->addMonth();
+                $start_at = Carbon::parse($subscription->ends_at)->startOfMonth();
                 $end_at = $start_at->copy()->endOfMonth();
             
             } else {
