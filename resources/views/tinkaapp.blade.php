@@ -43,6 +43,7 @@ Tinka App
         <div class="col-lg-12 " data-aos="fade-up" data-aos-delay="200">
           <center>
               <div>
+                <p>Now available for everyone! Register to create your account.</p>
                 <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
                   <span>Get The App</span>
                   <i class="bi bi-arrow-down"></i>
