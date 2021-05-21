@@ -26,6 +26,83 @@ Profile
 
       <div class="container aos-init aos-animate" data-aos="fade-up">
 
+        <div class="row mb-3">
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                          {{-- @if(isset($profile))
+                            <img src="{{ Storage::url('uploads/avatars/'.$profile['avatar']) }}" alt="{{ $user['name'] }}" class="rounded-circle" width="150">
+                          @else --}}
+                            <img src="https://ui-avatars.com/api/?name={!! urlencode($user['name']) !!}" alt="{{ $user['name'] }}" class="rounded-circle" width="150">
+                          {{-- @endif --}}
+                            <div class="mt-3">
+                                <h4>{!! $user['name'] !!}</h4>
+                                <p class="text-secondary mb-1">{!! ucfirst($user['role']) !!}</p>
+                                <p class="text-secondary mb-1">{!! $user['email'] !!}</p>
+                                <a class="btn btn-success" href="{{ route('change-password', $user['id']) }}">Change Password</a>
+                                <a class="btn btn-secondary" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <h4> Create new user to access Tinka App</h4>
+                            <form action="{{ route('app-create-user') }}" method="post" class="">
+                            @csrf
+                                @if($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+                                <div class="form-group mb-2">
+                                    <label>Name</label>
+                                    <input type="fullname" class="form-control" name="fullname" placeholder="fullname" {{ $errors->has('fullname') ? 'has-error' : '' }} value="{{ $user['name'] ?? old('fullname') }}">
+                                    <span class="text-danger">{{ $errors->first('fullname') }}</span>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label>Username</label>
+                                    <input type="username" class="form-control" name="username" placeholder="username" {{ $errors->has('username') ? 'has-error' : '' }} value="{{ old('username') }}">
+                                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label>Password</label>
+                                    <input type="password" class="form-control" name="password" placeholder="password" {{ $errors->has('password') ? 'has-error' : '' }} value="{{ old('password') }}">
+                                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                                </div>
+                                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                                <input type="hidden" name="type" value="student">
+                                <button type="submit" class="btn btn-primary">Create</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <h5>Get the app here</h5>
+                <a href="https://www.apple.com/my/app-store/" target="_blank"><img src="{{ asset('assets/img/appstore.png') }}" alt="" width="150"></a> 
+                <a href="https://play.google.com/store/apps/details?id=tech.pacton.tinka" target="_blank"><img src="{{ asset('assets/img/playstoreg.png') }}" alt="" width="150"></a>
+                <p>Access the app by creating new username and password. This credential is not the same as your existing Tinka login.</p>
+             </div>
+        </div>
+
         <!-- Feature Tabs -->
         <div class="row feture-tabs aos-init aos-animate" data-aos="fade-up">
           <div class="col-lg-12">
@@ -43,6 +120,9 @@ Profile
                 <a class="nav-link" data-bs-toggle="pill" href="#tab1">Profile</a>
               </li>
               @endif
+              <li>
+                <a class="nav-link" data-bs-toggle="pill" href="#tab4">App Access</a>
+              </li>
             </ul><!-- End Tabs -->
 
             <!-- Tab Content -->
@@ -169,40 +249,36 @@ Profile
                 @endif
               </div><!-- End Tab 2 Content -->
 
+            <div class="tab-pane fade" id="tab4">
+                @if($app)
+                <table class="table">
+                    <thead>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Type</th>
+                        <th>Action</th>
+                    </thead>
+                    @foreach($app as $access)
+                    <tr>
+                        <td>{!! $access['fullname'] !!}</td>
+                        <td>{!! $access['username'] !!}</td>
+                        <td>{!! $access['type'] !!}</td>
+                        <td>
+                            <a href="{{ route('app-change-password', $access['id']) }}" class="btn btn-sm btn-success">Change password</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+                @else
+                <p>No access to Tinka App yet. Create one <a href="{{ url('plan') }}">here</a>.</p>
+                @endif
+              </div><!-- End Tab 2 Content -->
+
             </div>
 
           </div>
 
         </div><!-- End Feature Tabs -->
-
-        <div class="col-lg-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="d-flex flex-column align-items-center text-center">
-                      {{-- @if(isset($profile))
-                        <img src="{{ Storage::url('uploads/avatars/'.$profile['avatar']) }}" alt="{{ $user['name'] }}" class="rounded-circle" width="150">
-                      @else --}}
-                        <img src="https://ui-avatars.com/api/?name={!! urlencode($user['name']) !!}" alt="{{ $user['name'] }}" class="rounded-circle" width="150">
-                      {{-- @endif --}}
-                        <div class="mt-3">
-                            <h4>{!! $user['name'] !!}</h4>
-                            <p class="text-secondary mb-1">{!! ucfirst($user['role']) !!}</p>
-                            <p class="text-secondary mb-1">{!! $user['email'] !!}</p>
-                            <a class="btn btn-success" href="{{ route('change-password', $user['id']) }}">Change Password</a>
-                            <a class="btn btn-secondary" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
 
       </div>
 

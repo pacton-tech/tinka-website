@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\TeacherProfile;
 use App\Models\StudentProfile;
 use App\Models\Subscription;
+use App\Models\AppLogin;
 use Hash;
 
 class ProfileController extends Controller
@@ -18,18 +19,24 @@ class ProfileController extends Controller
     	if($user['role'] == 'teacher')
     	{
     		$profile = TeacherProfile::where('user_id', $user['id'])->first();
-            return view('profile', compact('user', 'profile'));
+            $app = AppLogin::where('user_id', $user['id'])->get();
+            
+            return view('profile', compact('user', 'profile', 'app'));
     	}
 
     	if($user['role'] == 'student')
     	{
     		$profile = StudentProfile::where('user_id', $user['id'])->first();
-            return view('profile', compact('user', 'profile'));
+            $app = AppLogin::where('user_id', $user['id'])->get();
+
+            return view('profile', compact('user', 'profile', 'app'));
     	}
 
     	if($user['role'] == 'parent' || $user['role'] == '')
     	{
-    		return view('profile', compact('user'));
+            $app = AppLogin::where('user_id', $user['id'])->get();
+            
+    		return view('profile', compact('user', 'app'));
     	}
     }
 

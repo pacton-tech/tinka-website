@@ -43,7 +43,7 @@ Tinka App
         <div class="col-lg-12 " data-aos="fade-up" data-aos-delay="200">
           <center>
               <div>
-                <p>Now available for everyone! Register to create your account.</p>
+                <p>Now available for everyone! Register with Tinka to create your account.</p>
                 <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
                   <span>Get The App</span>
                   <i class="bi bi-arrow-down"></i>
@@ -53,10 +53,10 @@ Tinka App
         </div>
         <center>
         <div class="app-links mt-3">
-                 <a href="https://www.apple.com/my/app-store/" target="_blank"><img src="./assets/img/appstore.png" alt="" width="150"></a>
-                 <a href="https://play.google.com/store/apps/details?id=tech.pacton.tinka" target="_blank"><img src="./assets/img/playstoreg.png" alt="" width="150"></a>
-
-                </div>
+         <a href="https://www.apple.com/my/app-store/" target="_blank"><img src="./assets/img/appstore.png" alt="" width="150"></a>
+         <a href="https://play.google.com/store/apps/details?id=tech.pacton.tinka" target="_blank"><img src="./assets/img/playstoreg.png" alt="" width="150"></a>
+        </div>
+        <p>Alread registered? Login and create new username and password to access our app now!</p>
         </center>
       </div>
     </div>

@@ -85,6 +85,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('subscription/upgrade/{id}', 'SubscriptionController@upgrade')->name('upgrade-subscription');
     Route::post('/payment/renew', 'PaymentController@renew')->name('renew-payment');
     Route::get('payment/receipt/{id}', 'PaymentController@receipt')->name('receipt-payment');
+
+    Route::post('/app/create-user', 'AppLoginController@create_user')->name('app-create-user');
+    Route::get('/app/change-password/{id}', 'AppLoginController@show')->name('app-change-password');
+    Route::post('/app/update-user', 'AppLoginController@update_user')->name('app-update-user');
 });
 
 Route::get('/register/teacher', 'TeacherController@create')->name('register-teacher');
