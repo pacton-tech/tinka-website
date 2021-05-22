@@ -10,7 +10,11 @@ class AppLogin extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'username', 'password',
+        'user_id',
+        'username',
+        'password',
+        'fullname',
+        'type'
     ];
 
     public function user()

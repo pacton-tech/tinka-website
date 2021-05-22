@@ -23,7 +23,7 @@ class AppLoginController extends Controller
         $username = $request->input('username');
         $name = $request->input('username') ?? $user['name'];
         $password = md5($request->input('password'));
-        $user_id = $user['id'];
+        $user_id = $request->input('user_id');
 
         // try to create user
         /*
@@ -45,6 +45,7 @@ class AppLoginController extends Controller
 		{
 	        $app_user = new AppLogin;
 	        $app_user->username = $request->input('username');
+	        $app_user->user_id = $user_id;
 	        $app_user->fullname = $name;
 	        $app_user->type = $request->input('type');
 	        $app_user->password = $password;
