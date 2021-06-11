@@ -119,6 +119,13 @@ Route::get('fees/home-tuition', 'PlanController@home_tuition')->name('fee.home-t
 Route::get('fees/home-tuition/{id}', 'PlanController@home_tuition_show')->name('fee.home-tuition.show');
 Route::get('fees/app', 'PlanController@app')->name('fee.app');
 
+Route::get('app/class/fetch','AppLoginController@add_hall')->name('app.class.fetch');
+Route::get('app/class/refresh/{uuid}','AppLoginController@refresh_hall')->name('app.class.refresh');
+Route::get('app/student/fetch/{id}','AppLoginController@get_follower')->name('app.student.fetch');
+Route::get('app/student/refresh','AppLoginController@refresh_student')->name('app.student.refresh');
+Route::get('app/teacher/refresh','AppLoginController@refresh_teacher')->name('app.teacher.refresh');
+Route::post('app/assign/hall','AppLoginController@add_user_into_hall')->name('app.assign.hall');
+
 // Admin route goes here
 Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
 
@@ -140,8 +147,17 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         Route::resource('/subscription', SubscriptionController::class);
         Route::resource('/payment', PaymentController::class);
         Route::resource('/users', UserController::class);
+        Route::resource('/class', AppController::class);
         Route::post('/delete_invoice','PaymentController@delete_invoice')->name('invoice.delete');
         Route::get('/subscription/downgrade/{id}','SubscriptionController@downgrade')->name('subscription.downgrade');
+        Route::get('/class/details/{id}','AppController@show')->name('app.class.details');
+
+        Route::post('/user/create-user', 'AppController@create_user')->name('app.create.user');
+        Route::get('/user/change-password/{id}', 'AppController@show')->name('app.change.password');
+        Route::post('/user/update-user', 'AppController@update_user')->name('app.update.user');
+        Route::get('/user/app', 'UserController@index_app')->name('app.user.list');
+        Route::get('/user/app/{username}', 'UserController@app_user')->name('app.user.show');
+
     });
 
 });

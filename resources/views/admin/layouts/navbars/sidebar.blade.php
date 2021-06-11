@@ -60,26 +60,38 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.home') }}">
-                        <i class="ni ni-tv-2 text-primary"></i>
+                        <i class="ni ni-shop text-danger"></i>
                         <span class="nav-link-text">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.subscription.index') }}">
-                        <i class="ni ni-credit-card text-orange"></i>
+                        <i class="ni ni-credit-card text-success"></i>
                         <span class="nav-link-text">Subscription</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.payment.index') }}">
-                        <i class="ni ni-money-coins text-success"></i>
+                        <i class="ni ni-money-coins text-warning"></i>
                         <span class="nav-link-text">Payments</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.users.index') }}">
-                        <i class="ni ni-money-coins text-warning"></i>
-                        <span class="nav-link-text">Users</span>
+                        <i class="ni ni-money-coins text-primary"></i>
+                        <span class="nav-link-text">Portal Users</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.app.user.list') }}">
+                        <i class="ni ni-badge text-danger"></i>
+                        <span class="nav-link-text">App Users</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.class.index') }}">
+                        <i class="ni ni-building text-success"></i>
+                        <span class="nav-link-text">App Class</span>
                     </a>
                 </li>
             </ul>
