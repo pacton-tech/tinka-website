@@ -157,7 +157,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         Route::post('/user/update-user', 'AppController@update_user')->name('app.update.user');
         Route::get('/user/app', 'UserController@index_app')->name('app.user.list');
         Route::get('/user/app/{username}', 'UserController@app_user')->name('app.user.show');
-
+        Route::post('/user/assign-app', 'AppController@assign_user')->name('app.assign.user');
     });
 
 });
