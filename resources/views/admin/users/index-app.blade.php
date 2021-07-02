@@ -21,7 +21,6 @@
                                 <h3 class="mb-0">Tinka App Users</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{ route('admin.users.create') }}" class="btn btn-sm btn-primary">Create User</a>
                                 <a class="btn btn-sm btn-success" href="{{ route("app.student.refresh") }}" data-toggle="tooltip" title="Fetch latest student data">Get Student</a>
                                 <a class="btn btn-sm btn-info" href="{{ route("app.teacher.refresh") }}" data-toggle="tooltip" title="Fetch latest teacher data">Get Teacher</a>
                             </div>

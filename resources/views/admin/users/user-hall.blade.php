@@ -5,7 +5,7 @@
 
     <div class="container-fluid mt--9">
         <div class="row">
-            <div class="col-9">
+            <div class="col-md-9">
                 @if (session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{ session('success') }}
@@ -17,16 +17,16 @@
                 <div class="card shadow">
                     <div class="card-header border-0">
                         <div class="row align-items-center">
-                            <div class="col-8">
+                            <div class="col-md-6">
                                 <h3 class="mb-0">Class Following</h3>
                             </div>
-                            <div class="col-4 text-right">
+                            <div class="col-md-6 text-right">
                                 <a class="btn btn-sm btn-primary" href="#" data-toggle="modal" data-target="#add-class" title="Add student to this class"><i class="fas fa-plus"></i> Add this user into another class</a>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="col-12"></div>
+                    <div class="col-md-12"></div>
 
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-md-3">
                 <div class="card shadow">
                     <div class="card-header">
                         <div class="row align-items-center">

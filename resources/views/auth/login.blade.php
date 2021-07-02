@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('content')
-<section id="values" class="values">
+<section id="values" class="values" style="background-image: {{asset('assets/css/img/hero-bg.png') }}">
 
     <div class="container aos-init aos-animate" data-aos="fade-up">
 

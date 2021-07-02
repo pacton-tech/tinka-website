@@ -6,7 +6,7 @@
     <div class="container-fluid mt--9">
         <div class="row">
             
-            <div class="col-4">
+            <div class="col-md-4">
                 @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -31,8 +31,8 @@
                     <div class="card-body">
                         <dl class="row">
                             @foreach ($hall->getAttributes() as $key => $value)
-                            <dt class="col-3">{{ label_case($key) }}</dt>
-                            <dd class="col-9">{!! $value !!}</dd>
+                            <dt class="col-md-3">{{ label_case($key) }}</dt>
+                            <dd class="col-md-9">{!! $value !!}</dd>
                             @endforeach
                         </dl> 
                     </div>
@@ -42,7 +42,7 @@
                 </div>
             </div>
 
-            <div class="col-8">
+            <div class="col-md-8">
                 @if (session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{ session('success') }}
@@ -54,10 +54,10 @@
                 <div class="card shadow">
                     <div class="card-header bg-transparent border-0">
                         <div class="row align-items-center">
-                            <div class="col-8">
+                            <div class="col-md-6">
                                 <h3 class="mb-0">Student Details</h3>
                             </div>
-                            <div class="col-4 text-right">
+                            <div class="col-md-6 text-right">
                                 <a class="btn btn-sm btn-primary" href="#" data-toggle="modal" data-target="#add-user" title="Add student to this class"><i class="fas fa-plus"></i> Add someone into this class</a>
                             </div>
                         </div>

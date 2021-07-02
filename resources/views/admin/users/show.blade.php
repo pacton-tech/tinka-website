@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-md-3">
                         <div class="card mt-3">
                             <div class="card-header">
                                 <h4>Create App Login</h4>
@@ -136,14 +136,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-9">
+                    <div class="col-md-9">
                         <div class="card mt-3">
                             <div class="card-header">
                                 <div class="row align-items-center">
-                                    <div class="col-8">
+                                    <div class="col-md-8">
                                         <h4>Tinka App Login</h4>
                                     </div>
-                                    <div class="col-4 text-right">
+                                    <div class="col-md-4 text-right">
                                         <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#assign-user">Match user with Tinka App user</button>
                                     </div>
                                 </div>
