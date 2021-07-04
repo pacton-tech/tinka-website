@@ -6,9 +6,9 @@ TiNKA - Education. Everywhere.
 
 @section('content')
 @include('header')
-<div id="slider">
+<div id="slider" class="hero">
 @foreach($slider as $slide)
-    <section class="hero d-flex align-items-center">
+    <section class="d-flex align-items-center" id="slide-{{ $slide['id'] }}">
     <div class="container">
       <div class="row">
         <div class="col-lg-7 d-flex flex-column justify-content-center">
