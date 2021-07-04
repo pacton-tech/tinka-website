@@ -105,15 +105,13 @@ class SliderController extends Controller
 
         if($request->has('image')){
 
-            // delete old file before save
+            // delete old file
+            File::delete('uploads/slider/'.$slider['image']);
+
+            // save new file
             $file = $request->file('image');
             $fileName = $id.'.'.$file->extension();
-            File::delete('uploads/slider/'.$slider->image);
             $file->move(public_path('uploads/slider'),$fileName);
-
-            Slider::where('id', $id)->update([
-                'image' => $fileName
-            ]);
         }
         
         return redirect()->route('admin.slider.index')->with('success','Slider updated successfully');
