@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('billplz/response', 'PaymentController@response_billplz')->name('payment-response');
 Route::post('billplz/callback', 'PaymentController@callback_billplz')->name('payment-callback');
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about', function () {
     return view('about');
 });
@@ -148,6 +146,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         Route::resource('/payment', PaymentController::class);
         Route::resource('/users', UserController::class);
         Route::resource('/class', AppController::class);
+        Route::resource('/slider', SliderController::class);
         Route::post('/delete_invoice','PaymentController@delete_invoice')->name('invoice.delete');
         Route::get('/subscription/downgrade/{id}','SubscriptionController@downgrade')->name('subscription.downgrade');
         Route::get('/class/details/{id}','AppController@show')->name('app.class.details');

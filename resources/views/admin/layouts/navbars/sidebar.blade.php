@@ -78,7 +78,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.users.index') }}">
-                        <i class="ni ni-money-coins text-primary"></i>
+                        <i class="ni ni-circle-08 text-primary"></i>
                         <span class="nav-link-text">Portal Users</span>
                     </a>
                 </li>
@@ -92,6 +92,12 @@
                     <a class="nav-link" href="{{ route('admin.class.index') }}">
                         <i class="ni ni-building text-success"></i>
                         <span class="nav-link-text">App Class</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.slider.index') }}">
+                        <i class="ni ni-button-play text-primary"></i>
+                        <span class="nav-link-text">Slider</span>
                     </a>
                 </li>
             </ul>
