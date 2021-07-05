@@ -36,19 +36,34 @@
                     </div>
                     
                     <div class="card-body">
-                        <dl class="row">
-                            <dt class="col-3">Name</dt>
-                            <dd class="col-9">{{ $user->name }}</dd>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <dl class="row">
+                                    <dt class="col-3">Name</dt>
+                                    <dd class="col-9">{{ $user->name }}</dd>
 
-                            <dt class="col-3">E-mail</dt>
-                            <dd class="col-9">{{ $user->email }}</dd>
+                                    <dt class="col-3">E-mail</dt>
+                                    <dd class="col-9">{{ $user->email }}</dd>
 
-                            <dt class="col-3">Roles</dt>
-                            <dd class="col-9">{{ strtoupper($user->role) }}</dd>
+                                    <dt class="col-3">Roles</dt>
+                                    <dd class="col-9">{{ strtoupper($user->role) }}</dd>
 
-                            <dt class="col-3">Registration Date</dt>
-                            <dd class="col-9">{{ $user->created_at }}</dd>
-                        </dl>
+                                    <dt class="col-3">Registration Date</dt>
+                                    <dd class="col-9">{{ $user->created_at }}</dd>
+                                </dl>
+                            </div>
+                            <div class="col-lg-4">
+                                @if($user->role == 'teacher')
+                                <div class="text-right">
+                                    <img src="{{ !(asset('uploads/avatars/'.$user->teacher->avatar)) ? asset('uploads/avatars/'.$user->teacher->avatar) : asset('assets/img/profile.png') }}" class="img-thumbnail">
+                                </div>
+                                @else
+                                <div class="text-right">
+                                    <img src="{{ asset('assets/img/profile.png') }}" class="img-thumbnail">
+                                </div>
+                                @endif
+                            </div>
+                        </div>
 
                         @if($user->role != 'teacher')
                         <h2>Subscription</h2>
@@ -87,6 +102,26 @@
                                 </tbody>
                             </table>
                         </div>
+                        @else
+                        <h2>Profile</h2>
+                        <dl class="row">
+                            <dt class="col-3">Gender</dt>
+                            <dd class="col-9">{{ $user->teacher->gender }}</dd>
+                            <dt class="col-3">Date of Birth</dt>
+                            <dd class="col-9">{{ $user->teacher->birthday }}</dd>
+                            <dt class="col-3">Qualification</dt>
+                            <dd class="col-9">{{ $user->teacher->qualification }}</dd>
+                            <dt class="col-3">Currently Teaching at school</dt>
+                            <dd class="col-9">{{ $user->teacher->teaching }}</dd>
+                            <dt class="col-3">School Name</dt>
+                            <dd class="col-9">{{ $user->teacher->current_school }}</dd>
+                            <dt class="col-3">Tuition Center</dt>
+                            <dd class="col-9">{{ $user->teacher->current_tuition }}</dd>
+                            <dt class="col-3">Subject</dt>
+                            <dd class="col-9">{{ $user->teacher->subject }}</dd>
+                            <dt class="col-3">Video</dt>
+                            <dd class="col-9">{{ $user->teacher->video }}</dd>
+                        </dl>
                         @endif
                     </div>
                 </div>

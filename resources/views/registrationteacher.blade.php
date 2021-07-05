@@ -4,10 +4,6 @@
 Teacher Registration
 @endsection
 
-@push('css')
-<link href="{{ asset('assets/css/registrationform.css') }}" rel="stylesheet">
-@endpush
-
 @section('content')
 
 @include('header')
@@ -16,130 +12,115 @@ Teacher Registration
 
     <!-- ======= Breadcrumbs ======= -->
     <section class="breadcrumbs">
-      <div class="container">
-
- 
-
-      </div>
+      <div class="container"></div>
     </section><!-- End Breadcrumbs -->
 
-    <section class="inner-page">
-        <div class="container">
-              <header class="section-header" data-aos="fade-left" data-aos-delay="100">
-                <h2>Register</h2>
-                <p>Welcome Tink-Educator!</p>
-              </header>
-            <div class="row justify-content-md-center">
-              <div class="col-lg-6">
-                @if ($errors->any())
-                  <div class="alert alert-danger">
-                      <ul>
-                          @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                          @endforeach
-                      </ul>
-                  </div>
-              @endif
-              @if(session()->has('success'))
-                <div class="alert alert-success">
-                    {{ session()->get('success') }}
-                </div>
-            @endif
-            <form id="survey-form" data-aos="zoom-in" data-aos-delay="100" class="register" method="post" action="{{ route('create-teacher') }}" enctype="multipart/form-data">
-              @csrf
-              <div class="form-group">
+    <section id="about" class="about">
+
+      <div class="container aos-init aos-animate" data-aos="fade-up">
+        <div class="row gx-0">
+          <header class="section-header" data-aos="fade-left" data-aos-delay="100">
+            <h2>Register</h2>
+            <p>Welcome Tink-Educator!</p>
+          </header>
+          <div class="col-lg-6 d-flex flex-column justify-content-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+              <h3>We want you!</h3>
+              <h2>Do you have what it take to be the next generation of tutor in our platform?</h2>
+              <p>If you are a subject matter expert in your field, you can register with us by filling up the form below. You may refer to the content quality checklist document fromt the button below. Please share with us your video (between 3 to 5 minutes) by uploading a video or share the video URL (YouTube)</p>
+              <div class="text-center text-lg-start">
+                <a href="{{ asset('assets/Content-Quality-Checklist.pdf') }}" class="btn btn-danger" target="_blank">
+                  Content Quality Checklist
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex align-items-center aos-init aos-animate" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{{ asset('assets/img/about.jpg') }}" class="img-fluid" alt="">
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        
+        <div class="row">
+          @if($errors->any())
+            <div class="alert alert-danger">
+              <ul>
+                @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
+          @endif
+          @if(session()->has('success'))
+            <div class="alert alert-success">
+              {{ session()->get('success') }}
+            </div>
+          @endif
+        </div>
+          <form id="survey-form" data-aos="zoom-in" data-aos-delay="100" class="php-email-form" method="post" action="{{ route('create-teacher') }}" enctype="multipart/form-data">
+            <div class="row gy-4">
+            @csrf
+            <div class="col-lg-4">
+              <h4>Personal Information</h4>
+              <div class="form-group mb-2">
                 <label id="fullname-label" for="fullname">Full Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  class="form-control"
-                  placeholder="Enter your name"
-                  {{ $errors->has('name') ? 'has-error' : '' }} value="{{ old('name') }}"
-                />
+                <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" {{ $errors->has('name') ? 'has-error' : '' }} value="{{ old('name') }}" required/>
                 <span class="text-danger">{{ $errors->first('name') }}</span>
               </div>
 
               <div class="form-group">
-                <label id="gender-label" for="gender">Gender</label>                
-                  <label>
-                    <input
-                    name="gender"
-                    value="male"
-                    type="radio"
-                    class="input-radio"
-                    checked
-                    {{ $errors->has('gender') ? 'has-error' : 'checked' }}
-                  />Male</label
-                >
-                <label>
-                  <input
-                    name="gender"
-                    value="female"
-                    type="radio"
-                    class="input-radio"
-                    {{ $errors->has('gender') ? 'has-error' : 'checked' }}
-                  />Female</label
-                >
+                <label id="gender-label" for="gender">Gender</label>
+                <p>
+                  <input name="gender" value="male" type="radio" class="input-radio" checked {{ $errors->has('gender') ? 'has-error' : 'checked' }} required/>Male
+                  <input name="gender" value="female" type="radio" class="input-radio" {{ $errors->has('gender') ? 'has-error' : 'checked' }} />Female
+                </p>
                 <span class="text-danger">{{ $errors->first('gender') }}</span>
               </div>
 
-              <div class="form-group">
-                <label id="birthday" for="birthday"
-                  >Date of birth</label
-                >
-                <input
-                  type="date"
-                  name="birthday"
-                  id="birthday"
-                  class="form-control"
-                  {{ $errors->has('birthday') ? 'has-error' : '' }} value="{{ old('birthday') }}"
-                />
+              <div class="form-group mb-2">
+                <label id="birthday" for="birthday">Date of birth</label>
+                <input type="date" name="birthday" id="birthday" class="form-control" {{ $errors->has('birthday') ? 'has-error' : '' }} value="{{ old('birthday') }}" required/>
                 <span class="text-danger">{{ $errors->first('birthday') }}</span>
               </div>
 
-              <div class="form-group">
+              <div class="form-group mb-2">
                 <label id="email-label" for="email">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  class="form-control"
-                  placeholder="Enter your Email"
-                  {{ $errors->has('email') ? 'has-error' : '' }} value="{{ old('email') }}"
-                />
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" {{ $errors->has('email') ? 'has-error' : '' }} value="{{ old('email') }}" required/>
                 <span class="text-danger">{{ $errors->first('email') }}</span>
               </div>
 
-              <div class="form-group">
+              <div class="form-group mb-2">
                 <label id="password-label" for="password">Password</label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  class="form-control"
-                  placeholder="Enter your password"
-                  value="{{ old('password') }}"
-                />
+                <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" value="{{ old('password') }}" required/>
                 <span class="text-danger">{{ $errors->first('password') }}</span>
               </div>
 
-              <div class="form-group">
+              <div class="form-group mb-2">
                 <label id="confirmpassword-label" for="confirmpassword">Repeat Password</label>
-                <input
-                  type="password"
-                  name="confirmpassword"
-                  id="confirmpassword"
-                  class="form-control"
-                  placeholder="Re-enter your password"
-                  value="{{ old('confirmpassword') }}"
-                />
+                <input type="password" name="confirmpassword" id="confirmpassword" class="form-control" placeholder="Re-enter your password" value="{{ old('confirmpassword') }}" required/>
                 <span class="text-danger">{{ $errors->first('confirmpassword') }}</span>
               </div>
-            
+
               <div class="form-group">
+                <label id="photo-label" for="photo">Your Photo</label>
+                <input type="file" name="photo" id="photo" class="form-control" required accept="image/*"/>
+                <span class="text-danger">{{ $errors->first('photo') }}</span>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <h4>Education/Qualification</h4>
+ 
+              <div class="form-group mb-2">
                 <label id="qualification-label" for="qualification">Last Qualification</label>
-                <select id="dropdown" name="qualification" class="form-control" >
+                <select id="dropdown" name="qualification" class="form-control" required>
                   <option disabled selected value>Select qualification</option>
                   <option value="spm">SPM</option>
                   <option value="diploma">Diploma</option>
@@ -150,85 +131,69 @@ Teacher Registration
                 <span class="text-danger">{{ $errors->first('qualification') }}</span>
               </div>
               
-              <div class="form-group">
-                <label id="teaching-label" for="teaching">Are You Currently Teaching At Any School?</label>
-                <select id="dropdown" name="teaching" class="form-control" >
+              <div class="form-group mb-2">
+                <label id="teaching-label" for="teaching">Are you currently teaching at any school?</label>
+                <select id="dropdown" name="teaching" class="form-control" required>
                   <option disabled selected value>- Choose -</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </select>
                 <span class="text-danger">{{ $errors->first('teaching') }}</span>
               </div>
-             
-              <div class="form-group">
-                <label id="current_school-label" for="current_school">Your Current School Name</label>
-                <input
-                  type="text"
-                  name="current_school"
-                  id="current_school"
-                  class="form-control"
-                  placeholder="School Name"
-                  {{ $errors->has('current_school') ? 'has-error' : '' }} value="{{ old('current_school') }}"
-                />
+            
+              <div class="form-group mb-2">
+                <label id="current_school-label" for="current_school">Your current school name</label>
+                <input type="text" name="current_school" id="current_school" class="form-control" placeholder="School Name" {{ $errors->has('current_school') ? 'has-error' : '' }} value="{{ old('current_school') }}"/>
                 <span class="text-danger">{{ $errors->first('current_school') }}</span>
               </div>
           
-              <div class="form-group">
-                <label id="tuition">Are You Currently Teaching At Any Tuition Centre?</label>
-                <select id="dropdown" name="tuition" class="form-control" >
+              <div class="form-group mb-2">
+                <label id="tuition">Are you currently teaching at any tuition centre?</label>
+                <select id="dropdown" name="tuition" class="form-control" required>
                   <option disabled selected value>- Choose -</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </select>
                 <span class="text-danger">{{ $errors->first('tuition') }}</span>
               </div>
-             
-              <div class="form-group">
-                <label id="current_tuition-label" for="current_tuition">If Yes, Please State The Name Of The Tuition Centre</label>
-                <input
-                  type="text"
-                  name="current_tuition"
-                  id="current_tuition"
-                  class="form-control"
-                  placeholder="Tuition Centre Name"
-                />
+            
+              <div class="form-group mb-2">
+                <label id="current_tuition-label" for="current_tuition">If yes, please state the name of the tuition centre</label>
+                <input type="text" name="current_tuition" id="current_tuition" class="form-control" placeholder="Tuition Centre Name"/>
               </div>
             
               <div class="form-group">
-                <label id="subject-label" for="subject">Subject That You Are Teaching (seperate by comma)</label>
-                <input
-                  type="text"
-                  name="subject"
-                  id="subject"
-                  class="form-control"
-                  placeholder="Please state the name of the subjects that you are teaching"
-                />
+                <label id="subject-label" for="subject">Subject that you are teaching (seperate by comma)</label>
+                <input type="text" name="subject" id="subject" class="form-control" placeholder="Please state the name of the subjects that you are teaching" required/>
                 <span class="text-danger">{{ $errors->first('subject') }}</span>
               </div>
-
-              <div class="form-group">
-                <label id="photo-label" for="photo">Your Photo</label>
-                <input
-                  type="file"
-                  name="photo"
-                  id="photo"
-                  class="form-control"
-                />
-                <span class="text-danger">{{ $errors->first('photo') }}</span>
+            </div>
+            
+            <div class="col-lg-4">
+              <h4>Sample video</h4>
+              
+              <div class="form-group mb-2">
+                <label id="video-label" for="photo">Upload Video</label>
+                <input type="file" name="video" id="video" class="form-control" accept="video/*"/>
+                <span class="text-danger">{{ $errors->first('video') }}</span>
               </div>
 
-              <div class="form-group">
-                <button type="submit" id="submit" class="submit-button">
-                  Submit
-                </button>
+              <div class="form-group mb-2">
+                <label id="youtube-label" for="subject">YouTube URL</label>
+                <input type="text" name="youtube" id="youtube" class="form-control" placeholder="Please paste the URL of your video"/>
+                <span class="text-danger">{{ $errors->first('youtube') }}</span>
               </div>
-            </form>
-          </div>
+              <div class="alert alert-info">Please upload or paste your video here</div>
+              <small>By submitting this form, you agree to our <a href="{{ asset('assets/TiNKA - Schedule 1 (Terms & Conditions of Subscription).pdf') }}">Term and Condition</a></small>
+              <div class="form-group mb-2">
+                <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
         </div>
-          </div>
+      </div>
+      </div>
     </section>
-
   </main><!-- End #main -->
-
 @include('footer')
 @endsection
