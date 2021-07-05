@@ -1,4 +1,4 @@
-@extends('admin.layouts.app', ['title' => 'Edit User'])
+@extends('admin.layouts.app', ['title' => 'Edit Slider'])
 
 @section('content')
     @include('admin.layouts.headers.generic')

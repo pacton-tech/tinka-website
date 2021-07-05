@@ -11,7 +11,7 @@ TiNKA - Education. Everywhere.
     <section class="d-flex align-items-center" id="slide-{{ $slide['id'] }}">
     <div class="container">
       <div class="row">
-        <div class="col-lg-7 d-flex flex-column justify-content-center">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
           <h1 data-aos="fade-up">{{ $slide['name'] }}</h1>
           <h2 data-aos="fade-up" data-aos-delay="400">{{ $slide['caption'] }}</h2>
           
@@ -24,7 +24,7 @@ TiNKA - Education. Everywhere.
             </div>
           </div>
         </div>
-        <div class="col-lg-5 hero-img" data-aos="zoom-out" data-aos-delay="200">
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
           <img src="{{ asset('uploads/slider/'.$slide['image']) }}" class="img-fluid" alt="{{ $slide['name'] }}">
         </div>
       </div>
