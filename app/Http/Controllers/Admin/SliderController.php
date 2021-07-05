@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Slider;
 use File;
+use Image;
 
 class SliderController extends Controller
 {
@@ -51,12 +52,20 @@ class SliderController extends Controller
 
         if($request->has('image')){
 
-            $file = $request->file('image');
-            $fileName = $id.'.'.$file->extension();
-            $file->move(public_path('uploads/slider'),$fileName);
+            $image = $request->file('image');
+            $input['imagename'] = time().'.'.$image->extension();
+
+            $destinationPath = public_path('uploads/slider');
+            $img = Image::make($image->path());
+            $img->resize(800, 800, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($destinationPath.'/'.$input['imagename']);
+    
+            $destinationPath = public_path('/images');
+            $image->move($destinationPath, $input['imagename']);
 
             Slider::where('id', $id)->update([
-                'image' => $fileName
+                'image' => $input['imagename']
             ]);
         }
 
@@ -108,10 +117,21 @@ class SliderController extends Controller
             // delete old file
             File::delete('uploads/slider/'.$slider['image']);
 
-            // save new file
-            $file = $request->file('image');
-            $fileName = $id.'.'.$file->extension();
-            $file->move(public_path('uploads/slider'),$fileName);
+            $image = $request->file('image');
+            $input['imagename'] = time().'.'.$image->extension();
+
+            $destinationPath = public_path('uploads/slider');
+            $img = Image::make($image->path());
+            $img->resize(800, 800, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($destinationPath.'/'.$input['imagename']);
+    
+            $destinationPath = public_path('/images');
+            $image->move($destinationPath, $input['imagename']);
+
+            Slider::where('id', $id)->update([
+                'image' => $input['imagename']
+            ]);
         }
         
         return redirect()->route('admin.slider.index')->with('success','Slider updated successfully');
