@@ -18,13 +18,12 @@ Thank you for your registration with us. Below is the details of your credential
 Name: {{ $data['name'] }}  
 Login: {{ $data['email'] }}  
 Password : {{ $data['password'] }}
+@endcomponent
 
 To access the TiNKA app, login below and create your app access. Each user can create more than 1 username for the app.
 
 @component('mail::button', ['url' => config('app.url').'/login'])
 Login
-@endcomponent
-
 @endcomponent
 
 Thanks,<br>
