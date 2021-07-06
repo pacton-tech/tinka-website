@@ -2,16 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/mail-preview', function () {
+    $data = [
+        'name' => 'Fadli Saad',
+        'email' => 'fadlisaad@gmail.com',
+        'password' => '123456'
+    ];
+    return new App\Mail\WelcomeMail($data);
+});
 
 Route::get('billplz/response', 'PaymentController@response_billplz')->name('payment-response');
 Route::post('billplz/callback', 'PaymentController@callback_billplz')->name('payment-callback');
