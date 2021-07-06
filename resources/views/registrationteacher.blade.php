@@ -26,10 +26,10 @@ Teacher Registration
           <div class="col-lg-6 d-flex flex-column justify-content-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
             <div class="content">
               <h3>We want you!</h3>
-              <h2>Do you have what it take to be the next generation of tutor in our platform?</h2>
+              <h2>Do you have what it takes to be a tutor on our platform?</h2>
               <p>If you are a subject matter expert in your field, you can register with us by filling up the form below. You may refer to the content quality checklist document fromt the button below. Please share with us your video (between 3 to 5 minutes) by uploading a video or share the video URL (YouTube)</p>
               <div class="text-center text-lg-start">
-                <a href="{{ asset('assets/Content-Quality-Checklist.pdf') }}" class="btn btn-danger" target="_blank">
+                <a href="{{ asset('assets/Course-Quality-Checklist.pdf') }}" class="btn btn-danger" target="_blank">
                   Content Quality Checklist
                 </a>
               </div>
