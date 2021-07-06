@@ -54,7 +54,8 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $app = AppLogin::where('user_id', $user['id'])->get();
-        return view('admin.users.show',compact('user', 'app'));
+        $app_user = AppUser::all();
+        return view('admin.users.show',compact('user', 'app', 'app_user'));
     }
 
     public function edit($id)

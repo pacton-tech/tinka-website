@@ -36,19 +36,34 @@
                     </div>
                     
                     <div class="card-body">
-                        <dl class="row">
-                            <dt class="col-3">Name</dt>
-                            <dd class="col-9">{{ $user->name }}</dd>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <dl class="row">
+                                    <dt class="col-3">Name</dt>
+                                    <dd class="col-9">{{ $user->name }}</dd>
 
-                            <dt class="col-3">E-mail</dt>
-                            <dd class="col-9">{{ $user->email }}</dd>
+                                    <dt class="col-3">E-mail</dt>
+                                    <dd class="col-9">{{ $user->email }}</dd>
 
-                            <dt class="col-3">Roles</dt>
-                            <dd class="col-9">{{ strtoupper($user->role) }}</dd>
+                                    <dt class="col-3">Roles</dt>
+                                    <dd class="col-9">{{ strtoupper($user->role) }}</dd>
 
-                            <dt class="col-3">Registration Date</dt>
-                            <dd class="col-9">{{ $user->created_at }}</dd>
-                        </dl>
+                                    <dt class="col-3">Registration Date</dt>
+                                    <dd class="col-9">{{ $user->created_at }}</dd>
+                                </dl>
+                            </div>
+                            <div class="col-lg-4">
+                                @if($user->role == 'teacher')
+                                <div class="text-right">
+                                    <img src="{{ !(asset('uploads/avatars/'.$user->teacher->avatar)) ? asset('uploads/avatars/'.$user->teacher->avatar) : asset('assets/img/profile.png') }}" class="img-thumbnail">
+                                </div>
+                                @else
+                                <div class="text-right">
+                                    <img src="{{ asset('assets/img/profile.png') }}" class="img-thumbnail">
+                                </div>
+                                @endif
+                            </div>
+                        </div>
 
                         @if($user->role != 'teacher')
                         <h2>Subscription</h2>
@@ -87,11 +102,31 @@
                                 </tbody>
                             </table>
                         </div>
+                        @else
+                        <h2>Profile</h2>
+                        <dl class="row">
+                            <dt class="col-3">Gender</dt>
+                            <dd class="col-9">{{ $user->teacher->gender }}</dd>
+                            <dt class="col-3">Date of Birth</dt>
+                            <dd class="col-9">{{ $user->teacher->birthday }}</dd>
+                            <dt class="col-3">Qualification</dt>
+                            <dd class="col-9">{{ $user->teacher->qualification }}</dd>
+                            <dt class="col-3">Currently Teaching at school</dt>
+                            <dd class="col-9">{{ $user->teacher->teaching }}</dd>
+                            <dt class="col-3">School Name</dt>
+                            <dd class="col-9">{{ $user->teacher->current_school }}</dd>
+                            <dt class="col-3">Tuition Center</dt>
+                            <dd class="col-9">{{ $user->teacher->current_tuition }}</dd>
+                            <dt class="col-3">Subject</dt>
+                            <dd class="col-9">{{ $user->teacher->subject }}</dd>
+                            <dt class="col-3">Video</dt>
+                            <dd class="col-9">{{ $user->teacher->video }}</dd>
+                        </dl>
                         @endif
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-md-3">
                         <div class="card mt-3">
                             <div class="card-header">
                                 <h4>Create App Login</h4>
@@ -101,7 +136,7 @@
                                 @csrf
                                     <div class="form-group mb-2">
                                         <label>Name</label>
-                                        <input type="fullname" class="form-control" name="fullname" placeholder="fullname" {{ $errors->has('fullname') ? 'has-error' : '' }} value="{{ $user['name'] ?? old('fullname') }}" readonly>
+                                        <input type="fullname" class="form-control" name="fullname" placeholder="fullname" {{ $errors->has('fullname') ? 'has-error' : '' }} value="{{ $user['name'] ?? old('fullname') }}">
                                         <span class="text-danger">{{ $errors->first('fullname') }}</span>
                                     </div>
                                     <div class="form-group mb-2">
@@ -127,7 +162,7 @@
                                             break;
                                     }
                                     ?>
-                                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                                    <input type="hidden" name="user_id" value="{{  $user->id }}">
                                     <input type="hidden" name="type" value="{{ $type }}">
                             </div>
                             <div class="card-footer">
@@ -136,37 +171,42 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-9">
+                    <div class="col-md-9">
                         <div class="card mt-3">
                             <div class="card-header">
-                                <h4>Tinka App Login</h4>
-                            </div>
-                            <div class="">
-                                @if($app)
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <th>Name</th>
-                                            <th>Username</th>
-                                            <th>Type</th>
-                                            <th>Action</th>
-                                        </thead>
-                                        @foreach($app as $access)
-                                        <tr>
-                                            <td>{!! $access['fullname'] !!}</td>
-                                            <td>{!! $access['username'] !!}</td>
-                                            <td>{!! strtoupper($access['type']) !!}</td>
-                                            <td>
-                                                <button class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#change-password" onclick="showUser('{{ $access['id'] }}')">Change password</button>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </table>
+                                <div class="row align-items-center">
+                                    <div class="col-md-8">
+                                        <h4>Tinka App Login</h4>
+                                    </div>
+                                    <div class="col-md-4 text-right">
+                                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#assign-user">Match user with Tinka App user</button>
+                                    </div>
                                 </div>
-                                @else
-                                <p>No access to Tinka App yet. Create one <a href="{{ url('plan') }}">here</a>.</p>
-                                @endif
                             </div>
+                            @if($app)
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <th>Name</th>
+                                        <th>Username</th>
+                                        <th>Type</th>
+                                        <th>Action</th>
+                                    </thead>
+                                    @foreach($app as $access)
+                                    <tr>
+                                        <td>{!! $access['fullname'] !!}</td>
+                                        <td>{!! $access['username'] !!}</td>
+                                        <td>{!! strtoupper($access['type']) !!}</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#change-password" onclick="showUser('{{ $access['id'] }}')">Change name/password</button>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </table>
+                            </div>
+                            @else
+                            <p>No access to Tinka App yet. Create one</a>.</p>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -181,7 +221,7 @@
             <div class="modal-content">
             
                 <div class="modal-header">
-                    <h3 class="modal-title" id="modal-title-default">Change Password</h3>
+                    <h3 class="modal-title" id="modal-title-default">Change Name/Password</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -224,7 +264,65 @@
                             <input type="password" class="form-control" name="password" placeholder="New password" {{ $errors->has('password') ? 'has-error' : '' }} value="">
                             <span class="text-danger">{{ $errors->first('password') }}</span>
                         </div>
-                        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                        <input type="hidden" name="user_id" value="{{ $user->id }}">
+                        <input type="hidden" name="type" value="" id="user_type">
+                    
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    </form>
+                    <button type="button" class="btn btn-link  ml-auto" data-dismiss="modal">Close</button> 
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="assign-user" tabindex="-2" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+        <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+            
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modal-title-default">Assign existing Tinka App login to this user</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                
+                <div class="modal-body">
+                    @if ($errors->any())
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+                  @endif
+
+                  <form action="{{ route('admin.app.assign.user') }}" method="post" class="">
+                    @csrf
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+                        <div class="form-group mb-2">
+                            <label>App Username</label>
+                            <select class="form-control" name="app_user_id">
+                            @foreach ($app_user as $data)
+                                <option value="{{ $data->id }}">{{ $data->username }}</option>
+                            @endforeach
+                            </select>
+                            <span class="text-danger">{{ $errors->first('fullname') }}</span>
+                        </div>
+                        <input type="hidden" name="user_id" value="{{ $user->id }}">
                         <input type="hidden" name="type" value="" id="user_type">
                     
                 </div>

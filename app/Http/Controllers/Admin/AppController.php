@@ -10,6 +10,8 @@ use App\Models\AppLogin;
 use App\Models\AppUser;
 use App\Models\User;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AppController extends Controller
 {
@@ -124,6 +126,25 @@ class AppController extends Controller
             $msg = 'The details cannot be updated. Please try again';
             return back()->withErrors($msg);
         }
+    }
+
+    public function assign_user(Request $request)
+    {
+        $input = $request->all();
+
+        // get app_user
+        $app_user = AppUser::find($input['app_user_id']);
+        $user = User::find($input['user_id']);
+
+        AppLogin::create([
+            'user_id' => $input['user_id'],
+            'username' => $app_user->username,
+            'fullname' => $user->name,
+            'password' => Hash::make('123456'), // default temporary password
+            'type' => $app_user->type
+        ]);
+
+        return back()->withSuccess('This user has been has been matched to the respective Tinka App login');
     }
 
 }

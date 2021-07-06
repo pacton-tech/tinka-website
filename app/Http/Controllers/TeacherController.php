@@ -63,8 +63,19 @@ class TeacherController extends Controller
 
         if ($request->has('photo')) {
             $avatar = $request->file('photo');
-            $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(300, 300)->save(storage_path('uploads/avatars/' . $filename));
+            $photo_filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300, 300)->save(storage_path('uploads/avatars/' . $photo_filename));
+        }
+
+        if ($request->has('video')) {
+
+            $request->validate([
+                'video' => 'mimetypes:video/x-ms-asf,video/x-flv,video/mp4,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/avi|max:10000'
+            ]);
+
+            $video = $request->file('video');
+            $video_filename = time() . '.' . $video->getClientOriginalExtension();
+            $video->save(storage_path('uploads/video/' . $video_filename));
         }
 
         $profile = [
@@ -76,7 +87,8 @@ class TeacherController extends Controller
             'current_school' => $input['current_school'] ?? 'N/A',
             'current_tuition' => $input['current_tuition'] ?? 'N/A',
             'subject' => $input['subject'],
-            'avatar' => !empty($filename) ? $filename : 'default_avatar.png'
+            'avatar' => !empty($photo_filename) ? $photo_filename : 'default_avatar.png',
+            'video' => !empty($video_filename) ? $video_filename : $input['youtube']
         ];
 
         $create = TeacherProfile::create($profile);

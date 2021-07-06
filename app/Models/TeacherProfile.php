@@ -22,6 +22,7 @@ class TeacherProfile extends Model
 		'current_school',
 		'current_tuition',
 		'subject',
-		'avatar'
+		'avatar',
+		'video'
     ];
 }
