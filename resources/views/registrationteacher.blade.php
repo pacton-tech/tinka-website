@@ -37,7 +37,7 @@ Teacher Registration
           </div>
 
           <div class="col-lg-6 d-flex align-items-center aos-init aos-animate" data-aos="zoom-out" data-aos-delay="200">
-            <img src="{{ asset('assets/img/teacher-video.png') }}" class="img-fluid" alt="">
+            <img src="{{ asset('assets/img/qualitychecklist.png') }}" class="img-fluid" alt="">
           </div>
 
         </div>
