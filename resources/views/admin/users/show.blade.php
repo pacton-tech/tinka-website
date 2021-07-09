@@ -30,6 +30,10 @@
                                 <h3 class="mb-0">User Details for {{ $user->name }}</h3>
                             </div>
                             <div class="col-4 text-right">
+                                {!! Form::open(['method' => 'DELETE','route' => ['admin.users.destroy', $user->id],'style'=>'display:inline', 'id' => 'delete']) !!}
+                                <button class="btn btn-sm btn-danger">Delete</button>
+                                {!! Form::close() !!}
+                                <a class="btn btn-sm btn-success" href="{{ route('admin.users.edit',$user->id) }}">Edit</a>
                                 <a class="btn btn-sm btn-primary" href="{{ route('admin.users.index') }}"> Back</a>
                             </div>
                         </div>
@@ -353,12 +357,24 @@
         type:'GET',
             url:'/admin/user/app/'+ id,
             success:function(msg){
-                // {"id":1,"user_id":12,"username":"test01","fullname":"Fadli Pacton","password":"e10adc3949ba59abbe56e057f20f883e","type":"student","created_at":"2021-05-21T13:27:38.000000Z","updated_at":"2021-05-21T13:29:15.000000Z"}
                 $('#fullname').val(msg.fullname);
                 $('#username').val(msg.username);
                 $('#user_type').val(msg.type);
             }
         });
     }
+
+    function ConfirmDelete()
+    {
+        var x = confirm("Are you sure you want to delete?");
+        if (x)
+            return true;
+        else
+            event.preventDefault();
+    }
+
+    $('#delete').on('click', function(){
+        ConfirmDelete();
+    });
 </script>
 @endpush

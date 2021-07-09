@@ -12,14 +12,32 @@ use App\Models\HallUser;
 use App\Models\Hall;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeMail;
+use App\Mail\UserUpdated;
+use App\Events\UserCreated;
 
 class UserController extends Controller
 {
     public function index(Request $request)
     {
-        $user = User::orderBy('id','DESC')->paginate(10);
+        $term = NULL;
+        $user = User::where([
+            ['name', '!=', NULL],
+            [function($query) use ($request){
+                if(($term = $request->term)){
+                    $query->orWhere('name', 'LIKE', '%'.$term.'%')
+                        ->orWhere('email', 'LIKE', '%'.$term.'%')
+                        ->orWhere('role', $term)
+                        ->get();
+                }
+            }]
+        ])
+            ->orderBy('id','DESC')
+            ->paginate(10);
         return view('admin.users.index', compact('user'))
-            ->with('i', ($request->input('page', 1) - 1) * 10);
+            ->with('i', ($request->input('page', 1) - 1) * 10)
+            ->with('term', $term);
     }
 
     public function create()
@@ -31,23 +49,26 @@ class UserController extends Controller
     {
         $input = $request->all();
 
-        $this->validate($request, [
+        $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6'],
+            'role' => ['required'],
         ]);
 
-        if($validate){
+        $user = User::create([
+            'name' => $input['name'],
+            'email' => $input['email'],
+            'role' => $input['role'] ?? 'parent',
+            'password' => Hash::make($input['password']),
+        ]);
 
-            User::create([
-                'name' => $input['name'],
-                'email' => $input['email'],
-                'role' => $input['role'] ?? 'parent',
-                'password' => Hash::make($input['password']),
-            ]);
+        Mail::to($input['email'])->send(new WelcomeMail($input));
 
-            return view('admin.users.index')->withSuccess('New user has been created! Now proceed with adding the Tinka app user access');
-        }
+        // Fire an event that the user has been created
+        event(new UserCreated($user));
+
+        return view('admin.users.index')->withSuccess('New user has been created. A welcome email has been dispatched.');
     }
 
     public function show($id)
@@ -60,23 +81,54 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        $subscription = Subscription::find($id);
-        return view('admin.subscription.edit')->with('subscription', $subscription)->with('id', $id);
+        $user = User::find($id);
+        return view('admin.users.edit')->with('user', $user)->with('id', $id);
     }
 
     public function update(Request $request, $id)
     {
-        $subscription = Subscription::find($id);
-        $subscription->student_name = $request->input('student_name');
-        $subscription->subjects = $request->input('subjects');
-        $subscription->save();
+        $user = user::find($id);
+
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        if(!empty($request->input('password'))){
+            $password = $request->input('password');
+            $user->password = Hash::make($request->input('password'));
+        } else {
+            $password = 'Unchanged';
+        }
+        $user->role = $request->input('role');
+        $user->save();
         
-        return redirect()->route('admin.subscription.index')->with('success','Subcription updated successfully');
+        if($user->isDirty()){
+
+            $data = [
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'password' => $password,
+                'role' => ucfirst($request->input('role'))
+            ];
+
+            Mail::to($request->input('email'))->send(new UserUpdated($data));
+            
+            return redirect()->route('admin.users.index')->with('success','User has been updated successfully');
+
+        } else {
+            return redirect()->route('admin.users.index')->with('info','No changes has been made');
+        }
     }
 
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        // check app login
+        $app = AppLogin::where('user_id', $id)->get();
+
+        if($app){
+            return redirect()->route('admin.users.index')->with('error','User have app login. Delete the app login first before delete this user');
+        }
+        $user->delete();
+        return redirect()->route('admin.users.index')->with('success','User deleted successfully');
     }
 
     public function app_user(Request $request, $username)

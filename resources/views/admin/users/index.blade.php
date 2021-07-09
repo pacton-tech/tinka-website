@@ -6,9 +6,25 @@
     <div class="container-fluid mt--9">
         <div class="row">
             <div class="col">
+                @if (session('info'))
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        <i class="fas fa-info-circle"></i> {{ session('info') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
                 @if (session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ session('success') }}
+                        <i class="fas fa-check-circle"></i> {{ session('success') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+                @if (session('error'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <i class="fas fa-exclamation-triangle"></i> {{ session('error') }}
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -18,7 +34,26 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">Users</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3 class="mb-0">Users</h3>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <form action="{{ route('admin.users.index') }}" method="GET" role="search">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control form-control-sm" name="term" placeholder="Search users by name, email, role">
+                                                <span class="input-group-btn">
+                                                    <button type="submit" class="btn btn-default btn-sm">
+                                                        <span class="fas fa-search"></span>
+                                                    </button>
+                                                </span>
+                                                <span class="input-group-btn">
+                                                    <a href="{{ route('admin.users.index') }}" class="btn btn-sm btn-warning">Clear</a>
+                                                </span>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-4 text-right">
                                 <a href="{{ route('admin.users.create') }}" class="btn btn-sm btn-primary">Add user</a>
@@ -59,7 +94,7 @@
                     </div>
                     <div class="card-footer py-4">
                         <nav class="d-flex justify-content-center" aria-label="pagination">
-                            {!! $user->links() !!}
+                            {!! $user->withQueryString()->links() !!}
                         </nav>
                     </div>
                 </div>

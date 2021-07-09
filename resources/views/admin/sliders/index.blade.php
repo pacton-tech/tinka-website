@@ -51,7 +51,7 @@
                                     <td>
                                         <a class="btn btn-sm btn-success" href="{{ route('admin.slider.show',$data->id) }}">View</a>
                                         <a class="btn btn-sm btn-primary" href="{{ route('admin.slider.edit',$data->id) }}">Edit</a>
-                                        {!! Form::open(['method' => 'DELETE','route' => ['admin.slider.destroy', $data->id],'style'=>'display:inline']) !!}
+                                        {!! Form::open(['method' => 'DELETE','route' => ['admin.slider.destroy', $data->id],'style'=>'display:inline', 'id' => 'delete']) !!}
                                         <button class="btn btn-sm btn-danger">Delete</button>
                                         {!! Form::close() !!}
                                     </td>
@@ -72,3 +72,21 @@
         @include('admin.layouts.footers.auth')
     </div>
 @endsection
+
+@push('js')
+<script type="text/javascript">
+
+    function ConfirmDelete()
+    {
+        var x = confirm("Are you sure you want to delete?");
+        if (x)
+            return true;
+        else
+            event.preventDefault();
+    }
+
+    $('#delete').on('click', function(){
+        ConfirmDelete();
+    });
+</script>
+@endpush

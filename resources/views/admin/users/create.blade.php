@@ -31,32 +31,36 @@
                     <div class="card-body">
 
                         {!! Form::open(array('route' => 'admin.users.store','method'=>'POST', 'enctype' => 'multipart/form-data')) !!}
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                <div class="form-group">
-                                    <label class="form-control-label">Name</label>
-                                    {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control form-control-sm')) !!}
-                                </div>
+                        <div class="form-group row">
+                            <label class="form-control-label col-4 col-form-label">Name</label>
+                            <div class="col-8">
+                            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control form-control-sm')) !!}
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                <div class="form-group">
-                                    <label class="form-control-label">E-mail Address</label>
-                                    {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control form-control-sm')) !!}
-                                </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="form-control-label col-form-label col-4">E-mail Address</label>
+                            <div class="col-8">
+                            {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control form-control-sm')) !!}
                             </div>
-                            
-                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                <div class="form-group">
-                                    <label class="form-control-label">Password</label>
-                                    {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control form-control-sm')) !!}
-                                </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="form-control-label col-form-label col-4">Password</label>
+                            <div class="col-8">
+                            {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control form-control-sm')) !!}
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6">
-                                <div class="form-group">
-                                    <label class="form-control-label">Role</label>
-                                    {!! Form::select('role', ['student', 'teacher', 'parent'], array('placeholder' => 'Role','class' => 'form-control form-control-sm')) !!}
-                                </div>
-                            </div>  
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="form-control-label col-form-label col-4">Role</label>
+                            <div class="col-8">
+                            <select name="role" class="form-control form-control-sm">
+                                <option value="student">Student</option>
+                                <option value="teacher">Teacher</option>
+                                <option value="parent">Parent</option>
+                            </select>
+                            </div>
                         </div>
                     </div>
                     <div class="card-footer">
