@@ -26,7 +26,7 @@
   @stack('css')
   
 </head>
-<body>
+<body style="background-image: url('{{asset('assets/css/bg.svg')}}')">
   @yield('content')
 
    <!-- Vendor JS Files -->

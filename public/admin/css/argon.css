@@ -8091,6 +8091,11 @@ button.bg-darker:focus
     background-color: transparent !important;
 }
 
+.bg-pattern
+{
+    background-image: url('bg.svg');
+}
+
 .border
 {
     border: 1px solid #e9ecef !important;

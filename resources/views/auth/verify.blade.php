@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('content')
-<section id="values" class="values">
+<section id="values" class="values" style="background-image: {{asset('assets/css/img/hero-bg.png') }}">
 
     <div class="container aos-init aos-animate" data-aos="fade-up">
 
@@ -13,7 +13,7 @@
         <div class="row justify-content-center">
 
             <div class="col-lg-4">
-                <div class="box aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                <div class="box aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" style="background-color: #ffffff">
                     <img src="{{ asset('assets/img/values-2.png') }}" class="img-fluid" alt="">
 
                     @if (session('resent'))

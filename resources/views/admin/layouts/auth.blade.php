@@ -20,7 +20,7 @@
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('admin') }}/css/argon.css" rel="stylesheet">
     </head>
-    <body class="{{ $class ?? '' }}">
+    <body class="{{ $class ?? 'bg-pattern' }}">
         
         <div class="main-content">
             @yield('content')

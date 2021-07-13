@@ -13,7 +13,7 @@
         <div class="row justify-content-center">
 
           <div class="col-lg-4">
-                <div class="box aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                <div class="box aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" style="background-color: #ffffff">
                 <img src="{{ asset('assets/img/values-1.png') }}" class="img-fluid" alt="">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
