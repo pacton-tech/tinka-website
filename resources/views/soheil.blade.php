@@ -14,8 +14,8 @@ Dr. Soheil Alemi
   <section class="breadcrumbs">
     <div class="container">
       <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/tinkaleadership">Tinka Leadership</a></li>
+        <li><a href="/">{{ __("Home") }}</a></li>
+        <li><a href="/tinkaleadership">{{ __("Tinka Leadership") }}</a></li>
         <li>Dr. Soheil Alemi</li>
       </ol>
       <h2>Dr. Soheil Alemi</h2>
@@ -33,28 +33,24 @@ Dr. Soheil Alemi
       <div class="col-lg-6 d-flex flex-column justify-content-center">
         <h1 data-aos="fade-up">Dr. Soheil Alemi</h1>
         
-        <h2 data-aos="fade-up" data-aos-delay="400"> Tech Advisor </h2>
+        <h2 data-aos="fade-up" data-aos-delay="400"> {{ __("Tech Advisor") }} </h2>
         <hr>
-        <p data-aos="fade-left" data-aos-delay="300">Dr. Soheil Alemi is the Technology Advisor of Versatile Straits Sdn Bhd.</p>
+        <p data-aos="fade-left" data-aos-delay="300">{{ __("Dr. Soheil Alemi is the Technology Advisor of Versatile Straits Sdn Bhd.") }}</p>
 
-        <p  data-aos="fade-left" data-aos-delay="400"> Through his experience in Media Technology and Artificial Intelligence, 
-          he spearheaded the team behind TINKA development.
+        <p  data-aos="fade-left" data-aos-delay="400"> {{ __("Through his experience in Media Technology and Artificial Intelligence, he spearheaded the team behind TINKA development.") }}
         </p>
           
-        <p data-aos="fade-left" data-aos-delay="500">He holds a Bachelor of Physics from Azad Islamic University 
-          of Tehran and achieve is Doctorate in Business Administration 
-          from Fanapardazan Freelance Higher Education Institute.
+        <p data-aos="fade-left" data-aos-delay="500">{{ __("He holds a Bachelor of Physics from Azad Islamic University of Tehran and achieve is Doctorate in Business Administration from Fanapardazan Freelance Higher Education Institute.") }}
         </p>
           
-        <p data-aos="fade-left" data-aos-delay="600">He is well known for his out of the box approach to solving sophisticated 
-          problems and finding solutions.
+        <p data-aos="fade-left" data-aos-delay="600">{{ __("He is well known for his out of the box approach to solving sophisticated problems and finding solutions.") }}
         </p>
           
                  
         <div data-aos="fade-up" data-aos-delay="600">
           <div class="text-center text-lg-start">
             <a href="/tinkaleadership" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-              <span>View Full Tinka Leadership</span>
+              <span>{{ __("View Full Tinka Leadership") }}</span>
               <i class="bi bi-arrow-right"></i>
             </a>
           </div>

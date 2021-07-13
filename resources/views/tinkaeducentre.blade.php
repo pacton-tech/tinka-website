@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Tinka Educentre 
+{{ __("Tinka Educentre") }}
 @endsection
 
 @section('content')
@@ -15,11 +15,11 @@ Tinka Educentre
       <div class="container">
 
         <ol>
-        <li><a href="/">Home</a></li>
-          <li>Product & Services</li>
-          <li>Tinka Educentre</li>
+        <li><a href="/">{{ __("Home") }}</a></li>
+          <li>{{ __("Product & Services") }}</li>
+          <li>{{ __("Tinka Educentre") }}</li>
         </ol>
-        <h2>Tinka Educentre</h2>
+        <h2>{{ __("Tinka Educentre") }}</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -33,13 +33,10 @@ Tinka Educentre
   
             <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
               <div class="content">
-                <h3>Tinka Educentre</h3>
-                <h2>Get to know our tuition centre.</h2>
+                <h3>{{ __("Tinka Educentre") }}</h3>
+                <h2>{{ __("Get to know our tuition centre.") }}</h2>
                 <p>
-                    Versatile Straits acquired a tuition centre in Bukit Jelutong, Shah Alam 
-                    and converted the traditional tuition centre into TINKA™ Educentre. 
-                    Currently, TINKA™ Educentre has 25 tutors (“Tink-educators”) who 
-                    covers Standard 1 to Form 5 students including IGCSE.
+                    {{ __("Versatile Straits acquired a tuition centre in Bukit Jelutong, Shah Alam and converted the traditional tuition centre into TINKA™ Educentre. Currently, TINKA™ Educentre has 25 tutors “Tink-educators” who covers Standard 1 to Form 5 students including IGCSE.") }}
                 </p>
                 
                </div>
@@ -60,8 +57,8 @@ Tinka Educentre
         <div class="container" data-aos="fade-up">
   
           <header class="section-header">
-            <h2>Subjects that we offer on our tuition centre for physical tuition class.</h2>
-            <p>Our Subjects</p>
+            <h2>{{ __("Subjects that we offer on our tuition centre for physical tuition class.") }}</h2>
+            <p>{{ __("Our Subjects") }}</p>
           </header>
   
           <div class="row gy-4" data-aos="fade-left">

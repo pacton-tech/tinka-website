@@ -14,8 +14,8 @@ Nor Aqliah Arifin
 <section class="breadcrumbs">
     <div class="container">
       <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/tinkaleadership">Tinka Leadership</a></li>
+        <li><a href="/">{{ __("Home") }}</a></li>
+        <li><a href="/tinkaleadership">{{ __("Tinka Leadership") }}</a></li>
         <li>Nor Aqliah Arifin</li>
       </ol>
       <h2>Nor Aqliah Arifin</h2>
@@ -33,27 +33,23 @@ Nor Aqliah Arifin
       <div class="col-lg-6 d-flex flex-column justify-content-center">
         <h1 data-aos="fade-up">Nor Aqliah Arifin</h1>
         
-        <h2 data-aos="fade-up" data-aos-delay="400"> Project Director </h2>
+        <h2 data-aos="fade-up" data-aos-delay="400"> {{ __("Project Director") }} </h2>
         <hr>
-        <p>Nor Aqliah is the Project Director of Versatile Straits Sdn Bhd.</p>
+        <p>{{ __("Nor Aqliah is the Project Director of Versatile Straits Sdn Bhd.") }}</p>
 
-            <p> She is a licensed Counsellor with Lembaga Kounselor Malaysia. 
-                She holds a Diploma in Education from UNISEL and a Bachelor of Counselling 
-                from University of Malaya. 
+            <p> {{ __("She is a licensed Counsellor with Lembaga Kounselor Malaysia. She holds a Diploma in Education from UNISEL and a Bachelor of Counselling from University of Malaya.") }} 
             </p>
           
-            <p>Her qualification and experience in the education industry has brought 
-                her the edge on building lesson plans and managing TINKA’s educational assets.
+            <p> {{ __("Her qualification and experience in the education industry has brought her the edge on building lesson plans and managing TINKA’s educational assets.") }}
             </p>
           
-             <p>Prior to this, she was attached to TOC Automotive College in various 
-                 management positions and served a stint as a kindergarten teacher.
+             <p>{{ __("Prior to this, she was attached to TOC Automotive College in various management positions and served a stint as a kindergarten teacher.") }}
             </p>
                  
         <div data-aos="fade-up" data-aos-delay="600">
           <div class="text-center text-lg-start">
             <a href="/tinkaleadership" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-              <span>View Full Tinka Leadership</span>
+              <span>{{ __("View Full Tinka Leadership") }}</span>
               <i class="bi bi-arrow-right"></i>
             </a>
           </div>

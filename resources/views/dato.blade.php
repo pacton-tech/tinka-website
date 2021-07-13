@@ -14,8 +14,8 @@ Dato Nik Mod Amin bin Nik Abd Majid
 <section class="breadcrumbs">
     <div class="container">
       <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/tinkaleadership">Tinka Leadership</a></li>
+        <li><a href="/">{{ __("Home") }}</a></li>
+        <li><a href="/tinkaleadership">{{ __("Tinka Leadership") }}</a></li>
         <li>Dato Nik Mod Amin bin Nik Abd Majid</li>
       </ol>
       <h2>Dato Nik Mod Amin bin Nik Abd Majid</h2>
@@ -35,37 +35,22 @@ Dato Nik Mod Amin bin Nik Abd Majid
       <div class="col-lg-6 d-flex flex-column justify-content-center">
         <h1 data-aos="fade-up">Dato' Nik Mod Amin bin Nik Abd Majid</h1>
         
-        <h2 data-aos="fade-up" data-aos-delay="400"> Founder & Chairman </h2>
+        <h2 data-aos="fade-up" data-aos-delay="400"> {{ __("Founder & Chairman") }} </h2>
         <hr>
-        <p data-aos="fade-left" data-aos-delay="200">Dato’ Nik Mod Amin is the founder of Versatile Straits Sdn Bhd.</p>
+        <p data-aos="fade-left" data-aos-delay="200">{{ __("Dato’ Nik Mod Amin is the founder of Versatile Straits Sdn Bhd.") }}</p>
 
-         <p data-aos="fade-left" data-aos-delay="300"> He is a prominent figure in the Malaysian banking industry. 
-         He currently holds the position as Director and Shareholder of Mirmas Holding 
-         Sdn Bhd through FASK Capital Sdn Bhd. He is also currently the Chairman and 
-         Director of FASK Holding Group and the founder of FASK Capital Sdn Bhd 
-         (formerly known as The Royal Mint Exchange Sdn Bhd) and serves as the 
-         Non-Independent Director on the Board of AWC Berhad.</p>
+         <p data-aos="fade-left" data-aos-delay="300"> {{ __("He is a prominent figure in the Malaysian banking industry. He currently holds the position as Director and Shareholder of Mirmas Holding Sdn Bhd through FASK Capital Sdn Bhd. He is also currently the Chairman and Director of FASK Holding Group and the founder of FASK Capital Sdn Bhd (formerly known as The Royal Mint Exchange Sdn Bhd) and serves as the Non-Independent Director on the Board of AWC Berhad.") }}</p>
           
-          <p data-aos="fade-left" data-aos-delay="400">Dato’ Nik was previously the CEO/Executive Director of BSN Commercial 
-            Bank (M) Berhad. During his tenure with BSN Commercial, he re-engineered
-             the bank’s business direction towards assisting Small Medium Industries.
-             He was also the Board Member of Universiti Utara Malaysia (UUM) and a 
-             Trustee to the Malaysian Humanitarian Foundation.</p>
+          <p data-aos="fade-left" data-aos-delay="400">{{ __("Dato’ Nik was previously the CEO/Executive Director of BSN Commercial Bank (M) Berhad. During his tenure with BSN Commercial, he re-engineered the bank’s business direction towards assisting Small Medium Industries. He was also the Board Member of Universiti Utara Malaysia (UUM) and a Trustee to the Malaysian Humanitarian Foundation.") }}</p>
           
-         <p data-aos="fade-left" data-aos-delay="500">Prior to that, was also the General Manager of Perbadanan Usahawan 
-           Nasional Berhad (“PUNB”), setting up the funds’ investment division. 
-           He also held key senior positions in Maybank Berhad and Affin Bank Berhad 
-           executing risk management, strategic planning, credit management, 
-           international banking roles in the respective banks. Datuk Nik holds 
-           a Degree in Economics from the University of Malaya. </p>
+         <p data-aos="fade-left" data-aos-delay="500">{{ __("Prior to that, was also the General Manager of Perbadanan Usahawan Nasional Berhad (“PUNB”), setting up the funds’ investment division. He also held key senior positions in Maybank Berhad and Affin Bank Berhad executing risk management, strategic planning, credit management, international banking roles in the respective banks. Datuk Nik holds a Degree in Economics from the University of Malaya.") }} </p>
           
-          <p data-aos="fade-left" data-aos-delay="600">Being a serial entrepreneur, Dato’ Nik is involved in multiple industries
-             including Finance, Agriculture, Technology, Engineering and Education.</p>
+          <p data-aos="fade-left" data-aos-delay="600">{{ __("Being a serial entrepreneur, Dato’ Nik is involved in multiple industries including Finance, Agriculture, Technology, Engineering and Education.") }}</p>
         
         <div data-aos="fade-up" data-aos-delay="600">
           <div class="text-center text-lg-start">
             <a href="/tinkaleadership" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-              <span>View Full Tinka Leadership</span>
+              <span>{{ __("View Full Tinka Leadership") }}</span>
               <i class="bi bi-arrow-right"></i>
             </a>
           </div>

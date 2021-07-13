@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Contact Us
+{{ __("Contact Us") }}
 @endsection
 
 @section('content')
@@ -15,10 +15,10 @@ Contact Us
       <div class="container">
 
         <ol>
-          <li><a href="/">Home</a></li>
-          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/">{{ __("Home") }}</a></li>
+          <li><a href="/contact">{{ __("Contact Us") }}</a></li>
         </ol>
-        <h2>Contact Us</h2>
+        <h2>{{ __("Contact Us") }}</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -30,8 +30,8 @@ Contact Us
     <div class="container" data-aos="fade-up">
 
       <header class="section-header">
-        <h2>Contact</h2>
-        <p>Contact Us</p>
+        <h2>{{ __("Contact") }}</h2>
+        <p>{{ __("Contact Us") }}</p>
       </header>
 
       <div class="row gy-4">
@@ -42,7 +42,7 @@ Contact Us
             <div class="col-md-6">
               <div class="info-box">
                 <i class="bi bi-geo-alt"></i>
-                <h3>Address</h3>
+                <h3>{{ __("Address") }}</h3>
                 <p>29-1, Jalan Pelapik B U8/B,<br>
                   Bukit Jelutong, <br>
                   40150 Shah Alam, Selangor. <br>
@@ -53,17 +53,17 @@ Contact Us
             <div class="col-md-6">
               <div class="info-box">
                 <i class="bi bi-clock"></i>
-                <h3>Operating Hours</h3>
-                <p>Monday - Friday : 9 AM - 6 PM <br>
-                Saturday : 10 AM - 6 PM <br>
-                Sunday : 8 AM - 4 PM
+                <h3>{{ __("Operating Hours") }}</h3>
+                <p>{{ __("Monday - Friday") }} : 9 AM - 6 PM <br>
+                {{ __("Saturday") }} : 10 AM - 6 PM <br>
+                {{ __("Sunday") }} : 8 AM - 4 PM
                 </p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="info-box">
                 <i class="bi bi-telephone"></i>
-                <h3>Call Us</h3>
+                <h3>{{ __("Call Us") }}</h3>
                 <p>03 - 5880 4813<br>011 - 1087 0015</p>
               </div>
             </div>
@@ -71,7 +71,7 @@ Contact Us
             <div class="col-md-6">
               <div class="info-box">
                 <i class="bi bi-envelope"></i>
-                <h3>Email Us</h3>
+                <h3>{{ __("Email Us") }}</h3>
                 <p>info@tinka.world</p>
               </div>
             </div>
@@ -113,7 +113,7 @@ Contact Us
                 <textarea class="form-control" name="content" rows="6" placeholder="Message" {{ $errors->has('content') ? 'has-error' : '' }} value="{{ old('content') }}"></textarea>
                 <span class="text-danger">{{ $errors->first('content') }}</span>
               </div>
-                <button type="submit">Send Message</button>
+                <button type="submit">{{ __("Send Message") }}</button>
               </div>
 
             </div>

@@ -7,51 +7,51 @@
         <div class="row gy-4">
 
           <div class="col-lg-3 col-sm-12 footer-links">
-            <p>TINKA™ is positioned to be a Supplementary Enrichment and Enhancement program whereby its content is meta-tagged with curriculum data such as Learning Areas and Learning Outcomes as to enable self-paced, self-directed learning and also to support in-classroom and live-stream learning.</p>
+            <p>{{ __("Footer-text") }}</p>
             <img src="{{ asset('assets/img/Tinka (1).png') }}" alt="" height="50px" class="img-thumb">
 
           </div>
 
           <div class="col-lg-2 col-sm-12 footer-links">
-            <h4>How To</h4>
+            <h4>{{ __("How To") }}</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/Tinka Student App- How to.pdf') }}">Student App</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/A complete guide to Tinka App teacher.pdf') }}">Teacher App</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="{{ url('contact') }}">Contact Us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/Tinka Student App- How to.pdf') }}">{{ __("Student App") }}</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/A complete guide to Tinka App teacher.pdf') }}">{{ __("Teacher App") }}</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{{ url('contact') }}">{{ __("Contact Us") }}</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="{{ url('faq') }}">FAQ</a></li>
               
             </ul>
           </div>
 
           <div class="col-lg-2 col-sm-12 footer-links">
-            <h4>About Us</h4>
+            <h4>{{ __("About Us") }}</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/PDPR Press Release_21012021.pdf') }}" target="_blank">Press/Media</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/TiNKA - Schedule 1 (Terms & Conditions of Subscription).pdf') }}" target="_blank">Terms & Condition</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="{{ url('privacy-policy') }}">Privacy Policy</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a target="_blank" href="https://helpdesk.tinka.world/help-center">Help Centre</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/PDPR Press Release_21012021.pdf') }}" target="_blank">{{ __("Press/Media") }}</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/TiNKA - Schedule 1 (Terms & Conditions of Subscription).pdf') }}" target="_blank">{{ __("Terms & Condition") }}</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{{ url('privacy-policy') }}">{{ __("Privacy Policy") }}</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a target="_blank" href="https://helpdesk.tinka.world/help-center">{{ __("Help Centre") }}</a></li>
             </ul>
           </div>
 
           <div class="col-lg-2 col-sm-12 footer-links">
-            <h4>Links</h4>
+            <h4>{{ __("Links") }}</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="{{ url('login') }}">Login</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="{{ url('password/reset') }}">Reset Password</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="{{ url('register') }}">Student Registration</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="{{ url('register/teacher') }}">Teacher Registration</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{{ url('login') }}">{{ __("Login") }}</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{{ url('password/reset') }}">{{ __("Reset Password") }}</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{{ url('register') }}">{{ __("Student Registration") }}</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{{ url('register/teacher') }}">{{ __("Teacher Registration") }}</a></li>
             </ul>
           </div>
           
           <div class="col-lg-3 col-sm-12 footer-links">
 
                <div class="app-links">
-                 <h4>Download Our App Now</h4>
+                 <h4>{{ __("Download Our App Now") }}</h4>
                  <a href="https://www.apple.com/my/app-store/" target="_blank"><img src="{{ asset('assets/img/appstore.png') }}" alt="" width="150"></a>
                  <a href="https://play.google.com/store/apps/details?id=tech.pacton.tinka" target="_blank"><img src="{{ asset('assets/img/playstoreg.png') }}" alt="" width="150"></a>
                 </div>
                 <div class="social-links mt-3">
-              <h4>Find Us On</h4>
+              <h4>{{ __("Find Us On") }}</h4>
               <a href="https://www.facebook.com/tinkamalaysia" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
               <a href="https://www.instagram.com/tinkamalaysia/" target="_blank" class="instagram"><i class="bi bi-instagram bx bxl-instagram"></i></a>
               <a href="https://tinka.wasap.my/" target="_blank" class="whatsapp"><i class="bi bi-whatsapp"></i></a>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Tuition Fees
+{{ __("Tuition Fees") }}
 @endsection
 
 @section('content')
@@ -15,10 +15,10 @@ Tuition Fees
             <div class="container">
 
               <ol>
-                <li><a href="index">Home</a></li>
-                <li>Tuition Fees</li>
+                <li><a href="index">{{ __("Home") }}</a></li>
+                <li>{{ __("Tuition Fees") }}</li>
               </ol>
-              <h2>Tuition Fees</h2>
+              <h2>{{ __("Tuition Fees") }}</h2>
 
             </div>
           </section><!-- End Breadcrumbs -->
@@ -30,14 +30,14 @@ Tuition Fees
             <div class="container" data-aos="fade-up">
       
               <header class="section-header">
-                <h2>Course</h2>
-                <p>Tinka Educentre Course</p>
+                <h2>{{ __("Course") }}</h2>
+                <p>{{ __("Tinka Educentre Course") }}</p>
               </header>
       
               <div class="row" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12 d-flex justify-content-center">
                   <ul id="portfolio-flters">
-                    <li data-filter="*" class="filter-active">All</li>
+                    <li data-filter="*" class="filter-active">{{ __("All") }}</li>
                     <li data-filter=".filter-upsr">UPSR</li>
                     <li data-filter=".filter-pt3">PT3</li>
                     <li data-filter=".filter-spm">SPM</li>

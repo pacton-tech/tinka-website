@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Privacy Policy
+{{ __("Privacy Policy") }}
 @endsection
 
 @section('content')
@@ -14,10 +14,10 @@ Privacy Policy
     <div class="container">
 
       <ol>
-        <li><a href="/">Home</a></li>
-        <li>Documents</li>
+        <li><a href="/">{{ __("Home") }}</a></li>
+        <li>{{ __("Documents") }}</li>
       </ol>
-      <h2>Privacy Policy</h2>
+      <h2>{{ __("Privacy Policy") }}</h2>
 
     </div>
   </section><!-- End Breadcrumbs -->

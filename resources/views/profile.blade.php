@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Profile
+{{ __("Profile") }}
 @endsection
 
 @section('content')
@@ -14,10 +14,10 @@ Profile
     <div class="container">
 
       <ol>
-        <li><a href="/">Home</a></li>
-        <li>Profile</li>
+        <li><a href="/">{{ __("Home") }}</a></li>
+        <li>{{ __("Profile") }}</li>
       </ol>
-      <h2>Profile</h2>
+      <h2>{{ __("Profile") }}</h2>
 
     </div>
   </section><!-- End Breadcrumbs -->
@@ -40,7 +40,7 @@ Profile
                                 <h4>{!! $user['name'] !!}</h4>
                                 <p class="text-secondary mb-1">{!! ucfirst($user['role']) !!}</p>
                                 <p class="text-secondary mb-1">{!! $user['email'] !!}</p>
-                                <a class="btn btn-success" href="{{ route('change-password', $user['id']) }}">Change Password</a>
+                                <a class="btn btn-success" href="{{ route('change-password', $user['id']) }}">{{ __("Change Password") }}</a>
                                 <a class="btn btn-secondary" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
@@ -59,7 +59,7 @@ Profile
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <h4> Create new user to access Tinka App</h4>
+                            <h4> {{ __("Create new user to access Tinka App") }}</h4>
                             <form action="{{ route('app-create-user') }}" method="post" class="">
                             @csrf
                                 @if($errors->any())
@@ -73,17 +73,17 @@ Profile
                                 @endif
 
                                 <div class="form-group mb-2">
-                                    <label>Name</label>
+                                    <label>{{ __("Name") }}</label>
                                     <input type="fullname" class="form-control" name="fullname" placeholder="fullname" {{ $errors->has('fullname') ? 'has-error' : '' }} value="{{ $user['name'] ?? old('fullname') }}">
                                     <span class="text-danger">{{ $errors->first('fullname') }}</span>
                                 </div>
                                 <div class="form-group mb-2">
-                                    <label>Username</label>
+                                    <label>{{ __("Username") }}</label>
                                     <input type="username" class="form-control" name="username" placeholder="username" {{ $errors->has('username') ? 'has-error' : '' }} value="{{ old('username') }}">
                                     <span class="text-danger">{{ $errors->first('password') }}</span>
                                 </div>
                                 <div class="form-group mb-2">
-                                    <label>Password</label>
+                                    <label>{{ __("Password") }}</label>
                                     <input type="password" class="form-control" name="password" placeholder="password" {{ $errors->has('password') ? 'has-error' : '' }} value="{{ old('password') }}">
                                     <span class="text-danger">{{ $errors->first('password') }}</span>
                                 </div>
@@ -102,7 +102,7 @@ Profile
                                 ?>
                                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                                 <input type="hidden" name="type" value="{{ $type }}">
-                                <button type="submit" class="btn btn-primary">Create</button>
+                                <button type="submit" class="btn btn-primary">{{ __("Create") }}</button>
                             </form>
                         </div>
                     </div>
@@ -112,10 +112,10 @@ Profile
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <h5>Get the app here</h5>
+                            <h5>{{ __("Get the app here") }}</h5>
                             <a href="https://www.apple.com/my/app-store/" target="_blank"><img src="{{ asset('assets/img/appstore.png') }}" alt="" width="150"></a> 
                             <a href="https://play.google.com/store/apps/details?id=tech.pacton.tinka" target="_blank"><img src="{{ asset('assets/img/playstoreg.png') }}" alt="" width="150"></a>
-                            <p>Access the app by creating new username and password. This credential is not the same as your existing Tinka login.</p>
+                            <p>{{ __("Access the app by creating new username and password. This credential is not the same as your existing Tinka login.") }}</p>
                         </div>
                     </div>
                 </div>
@@ -129,18 +129,18 @@ Profile
             <ul class="nav nav-pills mb-3">
             
               <li>
-                <a class="nav-link active" data-bs-toggle="pill" href="#tab2">Subscription</a>
+                <a class="nav-link active" data-bs-toggle="pill" href="#tab2">{{ __("Subscription") }}</a>
               </li>
               <li>
-                <a class="nav-link" data-bs-toggle="pill" href="#tab3">Payments</a>
+                <a class="nav-link" data-bs-toggle="pill" href="#tab3">{{ __("Payments") }}</a>
               </li>
               @if(isset($profile))
               <li>
-                <a class="nav-link" data-bs-toggle="pill" href="#tab1">Profile</a>
+                <a class="nav-link" data-bs-toggle="pill" href="#tab1">{{ __("Profile") }}</a>
               </li>
               @endif
               <li>
-                <a class="nav-link" data-bs-toggle="pill" href="#tab4">App Access</a>
+                <a class="nav-link" data-bs-toggle="pill" href="#tab4">{{ __("App Access") }}</a>
               </li>
             </ul><!-- End Tabs -->
 
@@ -151,57 +151,57 @@ Profile
                 @if(isset($profile))
                 <table class="table">
                     <tr>
-                        <td>Date of Birth</td>
+                        <td>{{ __("Date of Birth") }}</td>
                         <td>{{ $profile->birthday }}</td>
                     </tr>
                     <tr>
-                        <td>Gender</td>
+                        <td>{{ __("Gender") }}</td>
                         <td>{{ ucfirst($profile->gender) }}</td>
                     </tr>
                     <tr>
-                        <td>Qualification</td>
+                        <td>{{ __("Qualification") }}</td>
                         <td>{{ strtoupper($profile->qualification) }}</td>
                     </tr>
                     @if($user['role'] == 'teacher')
                     <tr>
-                        <td>Curently teaching</td>
+                        <td>{{ __("Curently teaching") }}</td>
                         <td>{{ strtoupper($profile->teaching) }}</td>
                     </tr>
                     <tr>
-                        <td>Current School</td>
+                        <td>{{ __("Current School") }}</td>
                         <td>{{ strtoupper($profile->current_school) }}</td>
                     </tr>
                     <tr>
-                        <td>Current Tuition Center</td>
+                        <td>{{ __("Current Tuition Center") }}</td>
                         <td>{{ strtoupper($profile->current_tuition) }}</td>
                     </tr>
                     <tr>
-                        <td>Subject</td>
+                        <td>{{ __("Subject") }}</td>
                         <td>{{ ucfirst($profile->subject) }}</td>
                     </tr>
                     @endif
 
                     @if($user['role'] == 'student')
                     <tr>
-                        <td>Father/Mother/Guardian's name</td>
+                        <td>{{ __("Father/Mother/Guardian's name") }}</td>
                         <td>{{ strtoupper($profile->father_name) }}</td>
                     </tr>
                     <tr>
-                        <td>Father/Mother/Guardian's contact No.</td>
+                        <td>{{ __("Father/Mother/Guardian's contact No.") }}</td>
                         <td>{{ strtoupper($profile->mother_name) }}</td>
                     </tr>
                     <tr>
-                        <td>Current School</td>
+                        <td>{{ __("Current School") }}</td>
                         <td>{{ strtoupper($profile->current_school) }}</td>
                     </tr>
                     <tr>
-                        <td>Subject Interested</td>
+                        <td>{{ __("Subject Interested") }}</td>
                         <td>{{ ucfirst($profile->interest) }}</td>
                     </tr>
                     @endif
                 </table>
                 @else
-                <p>No profile available. <a class="btn btn-success" href="{{ route('create-profile', $user['id']) }}">Create new profile</a></p>
+                <p>{{ __("No profile available.") }} <a class="btn btn-success" href="{{ route('create-profile', $user['id']) }}">{{ __("Create new profile") }}</a></p>
                 @endif
               </div><!-- End Tab 1 Content -->
 
@@ -210,13 +210,13 @@ Profile
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
-                            <th>Category</th>
-                            <th>Package</th>
-                            <th>Student Name</th>
-                            <th>Duration</th>
-                            <th>Status</th>
-                            <th>Expiry</th>
-                            <th>Action</th>
+                            <th>{{ __("Category") }}</th>
+                            <th>{{ __("Package") }}</th>
+                            <th>{{ __("Student Name") }}</th>
+                            <th>{{ __("Duration") }}</th>
+                            <th>{{ __("Status") }}</th>
+                            <th>{{ __("Expiry") }}</th>
+                            <th>{{ __("Action") }}</th>
                         </thead>
                         @foreach($user->subscriptions as $subscription)
                         <tr>
@@ -227,16 +227,16 @@ Profile
                             @if(\Carbon\Carbon::now() < $subscription['ends_at'])
                             <td>{!! $subscription->is_cancelled == 1 ? '<button class="btn btn-sm btn-warning">Cancelled</button>' : '<button class="btn btn-sm btn-success">Active</button>' !!}</td>
                             @else
-                            <td><button class="btn btn-sm btn-danger">Expired</button></td>
+                            <td><button class="btn btn-sm btn-danger">{{ __("Expired") }}</button></td>
                             @endif
                             <td>{!! \Carbon\Carbon::parse($subscription['ends_at'])->diffForHumans() !!}</td>
-                            <td><a href="{{ url('subscription', $subscription->id) }}" class="btn btn-primary btn-sm">Details</a></td>
+                            <td><a href="{{ url('subscription', $subscription->id) }}" class="btn btn-primary btn-sm">{{ __("Details") }}</a></td>
                         </tr>
                         @endforeach
                     </table>
                 </div>
                 @else
-                <p>No subscription yet. Let's take a look at available <a href="{{ url('plan') }}">subscription</a>.</p>
+                <p>{{ __("No subscription yet. Let's take a look at available") }} <a href="{{ url('plan') }}">{{ __("subscription") }}</a>.</p>
                 @endif
               </div><!-- End Tab 2 Content -->
 
@@ -245,11 +245,11 @@ Profile
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
-                            <th>Order #</th>
-                            <th>Status</th>
-                            <th>Description</th>
-                            <th>Amount (RM)</th>
-                            <th>Action</th>
+                            <th>{{ __("Order #") }}</th>
+                            <th>{{ __("Status") }}</th>
+                            <th>{{ __("Description") }}</th>
+                            <th>{{ __("Amount") }} (RM)</th>
+                            <th>{{ __("Action") }}</th>
                         </thead>
                         @foreach($user->payments as $payment)
                         <tr>
@@ -258,9 +258,9 @@ Profile
                             <td>{!! $payment['description'] !!}</td>
                             <td>{!! number_format($payment['amount'],2) !!}</td>
                             <td>@if($payment['status'] != 'active')
-                                <a href="{!! $payment['url'] !!}" class="btn btn-sm btn-primary" target="_blank">Pay</a>
+                                <a href="{!! $payment['url'] !!}" class="btn btn-sm btn-primary" target="_blank">{{ __("Pay") }}</a>
                                 @else
-                                <a href="{!! $payment['url'] !!}" class="btn btn-sm btn-success" target="_blank">Invoice</a>
+                                <a href="{!! $payment['url'] !!}" class="btn btn-sm btn-success" target="_blank">{{ __("Invoice") }}</a>
                                 @endif
                             </td>
                         </tr>
@@ -268,7 +268,7 @@ Profile
                     </table>
                 </div>
                 @else
-                <p>No payment details yet. Let's take a look at available <a href="{{ url('plan') }}">subscription</a>.</p>
+                <p>{{ __("No payment details yet. Let's take a look at available") }} <a href="{{ url('plan') }}">{{ __("subscription") }}</a>.</p>
                 @endif
               </div><!-- End Tab 2 Content -->
 
@@ -277,10 +277,10 @@ Profile
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
-                            <th>Name</th>
-                            <th>Username</th>
-                            <th>Type</th>
-                            <th>Action</th>
+                            <th>{{ __("Name") }}</th>
+                            <th>{{ __("Username") }}</th>
+                            <th>{{ __("Type") }}</th>
+                            <th>{{ __("Action") }}</th>
                         </thead>
                         @foreach($app as $access)
                         <tr>
@@ -288,14 +288,14 @@ Profile
                             <td>{!! $access['username'] !!}</td>
                             <td>{!! $access['type'] !!}</td>
                             <td>
-                                <a href="{{ route('app-change-password', $access['id']) }}" class="btn btn-sm btn-success">Change password</a>
+                                <a href="{{ route('app-change-password', $access['id']) }}" class="btn btn-sm btn-success">{{ __("Change password") }}</a>
                             </td>
                         </tr>
                         @endforeach
                     </table>
                 </div>
                 @else
-                <p>No access to Tinka App yet. Create one <a href="{{ url('plan') }}">here</a>.</p>
+                <p>{{ __("No access to Tinka App yet. Create one") }} <a href="{{ url('plan') }}">{{ __("here") }}</a>.</p>
                 @endif
               </div><!-- End Tab 2 Content -->
 

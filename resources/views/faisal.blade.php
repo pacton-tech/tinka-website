@@ -13,8 +13,8 @@ Faisal Shadli Arshad
 <section class="breadcrumbs">
     <div class="container">
       <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/tinkaleadership">Tinka Leadership</a></li>
+        <li><a href="/">{{ __("Home") }}</a></li>
+        <li><a href="/tinkaleadership">{{ __("Tinka Leadership") }}</a></li>
         <li>Faisal Shadli Arshad</li>
       </ol>
       <h2>Faisal Shadli Arshad</h2>
@@ -32,34 +32,24 @@ Faisal Shadli Arshad
       <div class="col-lg-6 d-flex flex-column justify-content-center">
         <h1 data-aos="fade-up">Faisal Shadli Arshad</h1>
         
-        <h2 data-aos="fade-up" data-aos-delay="300"> Managing Director </h2>
+        <h2 data-aos="fade-up" data-aos-delay="300"> {{ __("Managing Director") }} </h2>
         <hr>
-        <p data-aos="fade-left" data-aos-delay="400">Faisal is the Managing Director of Versatile Straits Sdn Bhd.</p>
+        <p data-aos="fade-left" data-aos-delay="400">{{ __("Faisal is the Managing Director of Versatile Straits Sdn Bhd.") }}</p>
 
-            <p data-aos="fade-left" data-aos-delay="500"> Faisal is a graduate of Accounting & Finance from Dublin 
-             Business School, Ireland. He was the Chief Executive Officer 
-             of Metro Money Exchange Sdn Bhd, a licensed money services business 
-             under Bank Negara Malaysia. Prior to that, he served as an Account
-              Assistant at Merrion Fleet Management Limited in Ireland before
-               serving as an Audit Assistant at Lim, Cheh and Chang Chartered 
-               Accountants in Malaysia. 
+            <p data-aos="fade-left" data-aos-delay="500"> {{ __("Faisal is a graduate of Accounting & Finance from Dublin Business School, Ireland. He was the Chief Executive Officer of Metro Money Exchange Sdn Bhd, a licensed money services business under Bank Negara Malaysia. Prior to that, he served as an Account Assistant at Merrion Fleet Management Limited in Ireland before serving as an Audit Assistant at Lim, Cheh and Chang Chartered Accountants in Malaysia.") }} 
             </p>
           
-            <p data-aos="fade-left" data-aos-delay="600">Mr. Faisal is a trained Technical Analyst specializing in 
-              foreign exchange and commodities. He is also the Principal 
-              Officer of Capital Investment Bank (Labuan) Limited.
+            <p data-aos="fade-left" data-aos-delay="600">{{ __("Mr. Faisal is a trained Technical Analyst specializing in foreign exchange and commodities. He is also the Principal Officer of Capital Investment Bank (Labuan) Limited.") }}
             </p>
           
-             <p data-aos="fade-left" data-aos-delay="700">Due to his deep interest in technology, he co-founded Pacton 
-             Technologies Sdn Bhd, an ICT company specialized in communication 
-             technology, IoT and software development.
+             <p data-aos="fade-left" data-aos-delay="700">{{ __("Due to his deep interest in technology, he co-founded Pacton Technologies Sdn Bhd, an ICT company specialized in communication technology, IoT and software development.") }}
              </p>
           
                  
         <div data-aos="fade-up" data-aos-delay="600">
           <div class="text-center text-lg-start">
             <a href="/tinkaleadership" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-              <span>View Full Tinka Leadership</span>
+              <span>{{ __("View Full Tinka Leadership") }}</span>
               <i class="bi bi-arrow-right"></i>
             </a>
           </div>

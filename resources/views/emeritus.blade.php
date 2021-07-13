@@ -13,8 +13,8 @@ Professor Emeritus Dato' Dr. Ishak Harun
 <section class="breadcrumbs">
     <div class="container">
       <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/tinkaleadership">Tinka Leadership</a></li>
+        <li><a href="/">{{ __("Home") }}</a></li>
+        <li><a href="/tinkaleadership">{{ __("Tinka Leadership") }}</a></li>
         <li>Professor Emeritus Dato' Dr. Ishak Harun</li>
       </ol>
       <h2>Professor Emeritus Dato' Dr. Ishak Harun</h2>
@@ -33,36 +33,34 @@ Professor Emeritus Dato' Dr. Ishak Harun
       <div class="col-lg-6 d-flex flex-column justify-content-center">
         <h1 data-aos="fade-up">Professor Emeritus Dato' Dr. Ishak Harun</h1>
         
-        <h2 data-aos="fade-up" data-aos-delay="400"> Advisor </h2>
+        <h2 data-aos="fade-up" data-aos-delay="400"> {{ __("Advisor") }} </h2>
         <hr>
-        <h4 data-aos="fade-left" data-aos-delay="500">Consultant / Advisor / Visiting Scholar University and International Organization
+        <h4 data-aos="fade-left" data-aos-delay="500">{{ __("Consultant / Advisor / Visiting Scholar University and International Organization") }}
         </h4>
         <ol data-aos="fade-left" data-aos-delay="600">
-            <li>Consultant to World Bank 1989 on financing primary education for development.</li>
-            <li>World Book Encyclopedia International edition: London and Chicago 1988-2000. 
-                Member of Editorial Advisory Board. Met every year in London, Chicago, 
-                Sydney, Dublin etc.</li>
-            <li>Consultant to Uni of Brunei to develop Education Program for BEd in 1997/98.</li>    
-            <li>Consultant to the Ministry of Education Brunei DS 2011-2 on B. Melayu Literacy Pedagogy (Rumi n Jawi)</li>
-            <li>Examiner, Institute of Education Singapore, 1988.</li>
-            <li>Visiting scholar n consultant to the Faculty of Education, Kyushu University Japan 1987.</li>
-            <li>Fulbright visiting scholar, School of Education, Stanford Uni California 1984.</li>
+            <li>{{ __("Consultant to World Bank 1989 on financing primary education for development.") }}</li>
+            <li>{{ __("World Book Encyclopedia International edition: London and Chicago 1988-2000. Member of Editorial Advisory Board. Met every year in London, Chicago, Sydney, Dublin etc.") }}</li>
+            <li>{{ __("Consultant to Uni of Brunei to develop Education Program for BEd in 1997/98.") }}</li>    
+            <li>{{ __("Consultant to the Ministry of Education Brunei DS 2011-2 on B. Melayu Literacy Pedagogy (Rumi n Jawi)") }}</li>
+            <li>{{ __("Examiner, Institute of Education Singapore, 1988.") }}</li>
+            <li>{{ __("Visiting scholar n consultant to the Faculty of Education, Kyushu University Japan 1987.") }}</li>
+            <li>{{ __("Fulbright visiting scholar, School of Education, Stanford Uni California 1984.") }}</li>
         </ol>    
         
-        <h4 data-aos="fade-left" data-aos-delay="700">Consultant and Adviser to Local Organization</h4>
+        <h4 data-aos="fade-left" data-aos-delay="700">{{ __("Consultant and Adviser to Local Organization") }}</h4>
         <ol data-aos="fade-left" data-aos-delay="800">
-            <li> Ministry of Education in KBSR and KBSM from 1981 - 1988</li>
-            <li>Board Member of Yayasan Pelajaran MARA from 1994 - 1998 </li>
-            <li>Board Member of Dewan Bahasa dan Pustaka - DBP</li>
-            <li>Professor of Pedagogy at University of Malaya</li>
-            <li>MQA - Malaysian Qualification Agency</li>
+            <li> {{ __("Ministry of Education in KBSR and KBSM from 1981 - 1988") }}</li>
+            <li>{{ __("Board Member of Yayasan Pelajaran MARA from 1994 - 1998") }} </li>
+            <li>{{ __("Board Member of Dewan Bahasa dan Pustaka - DBP") }}</li>
+            <li>{{ __("Professor of Pedagogy at University of Malaya") }}</li>
+            <li>{{ __("MQA - Malaysian Qualification Agency") }}</li>
         </ol>
           
                  
         <div data-aos="fade-up" data-aos-delay="600">
           <div class="text-center text-lg-start">
             <a href="/tinkaleadership" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-              <span>View Full Tinka Leadership</span>
+              <span>{{ __("View Full Tinka Leadership") }}</span>
               <i class="bi bi-arrow-right"></i>
             </a>
           </div>

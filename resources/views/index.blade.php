@@ -18,7 +18,7 @@ TiNKA - Education. Everywhere.
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start">
               <a href="{{ $slide['url'] }}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                <span>Learn More</span>
+                <span>{{ __("Learn More") }}</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
             </div>
@@ -37,20 +37,19 @@ TiNKA - Education. Everywhere.
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h2>Available Class</h2>
-          <p>Class That We Offer</p>
+          <h2>{{ __("Available Class") }}</h2>
+          <p>{{ __("Class That We Offer") }}</p>
         </header>
 
         <div class="row">
 
           <div class="col-lg-4">
             <div class="physicalbox" data-aos="fade-up" data-aos-delay="200">
-              <h3>Physical Tuition Class</h3>
+              <h3>{{ __("Physical Tuition Class") }}</h3>
               <img src="assets/img/offeredclass/physical.png" class="img-fluid" alt="">
-              <p>Our new and revamped tuition centre is located at Bukit Jelutong.
-                Available for UPSR, PT3, SPM & IGCSE students.<br><br></p>
+              <p>{{ __("Our new and revamped tuition centre is located at Bukit Jelutong. Available for UPSR, PT3, SPM & IGCSE students.") }}<br><br></p>
               <a href="/register" class="btn btn-primary scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                <span>Register Now</span>
+                <span>{{ __("Register Now") }}</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
             </div>
@@ -58,14 +57,12 @@ TiNKA - Education. Everywhere.
 
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="onlinebox" data-aos="fade-up" data-aos-delay="400">
-              <h3>Online Class</h3>
+              <h3>{{ __("Online Class") }}</h3>
               <img src="assets/img/offeredclass/online.png" class="img-fluid" alt="">
-              <p>Online lessons are taught via our own TiNKA App.
-                Learn from the comfort of your own home or pretty much
-                everywhere.
+              <p>{{ __("Online lessons are taught via our own TiNKA App. Learn from the comfort of your own home or pretty much everywhere.") }}
               </p>
               <a href="/tinkaapp" class="btn btn-danger scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                <span>Register Now</span>
+                <span>{{ __("Register Now") }}</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
             </div>
@@ -73,14 +70,12 @@ TiNKA - Education. Everywhere.
 
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="homebox" data-aos="fade-up" data-aos-delay="600">
-              <h3>Home Tuition</h3>
+              <h3>{{ __("Home Tuition") }}</h3>
               <img src="assets/img/offeredclass/home tuition.png" class="img-fluid" alt="">
-              <p>Home tuition programme is catered for one-to-one
-                learning. Have our Tink-Educator drop by your place
-                for personalised.
+              <p>{{ __("Home tuition programme is catered for one-to-one learning. Have our Tink-Educator drop by your place for personalised.") }}
               </p>
               <a href="/register" class="btn btn-warning scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                <span>Register Now</span>
+                <span>{{ __("Register Now") }}</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
             </div>
@@ -103,15 +98,13 @@ TiNKA - Education. Everywhere.
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="content">
             
-              <h2>Tinka App</h2>
+              <h2>{{ __("Tinka App") }}</h2>
               <p>
-                Now your child is able to learn practically anywhere.
-                Our app are engaging, immersive, interactive and 
-                most importantly fun!
+                {{ __("Now your child is able to learn practically anywhere. Our app are engaging, immersive, interactive and most importantly fun!") }}
               </p>
               <div class="text-center text-lg-start">
                 <a href="/tinkaapp" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                  <span>Download Now</span>
+                  <span>{{ __("Download Now") }}</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
               </div>
@@ -132,28 +125,27 @@ TiNKA - Education. Everywhere.
           <div class="container" data-aos="fade-up">
     
             <header class="section-header">
-              <h2>Join Us</h2>
-              <p>Register To Our Website</p>
+              <h2>{{ __("Join Us") }}</h2>
+              <p>{{ __("Register To Our Website") }}</p>
             </header>
     
             <div class="row gy-4" data-aos="fade-left">
      
               <div class="col-lg-6 col-md-6 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="300">
                 <div class="studentbox">
-                  <h3 style="color: #1B1464;">Students</h3>
+                  <h3 style="color: #1B1464;">{{ __("Students") }}</h3>
                   <img src="assets/img/offeredclass/studentscropped.png" class="img-fluid" alt="">
-                  <p>Enroll your child at Tinka Educentre now.</p>   
-                  <a href="/register" class="btn-buy">Register Now</a>
+                  <p>{{ __("Enroll your child at Tinka Educentre now.") }}</p>   
+                  <a href="/register" class="btn-buy">{{ __("Register Now") }}</a>
                 </div>
               </div>
 
               <div class="col-lg-6 col-md-6 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="200">
                 <div class="teacherbox">
-                  <h3 style="color: #1B1464;">Tinka Tutor</h3>
+                  <h3 style="color: #1B1464;">{{ __("Tinka Tutor") }}</h3>
                   <img src="assets/img/offeredclass/tinka tutor cropped.png" class="img-fluid" alt="">
-                  <p>Earn a part-time income by
-                    signing up as Tinka Tutor.</p>
-                  <a href="/register/teacher" class="btn-buy">Register Now</a>
+                  <p>{{ __("Earn a part-time income by signing up as Tinka Tutor.") }}</p>
+                  <a href="/register/teacher" class="btn-buy">{{ __("Register Now") }}</a>
                 </div>
               </div>
              </div>

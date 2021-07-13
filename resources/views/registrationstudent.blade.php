@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Student Registration
+{{ __("Student Registration") }}
 @endsection
 
 @push('css')
@@ -22,8 +22,8 @@ Student Registration
     <section class="inner-page">
         <div class="container">
                 <header class="section-header" data-aos="fade-right" data-aos-delay="100">
-                    <h2>Register</h2>
-                    <p>Hello Future Tinkers!</p>
+                    <h2>{{ __("Register") }}</h2>
+                    <p>{{ __("Hello Future Tinkers!") }}</p>
                   </header>
                   <div class="row justify-content-md-center">
               <div class="col-lg-6">
@@ -44,7 +44,7 @@ Student Registration
                   <form id="survey-form" data-aos="zoom-in" data-aos-delay="100" class="register" method="post" action="{{ route('create-student') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                      <label id="fullname-label" for="fullname">Full Name</label>
+                      <label id="fullname-label" for="fullname">{{ __("Full Name") }}</label>
                       <input
                         type="text"
                         name="name"
@@ -57,7 +57,7 @@ Student Registration
                     </div>
       
                     <div class="form-group">
-                    <label id="gender-label" for="gender">Gender</label>                
+                    <label id="gender-label" for="gender">{{ __("Gender") }}</label>                
                       <label>
                         <input
                           name="gender"
@@ -66,7 +66,7 @@ Student Registration
                           class="input-radio"
                           checked
                           {{ $errors->has('gender') ? 'has-error' : 'checked' }}
-                        />Male</label
+                        />{{ __("Male") }}</label
                       >
                       <label>
                         <input
@@ -75,14 +75,14 @@ Student Registration
                           type="radio"
                           class="input-radio"
                           {{ $errors->has('gender') ? 'has-error' : 'checked' }}
-                        />Female</label
+                        />{{ __("Female") }}</label
                       >
                       <span class="text-danger">{{ $errors->first('gender') }}</span>
                     </div>
       
                     <div class="form-group">
                       <label id="birthday" for="birthday"
-                        >Date of Birth</label
+                        >{{ __("Date of Birth") }}</label
                       >
                       <input
                         type="date"
@@ -96,7 +96,7 @@ Student Registration
                     </div>
 
                     <div class="form-group">
-                      <label id="guardian_name" for="guardian_name">Father / Mother / Guardian Name</label>
+                      <label id="guardian_name" for="guardian_name">{{ __("Father / Mother / Guardian Name") }}</label>
                       <input
                         type="text"
                         name="guardian_name"
@@ -109,7 +109,7 @@ Student Registration
                     </div>
 
                     <div class="form-group">
-                      <label id="guardian_phone" for="guardian_phone">Father / Mother / Guardian Phone Number</label>
+                      <label id="guardian_phone" for="guardian_phone">{{ __("Father / Mother / Guardian Phone Number") }}</label>
                       <input
                         type="text"
                         name="guardian_phone"
@@ -122,7 +122,7 @@ Student Registration
                     </div>
       
                     <div class="form-group">
-                      <label id="email-label" for="email">Email</label>
+                      <label id="email-label" for="email">{{ __("Email") }}</label>
                       <input
                         type="email"
                         name="email"
@@ -135,7 +135,7 @@ Student Registration
                     </div>
 
                     <div class="form-group">
-                      <label id="password-label" for="password">Password</label>
+                      <label id="password-label" for="password">{{ __("Password") }}</label>
                       <input
                         type="password"
                         name="password"
@@ -148,7 +148,7 @@ Student Registration
                     </div>
 
                     <div class="form-group">
-                      <label id="confirmpassword-label" for="confirmpassword">Repeat Password</label>
+                      <label id="confirmpassword-label" for="confirmpassword">{{ __("Repeat Password") }}</label>
                       <input
                         type="password"
                         name="confirmpassword"
@@ -161,7 +161,7 @@ Student Registration
                     </div>
                                  
                     <div class="form-group">
-                <label id="current_school-label" for="current_school">Your Current School Name</label>
+                <label id="current_school-label" for="current_school">{{ __("Your Current School Name") }}</label>
                 <input
                   type="text"
                   name="current_school"
@@ -174,18 +174,18 @@ Student Registration
               </div>
                 
                     <div class="form-group">
-                      <label id="classroom" for="classroom">Classes That You Are Interested In</label>
+                      <label id="classroom" for="classroom">{{ __("Classes That You Are Interested In") }}</label>
                       <select id="dropdown" name="classroom" class="form-control">
-                        <option disabled selected value>- Choose -</option>
-                        <option value="physical tuition">Physical Tuition</option>
-                        <option value="online class">Online Class</option>
-                        <option value="home tuition">Home Tuition</option>
+                        <option disabled selected value>{{ __("- Choose -") }}</option>
+                        <option value="physical tuition">{{ __("Physical Tuition") }}</option>
+                        <option value="online class">{{ __("Online Class") }}</option>
+                        <option value="home tuition">{{ __("Home Tuition") }}</option>
                       </select>
                       <span class="text-danger">{{ $errors->first('classroom') }}</span>
                     </div>
       
                     <div class="form-group">
-                      <label id="photo-label" for="photo">Your Photo</label>
+                      <label id="photo-label" for="photo">{{ __("Your Photo") }}</label>
                       <input
                         type="file"
                         name="photo"
@@ -197,7 +197,7 @@ Student Registration
       
               <div class="form-group">
                 <button type="submit" id="submit" class="submit-button">
-                  Submit
+                  {{ __("Submit") }}
                 </button>
               </div>
             </form>

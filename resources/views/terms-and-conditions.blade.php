@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Terms and Conditions
+{{ __("Terms and Conditions") }}
 @endsection
 
 @section('content')
@@ -14,10 +14,10 @@ Terms and Conditions
     <div class="container">
 
       <ol>
-        <li><a href="/">Home</a></li>
-        <li>Documents</li>
+        <li><a href="/">{{ __("Home") }}</a></li>
+        <li>{{ __("Documents") }}</li>
       </ol>
-      <h2>Terms and Conditions</h2>
+      <h2>{{ __("Terms and Conditions") }}</h2>
 
     </div>
   </section><!-- End Breadcrumbs -->

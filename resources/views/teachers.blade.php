@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Teachers Profile
+{{ __("Teachers Profile") }}
 @endsection
 
 @section('content')
@@ -14,11 +14,11 @@ Teachers Profile
     <div class="container">
 
       <ol>
-        <li><a href="/">Home</a></li>
-        <li>About Us</li>
-        <li>Teachers Profile</li>
+        <li><a href="/">{{ __("Home") }}</a></li>
+        <li>{{ __("About Us") }}</li>
+        <li>{{ __("Teachers Profile") }}</li>
       </ol>
-      <h2>Teachers Profile</h2>
+      <h2>{{ __("Teachers Profile") }}</h2>
 
     </div>
   </section><!-- End Breadcrumbs -->
@@ -31,8 +31,8 @@ Teachers Profile
       <div class="container">
 
         <header class="section-header" data-aos="fade-left" data-aos-delay="100">
-            <h2>Tinka Teachers</h2>
-            <p>Teachers Profile</p>
+            <h2>{{ __("Tinka Teachers") }}</h2>
+            <p>{{ __("Teachers Profile") }}</p>
         </header>
 
         <div class="row">
@@ -42,8 +42,8 @@ Teachers Profile
               <div class="pic"><img src="assets/img/team/baharuddin.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Baharuddin bin Haji Kasim</h4>
-                <p> Full Time Tutor</p>
-                <p> 22 years teaching experience </p>
+                <p> {{ __("Full Time Tutor") }}</p>
+                <p> 22 {{ __("years teaching experience") }} </p>
                 <span> Diploma Eksekutif Pentadbiran, Sijil Fasilitator Pendidikan</span>      
               </div>
             </div>
@@ -54,8 +54,8 @@ Teachers Profile
               <div class="pic"><img src="assets/img/team/lyana.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Noor Lyana binti Mohd Rohaizad</h4>
-                <p> Full Time Tutor</p>
-                <p> 6 years teaching experience </p>
+                <p> {{ __("Full Time Tutor") }}</p>
+                <p> 6 {{ __("years teaching experience") }} </p>
                 <span>Bachelor of Science (Hons) Chemistry </span>
               </div>
             </div>
@@ -65,8 +65,8 @@ Teachers Profile
               <div class="pic"><img src="assets/img/team/halimatul.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Halimatul Saadiah Binti Che Dolah</h4>
-                <p>Lab Assistance / Tutor</p>
-                <p> 6 years teaching experience </p>
+                <p>{{ __("Lab Assistance / Tutor") }}</p>
+                <p> 6 {{ __("years teaching experience") }} </p>
                 <span>Bachelor Science Of Applied Chemistry </span>
               </div>
             </div>
@@ -76,8 +76,8 @@ Teachers Profile
               <div class="pic"><img src="assets/img/team/alizan.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Mohd Alizan Bin Azhari</h4>
-                <p> Teacher At Smi Darus Salim</p>
-                <p> 8 years teaching experience </p>
+                <p> {{ __("Teacher At Smi Darus Salim") }}</p>
+                <p> 8 {{ __("years teaching experience") }} </p>
                 <span>Bachelor Of Psychology</span>
               </div>
             </div>
@@ -87,8 +87,8 @@ Teachers Profile
               <div class="pic"><img src="assets/img/team/azrul.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Muhammad Azrul Hafiz Bin Kamaruddin</h4>
-                <p> Tutor / Student (UPM)</p>
-                <p> 10 years teaching experience </p>
+                <p> {{ __("Tutor / Student (UPM)") }}</p>
+                <p> 10 {{ __("years teaching experience") }} </p>
                 <span>Bachelor In Sc. (Hons) Microbiology </span>
               </div>
             </div>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Tinka News
+{{ __("Tinka News") }}
 @endsection
 
 @section('content')
@@ -16,11 +16,11 @@ Tinka News
   <section class="breadcrumbs">
     <div class="container">
       <ol>
-        <li><a href="index.html">Home</a></li>
-        <li>About Us</li>
-        <li>Tinka News</li>
+        <li><a href="index.html">{{ __("Home") }}</a></li>
+        <li>{{ __("About Us") }}</li>
+        <li>{{ __("Tinka News") }}</li>
       </ol>
-      <h2>Tinka News</h2>
+      <h2>{{ __("Tinka News") }}</h2>
     </div>
   </section>
   <!-- End Breadcrumbs -->
@@ -57,7 +57,7 @@ Tinka News
                   Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
                 </p>
                 <div class="read-more">
-                  <a href="blog-single.html">Read More</a>
+                  <a href="blog-single.html">{{ __("Read More") }}</a>
                 </div>
               </div>
 
@@ -87,7 +87,7 @@ Tinka News
                   Ad impedit qui officiis est in non aliquid veniam laborum. Id ipsum qui aut. Sit aliquam et quia molestias laboriosam. Tempora nam odit omnis eum corrupti qui aliquid excepturi molestiae. Facilis et sint quos sed voluptas. Maxime sed tempore enim omnis non alias odio quos distinctio.
                 </p>
                 <div class="read-more">
-                  <a href="blog-single.html">Read More</a>
+                  <a href="blog-single.html">{{ __("Read More") }}</a>
                 </div>
               </div>
 
@@ -117,7 +117,7 @@ Tinka News
                   Doloremque est saepe laborum aut. Ipsa cupiditate ex harum at recusandae nesciunt. Ut dolores velit.
                 </p>
                 <div class="read-more">
-                  <a href="blog-single.html">Read More</a>
+                  <a href="blog-single.html">{{ __("Read More") }}</a>
                 </div>
               </div>
 
@@ -147,7 +147,7 @@ Tinka News
                   Quia sed sunt. Ea asperiores expedita et et delectus voluptates rerum. Id saepe ut itaque quod qui voluptas nobis porro rerum. Quam quia nesciunt qui aut est non omnis. Inventore occaecati et quaerat magni itaque nam voluptas. Voluptatem ducimus sint id earum ut nesciunt sed corrupti nemo.
                 </p>
                 <div class="read-more">
-                  <a href="blog-single.html">Read More</a>
+                  <a href="blog-single.html">{{ __("Read More") }}</a>
                 </div>
               </div>
 
@@ -167,7 +167,7 @@ Tinka News
 
             <div class="sidebar">
 
-              <h3 class="sidebar-title">Search</h3>
+              <h3 class="sidebar-title">{{ __("Search") }}</h3>
               <div class="sidebar-item search-form">
                 <form action="">
                   <input type="text">
@@ -178,16 +178,16 @@ Tinka News
               <h3 class="sidebar-title">Categories</h3>
               <div class="sidebar-item categories">
                 <ul>
-                  <li><a href="#">General <span>(25)</span></a></li>
-                  <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                  <li><a href="#">Travel <span>(5)</span></a></li>
-                  <li><a href="#">Design <span>(22)</span></a></li>
-                  <li><a href="#">Creative <span>(8)</span></a></li>
-                  <li><a href="#">Educaion <span>(14)</span></a></li>
+                  <li><a href="#">{{ __("General") }} <span>(25)</span></a></li>
+                  <li><a href="#">{{ __("Lifestyle") }} <span>(12)</span></a></li>
+                  <li><a href="#">{{ __("Travel") }} <span>(5)</span></a></li>
+                  <li><a href="#">{{ __("Design") }} <span>(22)</span></a></li>
+                  <li><a href="#">{{ __("Creative") }} <span>(8)</span></a></li>
+                  <li><a href="#">{{ __("Education") }} <span>(14)</span></a></li>
                 </ul>
               </div><!-- End sidebar categories-->
 
-              <h3 class="sidebar-title">Recent Posts</h3>
+              <h3 class="sidebar-title">{{ __("Recent Posts") }}</h3>
               <div class="sidebar-item recent-posts">
                 <div class="post-item clearfix">
                   <img src="assets/img/blog/blog-recent-1.jpg" alt="">

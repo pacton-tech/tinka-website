@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Tinka App 
+{{ __("Tinka App") }} 
 @endsection
 
 @section('content')
@@ -16,11 +16,11 @@ Tinka App
       <div class="container">
 
         <ol>
-        <li><a href="/">Home</a></li>
-          <li>Product & Services</li>
-          <li>Tinka App</li>
+        <li><a href="/">{{ __("Home") }}</a></li>
+          <li>{{ __("Product & Services") }}</li>
+          <li>{{ __("Tinka App") }}</li>
         </ol>
-        <h2>Tinka App</h2>
+        <h2>{{ __("Tinka App") }}</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -43,9 +43,9 @@ Tinka App
         <div class="col-lg-12 " data-aos="fade-up" data-aos-delay="200">
           <center>
               <div>
-                <p>Now available for everyone! Register with Tinka to create your account.</p>
+                <p>{{ __("Now available for everyone! Register with Tinka to create your account.") }}</p>
                 <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                  <span>Get The App</span>
+                  <span>{{ __("Get The App") }}</span>
                   <i class="bi bi-arrow-down"></i>
                 </a>
               </div>
@@ -56,7 +56,7 @@ Tinka App
          <a href="https://www.apple.com/my/app-store/" target="_blank"><img src="./assets/img/appstore.png" alt="" width="150"></a>
          <a href="https://play.google.com/store/apps/details?id=tech.pacton.tinka" target="_blank"><img src="./assets/img/playstoreg.png" alt="" width="150"></a>
         </div>
-        <p>Alread registered? Login and create new username and password to access our app now!</p>
+        <p>{{ __("Already registered? Login and create new username and password to access our app now!") }}</p>
         </center>
       </div>
     </div>
@@ -77,8 +77,8 @@ Tinka App
         <div class="col-md-6">
           <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
             <div class="my-auto mx-auto text-center" style="max-width: 450px;">
-              <h2 style="font-weight: bold; text-align: justify; color: #1B1464">Online Learning</h2>
-              <p style="text-align: justify; color: #1B1464;">Learn from our mobile app at the comfort of your own home or literally from anywhere! It's smart, easy-to-use and best of all, convenient!</p>
+              <h2 style="font-weight: bold; text-align: justify; color: #1B1464">{{ __("Online Learning") }}</h2>
+              <p style="text-align: justify; color: #1B1464;">{{ __("Learn from our mobile app at the comfort of your own home or literally from anywhere! It's smart, easy-to-use and best of all, convenient!") }}</p>
             </div>
           </div>
         </div>
@@ -89,8 +89,8 @@ Tinka App
           
           <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
             <div class="my-auto mx-auto text-center" style="max-width: 450px;">
-              <h2 style="font-weight: bold; text-align: left; color: #1B1464">Professionally trained educators</h2>
-              <p style="text-align: justify; color: #1B1464;">Our teachers are professionally trained and are carefully vetted, to ensure that your child gets the best!</p>
+              <h2 style="font-weight: bold; text-align: left; color: #1B1464">{{ __("Professionally trained educators") }}</h2>
+              <p style="text-align: justify; color: #1B1464;">{{ __("Our teachers are professionally trained and are carefully vetted, to ensure that your child gets the best!") }}</p>
             </div>
           </div>     
         </div>
@@ -111,8 +111,8 @@ Tinka App
         <div class="col-md-6">
           <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
             <div class="my-auto mx-auto text-center" style="max-width: 450px;">
-              <h2 style="font-weight: bold; text-align: justify; color: #1B1464">Track your child's learning</h2>
-              <p style="text-align: justify; color: #1B1464;">Our AI powered app generates a comprehensive online report on your child's learning. We are able to step in wherever help is needed.</p>
+              <h2 style="font-weight: bold; text-align: justify; color: #1B1464">{{ __("Track your child's learning") }}</h2>
+              <p style="text-align: justify; color: #1B1464;">{{ __("Our AI powered app generates a comprehensive online report on your child's learning. We are able to step in wherever help is needed.") }}</p>
             </div>
           </div>
         </div>
@@ -123,8 +123,8 @@ Tinka App
           
           <div class="d-flex flex-column position-relative h-100 rounded-start bg-position-start-center bg-repeat-0 py-6" style="background-color: #F7F7F7;"><span  style="opacity: 1;"></span>
             <div class="my-auto mx-auto text-center" style="max-width: 450px;">
-              <h2 style="font-weight: bold; text-align: left; color: #1B1464"> Accessible lesson videos</h2>
-              <p style="text-align: justify; color: #1B1464;">Need a refresher before an exam? Our lesson videos are recorded and available at your fingertips when needed.</p>
+              <h2 style="font-weight: bold; text-align: left; color: #1B1464"> {{ __("Accessible lesson videos") }}</h2>
+              <p style="text-align: justify; color: #1B1464;">{{ __("Need a refresher before an exam? Our lesson videos are recorded and available at your fingertips when needed.") }}</p>
             </div>
           </div>     
         </div>

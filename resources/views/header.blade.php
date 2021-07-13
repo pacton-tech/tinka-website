@@ -8,38 +8,38 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" href="/">Home</a></li>
-          <li class="dropdown"><a href="/about"><span>About Us</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto" href="/">{{ __("Home") }}</a></li>
+          <li class="dropdown"><a href="/about"><span>{{ __("About Us") }}</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="/about">About Tinka</a></li>
-              <li><a href="/tinkaleadership">Tinka Leadership</a></li>
-              <li><a href="/teachers">Tinka Teachers</a></li>
+              <li><a href="/about">{{ __("About Tinka") }}</a></li>
+              <li><a href="/tinkaleadership">{{ __("Tinka Leadership") }}</a></li>
+              <li><a href="/teachers">{{ __("Tinka Teachers") }}</a></li>
             </ul>
-          <li class="dropdown" ><a href="#"><span>Product & Services</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown" ><a href="#"><span>{{ __("Product & Services") }}</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="/tinkaeducentre">Tinka Educentre</a></li>
-              <li><a href="/tinkaapp">Tinka App</a></li>
+              <li><a href="/tinkaeducentre">{{ __("Tinka Educentre") }}</a></li>
+              <li><a href="/tinkaapp">{{ __("Tinka App") }}</a></li>
             </ul>
-          <li class="dropdown" ><a href="#"><span>Fees</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown" ><a href="#"><span>{{ __("Fees") }}</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="/fees/educentre">Tinka Educentre</a></li>
-              <li><a href="/fees/home-tuition">Home Tuition</a></li>
+              <li><a href="/fees/educentre">{{ __("Tinka Educentre") }}</a></li>
+              <li><a href="/fees/home-tuition">{{ __("Home Tuition") }}</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#"><span>Join Us</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>{{ __("Join Us") }}</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="/register/teacher">Tink-Educator</a></li>
-              <li><a href="/register">Future Tinkers</a></li>
+              <li><a href="/register/teacher">{{ __("Tink-Educator") }}</a></li>
+              <li><a href="/register">{{ __("Future Tinkers") }}</a></li>
           
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="/contact">{{ __("Contact") }}</a></li>
           @auth
-          <li><a class="getstarted" href="{{ route('view-profile', auth()->user()->id) }}">Dashboard</a></li>
+          <li><a class="getstarted" href="{{ route('view-profile', auth()->user()->id) }}">{{ __("Dashboard") }}</a></li>
           @endauth
 
           @guest
-          <li><a class="getstarted scrollto" href="{{ route('login') }}">Get Started</a></li>
+          <li><a class="getstarted scrollto" href="{{ route('login') }}">{{ __("Get Started") }}</a></li>
           @endguest
        
         </ul>

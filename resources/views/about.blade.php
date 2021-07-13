@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-About Us
+{{ __("About Us") }}
 @endsection
 
 @section('content')
@@ -14,11 +14,11 @@ About Us
     <div class="container">
 
       <ol>
-        <li><a href="/">Home</a></li>
-        <li>About Us</li>
-        <li>About Tinka</li>
+        <li><a href="/">{{ __("Home") }}</a></li>
+        <li>{{ __("About Us") }}</li>
+        <li>{{ __("About Tinka") }}</li>
       </ol>
-      <h2>About Tinka</h2>
+      <h2>{{ __("About Tinka") }}</h2>
 
     </div>
   </section><!-- End Breadcrumbs -->
@@ -36,19 +36,12 @@ About Us
       <div class="row">
         <center>
          <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">About Tinka</h1>
+          <h1 data-aos="fade-up">{{ __("About Tinka") }}</h1>
           <hr>
-          <p style="text-align: justify;">TINKA™ was born and incorporated under Versatile Straits Sdn Bhd, a homegrown edtech company.  
-            Its objective is to not only to create passive learners but also to create learners who possesses 
-            a higher-order digital and thinking skills. Its goal is to create a learning experience through 
-            “experiential learning”.
+          <p style="text-align: justify;">{{ __("TINKA™ was born and incorporated under Versatile Straits Sdn Bhd, a homegrown edtech company. Its objective is to not only to create passive learners but also to create learners who possesses a higher-order digital and thinking skills. Its goal is to create a learning experience through “experiential learning”.") }}
           </p>
-          <p style="text-align: justify;">TINKA™ is positioned to be a Supplementary Enrichment and Enhancement program whereby its content 
-            is meta-tagged with curriculum data such as Learning Areas and Learning Outcomes as to enable self-paced, 
-            self-directed learning and also to support in-classroom and live-stream learning.
+          <p style="text-align: justify;">{{ __("TINKA™ is positioned to be a Supplementary Enrichment and Enhancement program whereby its content is meta-tagged with curriculum data such as Learning Areas and Learning Outcomes as to enable self-paced, self-directed learning and also to support in-classroom and live-stream learning.") }}
             </p>
-                    
-            
          </div>
         </center>
       </div>
@@ -62,7 +55,7 @@ About Us
   <div class="container" data-aos="fade-up">
 
     <header class="section-header">
-      <p>Our Vision & Mission</p>
+      <p>{{ __("Our Vision & Mission") }}</p>
       
     </header>
 
@@ -71,11 +64,9 @@ About Us
       <div class="col-lg-6">
         <div class="box" data-aos="fade-up" data-aos-delay="200">
           
-          <h3>Vision</h3>
+          <h3>{{ __("Vision") }}</h3>
           <p>
-            Democratize access to international standard quality education nationwide 
-            in order to produce intellectual and globally competent individuals towards 
-            the betterment of the nation.
+            {{ __("Democratize access to international standard quality education nationwide in order to produce intellectual and globally competent individuals towards the betterment of the nation.") }}
             </p>
       
         </div>
@@ -84,9 +75,8 @@ About Us
       <div class="col-lg-6 mt-4 mt-lg-0">
         <div class="box" data-aos="fade-up" data-aos-delay="400">
          
-          <h3>Mission</h3>
-          <p>Able to supplement classroom education with innovative content delivery
-             methods via the TINKA™ Platform.
+          <h3>{{ __("Mission") }}</h3>
+          <p>{{ __("Able to supplement classroom education with innovative content delivery methods via the TINKA™ Platform.") }}
           </p>
        
         </div>
@@ -104,8 +94,8 @@ About Us
     <div class="container" data-aos="fade-up">
   
       <header class="section-header">
-        <h2>Portfolio</h2>
-        <p>Our Team</p>
+        <h2>{{ __("Portfolio") }}</h2>
+        <p>{{ __("Our Team") }}</p>
       </header>
   
       <div class="row gy-4">

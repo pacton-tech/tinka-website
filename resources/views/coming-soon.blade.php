@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Coming Soon
+{{ __("Coming Soon") }}
 @endsection
 
 @section('content')
@@ -19,9 +19,9 @@ Coming Soon
     <section class="inner-page">
         <div class="container">
           <header class="section-header" data-aos="fade-left" data-aos-delay="100">
-            <h2>Coming Soon</h2>
+            <h2>{{ __("Coming Soon") }}</h2>
           </header>
-            <p class="text-center">Registration will be open after the launching of TiNKA Education Centre.</p>
+            <p class="text-center">{{ __("Registration will be open after the launching of TiNKA Education Centre.") }}</p>
         </div>
           </div>
     </section>
