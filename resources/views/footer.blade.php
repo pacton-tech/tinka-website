@@ -13,11 +13,13 @@
           </div>
 
           <div class="col-lg-2 col-sm-12 footer-links">
-            <h4>Customer Service</h4>
+            <h4>How To</h4>
             <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/Tinka Student App- How to.pdf') }}">Student App</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/A complete guide to Tinka App teacher.pdf') }}">Teacher App</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="{{ url('contact') }}">Contact Us</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="{{ url('faq') }}">FAQ</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a target="_blank" href="https://helpdesk.tinka.world/help-center">Help Centre</a></li>
+              
             </ul>
           </div>
 
@@ -27,6 +29,7 @@
               <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/PDPR Press Release_21012021.pdf') }}" target="_blank">Press/Media</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/TiNKA - Schedule 1 (Terms & Conditions of Subscription).pdf') }}" target="_blank">Terms & Condition</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="{{ url('privacy-policy') }}">Privacy Policy</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a target="_blank" href="https://helpdesk.tinka.world/help-center">Help Centre</a></li>
             </ul>
           </div>
 
