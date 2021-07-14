@@ -1,13 +1,13 @@
 {
-    "Home" : "Home",
-    "About Us" : "About Us",
-    "About Tinka" : "About Tinka",
+    "Home" : "Utama",
+    "About Us" : "Tentang Kami",
+    "About Tinka" : "Tentang Tinka",
     "TINKA™ was born and incorporated under Versatile Straits Sdn Bhd, a homegrown edtech company. Its objective is to not only to create passive learners but also to create learners who possesses a higher-order digital and thinking skills. Its goal is to create a learning experience through “experiential learning”." : "TINKA™ was born and incorporated under Versatile Straits Sdn Bhd, a homegrown edtech company. \nIts objective is to not only to create passive learners but also to create learners who possesses \na higher-order digital and thinking skills. Its goal is to create a learning experience through \n“experiential learning”.",
     "TINKA™ is positioned to be a Supplementary Enrichment and Enhancement program whereby its content is meta-tagged with curriculum data such as Learning Areas and Learning Outcomes as to enable self-paced, self-directed learning and also to support in-classroom and live-stream learning." : "TINKA™ is positioned to be a Supplementary Enrichment and Enhancement program whereby its content \nis meta-tagged with curriculum data such as Learning Areas and Learning Outcomes as to enable self-paced, \nself-directed learning and also to support in-classroom and live-stream learning.",
-    "Our Vision & Mission" : "Our Vision & Mission",
-    "Vision" : "Vision",
+    "Our Vision & Mission" : "Misi dan Visi",
+    "Vision" : "Visi",
     "Democratize access to international standard quality education nationwide in order to produce intellectual and globally competent individuals towards the betterment of the nation." : "Democratize access to international standard quality education nationwide \nin order to produce intellectual and globally competent individuals towards \nthe betterment of the nation.",
-    "Mission" : "Mission",
+    "Mission" : "Misi",
     "Able to supplement classroom education with innovative content delivery methods via the TINKA™ Platform." : "Able to supplement classroom education with innovative content delivery \nmethods via the TINKA™ Platform.",
     "Portfolio" : "Portfolio",
     "Our Team" : "Our Team",
@@ -249,6 +249,6 @@
     "Course" : "Course",
     "Tinka Educentre Course" : "Tinka Educentre Course",
     "All" : "All",
-    "All Rights Reserved" : "All Rights Reserved",
-    "Copyright" : "Copyright"
+    "All Rights Reserved" : "Hakcipta Terpelihara",
+    "Copyright" : "Hakcipta"
 }
