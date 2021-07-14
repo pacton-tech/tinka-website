@@ -64,7 +64,7 @@
 
           <div class="container">
             <div class="copyright">
-              &copy; Copyright <strong> 2021 <span>Versatile Straits Sdn. Bhd</span></strong>. All Rights Reserved
+              &copy; {{ __("Copyright") }} <strong> 2021 <span>Versatile Straits Sdn. Bhd</span></strong>. {{ __("All Rights Reserved") }}
             </div>
           </div>
 
