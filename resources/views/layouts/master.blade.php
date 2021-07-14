@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ env('APP_NAME') }} | @yield('title')</title>
-   <!-- Favicons -->
-   <link href="{{asset('assets/img/tinkablue.png')}}" rel="icon">
+  
+  <!-- Favicons -->
+  <link href="{{asset('assets/img/tinkablue.png')}}" rel="icon">
   <link href="{{asset('assets/img/tinkablue.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -40,7 +41,18 @@
   <script src="{{asset('assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
   <!-- Template Main JS File -->
   <script src="{{asset('assets/js/main.js')}}"></script>
-  @stack('js')
   
+  <script type="text/javascript">
+    // Get the button, and when the user clicks on it, execute myFunction
+    document.getElementById("lang-en").onclick = function() {
+      window.location.href = "{{ route('language.switch', 'en') }}";
+    };
+
+    document.getElementById("lang-my").onclick = function() {
+      window.location.href = "{{ route('language.switch', 'ms') }}";
+    };
+  </script>
+
+  @stack('js')
 </body>
 </html>

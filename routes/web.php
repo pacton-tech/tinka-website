@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Language Switch
+Route::get('language/{language}', 'LanguageController@switch')->name('language.switch');
+
 Route::get('/mail-preview', function () {
     $data = [
         'name' => 'Fadli Saad',

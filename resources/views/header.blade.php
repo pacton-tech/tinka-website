@@ -8,6 +8,12 @@
 
       <nav id="navbar" class="navbar">
         <ul>
+          <li>
+            <div class="btn-group" role="group" aria-label="Language">
+              <button type="button" class="btn btn-primary btn-sm" id="lang-en">EN</button>
+              <button type="button" class="btn btn-danger btn-sm" id="lang-my">MY</button>
+            </div>
+          </li>
           <li><a class="nav-link scrollto" href="/">{{ __("Home") }}</a></li>
           <li class="dropdown"><a href="/about"><span>{{ __("About Us") }}</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -30,10 +36,10 @@
             <ul>
               <li><a href="/register/teacher">{{ __("Tink-Educator") }}</a></li>
               <li><a href="/register">{{ __("Future Tinkers") }}</a></li>
-          
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="/contact">{{ __("Contact") }}</a></li>
+          
           @auth
           <li><a class="getstarted" href="{{ route('view-profile', auth()->user()->id) }}">{{ __("Dashboard") }}</a></li>
           @endauth
