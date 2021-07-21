@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mail;
+use Validator;
 
 class ContactController extends Controller
 {
@@ -15,24 +16,29 @@ class ContactController extends Controller
         
         $input = $request->all();
 
-        $this->validate($request, [
+        $validator = Validator::make($input, [
             'name' => 'required',
             'email' => 'required|email',
             'subject' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'g-recaptcha-response' => 'required',
         ]);
 
-        Mail::send('email/contact', [
-            'name' => $input['name'],
-            'email' => $input['email'],
-            'subject' => $input['subject'],
-            'content' => $input['content']
-        ],function ($message) use ($request) {
-            $message->from('info@tinka.world');
-            $message->to('info@tinka.world', 'Tinka Educentre')->subject($request->get('subject'));
-        });
+        if ($validator->passes()){
 
-        return back()->with('success', 'Thanks for contacting us, we will get back to you soon!');
+            Mail::send('email/contact', [
+                'name' => $input['name'],
+                'email' => $input['email'],
+                'subject' => $input['subject'],
+                'content' => $input['content']
+            ],function ($message) use ($request) {
+                $message->from('info@tinka.world');
+                $message->to('info@tinka.world', 'Tinka Educentre')->subject($request->get('subject'));
+            });
 
+            return back()->with('success', 'Thanks for contacting us, we will get back to you soon!');
+        }
+
+        return back()->withErrors($validator)->withInput();
     }
 }

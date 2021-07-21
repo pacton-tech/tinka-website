@@ -113,6 +113,7 @@
                 <textarea class="form-control" name="content" rows="6" placeholder="Message" {{ $errors->has('content') ? 'has-error' : '' }} value="{{ old('content') }}"></textarea>
                 <span class="text-danger">{{ $errors->first('content') }}</span>
               </div>
+                <input type="hidden" name="g-recaptcha-response" id="recaptcha">
                 <button type="submit">{{ __("Send Message") }}</button>
               </div>
 
@@ -194,3 +195,15 @@
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 @endsection
 
+@push('js')
+<script src="https://www.google.com/recaptcha/api.js?render={{ env('NOCAPTCHA_SITEKEY') }}"></script>
+<script>
+  grecaptcha.ready(function() {
+    grecaptcha.execute('{{ env('NOCAPTCHA_SITEKEY') }}', {action: 'contact'}).then(function(token) {
+      if (token) {
+        document.getElementById('recaptcha').value = token;
+      }
+    });
+  });
+</script>
+@endpush

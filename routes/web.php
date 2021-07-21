@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GoogleV3CaptchaController;
+
+Route::get('google-v3-recaptcha', [GoogleV3CaptchaController::class, 'index']);
+Route::post('validate-g-recaptcha', [GoogleV3CaptchaController::class, 'validateGCaptch']);
 
 // Language Switch
 Route::get('language/{language}', 'LanguageController@switch')->name('language.switch');
