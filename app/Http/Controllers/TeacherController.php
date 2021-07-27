@@ -48,6 +48,7 @@ class TeacherController extends Controller
             'teaching' => 'required',
             'subject' => 'required',
             'photo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'g-recaptcha-response' => 'required',
         ]);
 
         $input = $request->all();

@@ -50,6 +50,7 @@
                         </div>
 
                         <div class="form-group mb-2">
+                            <input type="hidden" name="g-recaptcha-response" id="recaptcha">
                             <button type="submit" class="btn btn-primary">
                                 {{ __('Register') }}
                             </button>
@@ -68,3 +69,16 @@
     </div>
 </div>
 @endsection
+
+@push('js')
+<script src="https://www.google.com/recaptcha/api.js?render={{ env('NOCAPTCHA_SITEKEY') }}"></script>
+<script>
+  grecaptcha.ready(function() {
+    grecaptcha.execute('{{ env('NOCAPTCHA_SITEKEY') }}', {action: 'contact'}).then(function(token) {
+      if (token) {
+        document.getElementById('recaptcha').value = token;
+      }
+    });
+  });
+</script>
+@endpush

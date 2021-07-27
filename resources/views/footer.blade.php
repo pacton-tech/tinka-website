@@ -55,6 +55,7 @@
               <a href="https://www.facebook.com/tinkamalaysia" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
               <a href="https://www.instagram.com/tinkamalaysia/" target="_blank" class="instagram"><i class="bi bi-instagram bx bxl-instagram"></i></a>
               <a href="https://tinka.wasap.my/" target="_blank" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+              <a href="https://www.youtube.com/channel/UCzVZCcd54qeX7OIt66RPYuA/featured" target="_blank" class="youtube"><i class="bi bi-youtube"></i></a>
             </div>
           </div>
 

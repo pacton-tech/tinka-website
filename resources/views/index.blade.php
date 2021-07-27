@@ -61,7 +61,7 @@ TiNKA - Education. Everywhere.
               <img src="assets/img/offeredclass/online.png" class="img-fluid" alt="">
               <p>{{ __("Online lessons are taught via our own TiNKA App. Learn from the comfort of your own home or pretty much everywhere.") }}
               </p>
-              <a href="/tinkaapp" class="btn btn-danger scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <a href="https://lms.tinka.world" class="btn btn-danger scrollto d-inline-flex align-items-center justify-content-center align-self-center" target="_blank">
                 <span>{{ __("Register Now") }}</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
