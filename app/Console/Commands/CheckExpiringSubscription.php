@@ -52,6 +52,7 @@ class CheckExpiringSubscription extends Command
                             'collection_id' => env('BILLPLZ_COLLECTION_ID'),
                             'description' => 'Renewal for '.$plan['name'],
                             'email' => $data->user->email,
+                            'mobile' => $data->user->phone_number,
                             'name' => $data->user->name,
                             'reference_1_label' => 'Student Name',
                             'reference_1' => $data['student_name'],

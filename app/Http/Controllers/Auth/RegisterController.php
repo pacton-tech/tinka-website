@@ -56,6 +56,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'phone_number' => ['required', 'string', 'min:8'],
             'g-recaptcha-response' => 'required',
         ]);
     }
@@ -73,6 +74,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'role' => $data['role'] ?? 'parent',
             'password' => Hash::make($data['password']),
+            'phone_number' => $data['phone_number'],
         ]);
 
         Mail::to($data['email'])->send(new WelcomeMail($data))->subject('Welcome to Tinka!');

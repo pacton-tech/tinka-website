@@ -18,6 +18,7 @@ Thank you for your registration with us. Below is the details of your credential
 Name: {{ $data['name'] }}  
 Login: {{ $data['email'] }}  
 Password : {{ $data['password'] }}
+Phone Number : {{ $data['phone_number'] }}
 @endcomponent
 
 To access the TiNKA app, login below and create your app access. Each user can create more than 1 username for the app.

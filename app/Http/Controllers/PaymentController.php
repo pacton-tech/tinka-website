@@ -31,7 +31,8 @@ class PaymentController extends Controller
                     'user_id' => 'required',
                     'plan_id' => 'required',
                     'price' => 'required',
-                    'student_name' => 'required'
+                    'student_name' => 'required',
+                    'phone_number' => 'required'
                 ]);
 
             } else {
@@ -42,7 +43,8 @@ class PaymentController extends Controller
                     'subjects' => 'required',
                     'price' => 'required',
                     'extra_amount' => 'required',
-                    'student_name' => 'required'
+                    'student_name' => 'required',
+                    'phone_number' => 'required'
                 ]);
             }
 
@@ -51,6 +53,7 @@ class PaymentController extends Controller
             $name = $user['name'];
             $email = $user['email'];
             $user_id = $user['id'];
+            $phone_number = $user['phone_number'];
 
         } else {
 
@@ -61,7 +64,8 @@ class PaymentController extends Controller
                     'email' => 'required|unique:users',
                     'plan_id' => 'required',
                     'price' => 'required',
-                    'student_name' => 'required'
+                    'student_name' => 'required',
+                    'phone_number' => 'required'
                 ]);
 
             } else {
@@ -73,12 +77,14 @@ class PaymentController extends Controller
                     'subjects' => 'required',
                     'extra_amount' => 'required',
                     'price' => 'required',
-                    'student_name' => 'required'
+                    'student_name' => 'required',
+                    'phone_number' => 'required'
                 ]);
             }
 
             $name = $request->input('name');
             $email = $request->input('email');
+            $phone_number = $request->input('phone_number');
 
             // create new user
 
@@ -88,6 +94,7 @@ class PaymentController extends Controller
             $user->name = $name;
             $user->email = $email;
             $user->role = 'student';
+            $user->phone_number = $phone_number;
             $user->password = Hash::make($temp_password);
             $user->api_token = \Str::random(60);
 
@@ -97,6 +104,7 @@ class PaymentController extends Controller
             $data = ([
                 'name' => $user['name'],
                 'email' => $user['email'],
+                'phone_number' => $user['phone_number'],
                 'temporary_password' => $temp_password
             ]);
 
@@ -128,6 +136,7 @@ class PaymentController extends Controller
             'description' => 'Subscription for '.$plan['name'],
             'email' => $email,
             'name' => $name,
+            'mobile' => $phone_number,
             'reference_1_label' => 'Student Name',
             'reference_1' => $input['student_name'],
             'reference_2_label' => 'Subject',
@@ -230,6 +239,7 @@ class PaymentController extends Controller
             $name = $user['name'];
             $email = $user['email'];
             $user_id = $user['id'];
+            $phone_number = $user['phone_number'];
 
             $input = $request->all();
 
@@ -257,6 +267,7 @@ class PaymentController extends Controller
                 'description' => 'Renewal for '.$plan['name'],
                 'email' => $email,
                 'name' => $name,
+                'mobile' => $phone_number,
                 'reference_1_label' => 'Student Name',
                 'reference_1' => $input['student_name'],
                 'reference_2_label' => 'Subject',

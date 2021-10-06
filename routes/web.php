@@ -165,3 +165,6 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     });
 
 });
+
+Route::get('update-phone-number','ProfileController@update_phone_number')->name('update.phone.number');
+Route::post('update-phone-number','ProfileController@process_update_phone_number')->name('process.update.phone.number');

@@ -64,6 +64,7 @@ Package Renewal
                       @csrf
                       
                       <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                      <input type="hidden" name="phone_number" value="{{ auth()->user()->phone_number }}">
                       <p class="text-mute">Name: {{ auth()->user()->name }}<br>
                         E-mail: {{ auth()->user()->email }}</p>
                       <div class="mb-3">

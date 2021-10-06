@@ -45,6 +45,32 @@ class ProfileController extends Controller
         return view('profile.change-password');
     }
 
+    public function update_phone_number()
+    {
+        return view('auth.update-phone-number');
+    }
+
+    public function process_update_phone_number(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'phone_number' => 'required',
+        ]);
+
+        $phone_number = $request->input('phone_number');
+        $user = User::where('email', $request->input('email'))->first();
+
+        if($user)
+        {
+            $user->phone_number = $phone_number;
+            $user->update();
+
+            return back()->with('success','Your phone number has been updated. Next time you will received SMS notification on your phone for new invoice.');
+        } else {
+            return back()->with('fail','Unable to update your phone number. Your email does not match');
+        }
+    }
+
     public function reset_password(Request $request)
     {
         $request->validate([
