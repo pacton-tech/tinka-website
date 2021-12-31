@@ -39,6 +39,7 @@
                             <div class="mt-3">
                                 <h4>{!! $user['name'] !!}</h4>
                                 <p class="text-secondary mb-1">{!! ucfirst($user['role']) !!}</p>
+                                <p class="text-secondary mb-1">{!! $user['phone_number'] !!}</p>
                                 <p class="text-secondary mb-1">{!! $user['email'] !!}</p>
                                 <a class="btn btn-success" href="{{ route('change-password', $user['id']) }}">{{ __("Change Password") }}</a>
                                 <a class="btn btn-secondary" href="{{ route('logout') }}"
