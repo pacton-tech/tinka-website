@@ -21,7 +21,7 @@ class InvoiceRenewal extends Command
     {
         // check for overdue invoice
         $renewals = Payment::where('is_renewal', 1)
-            //->where('status', 'due')
+            ->where('subscription_id', '6')
             ->get();
 
         if(!$renewals)

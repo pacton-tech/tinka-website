@@ -25,13 +25,13 @@ class DropSubjectRenewal extends Command
         $today = Carbon::now();
 
         // check for overdue subscription
-        $expiring = Subscription::find([3,8,9,10]);
+        $expiring = Subscription::find([6]);
 
         foreach ($expiring as $data) {
 
             if($data['ends_at'] < $today){
 
-                $plan = Plan::find(16); // SPM 1 subject
+                $plan = Plan::find(13); // SPM 1 subject
 
                 if($plan['category'] != 'home-tuition' && $data['is_cancelled'] == 0)
                 {
@@ -43,9 +43,9 @@ class DropSubjectRenewal extends Command
                     } else {
 
                         $extra_amount = 0;
-                        $subject = "Science";
-                        $total_subject = 1;
-                        $total_amount = $plan['price'];
+                        $subject = "History, Science, Business, Economy";
+                        $total_subject = 4;
+                        $total_amount = $plan['price']*$total_subject;
 
                         $response = Http::withBasicAuth(env('BILLPLZ_API_KEY').':', '')
                             ->post(env('BILLPLZ_URL').'v3/bills', [
@@ -90,6 +90,6 @@ class DropSubjectRenewal extends Command
                 }
             }
         }
-        $this->info('Successfully execute invoice creation for expiring subscription.');
+        $this->info('Successfully execute invoice creation for drop subject subscription.');
     }
 }
