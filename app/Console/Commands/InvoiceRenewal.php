@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\Payment;
 use App\Notifications\SubscriptionRenewal;
+use Carbon\Carbon;
 
 class InvoiceRenewal extends Command
 {
@@ -19,9 +20,14 @@ class InvoiceRenewal extends Command
 
     public function handle()
     {
+        $date = Carbon::now()->subDays(30);
+
         // check for overdue invoice
         $renewals = Payment::where('is_renewal', 1)
-            ->where('subscription_id', '6')
+            //->where('subscription_id', '6')
+            ->where('paid', 0)
+            ->where('status', 'due')
+            ->where('updated_at', '>=', $date) // only last 30 days records
             ->get();
 
         if(!$renewals)
