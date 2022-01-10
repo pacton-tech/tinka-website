@@ -74,6 +74,7 @@ Plan
                       
                       <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                       <p class="text-mute">Name: {{ auth()->user()->name }}<br>
+                      Phone: {{ auth()->user()->phone_number }}<br>
                         E-mail: {{ auth()->user()->email }}</p>
                       <div class="mb-3">
                         <label for="studentName">Student Name <span class="text-muted">(required)</span></label>
@@ -100,6 +101,7 @@ Plan
                     <input type="hidden" name="plan_id" value="{{ $plan['id'] }}">
                     <input type="hidden" name="extra_amount" value="{{ $extra }}">
                     <input type="hidden" name="price" value="{{ $plan['price'] }}">
+                    <input type="hidden" name="phone_number" value="{{ auth()->user()->phone_number }}">
 
                     <hr class="mb-4">
                     <div class="text-center text-lg-start">
