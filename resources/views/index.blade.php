@@ -104,8 +104,8 @@ TiNKA - Education. Everywhere.
                 {{ __("Now your child is able to learn practically anywhere. Our app are engaging, immersive, interactive and most importantly fun!") }}
               </p>
               <div class="text-center text-lg-start">
-                <a href="/tinkaapp" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                  <span>{{ __("Download Now") }}</span>
+                <a href="https://campus.tinka.world" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span>{{ __("Register Now") }}</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
               </div>
