@@ -30,6 +30,7 @@
             <ul>
               <li><a href="/fees/educentre">{{ __("Tinka Educentre") }}</a></li>
               <li><a href="/fees/home-tuition">{{ __("Home Tuition") }}</a></li>
+              <li><a href="/fees/tinka-campus">{{ __("Tinka Campus") }}</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>{{ __("Join Us") }}</span> <i class="bi bi-chevron-down"></i></a>

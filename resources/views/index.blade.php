@@ -93,12 +93,13 @@ TiNKA - Education. Everywhere.
       <div class="container" data-aos="fade-up">
         <div class="row gx-0">
           <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-            <img src="assets/img/apps.png" class="img-fluid" alt="">
+            <!-- <img src="assets/img/apps.png" class="img-fluid" alt=""> -->
+            <img src="assets/img/onlinelearning.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="content">
             
-              <h2>{{ __("Tinka App") }}</h2>
+              <h2>{{ __("Tinka Campus") }}</h2>
               <p>
                 {{ __("Now your child is able to learn practically anywhere. Our app are engaging, immersive, interactive and most importantly fun!") }}
               </p>
@@ -126,7 +127,7 @@ TiNKA - Education. Everywhere.
     
             <header class="section-header">
               <h2>{{ __("Join Us") }}</h2>
-              <p>{{ __("Register To Our Website") }}</p>
+              <p>{{ __("Register Now") }}</p>
             </header>
     
             <div class="row gy-4" data-aos="fade-left">
