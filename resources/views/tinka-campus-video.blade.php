@@ -29,7 +29,7 @@
 <!-- End Header -->
 
 <!--Tinka Team Section-->
-    <section id="tinkateam" class="tinkateam">
+  <section id="tinkateam" class="tinkateam">
 
     <div class="container" data-aos="fade-up">
   
