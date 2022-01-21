@@ -59,8 +59,8 @@
             <div class="col-sm-1"></div>
             <div class="col member2" >
                 <center>
-                 <div class="pic"><img src="assets/img/team/soheil.jpg" class="img-fluid" alt=""></div>
-                 <h5 class="text-black "><a href="/soheil">Dr. Soheil Alemi</a></h5>
+                 <div class="pic"><img src="assets/img/team/squared/fadli.jpeg" class="img-fluid" alt=""></div>
+                 <h5 class="text-black "><a href="/fadli">Fadli Saad</a></h5>
                  <p class="text-black"> {{ __("Tech Advisor") }}</p>
                 </center>
             </div>
@@ -86,16 +86,24 @@
           </div>
 
           <div class="row">
-            <center><div class="col-md"></div>
-              <div class="col-md member2" >
-              <div class="pic"><img src="assets/img/team/squared/aqliah.jpeg" class="img-fluid" alt=""></div>
-              <h5 class="text-black"><a href="/aqliah"> Nor Aqliah Arifin</a></h5>
-              <p class="text-black ">{{ __("Project Director") }}</p>
-              </div>
-              </div>
-            </center>
-      </div>
-      
+            <div class="col member2" >
+                  <center>
+                    <div class="pic"><img src="assets/img/team/squared/aqliah.jpeg" class="img-fluid" alt=""></div>
+                    <h5 class="text-black"><a href="/emeritus"> Nor Aqliah Arifin</a></h5>
+                    <p class="text-black"> {{ __("Project Director") }}</p>
+                  </center>
+            </div>
+            
+            <div class="col-sm-1"></div>
+            <div class="col member2" >
+                  <center>
+                   <div class="pic"><img src="assets/img/team/squared/rahman.jpeg" class="img-fluid" alt=""></div>
+                   <h5 class="text-black "><a href="/rahman"> Muhd Abd. Rahman</a></h5>
+                   <p class="text-black"> {{ __("QoF Digital") }}</p>
+                  </center>
+            </div>
+          </div>
+
   
     </div>
 

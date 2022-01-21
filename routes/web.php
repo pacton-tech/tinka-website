@@ -42,6 +42,14 @@ Route::get('/aqliah', function () {
     return view('aqliah');
 });
 
+Route::get('/fadli', function () {
+    return view('fadli');
+});
+
+Route::get('/rahman', function () {
+    return view('rahman');
+});
+
 Route::get('fees/tinka-campus', function () {
     return view('plan.tinka-campus');
 });
