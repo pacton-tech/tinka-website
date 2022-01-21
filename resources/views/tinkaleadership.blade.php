@@ -89,7 +89,7 @@
             <div class="col member2" >
                   <center>
                     <div class="pic"><img src="assets/img/team/squared/aqliah.jpeg" class="img-fluid" alt=""></div>
-                    <h5 class="text-black"><a href="/emeritus"> Nor Aqliah Arifin</a></h5>
+                    <h5 class="text-black"><a href="/aqliah"> Nor Aqliah Arifin</a></h5>
                     <p class="text-black"> {{ __("Project Director") }}</p>
                   </center>
             </div>
