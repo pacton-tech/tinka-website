@@ -165,10 +165,10 @@ TiNKA - Education. Everywhere.
                 <div class="maincard">
                     <div class="thecard">
                       <a href="https://www.facebook.com/tinkamalaysia" target="_blank">
-                        <div class="thefront text-center py-4 sfacebook">
+                        <div class="theback text-center py-4 sfacebook">
                             <div class="social-icon"> <i class="fa fa-facebook fa-2x"></i> </div>
                         </div>
-                        <div class="theback text-center py-4 sfacebook">
+                        <div class="thefront text-center py-4 sfacebook">
                             <div class="social-icon"> <i class="fa fa-facebook fa-2x"></i> </div>
                         </div>
                       </a>
@@ -179,10 +179,10 @@ TiNKA - Education. Everywhere.
                 <div class="maincard">
                     <div class="thecard">
                       <a href="https://www.instagram.com/tinkamalaysia" target="_blank">
-                        <div class="thefront text-center py-4 sinstagram">
+                        <div class="theback text-center py-4 sinstagram">
                             <div class="social-icon"> <i class="fa fa-instagram fa-2x"></i> </div>
                         </div>
-                        <div class="theback text-center py-4 sinstagram">
+                        <div class="thefront text-center py-4 sinstagram">
                             <div class="social-icon"> <i class="fa fa-instagram fa-2x"></i> </div>
                         </div>
                       </a>
@@ -194,10 +194,10 @@ TiNKA - Education. Everywhere.
               <div class="maincard">
                 <div class="thecard">
                   <a href="https://tinka.wasap.my" target="_blank">
-                    <div class="thefront text-center py-4 swhatsapp">
+                    <div class="theback text-center py-4 swhatsapp">
                         <div class="social-icon"> <i class="fa fa-whatsapp fa-2x"></i> </div>
                     </div>
-                    <div class="theback text-center py-4 swhatsapp">
+                    <div class="thefront text-center py-4 swhatsapp">
                         <div class="social-text"> <i class="fa fa-whatsapp fa-2x"></i></div>
                     </div>
                   </a>
