@@ -24,12 +24,13 @@
           <li class="dropdown" ><a href="#"><span>{{ __("Product & Services") }}</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/tinkaeducentre">{{ __("Tinka Educentre") }}</a></li>
-              <li><a href="/tinkaapp">{{ __("Tinka App") }}</a></li>
+              <li><a href="https://campus.tinka.world">{{ __("Tinka Campus - Digital Online Learning Platform") }}</a></li>
             </ul>
           <li class="dropdown" ><a href="#"><span>{{ __("Fees") }}</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/fees/educentre">{{ __("Tinka Educentre") }}</a></li>
               <li><a href="/fees/home-tuition">{{ __("Home Tuition") }}</a></li>
+              <li><a href="/fees/tinka-campus">{{ __("Tinka Campus") }}</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>{{ __("Join Us") }}</span> <i class="bi bi-chevron-down"></i></a>

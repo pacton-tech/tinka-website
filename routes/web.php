@@ -41,6 +41,23 @@ Route::post('/contact', 'ContactController@contactPost')->name('contactPost');
 Route::get('/aqliah', function () {
     return view('aqliah');
 });
+
+Route::get('/fadli', function () {
+    return view('fadli');
+});
+
+Route::get('/rahman', function () {
+    return view('rahman');
+});
+
+Route::get('fees/tinka-campus', function () {
+    return view('plan.tinka-campus');
+});
+
+Route::get('/tinka-campus-walkthrough', function () {
+    return view('tinka-campus-video');
+});
+
 Route::get('/dato', function () {
     return view('dato');
 });

@@ -15,8 +15,9 @@
           <div class="col-lg-2 col-sm-12 footer-links">
             <h4>{{ __("How To") }}</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/Tinka Student App- How to.pdf') }}">{{ __("Student App") }}</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/A complete guide to Tinka App teacher.pdf') }}">{{ __("Teacher App") }}</a></li>
+              <!-- <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/Tinka Student App- How to.pdf') }}">{{ __("Student App") }}</a></li> -->
+              <!-- <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('assets/A complete guide to Tinka App teacher.pdf') }}">{{ __("Teacher App") }}</a></li> -->
+              <li><i class="bi bi-chevron-right"></i> <a href="{{ asset('tinka-campus-walkthrough') }}">{{ __("Tinka Campus") }}</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="{{ url('contact') }}">{{ __("Contact Us") }}</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="{{ url('faq') }}">FAQ</a></li>
               
@@ -45,12 +46,13 @@
           
           <div class="col-lg-3 col-sm-12 footer-links">
 
-               <div class="app-links">
+               <!-- <div class="app-links">
                  <h4>{{ __("Download Our App Now") }}</h4>
                  <a href="https://www.apple.com/my/app-store/" target="_blank"><img src="{{ asset('assets/img/appstore.png') }}" alt="" width="150"></a>
                  <a href="https://play.google.com/store/apps/details?id=tech.pacton.tinka" target="_blank"><img src="{{ asset('assets/img/playstoreg.png') }}" alt="" width="150"></a>
-                </div>
-                <div class="social-links mt-3">
+                </div> -->
+            <!-- <div class="social-links mt-3"> -->
+            <div class="social-links">
               <h4>{{ __("Find Us On") }}</h4>
               <a href="https://www.facebook.com/tinkamalaysia" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
               <a href="https://www.instagram.com/tinkamalaysia/" target="_blank" class="instagram"><i class="bi bi-instagram bx bxl-instagram"></i></a>
