@@ -35,7 +35,7 @@
                             <div class="col-9">
                                 <div class="row">
                                     @foreach($plan as $data)
-                                    <div class="col-3">
+                                    <div class="col-md-6 col-sm-12 col-lg-4">
                                         <div class="card mb-3">
                                             <img class="card-img-top" src="{{ asset('assets/img/portfolio/'.$data['id'].'.png') }}" alt="Card image cap">
                                             <div class="card-body">
@@ -43,7 +43,7 @@
                                                 <p class="card-text">{{ $data['description'] }}<br>
                                                 Price: RM {{ $data['price'] }}/subject<br>
                                                 Renewal: Every {{ $data['invoice_period'].' '.$data['invoice_interval'] }}</p>
-                                                <a href="#" class="btn btn-primary">Choose</a>
+                                                <a href="#" class="btn btn-primary downgrade" id="{{ $data['id'] }}" data-student-name="{{ $subscription['student_name'] }}">Choose</a>
                                             </div>
                                         </div>
                                     </div>
