@@ -309,6 +309,69 @@ TiNKA - Education. Everywhere.
     </div>
 
     </section>
+
+    <section>
+
+      <!-- Gallery -->
+
+      <header class="section-header">
+        <p>{{ __("Gallery") }}</p>
+      </header>
+
+      <!-- <div class="container mt-5 mb-5 d-flex justify-content-center"> -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+
+            <img 
+              src="{{ asset('uploads/slider/trial-one-week.png') }}"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+            />
+            <img 
+              src="{{ asset('assets/img/gallery/gallery1.jpeg') }}"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+            />
+
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0">
+
+          <img 
+              src="{{ asset('uploads/slider/darjah1-form5.png') }}"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Wintry Mountain Landscape"
+            />
+
+          <img 
+              src="{{ asset('assets/img/gallery/gallery5.jpeg') }}"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Mountains in the Clouds"
+            />
+
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0">
+
+          <img 
+              src="{{ asset('uploads/slider/home-tuition.png') }}"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Mountains in the Clouds"
+            />
+
+            <img 
+                src="{{ asset('assets/img/gallery/gallery10.jpeg') }}"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="Wintry Mountain Landscape"
+              />
+
+          </div>
+        </div>
+      </div>
+      <!-- Gallery -->
+
+    </section>
   </main>
 
 @include('footer')

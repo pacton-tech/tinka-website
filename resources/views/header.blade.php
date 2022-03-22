@@ -15,6 +15,7 @@
             </div>
           </li>
           <li><a class="nav-link scrollto" href="/">{{ __("Home") }}</a></li>
+          <li><a class="nav-link scrollto" target=”_blank” href="https://blog.tinka.world/">Blog</a></li>
           <li class="dropdown"><a href="/about"><span>{{ __("About Us") }}</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/about">{{ __("About Tinka") }}</a></li>
