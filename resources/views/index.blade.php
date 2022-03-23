@@ -310,66 +310,77 @@ TiNKA - Education. Everywhere.
 
     </section>
 
-    <section>
+    <section class="image-grid">
 
       <!-- Gallery -->
 
-      <header class="section-header">
-        <p>{{ __("Gallery") }}</p>
-      </header>
+        <div class="container" data-aos="fade-up">
 
-      <!-- <div class="container mt-5 mb-5 d-flex justify-content-center"> -->
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+          <header class="section-header">
+            <p>{{ __("Gallery") }}</p>
+          </header>
 
-            <img 
-              src="{{ asset('uploads/slider/trial-one-week.png') }}"
-              class="w-100 shadow-1-strong rounded mb-4"
-              alt="Boat on Calm Water"
-            />
-            <img 
-              src="{{ asset('assets/img/gallery/gallery1.jpeg') }}"
-              class="w-100 shadow-1-strong rounded mb-4"
-              alt="Boat on Calm Water"
-            />
+              <div class="container-xxl">
+                <div class="row gy-4">
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <figure>
+                      <a class="d-block" href="">
+                        <img width="1920" height="1280" src="{{ asset('uploads/slider/trial-one-week.png') }}" class="img-fluid" alt="Ring of Kerry, County Kerry, Ireland" data-caption="Ring of Kerry, County Kerry, Ireland">
+                      </a>
+                    </figure>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <figure>
+                      <a class="d-block" href="">
+                        <img width="1920" height="1280" src="{{ asset('uploads/slider/darjah1-form5.png') }}" class="img-fluid" alt="Fintown, Ireland" data-caption="Fintown, Ireland">
+                      </a>
+                    </figure>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <figure>
+                      <a class="d-block" href="">
+                        <img width="1920" height="1280" src="{{ asset('uploads/slider/home-tuition.png') }}" class="img-fluid" alt="Anne Street, Dublin, Ireland" data-caption="Anne Street, Dublin, Ireland">
+                      </a>
+                    </figure>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <figure>
+                      <a class="d-block" href="">
+                        <img width="1920" height="1280" src="{{ asset('assets/img/gallery/gallery1.jpeg') }}" class="img-fluid" alt="Doonagore Castle, Doolin, Ireland" data-caption="Doonagore Castle, Doolin, Ireland">
+                      </a>
+                    </figure>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <figure>
+                      <a class="d-block" href="">
+                        <img width="1920" height="1280" src="{{ asset('assets/img/gallery/gallery5.jpeg') }}" class="img-fluid" alt="Connemara National Park, Letterfrack, Ireland" data-caption="Connemara National Park, Letterfrack, Ireland">
+                      </a>
+                    </figure>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <figure>
+                      <a class="d-block" href="">
+                        <img width="1920" height="1280" src="{{ asset('assets/img/gallery/gallery10.jpeg') }}" class="img-fluid" alt="Galway, Ireland" data-caption="Galway, Ireland">
+                      </a>
+                    </figure>
+                  </div>
+                </div>
+              </div>
 
-          </div>
+        </div>
 
-          <div class="col-lg-4 mb-4 mb-lg-0">
-
-          <img 
-              src="{{ asset('uploads/slider/darjah1-form5.png') }}"
-              class="w-100 shadow-1-strong rounded mb-4"
-              alt="Wintry Mountain Landscape"
-            />
-
-          <img 
-              src="{{ asset('assets/img/gallery/gallery5.jpeg') }}"
-              class="w-100 shadow-1-strong rounded mb-4"
-              alt="Mountains in the Clouds"
-            />
-
-          </div>
-
-          <div class="col-lg-4 mb-4 mb-lg-0">
-
-          <img 
-              src="{{ asset('uploads/slider/home-tuition.png') }}"
-              class="w-100 shadow-1-strong rounded mb-4"
-              alt="Mountains in the Clouds"
-            />
-
-            <img 
-                src="{{ asset('assets/img/gallery/gallery10.jpeg') }}"
-                class="w-100 shadow-1-strong rounded mb-4"
-                alt="Wintry Mountain Landscape"
-              />
-
+        <div class="modal lightbox-modal" id="lightbox-modal" tabindex="-1">
+          <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div class="modal-body">
+                <div class="container-fluid p-0">
+                  <!-- JS content here -->
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Gallery -->
 
     </section>
   </main>
@@ -399,5 +410,73 @@ TiNKA - Education. Everywhere.
       'arrows' : false
     });
   });
+</script>
+
+<!-- Gallery Lightbox JS -->
+<script>
+
+  const imageGrid = document.querySelector(".image-grid");
+  const links = imageGrid.querySelectorAll("a");
+  const imgs = imageGrid.querySelectorAll("img");
+  const lightboxModal = document.getElementById("lightbox-modal");
+  const bsModal = new bootstrap.Modal(lightboxModal);
+  const modalBody = document.querySelector(".modal-body .container-fluid");
+
+  for (const link of links) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const currentImg = link.querySelector("img");
+      const lightboxCarousel = document.getElementById("lightboxCarousel");
+      if (lightboxCarousel) {
+        const parentCol = link.parentElement.parentElement;
+        const index = [...parentCol.parentElement.children].indexOf(parentCol);
+        const bsCarousel = new bootstrap.Carousel(lightboxCarousel);
+        bsCarousel.to(index);
+      } else {
+        createCarousel(currentImg);
+      }
+      bsModal.show();
+    });
+  }
+
+  function createCarousel(img) {
+    const markup = `
+      <div id="lightboxCarousel" class="carousel" data-bs-ride="carousel" data-bs-interval="false">
+        <div class="carousel-inner">
+          ${createSlides(img)}
+        </div> 
+        <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      `;
+
+    modalBody.innerHTML = markup;
+  }
+
+  function createSlides(img) {
+    let markup = "";
+    const currentImgSrc = img.getAttribute("src");
+
+    for (const img of imgs) {
+      const imgSrc = img.getAttribute("src");
+      const imgAlt = img.getAttribute("alt");
+      const imgCaption = img.getAttribute("data-caption");
+
+      markup += `
+      <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
+        <img src=${imgSrc} alt=${imgAlt}>
+      </div>
+      `;
+    }
+
+    return markup;
+  }
+
 </script>
 @endpush
