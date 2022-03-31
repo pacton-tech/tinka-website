@@ -11,22 +11,22 @@ TiNKA - Education. Everywhere.
   <section class="d-flex align-items-center">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 d-flex flex-column justify-content-center">
-            <h1 data-aos="fade-up">Promosi Bulan Mac</h1>
-            <h2 data-aos="fade-up" data-aos-delay="400">Kelas Tuisyen Trial PERCUMA di Bukit Jelutong selama SEMINGGU!</h2>
+        <div class="col-lg-5 d-flex flex-column justify-content-center">
+            <h1 data-aos="fade-up">{{ __("Join Us") }}</h1>
+            <h2 data-aos="fade-up" data-aos-delay="400">Majlis Khatam Al-Quran</h2>
             
             <div data-aos="fade-up" data-aos-delay="600">
               <div class="text-center text-lg-start">
-                <a href="/contact" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                  <span>{{ __("Contact Us") }}</span>
+                <a href="https://forms.gle/3NH2XQAhEU4mSoeb7" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span>{{ __("Register Now") }}</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-            <img src="{{ asset('uploads/slider/trial-one-week.png') }}" class="img-fluid" alt="public speaking">
+          <div class="col-lg-7 hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{{ asset('uploads/slider/al-quran.jpeg') }}" class="img-fluid" alt="public speaking">
           </div>
 
       </div>
@@ -106,6 +106,7 @@ TiNKA - Education. Everywhere.
     </div>
   </section>
 
+   
 @foreach($slider as $slide)
     <section class="d-flex align-items-center" id="slide-{{ $slide['id'] }}">
       <div class="container">
