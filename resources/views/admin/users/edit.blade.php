@@ -46,6 +46,13 @@
                         </div>
 
                         <div class="form-group row">
+                            <label class="form-control-label col-form-label col-4">Phone Number</label>
+                            <div class="col-8">
+                            {!! Form::number('phone_number', null, array('placeholder' => 'Phone Number','class' => 'form-control form-control-sm')) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label class="form-control-label col-form-label col-4">Password</label>
                             <div class="col-8">
                             {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control form-control-sm')) !!}

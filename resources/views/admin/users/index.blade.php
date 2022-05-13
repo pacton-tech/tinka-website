@@ -70,6 +70,7 @@
                                     <th>No.</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Email</th>
+                                    <th scope="col">Phone No.</th>
                                     <th scope="col">Role</th>
                                     <th scope="col">Creation Date</th>
                                     <th scope="col">Action</th>
@@ -81,6 +82,7 @@
                                     <td>{{ ++$i }}</td>
                                     <td>{{ $data->name }}</td>
                                     <td>{{ $data->email }}</td>
+                                    <td>{{ $data->phone_number }}</td>
                                     <td>{{ $data->role }}</td>
                                     <td>{{ \Carbon\Carbon::parse($data->created_at)->format('d/m/Y') }}</td>
                                     <td>

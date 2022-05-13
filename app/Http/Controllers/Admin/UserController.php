@@ -53,12 +53,14 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6'],
+            'phone_number' => ['required', 'number', 'min:7'],
             'role' => ['required'],
         ]);
 
         $user = User::create([
             'name' => $input['name'],
             'email' => $input['email'],
+            'phone_number' => $input['phone_number'],
             'role' => $input['role'] ?? 'parent',
             'password' => Hash::make($input['password']),
         ]);
@@ -91,20 +93,24 @@ class UserController extends Controller
 
         $user->name = $request->input('name');
         $user->email = $request->input('email');
+        $user->phone_number = $request->input('phone_number');
+
         if(!empty($request->input('password'))){
             $password = $request->input('password');
             $user->password = Hash::make($request->input('password'));
         } else {
             $password = 'Unchanged';
         }
+
         $user->role = $request->input('role');
         $user->save();
         
-        if($user->isDirty()){
+        if($user->wasChanged()){
 
             $data = [
                 'name' => $request->input('name'),
                 'email' => $request->input('email'),
+                'phone_number' => $request->input('phone_number'),
                 'password' => $password,
                 'role' => ucfirst($request->input('role'))
             ];
