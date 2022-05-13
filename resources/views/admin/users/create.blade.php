@@ -44,6 +44,13 @@
                             {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control form-control-sm')) !!}
                             </div>
                         </div>
+                        
+                        <div class="form-group row">
+                            <label class="form-control-label col-form-label col-4">Phone Number</label>
+                            <div class="col-8">
+                            {!! Form::text('phone_number', null, array('placeholder' => 'Phone Number','class' => 'form-control form-control-sm')) !!}
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label class="form-control-label col-form-label col-4">Password</label>

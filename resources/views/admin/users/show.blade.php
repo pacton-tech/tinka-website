@@ -49,6 +49,9 @@
                                     <dt class="col-3">E-mail</dt>
                                     <dd class="col-9">{{ $user->email }}</dd>
 
+                                    <dt class="col-3">Phone Number</dt>
+                                    <dd class="col-9">{{ $user->phone_number }}</dd>
+
                                     <dt class="col-3">Roles</dt>
                                     <dd class="col-9">{{ strtoupper($user->role) }}</dd>
 
